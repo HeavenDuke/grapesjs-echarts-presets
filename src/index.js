@@ -6,6 +6,7 @@ import events from "./events";
 import en from "./locale/en";
 import zh from "./locale/zh";
 import echarts from "echarts";
+import Vue from "vue";
 import merge from "lodash/merge";
 require("echarts/theme/dark");
 require("echarts/theme/macarons");
@@ -36,6 +37,7 @@ export default grapesjs.plugins.add('gjs-echarts-presets', function (editor, { i
     // Attach Events
     events(editor);
     editor.echarts = echarts;
+    editor.Vue = Vue;
     // Add Traits
     loadTraits(editor, options);
     // Add Components
