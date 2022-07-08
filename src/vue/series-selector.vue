@@ -28,7 +28,7 @@
                 </div>
                 <div class="gjs-field-wrp gjs-field-wrp--text" data-input>
                     <div class="gjs-field gjs-field-text" data-input>
-                        <input type="text" placeholder="eg. 2000" v-model="serie.value" />
+                        <input type="number" placeholder="eg. 2000" v-model="serie.value" />
                     </div>
                 </div>
                 <div class="gjs-field-wrp gjs-field-wrp--text" data-input>
@@ -38,11 +38,6 @@
                 </div>
                 <div class="gjs-field-wrp gjs-field-wrp--text" data-input>
                     <button class="btn btn-icon" @click="remove(serie.id)">-</button>
-                </div>
-            </div>
-            <div class="gjs-trt-trait save-button-wrapper">
-                <div class="gjs-field gjs-field-text" data-input>
-                    <button class="btn btn-full" @click="save">{{t('grapesjs-echarts-presets.items.save')}}</button>
                 </div>
             </div>
         </div>
@@ -57,6 +52,17 @@ export default {
       series: [],
       theme: ""
     };
+  },
+  watch: {
+    theme () {
+      this.onChange();
+    },
+    series: {
+      handler () {
+        this.onChange();
+      },
+      deep: true
+    }
   },
   methods: {
     add() {

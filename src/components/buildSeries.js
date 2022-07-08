@@ -35,8 +35,10 @@ const DEFAULT_GET_OPTIONS = function(newSeries) {
     },
     series,
   };
+const DEFAULT_GET_OPTIONS = function(options = {}) {
   return options;
 };
+
 export default ({
   getOptions = DEFAULT_GET_OPTIONS,
   name = "grapesjs-echarts.components.MY_COMPONENT.name",
@@ -65,6 +67,19 @@ export default ({
           const theme = component.get("attributes")["data-ecg-theme"] || null;
           const options = this.getOptions(newSeries);
           this.renderChart(options, theme);
+          this.on("change:attributes:data-ecg-series", this.updateChart);
+          this.on("change:attributes:data-ecg-theme", this.updateChart);
+          this.on("change:attributes:data-ecg-title", this.updateChart);
+          setTimeout(() => {
+            this.updateChart();
+          }, 100);
+        },
+        updateChart () {
+          const title = JSON.parse(this.get("attributes")["data-ecg-title"] || "{}");
+          const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "[]");
+          const theme = this.get("attributes")["data-ecg-theme"] || null;
+          const option = this.getOptions({ series, title });
+          this.renderChart(option, theme);
         },
         getOptions,
         renderChart(options, theme) {
@@ -88,6 +103,11 @@ export default ({
             {
               type: "echarts-series-trait",
             },
+              type: "echarts-title-trait"
+            },
+            {
+              type: "echarts-series-trait",
+            }
           ],
         },
       },
@@ -98,6 +118,7 @@ export default ({
             const options = model.getOptions(series);
             const theme = model.get("attributes")["data-ecg-theme"] || null;
             model.renderChart(options, theme);
+            model.updateChart();
           }, 50);
         },
       },
