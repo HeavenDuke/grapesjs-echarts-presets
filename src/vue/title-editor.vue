@@ -123,9 +123,13 @@
 </template>
 
 <script>
+
+import TextStyleEditor from "./text-style-editor";
+
 export default {
   name: "title-modifier",
   props: ["t", "editor", "onChange"],
+  components: [TextStyleEditor],
   data() {
     return {
       title: {
