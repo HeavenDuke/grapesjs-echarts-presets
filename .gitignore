@@ -104,3 +104,6 @@ typings/
 
 # Webstorm configuration files
 .idea/
+
+# Other dev files
+_index.html

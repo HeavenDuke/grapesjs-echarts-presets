@@ -17,5 +17,20 @@ export default {
         name: "Bar Chart",
       }
     },
+    config: {
+      title: {
+        show: {
+          label: "Show"
+        },
+        text: {
+          label: "Title",
+          placeholder: "Input title"
+        },
+        subtext: {
+          label: "Subtitle",
+          placeholder: "Input subtitle."
+        }
+      }
+    }
   },
 };

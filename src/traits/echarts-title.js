@@ -1,14 +1,15 @@
-import SeriesSelector from "../vue/series-selector.vue";
+import TitleEditor from "../vue/title-editor.vue";
 export default {
   // Expects as return a simple HTML string or an HTML element
   noLabel: true,
   createInput({ component }) {
+    // Construct a vue instance and pass its DOM to grapesjs
     const editor = component.em.get("Editor");
     const intl = editor.I18n;
     const { Vue } = editor;
     const vueInstance = new Vue({
       render: (h) =>
-        h(SeriesSelector, {
+        h(TitleEditor, {
           props: {
             editor,
             t: (key) => intl.t(key),
@@ -22,20 +23,17 @@ export default {
   },
   // Update the component based element changes
   onEvent({ component }) {
-    const { series, theme } = this.inputInstance;
+    const { title } = this.inputInstance;
     component.addAttributes({
-      "data-ecg-series": JSON.stringify(series),
-      "data-ecg-theme": theme,
+      "data-ecg-title": JSON.stringify(title)
     });
     component.view.render();
   },
   onUpdate({ component }) {
-    const series = component.getAttributes()["data-ecg-series"] || null;
-    const theme = component.getAttributes()["data-ecg-theme"] || null;
+    const title = component.getAttributes()["data-ecg-title"] || null;
 
-    if (series) {
-      this.inputInstance.series = JSON.parse(series);
-      this.inputInstance.theme = theme;
+    if (title) {
+      this.inputInstance.title = JSON.parse(title);
     }
   },
 };
