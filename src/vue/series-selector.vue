@@ -50,32 +50,32 @@
 </template>
 
 <script>
-    export default {
-        props: ["t", "editor", "onChange"],
-        data() {
-            return {
-                series: [],
-                theme: ""
-            };
-        },
-        methods: {
-            add() {
-                const categoryLabel = this.t("grapesjs-echarts-presets.items.category");
-                this.series.push({
-                    id: new Date().getTime(),
-                    label: `${categoryLabel} ${this.series.length + 1}`,
-                    value: 100,
-                    color: null
-                });
-            },
-            remove(serie) {
-                this.series = this.series.filter(({ id }) => id !== serie);
-            },
-            save() {
-                this.onChange();
-            }
-        }
+export default {
+  props: ["t", "editor", "onChange"],
+  data() {
+    return {
+      series: [],
+      theme: ""
     };
+  },
+  methods: {
+    add() {
+      const categoryLabel = this.t("grapesjs-echarts-presets.items.category");
+      this.series.push({
+        id: new Date().getTime(),
+        label: `${categoryLabel} ${this.series.length + 1}`,
+        value: 100,
+        color: null
+      });
+    },
+    remove(serie) {
+      this.series = this.series.filter(({ id }) => id !== serie);
+    },
+    save() {
+      this.onChange();
+    }
+  }
+};
 </script>
 
 <style lang='scss' scoped>

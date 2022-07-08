@@ -1,11 +1,11 @@
 import build from "./buildSeries";
 export default build({
-  name: "grapesjs-echarts.components.bars.name",
+  name: "grapesjs-echarts.components.lines.name",
   getOptions: (newSeries) => {
     const map = JSON.parse(newSeries);
     const series = [
       {
-        type: "bar",
+        type: "line",
         data: map.map(({ value, color, label }) => ({
           value,
           name: label,
