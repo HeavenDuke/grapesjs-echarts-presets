@@ -1,4 +1,4 @@
-import build from "./buildSeries";
+import build from "../buildSeries";
 export default build({
   name: "grapesjs-echarts.components.bars.name",
   getOptions: (options) => {
