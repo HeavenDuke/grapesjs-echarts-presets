@@ -34,10 +34,7 @@ export default (editor) => {
               if (options) {
                 chart.setOption(options);
               }
-              //图表宽高自适应
-              window.onresize=function (){
-                chart.resize();
-              };
+
             } catch (e) {
               console.log(e);
             }
