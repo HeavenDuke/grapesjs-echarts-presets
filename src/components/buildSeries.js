@@ -1,49 +1,12 @@
-const DEFAULT_GET_OPTIONS = function(newSeries) {
-  const map = JSON.parse(newSeries);
-  const series = [
-    {
-      type: "pie",
-      radius: ["40%", "70%"],
-      label: {
-        normal: {
-          show: false,
-          position: "center",
-        },
-        emphasis: {
-          show: true,
-          textStyle: {
-            fontSize: "14",
-          },
-        },
-      },
-      labelLine: {
-        normal: {
-          show: false,
-        },
-      },
-      data: map.map(({ value, color, label }) => ({
-        value,
-        name: label,
-        itemStyle: { color },
-      })),
-    },
-  ];
-  const options = {
-    tooltip: {
-      trigger: "item",
-      formatter: "{b}: {c} ({d}%)",
-    },
-    series,
-  };
-const DEFAULT_GET_OPTIONS = function(options = {}) {
-  return options;
-};
+
+const DEFAULT_GET_OPTIONS = function (options = {}) {
+  return options;};
 
 export default ({
   getOptions = DEFAULT_GET_OPTIONS,
   name = "grapesjs-echarts.components.MY_COMPONENT.name",
 }) => {
-  return function(editor) {
+  return function (editor) {
     return {
       extend: "default",
       model: {
@@ -74,11 +37,11 @@ export default ({
             this.updateChart();
           }, 100);
         },
-        updateChart () {
+        updateChart() {
           const title = JSON.parse(this.get("attributes")["data-ecg-title"] || "{}");
           const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "[]");
           const theme = this.get("attributes")["data-ecg-theme"] || null;
-          const option = this.getOptions({ series, title });
+          const option = this.getOptions({series, title});
           this.renderChart(option, theme);
         },
         getOptions,
@@ -91,7 +54,7 @@ export default ({
               renderer: "canvas",
             });
             chart.setOption(options);
-            this.addAttributes({ "data-ecg-options": JSON.stringify(options) });
+            this.addAttributes({"data-ecg-options": JSON.stringify(options)});
             this.chart = chart;
           }
         },
@@ -101,8 +64,7 @@ export default ({
           resizable: true,
           traits: [
             {
-              type: "echarts-series-trait",
-            },
+
               type: "echarts-title-trait"
             },
             {
@@ -112,7 +74,7 @@ export default ({
         },
       },
       view: {
-        onRender({ model }) {
+        onRender({model}) {
           setTimeout(() => {
             const series = model.get("attributes")["data-ecg-series"] || "[]";
             const options = model.getOptions(series);
@@ -124,4 +86,5 @@ export default ({
       },
     };
   };
+  
 };

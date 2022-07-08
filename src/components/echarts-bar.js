@@ -1,8 +1,6 @@
 import build from "./buildSeries";
 export default build({
   name: "grapesjs-echarts.components.bars.name",
-  getOptions: (newSeries) => {
-    const map = JSON.parse(newSeries);
   getOptions: (options) => {
     const map = options.series || [];
     const title = options.title || {};
@@ -22,7 +20,7 @@ export default build({
         data: map.map(({ label }) => label),
       },
     ];
-    const options = {
+
     return {
       title,
       series,
@@ -34,6 +32,5 @@ export default build({
       ],
     };
 
-    return options;
   },
 });

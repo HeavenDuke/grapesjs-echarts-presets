@@ -1,8 +1,6 @@
 export default {
   listenTo: ["styleManager:change:width", "styleManager:change:height"],
-  action() {
-  listenTo: ["style:property:update"],
-  action({ property }) {
+  action({property}) {
     const editor = this.get("Editor");
     const component = editor.getSelected();
     editor.registeredComponents.map((name) => {
@@ -16,10 +14,12 @@ export default {
         }
 
         if (component.chart) {
-        if (component.chart && ["width", "height", "max-width", "max-height"].includes(property.id)) {
-          component.chart.resize();
+          if (component.chart && ["width", "height", "max-width", "max-height"].includes(property.id)) {
+            component.chart.resize();
+          }
         }
       }
     });
   },
+
 };

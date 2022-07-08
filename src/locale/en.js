@@ -20,8 +20,6 @@ export default {
         name: "Lines Chart",
       }
     },
-      }
-    },
     config: {
       title: {
         show: {
@@ -37,5 +35,7 @@ export default {
         }
       }
     }
+
+
   },
 };
