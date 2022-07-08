@@ -4,7 +4,18 @@
 
 <script>
 export default {
-  name: "text-style-editor"
+  name: "text-style-editor",
+  props: {
+    value: Object
+  },
+  watch: {
+    value: {
+      handler (newValue) {
+        this.$emit('input', newValue)
+      },
+      deep: true
+    }
+  }
 };
 </script>
 

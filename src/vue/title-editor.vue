@@ -124,12 +124,12 @@
 
 <script>
 
-import TextStyleEditor from "./text-style-editor";
+// import TextStyleEditor from "./text-style-editor";
 
 export default {
   name: "title-modifier",
   props: ["t", "editor", "onChange"],
-  components: [TextStyleEditor],
+  components: [/*TextStyleEditor*/],
   data() {
     return {
       title: {
