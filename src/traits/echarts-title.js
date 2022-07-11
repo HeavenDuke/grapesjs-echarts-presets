@@ -27,6 +27,7 @@ export default {
     component.addAttributes({
       "data-ecg-title": JSON.stringify(title)
     });
+    component.clearChart()
     component.view.render();
   },
   onUpdate({ component }) {

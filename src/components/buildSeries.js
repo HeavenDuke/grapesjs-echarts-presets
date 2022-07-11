@@ -26,11 +26,13 @@ export default ({
           this.renderChart(option, theme);
         },
         getOptions,
+        clearChart() {
+          if (this.chart) {
+            editor.echarts.dispose(this.chart);
+          }
+        },
         renderChart(options, theme) {
           if (options) {
-            if (this.chart) {
-              editor.echarts.dispose(this.chart);
-            }
             const chart = editor.echarts.init(this.view.el, theme, {
               renderer: "canvas",
             });

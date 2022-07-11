@@ -27,6 +27,7 @@ export default {
       "data-ecg-series": JSON.stringify(series),
       "data-ecg-theme": theme,
     });
+    component.clearChart()
     component.view.render();
   },
   onUpdate({ component }) {
