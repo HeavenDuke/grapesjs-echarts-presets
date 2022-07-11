@@ -30,6 +30,9 @@ export default {
       },
       rose:{
         name:"Rose Chart"
+      },
+      funnel:{
+        name:"Funnel Chart"
       }
     },
     dict: {
