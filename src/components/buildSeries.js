@@ -1,35 +1,17 @@
 
-const DEFAULT_GET_OPTIONS = function (options = {}) {
-  return options;};
+const DEFAULT_GET_OPTIONS = function(options = {}) {
+  return options;
+};
 
 export default ({
   getOptions = DEFAULT_GET_OPTIONS,
   name = "grapesjs-echarts.components.MY_COMPONENT.name",
 }) => {
-  return function (editor) {
+  return function(editor) {
     return {
       extend: "default",
       model: {
         init() {
-          this.on("change:attributes:data-ecg-series", this.handleSeriesChange);
-          this.on("change:attributes:data-ecg-theme", this.handleThemeChange);
-          setTimeout(() => {
-            const series = this.get("attributes")["data-ecg-series"] || "[]";
-            const options = this.getOptions(series);
-            const theme = this.get("attributes")["data-ecg-theme"] || null;
-            // console.log(series, theme);
-            this.renderChart(options, theme);
-          }, 100);
-        },
-        handleThemeChange(component, newTheme) {
-          const series = component.get("attributes")["data-ecg-series"] || [];
-          const options = this.getOptions(series);
-          this.renderChart(options, newTheme);
-        },
-        handleSeriesChange(component, newSeries) {
-          const theme = component.get("attributes")["data-ecg-theme"] || null;
-          const options = this.getOptions(newSeries);
-          this.renderChart(options, theme);
           this.on("change:attributes:data-ecg-series", this.updateChart);
           this.on("change:attributes:data-ecg-theme", this.updateChart);
           this.on("change:attributes:data-ecg-title", this.updateChart);
@@ -37,16 +19,15 @@ export default ({
             this.updateChart();
           }, 100);
         },
-        updateChart() {
+        updateChart () {
           const title = JSON.parse(this.get("attributes")["data-ecg-title"] || "{}");
           const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "[]");
           const theme = this.get("attributes")["data-ecg-theme"] || null;
-          const option = this.getOptions({series, title});
+          const option = this.getOptions({ series, title });
           this.renderChart(option, theme);
         },
         getOptions,
         renderChart(options, theme) {
-          // console.log(options)
           if (options) {
             if (this.chart) {
               editor.echarts.dispose(this.chart);
@@ -55,7 +36,7 @@ export default ({
               renderer: "canvas",
             });
             chart.setOption(options);
-            this.addAttributes({"data-ecg-options": JSON.stringify(options)});
+            this.addAttributes({ "data-ecg-options": JSON.stringify(options) });
             this.chart = chart;
           }
         },
@@ -65,7 +46,6 @@ export default ({
           resizable: true,
           traits: [
             {
-
               type: "echarts-title-trait"
             },
             {
@@ -75,17 +55,12 @@ export default ({
         },
       },
       view: {
-        onRender({model}) {
+        onRender({ model }) {
           setTimeout(() => {
-            const series = model.get("attributes")["data-ecg-series"] || "[]";
-            const options = model.getOptions(series);
-            const theme = model.get("attributes")["data-ecg-theme"] || null;
-            model.renderChart(options, theme);
             model.updateChart();
           }, 50);
         },
       },
     };
   };
-  
 };
