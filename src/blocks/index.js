@@ -4,7 +4,8 @@ import PieChart from "./chartsBlocks/pie-chart";
 import polarHistogram from "./chartsBlocks/polarHistogram-chart";
 import roundedPie from "./chartsBlocks/roundedPie-chart";
 import RoseChart from "./chartsBlocks/rose-chart";
-import FunnelChart from "./chartsBlocks/funnel-chart"
+import FunnelChart from "./chartsBlocks/funnel-chart";
+import ScatterChart from "./chartsBlocks/scatter-chart";
 export default {
   "bar-chart": BarChart,
   "lines-chart": LinesChart,
@@ -13,4 +14,5 @@ export default {
   "roundedPie-chart":roundedPie,
   "rose-chart":RoseChart,
   "funnel-chart":FunnelChart,
+  "scatter-chart":ScatterChart,
 };
