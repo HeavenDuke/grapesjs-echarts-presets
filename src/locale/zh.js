@@ -15,6 +15,12 @@ export default {
     components: {
       bar: {
         name: "柱状图",
+      },
+      lines:{
+        name: "折线图",
+      },
+      pie:{
+        name:"饼图"
       }
     },
     dict: {
@@ -50,6 +56,7 @@ export default {
           label: "位置"
         }
       }
+
     },
   },
 };

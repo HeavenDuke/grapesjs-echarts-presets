@@ -15,6 +15,12 @@ export default {
     components: {
       bar: {
         name: "Bar Chart",
+      },
+      lines:{
+        name: "Lines Chart",
+      },
+      pie:{
+        name: "Pie Chart",
       }
     },
     dict: {
@@ -51,5 +57,7 @@ export default {
         }
       }
     }
+
+
   },
 };
