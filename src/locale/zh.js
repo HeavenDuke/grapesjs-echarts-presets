@@ -20,6 +20,14 @@ export default {
         name: "折线图",
       }
     },
+    dict: {
+      position: {
+        left: "左",
+        right: "右",
+        top: "上",
+        bottom: "下"
+      }
+    },
     config: {
       title: {
         show: {
@@ -32,6 +40,17 @@ export default {
         subtext: {
           label: "副标题",
           placeholder: "请输入副标题"
+        },
+        textAlign: {
+          label: "文本对齐",
+          placeholder: "请设置"
+        },
+        textVerticalAlign: {
+          label: "垂直对齐",
+          placeholder: "请设置"
+        },
+        position: {
+          label: "位置"
         }
       }
 
