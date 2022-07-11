@@ -1,35 +1,46 @@
 .gjs-trt-traits {
-    .trait-header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
 
-    .gjs-field-wrp {
-        margin: 2px;
-    }
+    .gjs-trt-trait {
+        padding: 5px 0;
 
-    .save-button-wrapper {
-        width: 100%;
-
-        .gjs-field {
-            width: calc(100% - 12px);
-        }
-    }
-
-    .btn {
-        background: transparent;
-        color: white;
-        border: none;
-        cursor: pointer;
-
-        &.btn-icon {
-            font-size: 20px;
+        .gjs-traits-content {
+            padding: 0 10px;
         }
 
-        &.btn-full {
+        .trait-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .gjs-field-wrp {
+            margin: 2px;
+        }
+
+        .save-button-wrapper {
             width: 100%;
-            font-size: 14px;
+
+            .gjs-field {
+                width: calc(100% - 12px);
+            }
         }
+
+        .btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: #b9a5a6;
+            font-family: Arial;
+
+            &.btn-icon {
+                font-size: 20px;
+            }
+
+            &.btn-full {
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+
     }
 }

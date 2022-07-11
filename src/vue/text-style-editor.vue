@@ -1,14 +1,12 @@
 <template>
-    <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
-        <div class="gjs-trt-trait">
-            <div class="gjs-label-wrp" data-label>
-                <div class="gjs-label" title="show">{{t('grapesjs-echarts-presets.config.title.textStyle.label')}}</div>
-            </div>
-            <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-                <label class="gjs-field gjs-field-text" data-input="">
-                    <button class="btn btn-full" @click="">{{t('grapesjs-echarts-presets.actions.edit')}}</button>
-                </label>
-            </div>
+    <div class="gjs-trt-trait">
+        <div class="gjs-label-wrp" data-label>
+            <div class="gjs-label" title="show">{{t('grapesjs-echarts-presets.config.title.textStyle.label')}}</div>
+        </div>
+        <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+            <label class="gjs-field gjs-field-text" data-input="">
+                <button class="btn btn-full" @click="">{{t('grapesjs-echarts-presets.actions.edit')}}</button>
+            </label>
         </div>
     </div>
 </template>

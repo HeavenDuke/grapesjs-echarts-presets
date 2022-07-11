@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <chart-section :title="t('grapesjs-echarts-presets.config.title.label')">
         <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
             <div class="gjs-trt-trait">
                 <div class="gjs-label-wrp" data-label>
@@ -76,6 +76,7 @@
                     </div>
                 </div>
             </div>
+            <text-style-editor :t="t" v-model="title.textStyle"></text-style-editor>
             <div class="gjs-sm-property gjs-sm-composite gjs-sm-property__margin gjs-sm-property--full" style="">
                 <div class="gjs-sm-label" data-sm-label="">
                     <span class="gjs-sm-icon " title="position">
@@ -86,12 +87,14 @@
                     <div class="gjs-sm-field gjs-sm-composite">
                         <span id="gjs-sm-input-holder">
                             <div class="gjs-sm-properties">
-                                <div :key="pos.name" v-for="pos in positions" class="gjs-sm-property gjs-sm-number gjs-sm-integer gjs-sm-property__margin-top">
+                                <div :key="pos.name" v-for="pos in positions"
+                                     class="gjs-sm-property gjs-sm-number gjs-sm-integer gjs-sm-property__margin-top">
                                     <div class="gjs-sm-label" data-sm-label="">
                                         <span class="gjs-sm-icon " title="">{{t(`grapesjs-echarts-presets.dict.position.${pos.name}`)}}</span>
                                         <div class="gjs-sm-clear" style="display: none" data-clear-style="">
                                             <svg viewBox="0 0 24 24">
-                                                <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
+                                                <path fill="currentColor"
+                                                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
                                             </svg>
                                         </div>
                                     </div>
@@ -119,92 +122,93 @@
                 </div>
             </div>
         </div>
-        <text-style-editor :t="t" v-model="title.textStyle"></text-style-editor>
-    </div>
+    </chart-section>
 </template>
 
 <script>
 
-import TextStyleEditor from "./text-style-editor";
+  import ChartSection from "./widgets/chart-section"
+  import TextStyleEditor from "./text-style-editor";
 
-export default {
-  name: "title-modifier",
-  props: ["t", "editor", "onChange"],
-  components: {
-    TextStyleEditor
-  },
-  data() {
-    return {
-      title: {
-        show: false,
-        text: "",
-        link: "",
-        target: "",
-        subtext: "",
-        sublink: "",
-        subtarget: "",
-        textAlign: "auto",
-        textVerticalAlign: "auto",
-        left: "auto",
-        top: "auto",
-        right: "auto",
-        bottom: "auto",
-        triggerEvent: "",
-        padding: [0, 0, 0, 0],
-        itemGap: "",
-        zlevel: 0,
-        z: 2,
-        backgroundColor: "rgba(0, 0, 0, 0)",
-        borderColor: "#ccc",
-        borderWidth: 0,
-        borderRadius: [0, 0, 0, 0],
-        shadowBlur: 10,
-        shadowColor: "rgba(0, 0, 0, 0)",
-        shadowOffsetX: "",
-        shadowOffsetY: "",
-        textStyle: {}
-      },
-      positions: [{
-        name: "top",
-        value: "",
-        unit: "px"
-      }, {
-        name: "right",
-        value: "",
-        unit: "px"
-      }, {
-        name: "bottom",
-        value: "",
-        unit: "px"
-      }, {
-        name: "left",
-        value: "",
-        unit: "px"
-      }],
-      units: ["px", "%", "em", "rem", "vh", "vw"],
-    };
-  },
-  watch: {
-    title: {
-      handler() {
-        this.onChange();
-      },
-      deep: true
+  export default {
+    name: "title-modifier",
+    props: ["t", "editor", "onChange"],
+    components: {
+      TextStyleEditor,
+      ChartSection
     },
-    positions: {
-      handler (newValue) {
-        for(let i = 0; i < newValue.length; i++) {
-          let pos = newValue[i];
-          this.title[pos.name] = `${pos.value}${pos.unit}`;
-        }
-        console.log(this.title);
-        this.onChange();
+    data() {
+      return {
+        title: {
+          show: false,
+          text: "",
+          link: "",
+          target: "",
+          subtext: "",
+          sublink: "",
+          subtarget: "",
+          textAlign: "auto",
+          textVerticalAlign: "auto",
+          left: "auto",
+          top: "auto",
+          right: "auto",
+          bottom: "auto",
+          triggerEvent: "",
+          padding: [0, 0, 0, 0],
+          itemGap: "",
+          zlevel: 0,
+          z: 2,
+          backgroundColor: "rgba(0, 0, 0, 0)",
+          borderColor: "#ccc",
+          borderWidth: 0,
+          borderRadius: [0, 0, 0, 0],
+          shadowBlur: 10,
+          shadowColor: "rgba(0, 0, 0, 0)",
+          shadowOffsetX: "",
+          shadowOffsetY: "",
+          textStyle: {}
+        },
+        positions: [{
+          name: "top",
+          value: "",
+          unit: "px"
+        }, {
+          name: "right",
+          value: "",
+          unit: "px"
+        }, {
+          name: "bottom",
+          value: "",
+          unit: "px"
+        }, {
+          name: "left",
+          value: "",
+          unit: "px"
+        }],
+        units: ["px", "%", "em", "rem", "vh", "vw"],
+      };
+    },
+    watch: {
+      title: {
+        handler() {
+          this.onChange();
+        },
+        deep: true
       },
-      deep: true
-    }
-  },
-  methods: {}
-};
+      positions: {
+        handler(newValue) {
+          for (let i = 0; i < newValue.length; i++) {
+            let pos = newValue[i];
+            this.title[pos.name] = `${pos.value}${pos.unit}`;
+          }
+          console.log(this.title);
+          this.onChange();
+        },
+        deep: true
+      }
+    },
+    methods: {}
+  };
 </script>
 
 <style lang='scss' scoped>
