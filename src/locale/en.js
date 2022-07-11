@@ -40,6 +40,9 @@ export default {
         bottom: "Bottom"
       }
     },
+    actions: {
+      edit: "Edit"
+    },
     config: {
       title: {
         show: {
@@ -63,6 +66,9 @@ export default {
         },
         position: {
           label: "Position"
+        },
+        textStyle: {
+          label: "Text Style"
         }
       }
     }
