@@ -18,6 +18,9 @@ export default {
       },
       lines:{
         name: "折线图",
+      },
+      pie:{
+        name:"饼图"
       }
     },
     dict: {

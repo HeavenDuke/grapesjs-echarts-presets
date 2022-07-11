@@ -17,7 +17,7 @@ export default ({
             const series = this.get("attributes")["data-ecg-series"] || "[]";
             const options = this.getOptions(series);
             const theme = this.get("attributes")["data-ecg-theme"] || null;
-            console.log(series, theme);
+            // console.log(series, theme);
             this.renderChart(options, theme);
           }, 100);
         },
@@ -46,6 +46,7 @@ export default ({
         },
         getOptions,
         renderChart(options, theme) {
+          // console.log(options)
           if (options) {
             if (this.chart) {
               editor.echarts.dispose(this.chart);

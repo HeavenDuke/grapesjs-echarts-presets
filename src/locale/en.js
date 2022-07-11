@@ -18,6 +18,9 @@ export default {
       },
       lines:{
         name: "Lines Chart",
+      },
+      pie:{
+        name: "Pie Chart",
       }
     },
     dict: {

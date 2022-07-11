@@ -1,8 +1,9 @@
 import build from "../buildSeries";
 export default build({
   name: "grapesjs-echarts.components.lines.name",
-  getOptions: (newSeries) => {
-    const map = JSON.parse(newSeries);
+  getOptions: (options) => {
+    const map = options.series || [];
+    const title = options.title || {};
     const series = [
       {
         type: "line",
@@ -19,7 +20,8 @@ export default build({
         data: map.map(({ label }) => label),
       },
     ];
-    const options = {
+    return {
+      title,
       series,
       xAxis,
       yAxis: [
@@ -29,6 +31,5 @@ export default build({
       ],
     };
 
-    return options;
   },
 });
