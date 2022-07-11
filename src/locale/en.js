@@ -48,6 +48,7 @@ export default {
     },
     config: {
       title: {
+        label: "Title",
         show: {
           label: "Show"
         },
@@ -73,6 +74,9 @@ export default {
         textStyle: {
           label: "Text Style"
         }
+      },
+      series: {
+        label: 'Series'
       }
     }
 

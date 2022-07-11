@@ -48,6 +48,7 @@ export default {
     },
     config: {
       title: {
+        label: "图表标题",
         show: {
           label: "显示"
         },
@@ -73,8 +74,10 @@ export default {
         textStyle: {
           label: "文字样式"
         }
+      },
+      series: {
+        label: '数据'
       }
-
     },
   },
 };

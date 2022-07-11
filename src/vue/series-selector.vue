@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <chart-section :title="t('grapesjs-echarts-presets.config.series.label')">
         <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
             <div class="gjs-trt-trait">
                 <div class="gjs-label-wrp" data-label>
@@ -41,12 +41,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </chart-section>
 </template>
 
 <script>
+
+
+  import ChartSection from "./widgets/chart-section"
 export default {
   props: ["t", "editor", "onChange"],
+  components: { ChartSection },
   data() {
     return {
       series: [],
