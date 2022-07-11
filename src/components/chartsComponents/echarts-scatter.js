@@ -1,34 +1,37 @@
 import build from "../buildSeries";
 export default build({
-  name: "grapesjs-echarts.components.pie.name",
+  name: "grapesjs-echarts.components.scatter.name",
   getOptions: (options) => {
     const map = options.series || [];
     const title = options.title || {};
     const series = [
-
       {
-        type: "pie",
-        radius:'50%',
+        type: "scatter",
         data: map.map(({ value, color, label }) => ({
           value,
           name: label,
           itemStyle: { color },
         })),
       },
-
     ];
-    return  {
+
+    const xAxis = [
+      {
+        data: map.map(({ label }) => label),
+      },
+    ];
+    return {
       title,
       series,
-      selectedMode: 'single',
-      legend: {
-        bottom:'5%',
-        left:'center'
-      },
+      xAxis,
       tooltip: {
         trigger: 'item'
-      }
+      },
+      yAxis: [
+        {
+          type: "value",
+        },
+      ],
     };
-
   },
 });

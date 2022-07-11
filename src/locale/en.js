@@ -33,6 +33,9 @@ export default {
       },
       funnel:{
         name:"Funnel Chart"
+      },
+      scatter:{
+        name:"Scatter Chart"
       }
     },
     dict: {

@@ -8,7 +8,7 @@ export default build({
 
       {
         type: "pie",
-        radius:['40%','70%'],
+        radius:['25%','50%'],
         itemStyle: {
           borderRadius: 10,
           borderColor: '#fff',
@@ -25,6 +25,7 @@ export default build({
     return  {
       title,
       series,
+      selectedMode: 'single',
       legend: {
         bottom:'5%',
         left:'center'

@@ -33,6 +33,9 @@ export default {
       },
       funnel:{
         name:"漏斗图"
+      },
+      scatter:{
+        name:"散点图"
       }
     },
     dict: {
