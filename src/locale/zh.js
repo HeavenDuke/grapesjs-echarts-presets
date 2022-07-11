@@ -21,6 +21,9 @@ export default {
       },
       pie:{
         name:"饼图"
+      },
+      polarHistogram:{
+        name:"极坐标柱状图"
       }
     },
     dict: {

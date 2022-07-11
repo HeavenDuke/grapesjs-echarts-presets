@@ -21,6 +21,9 @@ export default {
       },
       pie:{
         name: "Pie Chart",
+      },
+      polarHistogram:{
+        name:"Polar histogram"
       }
     },
     dict: {
