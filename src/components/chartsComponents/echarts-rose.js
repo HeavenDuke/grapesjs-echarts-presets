@@ -15,7 +15,7 @@ export default build({
         })).sort(function (a, b) {
             return a.value - b.value;
           }),
-        radius: ['25%', '100%'],
+        radius: ['25%', '75%'],
         roseType: 'area',
         itemStyle: {
           borderRadius: 8

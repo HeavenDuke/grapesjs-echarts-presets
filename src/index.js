@@ -14,7 +14,7 @@ require("echarts/theme/dark-blue");
 
 export default grapesjs.plugins.add("gjs-echarts-presets", function (editor, { intl = {}, ...restOpts }) {
   // Configure language(en - English, zh - Simplified Chinese)
-  const { locale = "zh", messages = { zh } } = intl;
+  const { locale = "en", messages = { en } } = intl;
   const options = {
     ...{
       i18n: {
