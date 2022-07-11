@@ -25,6 +25,9 @@ export default {
         bottom: "下"
       }
     },
+    actions: {
+      edit: "编辑"
+    },
     config: {
       title: {
         show: {
@@ -48,6 +51,9 @@ export default {
         },
         position: {
           label: "位置"
+        },
+        textStyle: {
+          label: "文字样式"
         }
       }
     },

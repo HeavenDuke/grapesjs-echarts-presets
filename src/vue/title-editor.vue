@@ -119,7 +119,7 @@
                 </div>
             </div>
         </div>
-        <text-style-editor></text-style-editor>
+        <text-style-editor :t="t" v-model="title.textStyle"></text-style-editor>
     </div>
 </template>
 
@@ -162,6 +162,7 @@ export default {
         shadowColor: "rgba(0, 0, 0, 0)",
         shadowOffsetX: "",
         shadowOffsetY: "",
+        textStyle: {}
       },
       positions: [{
         name: "top",
@@ -202,47 +203,10 @@ export default {
       deep: true
     }
   },
-  methods: {},
-  created() {
-    console.log(this.title);
-  }
+  methods: {}
 };
 </script>
 
 <style lang='scss' scoped>
-    .gjs-trt-traits {
-        .trait-header {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        .gjs-field-wrp {
-            margin: 2px;
-        }
-
-        .save-button-wrapper {
-            width: 100%;
-
-            .gjs-field {
-                width: calc(100% - 12px);
-            }
-        }
-
-        .btn {
-            background: transparent;
-            color: white;
-            border: none;
-            cursor: pointer;
-
-            &.btn-icon {
-                font-size: 20px;
-            }
-
-            &.btn-full {
-                width: 100%;
-                font-size: 14px;
-            }
-        }
-    }
+    @import "./assets/style.scss";
 </style>
