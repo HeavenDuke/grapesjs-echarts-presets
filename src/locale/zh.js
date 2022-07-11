@@ -55,6 +55,28 @@ export default {
         position: {
           label: "位置"
         },
+        borderColor: {
+          label: "边框颜色"
+        },
+        borderWidth: {
+          label: "边框粗细",
+          placeholder: ""
+        },
+        shadowColor: {
+          label: "阴影颜色"
+        },
+        shadowBlur: {
+          label: "阴影长度"
+        },
+        containLabel: {
+          label: "包含刻度标签"
+        },
+        zlevel: {
+          label: "Z Level"
+        },
+        z: {
+          label: "Z"
+        }
       },
       title: {
         label: "图表标题",

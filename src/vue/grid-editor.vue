@@ -12,14 +12,46 @@
                     </label>
                 </div>
             </div>
-            <div class="gjs-sm-property gjs-sm-composite gjs-sm-property__margin gjs-sm-property--full" style="">
-                <div class="gjs-sm-label" data-sm-label="">
+            <div class="gjs-trt-trait">
+                <div class="gjs-label-wrp" data-label>
+                    <div class="gjs-label" title="zlevel">{{t('grapesjs-echarts-presets.config.grid.zlevel.label')}}</div>
+                </div>
+                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+                    <label class="gjs-field gjs-field-text" data-input="">
+                        <input type="number" v-model="grid.zlevel">
+                    </label>
+                </div>
+            </div>
+            <div class="gjs-trt-trait">
+                <div class="gjs-label-wrp" data-label>
+                    <div class="gjs-label" title="z">{{t('grapesjs-echarts-presets.config.grid.z.label')}}</div>
+                </div>
+                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+                    <label class="gjs-field gjs-field-text" data-input="">
+                        <input type="number" v-model="grid.z">
+                    </label>
+                </div>
+            </div>
+            <div class="gjs-trt-trait">
+                <div class="gjs-label-wrp" data-label>
+                    <div class="gjs-label" title="containLabel">{{t('grapesjs-echarts-presets.config.grid.containLabel.label')}}</div>
+                </div>
+                <div class="gjs-field-wrp gjs-field-wrp--checkbox" data-input="">
+                    <label class="gjs-field gjs-field-checkbox" data-input="">
+                        <input type="checkbox" v-model="grid.containLabel">
+                        <i class="gjs-chk-icon"></i>
+                    </label>
+                </div>
+            </div>
+            <div class="gjs-trt-trait">
+                <div class="gjs-sm-property gjs-sm-composite gjs-sm-property__margin gjs-sm-property--full" style="">
+                    <div class="gjs-sm-label" data-sm-label="">
                     <span class="gjs-sm-icon " title="position">
                         {{t("grapesjs-echarts-presets.config.grid.position.label")}}
                     </span>
-                </div>
-                <div class="gjs-fields" data-sm-fields="">
-                    <div class="gjs-sm-field gjs-sm-composite">
+                    </div>
+                    <div class="gjs-fields" data-sm-fields="">
+                        <div class="gjs-sm-field gjs-sm-composite">
                         <span id="gjs-sm-input-holder">
                             <div class="gjs-sm-properties">
                                 <div :key="pos.name" v-for="pos in positions"
@@ -53,7 +85,48 @@
                                 </div>
                             </div>
                         </span>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="gjs-trt-trait">
+                <div class="gjs-label-wrp" data-label>
+                    <div class="gjs-label" title="borderColor">{{t('grapesjs-echarts-presets.config.grid.borderColor.label')}}</div>
+                </div>
+                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+                    <label class="gjs-field gjs-field-text" data-input="">
+                        <input type="color" v-model="grid.borderColor">
+                    </label>
+                </div>
+            </div>
+            <div class="gjs-trt-trait">
+                <div class="gjs-label-wrp gjs-field-wrp--text" data-label>
+                    <div class="gjs-label" title="borderWidth">{{t('grapesjs-echarts-presets.config.grid.borderWidth.label')}}</div>
+                </div>
+                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+                    <label class="gjs-field gjs-field-text" data-input="">
+                        <input type="number" v-model="grid.borderWidth" data-input="" :placeholder="t('grapesjs-echarts-presets.config.grid.borderWidth.placeholder')">
+                    </label>
+                </div>
+            </div>
+            <div class="gjs-trt-trait">
+                <div class="gjs-label-wrp" data-label>
+                    <div class="gjs-label" title="shadowColor">{{t('grapesjs-echarts-presets.config.grid.shadowColor.label')}}</div>
+                </div>
+                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+                    <label class="gjs-field gjs-field-text" data-input="">
+                        <input type="color" v-model="grid.shadowColor">
+                    </label>
+                </div>
+            </div>
+            <div class="gjs-trt-trait">
+                <div class="gjs-label-wrp gjs-field-wrp--text" data-label>
+                    <div class="gjs-label" title="shadowBlur">{{t('grapesjs-echarts-presets.config.grid.shadowBlur.label')}}</div>
+                </div>
+                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+                    <label class="gjs-field gjs-field-text" data-input="">
+                        <input type="number" v-model="grid.shadowBlur" data-input="" :placeholder="t('grapesjs-echarts-presets.config.grid.shadowBlur.placeholder')">
+                    </label>
                 </div>
             </div>
         </div>
