@@ -5,7 +5,7 @@ export default {
       placeholder: "选择一个主题",
     },
     items: {
-      label: "Items",
+      label: "数据",
       name: "Item",
       category: "类别",
       color: "颜色",
@@ -27,6 +27,9 @@ export default {
       },
       roundedPie:{
         name:"圆角环形图"
+      },
+      rose:{
+        name:"玫瑰图"
       }
     },
     dict: {

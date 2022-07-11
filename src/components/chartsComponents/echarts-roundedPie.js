@@ -1,6 +1,6 @@
 import build from "../buildSeries";
 export default build({
-  name: "grapesjs-echarts.components.pie.name",
+  name: "grapesjs-echarts.components.roundedPie.name",
   getOptions: (options) => {
     const map = options.series || [];
     const title = options.title || {};

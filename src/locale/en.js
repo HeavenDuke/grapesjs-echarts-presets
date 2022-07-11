@@ -27,6 +27,9 @@ export default {
       },
       roundedPie:{
         name:"Rounded Pie Chart"
+      },
+      rose:{
+        name:"Rose Chart"
       }
     },
     dict: {
