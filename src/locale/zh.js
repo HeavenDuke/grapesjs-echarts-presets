@@ -15,6 +15,18 @@ export default {
     components: {
       bar: {
         name: "柱状图",
+      },
+      lines:{
+        name: "折线图",
+      },
+      pie:{
+        name:"饼图"
+      },
+      polarHistogram:{
+        name:"极坐标柱状图"
+      },
+      roundedPie:{
+        name:"圆角环形图"
       }
     },
     dict: {
@@ -56,6 +68,7 @@ export default {
           label: "文字样式"
         }
       }
+
     },
   },
 };

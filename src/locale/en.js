@@ -15,6 +15,18 @@ export default {
     components: {
       bar: {
         name: "Bar Chart",
+      },
+      lines:{
+        name: "Lines Chart",
+      },
+      pie:{
+        name: "Pie Chart",
+      },
+      polarHistogram:{
+        name:"Polar histogram Chart"
+      },
+      roundedPie:{
+        name:"Rounded Pie Chart"
       }
     },
     dict: {
@@ -57,5 +69,7 @@ export default {
         }
       }
     }
+
+
   },
 };
