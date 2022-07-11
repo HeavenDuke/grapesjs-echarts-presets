@@ -47,6 +47,15 @@ export default {
       edit: "编辑"
     },
     config: {
+      grid: {
+        label: '网格',
+        show: {
+          label: "显示"
+        },
+        position: {
+          label: "位置"
+        },
+      },
       title: {
         label: "图表标题",
         show: {

@@ -47,6 +47,15 @@ export default {
       edit: "Edit"
     },
     config: {
+      grid: {
+        label: 'Grid',
+        show: {
+          label: "Show"
+        },
+        position: {
+          label: "Position"
+        },
+      },
       title: {
         label: "Title",
         show: {
@@ -79,7 +88,5 @@ export default {
         label: 'Series'
       }
     }
-
-
   },
 };

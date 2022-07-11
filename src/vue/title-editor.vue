@@ -131,7 +131,7 @@
   import TextStyleEditor from "./text-style-editor";
 
   export default {
-    name: "title-modifier",
+    name: "title-editor",
     props: ["t", "editor", "onChange"],
     components: {
       TextStyleEditor,
