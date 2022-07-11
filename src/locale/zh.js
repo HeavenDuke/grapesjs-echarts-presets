@@ -30,6 +30,9 @@ export default {
       },
       rose:{
         name:"玫瑰图"
+      },
+      funnel:{
+        name:"漏斗图"
       }
     },
     dict: {

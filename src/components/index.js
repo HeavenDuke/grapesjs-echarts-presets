@@ -3,7 +3,8 @@ import Lines from "./chartsComponents/echarts-lines";
 import Pie from "./chartsComponents/echarts-pie";
 import polarHistogram from "./chartsComponents/echarts-polarHistogram";
 import roundedPie from "./chartsComponents/echarts-roundedPie";
-import Rose from "./chartsComponents/echarts-rose"
+import Rose from "./chartsComponents/echarts-rose";
+import Funnel from "./chartsComponents/echarts-funnel"
 export default {
   "echarts-bar": Bar,
   "echarts-lines": Lines,
@@ -11,4 +12,5 @@ export default {
   "echarts-polarHistogram":polarHistogram,
   "echarts-roundedPie":roundedPie,
   "echarts-rose":Rose,
+  "echarts-funnel":Funnel
 };
