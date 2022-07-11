@@ -23,7 +23,10 @@ export default {
         name: "Pie Chart",
       },
       polarHistogram:{
-        name:"Polar histogram"
+        name:"Polar histogram Chart"
+      },
+      roundedPie:{
+        name:"Rounded Pie Chart"
       }
     },
     dict: {
