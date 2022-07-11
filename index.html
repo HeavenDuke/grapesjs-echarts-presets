@@ -5,6 +5,8 @@
     <title>Grapesjs Echarts Preset</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/grapesjs/0.19.4/css/grapes.min.css" rel="stylesheet">
     <script src="https://cdn.bootcdn.net/ajax/libs/grapesjs/0.19.4/grapes.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/grapesjs-preset-webpage@0.1.11/dist/grapesjs-preset-webpage.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/grapesjs-preset-webpage@0.1.11/dist/grapesjs-preset-webpage.min.js"></script>
     <script src="../dist/grapesjs-echarts-presets.js"></script>
     <style>
         html,body {
@@ -24,11 +26,14 @@
     showOffsets: true,
     fromElement: true,
     noticeOnUnload: false,
-    plugins: ["gjs-echarts-presets"],
+    plugins: ["gjs-echarts-presets", "gjs-preset-webpage"],
     pluginsOpts: {
       "gjs-echarts-presets": {
         /* Test here your options  */
       },
+      "gjs-preset-webpage": {
+
+      }
     },
     storageManager: {
       autosave: 1,
