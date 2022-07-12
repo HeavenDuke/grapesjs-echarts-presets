@@ -25,7 +25,7 @@ export default build({
       series,
       xAxis,
       tooltip: {
-        trigger: 'item'
+        formatter: 'Group {a}: ({c})'
       },
       yAxis: [
         {

@@ -15,6 +15,7 @@
 </template>
 
 <script>
+//设置下拉列表
   export default {
     name: "chart-section",
     props: {

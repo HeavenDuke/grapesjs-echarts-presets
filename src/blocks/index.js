@@ -6,6 +6,8 @@ import roundedPie from "./chartsBlocks/roundedPie-chart";
 import RoseChart from "./chartsBlocks/rose-chart";
 import FunnelChart from "./chartsBlocks/funnel-chart";
 import ScatterChart from "./chartsBlocks/scatter-chart";
+
+//模块按钮注册
 export default {
   "bar-chart": BarChart,
   "lines-chart": LinesChart,

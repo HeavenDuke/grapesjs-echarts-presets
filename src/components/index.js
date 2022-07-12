@@ -5,7 +5,9 @@ import polarHistogram from "./chartsComponents/echarts-polarHistogram";
 import roundedPie from "./chartsComponents/echarts-roundedPie";
 import Rose from "./chartsComponents/echarts-rose";
 import Funnel from "./chartsComponents/echarts-funnel";
-import Scatter from "./chartsComponents/echarts-scatter"
+import Scatter from "./chartsComponents/echarts-scatter";
+
+//组件注册
 export default {
   "echarts-bar": Bar,
   "echarts-lines": Lines,
