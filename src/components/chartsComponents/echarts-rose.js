@@ -4,6 +4,8 @@ export default build({
   getOptions: (options) => {
     const map = options.series || [];
     const title = options.title || {};
+    const basic=options.basic ||{};
+    const grid = options.grid || {};
     const series = [
 
       {
@@ -22,6 +24,8 @@ export default build({
 
     ];
     return  {
+      ...basic,
+      grid,
       title,
       series,
       legend: {

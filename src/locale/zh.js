@@ -50,6 +50,45 @@ export default {
       edit: "编辑"
     },
     config: {
+      basic:{
+        label: '基础配置',
+        color: {
+          label: "内容颜色"
+        },
+        backgroundColor:{
+          label:"背景颜色"
+        },
+        animation:{
+          label: "动画",
+
+        },
+        animationThreshold:{
+          label:"动画显示阈值"
+        },
+        animationDuration:{
+          label:"初始动画时长"
+        },
+        animationEasing: {
+          label: "动画缓动效果",
+          placeholder:"选择初始缓动动画"
+        },
+        animationDelay: {
+          label: "初始动画延迟"
+        },
+        animationDurationUpdate: {
+          label: "数据更新动画时长"
+        },
+        animationEasingUpdate: {
+          label: "数据更新动画缓动效果",
+          placeholder:"选择数据更新缓动动画"
+        },
+        animationDelayUpdate: {
+          label: "数据更新动画延迟"
+        },
+        useUTC:{
+          label:"使用UTC时间"
+        }
+      },
       grid: {
         label: '网格',
         show: {

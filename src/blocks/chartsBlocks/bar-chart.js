@@ -1,5 +1,5 @@
 import build from "../build";
-import icon from "../../icons/bar-chart.svg";
+import icon from "../../icons/柱状图.svg";
 export default (editor) =>
   build(editor)({
     icon,

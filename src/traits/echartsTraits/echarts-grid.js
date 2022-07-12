@@ -1,4 +1,4 @@
-import GridEditor from "../vue/grid-editor.vue";
+import GridEditor from "../../vue/grid-editor.vue";
 export default {
   // Expects as return a simple HTML string or an HTML element
   noLabel: true,
@@ -24,7 +24,7 @@ export default {
   // Update the component based element changes
   onEvent({ component }) {
     const { grid } = this.inputInstance;
-    console.log(grid)
+    // console.log(grid)
     component.addAttributes({
       "data-ecg-grid": JSON.stringify(grid)
     });

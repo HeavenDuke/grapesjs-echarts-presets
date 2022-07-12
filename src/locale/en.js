@@ -50,6 +50,53 @@ export default {
       edit: "Edit"
     },
     config: {
+      basic:{
+        label: 'Basic',
+        color: {
+          label: "Color"
+        },
+        backgroundColor:{
+          label:"BackgroundColor"
+        },
+        animation:{
+          label: "Animation",
+
+        },
+        animationThreshold:{
+          label:"AnimationThreshold"
+        },
+        animationDuration:{
+          label:"AnimationDuration"
+        },
+        animationEasing: {
+          label: "AnimationEasing",
+          placeholder:"Choose an initial animation"
+        },
+        animationDelay: {
+          label: "AnimationDelay"
+        },
+        animationDurationUpdate: {
+          label: "AnimationDurationUpdate"
+        },
+        animationEasingUpdate: {
+          label: "AnimationEasingUpdate",
+          placeholder:"Select data update animation"
+        },
+        animationDelayUpdate: {
+          label: "AnimationDelayUpdate"
+        },
+        blendMode:{
+          label:"BlendMode"
+        },
+        hoverLayerThreshold:{
+          label:"HoverLayerThreshold"
+        },
+        useUTC:{
+          label:"UseUTC"
+        }
+
+
+      },
       grid: {
         label: 'Grid',
         show: {
@@ -78,7 +125,8 @@ export default {
           label: "Shadow Color"
         },
         shadowBlur: {
-          label: "Shadow Blur"
+          label: "Shadow Blur",
+          placeholder:"Specify the shadow blur size"
         },
       },
       title: {

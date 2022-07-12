@@ -15,17 +15,23 @@ export default ({
           this.on("change:attributes:data-ecg-theme", this.updateChart);
           this.on("change:attributes:data-ecg-title", this.updateChart);
           this.on("change:attributes:data-ecg-grid", this.updateChart);
+          this.on("change:attributes:data-ecg-basic", this.updateChart);
           setTimeout(() => {
             this.updateChart();
           }, 100);
         },
         updateChart () {
+          //基础项
+          const basic = JSON.parse(this.get("attributes")["data-ecg-basic"] || "{}");
+
           const title = JSON.parse(this.get("attributes")["data-ecg-title"] || "{}");
           const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "[]");
           const grid = JSON.parse(this.get("attributes")["data-ecg-grid"] || "{}");
           const theme = this.get("attributes")["data-ecg-theme"] || null;
-          const option = this.getOptions({ series, title, grid });
-          console.log(grid.borderWidth)
+
+          const option = this.getOptions({basic,series, title, grid });
+
+          console.log(grid)
           this.renderChart(option, theme);
         },
         getOptions,
@@ -49,6 +55,9 @@ export default ({
           name: editor.I18n.t(name),
           resizable: true,
           traits: [
+            {
+              type: "echarts-basic-trait"
+            },
             {
               type: "echarts-grid-trait"
             },

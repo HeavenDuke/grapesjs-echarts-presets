@@ -1,6 +1,6 @@
 import build from "../build";
 import icon from "../../icons/bar-chart.svg"
-//圆角环形饼图
+//散点图
 export default (editor) =>
   build(editor)({
     // icon,

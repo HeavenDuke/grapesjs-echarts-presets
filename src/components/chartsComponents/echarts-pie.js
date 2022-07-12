@@ -3,6 +3,8 @@ export default build({
   name: "grapesjs-echarts.components.pie.name",
   getOptions: (options) => {
     const map = options.series || [];
+    const basic=options.basic ||{};
+    const grid = options.grid || {};
     const title = options.title || {};
     const series = [
 
@@ -18,6 +20,8 @@ export default build({
 
     ];
     return  {
+      ...basic,
+      grid,
       title,
       series,
       selectedMode: 'single',
