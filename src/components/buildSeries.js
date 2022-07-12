@@ -14,6 +14,7 @@ export default ({
           this.on("change:attributes:data-ecg-series", this.updateChart);
           this.on("change:attributes:data-ecg-theme", this.updateChart);
           this.on("change:attributes:data-ecg-title", this.updateChart);
+          this.on("change:attributes:data-ecg-grid", this.updateChart);
           setTimeout(() => {
             this.updateChart();
           }, 100);
@@ -21,8 +22,10 @@ export default ({
         updateChart () {
           const title = JSON.parse(this.get("attributes")["data-ecg-title"] || "{}");
           const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "[]");
+          const grid = JSON.parse(this.get("attributes")["data-ecg-grid"] || "{}");
           const theme = this.get("attributes")["data-ecg-theme"] || null;
-          const option = this.getOptions({ series, title });
+          const option = this.getOptions({ series, title, grid });
+          console.log(grid.borderWidth)
           this.renderChart(option, theme);
         },
         getOptions,
@@ -46,6 +49,9 @@ export default ({
           name: editor.I18n.t(name),
           resizable: true,
           traits: [
+            {
+              type: "echarts-grid-trait"
+            },
             {
               type: "echarts-title-trait"
             },

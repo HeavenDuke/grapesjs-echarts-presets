@@ -4,6 +4,7 @@ export default build({
   getOptions: (options) => {
     const map = options.series || [];
     const title = options.title || {};
+    const grid = options.grid || {};
     const series = [
       {
         type: "bar",
@@ -21,6 +22,7 @@ export default build({
       },
     ];
     return {
+      grid,
       title,
       series,
       xAxis,

@@ -50,6 +50,37 @@ export default {
       edit: "编辑"
     },
     config: {
+      grid: {
+        label: '网格',
+        show: {
+          label: "显示"
+        },
+        position: {
+          label: "位置"
+        },
+        borderColor: {
+          label: "边框颜色"
+        },
+        borderWidth: {
+          label: "边框粗细",
+          placeholder: ""
+        },
+        shadowColor: {
+          label: "阴影颜色"
+        },
+        shadowBlur: {
+          label: "阴影长度"
+        },
+        containLabel: {
+          label: "包含刻度标签"
+        },
+        zlevel: {
+          label: "Z Level"
+        },
+        z: {
+          label: "Z"
+        }
+      },
       title: {
         label: "图表标题",
         show: {

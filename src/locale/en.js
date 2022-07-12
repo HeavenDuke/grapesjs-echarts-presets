@@ -50,6 +50,37 @@ export default {
       edit: "Edit"
     },
     config: {
+      grid: {
+        label: 'Grid',
+        show: {
+          label: "Show"
+        },
+        position: {
+          label: "Position"
+        },
+        borderColor: {
+          label: "Border Color"
+        },
+        borderWidth: {
+          label: "Border Width",
+          placeholder: "Specify width"
+        },
+        containLabel: {
+          label: "Contain Label"
+        },
+        zlevel: {
+          label: "Z Level"
+        },
+        z: {
+          label: "Z"
+        },
+        shadowColor: {
+          label: "Shadow Color"
+        },
+        shadowBlur: {
+          label: "Shadow Blur"
+        },
+      },
       title: {
         label: "Title",
         show: {
@@ -82,7 +113,5 @@ export default {
         label: 'Series'
       }
     }
-
-
   },
 };
