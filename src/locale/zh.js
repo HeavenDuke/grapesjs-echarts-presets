@@ -85,6 +85,12 @@ export default {
         animationDelayUpdate: {
           label: "数据更新动画延迟"
         },
+        blendMode:{
+          label:"图形混合模式"
+        },
+        hoverLayerThreshold:{
+          label:"图形数量阈值"
+        },
         useUTC:{
           label:"使用UTC时间"
         }
