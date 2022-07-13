@@ -3,6 +3,6 @@ import icon from "../../icons/折线图.svg";
 export default (editor) =>
   build(editor)({
     icon,
-    label: "grapesjs-echarts-presets.components.lines.name",
-    type: "echarts-lines",
+    label: "grapesjs-echarts-presets.components.line.name",
+    type: "echarts-line",
   });

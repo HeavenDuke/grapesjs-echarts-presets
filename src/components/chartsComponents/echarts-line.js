@@ -1,6 +1,6 @@
 import build from "../buildSeries";
 export default build({
-  name: "grapesjs-echarts.components.lines.name",
+  name: "grapesjs-echarts.components.line.name",
   getOptions: (options) => {
     const map = options.series || [];
     const basic=options.basic ||{};

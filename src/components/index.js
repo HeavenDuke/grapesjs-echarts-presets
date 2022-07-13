@@ -1,5 +1,5 @@
 import Bar from "./chartsComponents/echarts-bar";
-import Lines from "./chartsComponents/echarts-lines";
+import Line from "./chartsComponents/echarts-line";
 import Pie from "./chartsComponents/echarts-pie";
 import polarHistogram from "./chartsComponents/echarts-polarHistogram";
 import roundedPie from "./chartsComponents/echarts-roundedPie";
@@ -10,7 +10,7 @@ import Scatter from "./chartsComponents/echarts-scatter";
 //组件注册
 export default {
   "echarts-bar": Bar,
-  "echarts-lines": Lines,
+  "echarts-line": Line,
   "echarts-pie": Pie,
   "echarts-polarHistogram":polarHistogram,
   "echarts-roundedPie":roundedPie,

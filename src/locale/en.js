@@ -16,8 +16,8 @@ export default {
       bar: {
         name: "Bar Chart",
       },
-      lines:{
-        name: "Lines Chart",
+      line:{
+        name: "Line Chart",
       },
       pie:{
         name: "Pie Chart",

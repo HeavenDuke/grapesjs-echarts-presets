@@ -16,7 +16,7 @@ export default {
       bar: {
         name: "柱状图",
       },
-      lines:{
+      line:{
         name: "折线图",
       },
       pie:{

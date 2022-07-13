@@ -1,5 +1,5 @@
 import BarChart from "./chartsBlocks/bar-chart";
-import LinesChart from "./chartsBlocks/lines-chart";
+import LineChart from "./chartsBlocks/line-chart";
 import PieChart from "./chartsBlocks/pie-chart";
 import polarHistogram from "./chartsBlocks/polarHistogram-chart";
 import roundedPie from "./chartsBlocks/roundedPie-chart";
@@ -10,7 +10,7 @@ import ScatterChart from "./chartsBlocks/scatter-chart";
 //模块按钮注册
 export default {
   "bar-chart": BarChart,
-  "lines-chart": LinesChart,
+  "line-chart": LineChart,
   "pie-chart": PieChart,
   "polarHistogram-chart":polarHistogram,
   "roundedPie-chart":roundedPie,
