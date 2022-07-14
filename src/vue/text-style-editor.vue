@@ -12,69 +12,13 @@
                         :title="dialog.title"
                         @close="dialog.visibility = false">
             <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
-                <div class="gjs-trt-trait">
-                    <div data-label="" class="gjs-label-wrp">
-                        <div title="fontSize" class="gjs-label">
-                            {{t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')}}
-                        </div>
-                    </div>
-                    <div class="gjs-field-wrp gjs-field-wrp--text">
-                        <div class="gjs-field gjs-field-text">
-                            <select v-model="value.fontFamily">
-                                <option v-for="font in fonts" :key="font.value" :value="font.value">{{font.name}}
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="gjs-trt-trait">
-                    <div data-label="" class="gjs-label-wrp">
-                        <div title="fontSize" class="gjs-label">
-                            {{t('grapesjs-echarts-presets.config.textStyle.fontSize.label')}}
-                        </div>
-                    </div>
-                    <div class="gjs-field-wrp gjs-field-wrp--text">
-                        <div class="gjs-field gjs-field-text">
-                            <input type="number" v-model="value.fontSize" data-input/>
-                        </div>
-                    </div>
-                </div>
-                <div class="gjs-trt-trait">
-                    <div data-label="" class="gjs-label-wrp">
-                        <div title="fontWeight" class="gjs-label">
-                            {{t('grapesjs-echarts-presets.config.textStyle.fontWeight.label')}}
-                        </div>
-                    </div>
-                    <div class="gjs-field-wrp gjs-field-wrp--text">
-                        <div class="gjs-field gjs-field-text">
-                            <input v-model="value.fontWeight" data-input/>
-                        </div>
-                    </div>
-                </div>
-                <div class="gjs-trt-trait">
-                    <div data-label="" class="gjs-label-wrp">
-                        <div title="lineHeight" class="gjs-label">
-                            {{t('grapesjs-echarts-presets.config.textStyle.lineHeight.label')}}
-                        </div>
-                    </div>
-                    <div class="gjs-field-wrp gjs-field-wrp--text">
-                        <div class="gjs-field gjs-field-text">
-                            <input type="number" v-model="value.lineHeight" data-input/>
-                        </div>
-                    </div>
-                </div>
-                <div class="gjs-trt-trait">
-                    <div data-label="" class="gjs-label-wrp">
-                        <div title="color" class="gjs-label">
-                            {{t('grapesjs-echarts-presets.config.textStyle.color.label')}}
-                        </div>
-                    </div>
-                    <div class="gjs-field-wrp gjs-field-wrp--text">
-                        <div class="gjs-field gjs-field-text">
-                            <input name="color" type="color" v-model="value.color" data-input/>
-                        </div>
-                    </div>
-                </div>
+                <ep-select :label="t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')" v-model="value.fontFamily">
+                    <ep-option v-for="font in fonts" :key="font.value" :value="font.value" :label="font.name">{{font.name}}</ep-option>
+                </ep-select>
+                <ep-input type="number" :label="t('grapesjs-echarts-presets.config.textStyle.fontSize.label')" v-model="value.fontSize"></ep-input>
+                <ep-input type="number" :label="t('grapesjs-echarts-presets.config.textStyle.fontWeight.label')" v-model="value.fontWeight"></ep-input>
+                <ep-input type="number" :label="t('grapesjs-echarts-presets.config.textStyle.lineHeight.label')" v-model="value.lineHeight"></ep-input>
+                <ep-color-picker :label="t('grapesjs-echarts-presets.config.textStyle.color.label')" v-model="value.color"></ep-color-picker>
             </div>
         </content-dialog>
     </div>
@@ -82,8 +26,13 @@
 
 <script>
 
-  import {FONTS, BORDER_TYPES} from "./utils/dict";
+  import {FONTS} from "./utils/dict";
   import ContentDialog from "./widgets/content-dialog"
+  import EpSelect from "./editor-components/select"
+  import EpOption from "./editor-components/option"
+  import EpInput from "./editor-components/input"
+  import EpCheckBox from "./editor-components/checkbox"
+  import EpColorPicker from "./editor-components/color-picker"
 
   export default {
     name: "text-style-editor",
@@ -93,7 +42,12 @@
       title: String
     },
     components: {
-      ContentDialog
+      ContentDialog,
+      EpCheckBox,
+      EpSelect,
+      EpOption,
+      EpInput,
+      EpColorPicker
     },
     watch: {
       value: {
@@ -109,8 +63,7 @@
           visibility: false,
           title: this.t('grapesjs-echarts-presets.dialogs.textStyle')
         },
-        fonts: FONTS,
-        borderTypes: BORDER_TYPES
+        fonts: FONTS
       }
     },
     methods: {

@@ -159,6 +159,9 @@ export default {
           label: "垂直对齐",
           placeholder: "请设置"
         },
+        itemGap: {
+          label: "正副标题间距"
+        },
         position: {
           label: "位置"
         },

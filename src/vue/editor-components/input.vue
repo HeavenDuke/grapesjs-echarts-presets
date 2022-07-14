@@ -3,7 +3,7 @@
     <div class="gjs-label-wrp" data-label>
       <div class="gjs-label" :title="label">{{label}}</div>
     </div>
-    <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+    <div class="gjs-field-wrp gjs-field-wrp-text" data-input="">
       <label class="gjs-field gjs-field-text" data-input="">
         <input :type="Type" v-model="value">
       </label>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "input-editor",
+  name: "ep-input",
   props:{
     label:String,
     Type:String,

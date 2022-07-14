@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "checkbox",
+  name: "ep-checkbox",
   props: {
     label: String,
     value: Boolean,

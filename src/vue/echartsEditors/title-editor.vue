@@ -1,105 +1,28 @@
 <template>
     <chart-section :title="t('grapesjs-echarts-presets.config.title.label')">
         <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="show">{{t('grapesjs-echarts-presets.config.title.show.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--checkbox" data-input="">
-                    <label class="gjs-field gjs-field-checkbox" data-input="">
-                        <input type="checkbox" v-model="title.show">
-                        <i class="gjs-chk-icon"></i>
-                    </label>
-                </div>
-            </div>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="text">{{t('grapesjs-echarts-presets.config.title.text.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text">
-                    <div class="gjs-field gjs-field-text">
-                        <input v-model="title.text" data-input
-                               :placeholder="t('grapesjs-echarts-presets.config.title.text.placeholder')"/>
-                    </div>
-                </div>
-            </div>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="text">{{t('grapesjs-echarts-presets.config.title.link.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text">
-                    <div class="gjs-field gjs-field-text">
-                        <input v-model="title.link" data-input
-                               :placeholder="t('grapesjs-echarts-presets.config.title.link.placeholder')"/>
-                    </div>
-                </div>
-            </div>
+            <ep-check-box :label="t('grapesjs-echarts-presets.config.title.show.label')" v-model="title.show"></ep-check-box>
+            <ep-input :label="t('grapesjs-echarts-presets.config.title.text.label')" v-model="title.text"></ep-input>
+            <ep-input :label="t('grapesjs-echarts-presets.config.title.link.label')" v-model="title.link"></ep-input>
             <text-style-editor :title="t('grapesjs-echarts-presets.config.title.textStyle.label')" :t="t" v-model="title.textStyle"></text-style-editor>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="subtext">
-                        {{t('grapesjs-echarts-presets.config.title.subtext.label')}}
-                    </div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text">
-                    <div class="gjs-field gjs-field-text">
-                        <input v-model="title.subtext" data-input
-                               :placeholder="t('grapesjs-echarts-presets.config.title.subtext.placeholder')"/>
-                    </div>
-                </div>
-            </div>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="text">{{t('grapesjs-echarts-presets.config.title.sublink.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text">
-                    <div class="gjs-field gjs-field-text">
-                        <input v-model="title.sublink" data-input
-                               :placeholder="t('grapesjs-echarts-presets.config.title.sublink.placeholder')"/>
-                    </div>
-                </div>
-            </div>
+            <ep-input :label="t('grapesjs-echarts-presets.config.title.subtext.label')" v-model="title.subtext"></ep-input>
+            <ep-input :label="t('grapesjs-echarts-presets.config.title.sublink.label')" v-model="title.sublink"></ep-input>
             <text-style-editor :title="t('grapesjs-echarts-presets.config.title.subTextStyle.label')" :t="t" v-model="title.subtextStyle"></text-style-editor>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="textAlign">
-                        {{t('grapesjs-echarts-presets.config.title.textAlign.label')}}
-                    </div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text">
-                    <div class="gjs-field gjs-select">
-                        <select v-model="title.textAlign" data-input>
-                            <option value disabled selected>
-                                {{t("grapesjs-echarts-presets.config.title.textAlign.placeholder")}}
-                            </option>
-                            <option value="auto">auto</option>
-                            <option value="left">left</option>
-                            <option value="right">right</option>
-                            <option value="center">center</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="textVerticalAlign">
-                        {{t('grapesjs-echarts-presets.config.title.textVerticalAlign.label')}}
-                    </div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text">
-                    <div class="gjs-field gjs-select">
-                        <select v-model="title.textVerticalAlign" data-input>
-                            <option value disabled selected>
-                                {{t("grapesjs-echarts-presets.config.title.textVerticalAlign.placeholder")}}
-                            </option>
-                            <option value="auto">auto</option>
-                            <option value="top">top</option>
-                            <option value="bottom">bottom</option>
-                            <option value="middle">middle</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+            <ep-input type="number" :label="t('grapesjs-echarts-presets.config.title.itemGap.label')" v-model="title.itemGap"></ep-input>
+            <ep-select :label="t('grapesjs-echarts-presets.config.title.textAlign.label')" v-model="title.textAlign">
+                <ep-option value="" :label="t('grapesjs-echarts-presets.config.title.textAlign.placeholder')"></ep-option>
+                <ep-option value="auto">auto</ep-option>
+                <ep-option value="left">left</ep-option>
+                <ep-option value="right">right</ep-option>
+                <ep-option value="center">center</ep-option>
+            </ep-select>
+            <ep-select :label="t('grapesjs-echarts-presets.config.title.textVerticalAlign.label')" v-model="title.textVerticalAlign">
+                <ep-option value="" :label="t('grapesjs-echarts-presets.config.title.textVerticalAlign.placeholder')"></ep-option>
+                <ep-option value="auto">auto</ep-option>
+                <ep-option value="top">top</ep-option>
+                <ep-option value="bottom">bottom</ep-option>
+                <ep-option value="middle">middle</ep-option>
+            </ep-select>
             <div class="gjs-sm-property gjs-sm-composite gjs-sm-property__margin gjs-sm-property--full" style="">
                 <div class="gjs-sm-label" data-sm-label="">
                     <span class="gjs-sm-icon " title="position">
@@ -150,15 +73,25 @@
 
 <script>
 
+  import TextStyleEditor from "../text-style-editor"
   import ChartSection from "../widgets/chart-section"
-  import TextStyleEditor from "../text-style-editor";
+  import EpSelect from "../editor-components/select"
+  import EpOption from "../editor-components/option"
+  import EpInput from "../editor-components/input"
+  import EpCheckBox from "../editor-components/checkbox"
+  import EpColorPicker from "../editor-components/color-picker"
 
   export default {
     name: "title-editor",
     props: ["t", "editor", "onChange"],
     components: {
       TextStyleEditor,
-      ChartSection
+      ChartSection,
+      EpCheckBox,
+      EpSelect,
+      EpOption,
+      EpInput,
+      EpColorPicker
     },
     data() {
       return {
@@ -178,7 +111,7 @@
           bottom: "auto",
           triggerEvent: "",
           padding: [0, 0, 0, 0],
-          itemGap: "",
+          itemGap: 10,
           zlevel: 0,
           z: 2,
           backgroundColor: "rgba(0, 0, 0, 0)",
@@ -202,8 +135,8 @@
             fontStyle: 'normal',
             fontWeight: 'bolder',
             fontFamily: 'sans-serif',
-            fontSize: 18,
-            lineHeight: 24
+            fontSize: 12,
+            lineHeight: 18
           }
         },
         positions: [{
@@ -252,3 +185,4 @@
 <style lang='scss' scoped>
     @import "../assets/style";
 </style>
+

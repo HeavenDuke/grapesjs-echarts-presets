@@ -232,6 +232,9 @@ export default {
           label: "Vertical Alignment",
           placeholder: "Select vertical text alignment"
         },
+        itemGap: {
+          label: "Gap"
+        },
         position: {
           label: "Position"
         },
