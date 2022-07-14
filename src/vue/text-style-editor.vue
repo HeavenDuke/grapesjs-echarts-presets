@@ -1,7 +1,7 @@
 <template>
     <div class="gjs-trt-trait">
         <div class="gjs-label-wrp" data-label>
-            <div class="gjs-label" title="show">{{t('grapesjs-echarts-presets.config.title.textStyle.label')}}</div>
+            <div class="gjs-label" title="show">{{title || t('grapesjs-echarts-presets.config.textStyle.label')}}</div>
         </div>
         <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
             <label class="gjs-field gjs-field-text" data-input="">
@@ -13,7 +13,7 @@
             <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
                 <div class="gjs-trt-trait">
                     <div data-label="" class="gjs-label-wrp">
-                        <div title="fontSize" class="gjs-label">{{t('grapesjs-echarts-presets.config.title.textStyle.fontFamily.label')}}</div>
+                        <div title="fontSize" class="gjs-label">{{t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')}}</div>
                     </div>
                     <div class="gjs-field-wrp gjs-field-wrp--text">
                         <div class="gjs-field gjs-field-text">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="gjs-trt-trait">
                     <div data-label="" class="gjs-label-wrp">
-                        <div title="fontSize" class="gjs-label">{{t('grapesjs-echarts-presets.config.title.textStyle.fontSize.label')}}</div>
+                        <div title="fontSize" class="gjs-label">{{t('grapesjs-echarts-presets.config.textStyle.fontSize.label')}}</div>
                     </div>
                     <div class="gjs-field-wrp gjs-field-wrp--text">
                         <div class="gjs-field gjs-field-text">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="gjs-trt-trait">
                     <div data-label="" class="gjs-label-wrp">
-                        <div title="fontWeight" class="gjs-label">{{t('grapesjs-echarts-presets.config.title.textStyle.fontWeight.label')}}</div>
+                        <div title="fontWeight" class="gjs-label">{{t('grapesjs-echarts-presets.config.textStyle.fontWeight.label')}}</div>
                     </div>
                     <div class="gjs-field-wrp gjs-field-wrp--text">
                         <div class="gjs-field gjs-field-text">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="gjs-trt-trait">
                     <div data-label="" class="gjs-label-wrp">
-                        <div title="lineHeight" class="gjs-label">{{t('grapesjs-echarts-presets.config.title.textStyle.lineHeight.label')}}</div>
+                        <div title="lineHeight" class="gjs-label">{{t('grapesjs-echarts-presets.config.textStyle.lineHeight.label')}}</div>
                     </div>
                     <div class="gjs-field-wrp gjs-field-wrp--text">
                         <div class="gjs-field gjs-field-text">
@@ -55,7 +55,7 @@
                 </div>
                 <div class="gjs-trt-trait">
                     <div data-label="" class="gjs-label-wrp">
-                        <div title="color" class="gjs-label">{{t('grapesjs-echarts-presets.config.title.textStyle.color.label')}}</div>
+                        <div title="color" class="gjs-label">{{t('grapesjs-echarts-presets.config.textStyle.color.label')}}</div>
                     </div>
                     <div class="gjs-field-wrp gjs-field-wrp--text">
                         <div class="gjs-field gjs-field-text">
@@ -77,7 +77,8 @@
     name: "text-style-editor",
     props: {
       value: Object,
-      t: Function
+      t: Function,
+      title: String
     },
     components: {
       ContentDialog
@@ -90,7 +91,6 @@
         deep: true
       }
     },
-
     data() {
       return {
         dialog: {

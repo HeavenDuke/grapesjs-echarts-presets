@@ -163,22 +163,28 @@ export default {
           label: "Position"
         },
         textStyle: {
-          label: "Text Style",
-          fontFamily: {
-            label: 'Font'
-          },
-          fontSize: {
-            label: 'Font Size'
-          },
-          fontWeight: {
-            label: 'Font Weight'
-          },
-          lineHeight: {
-            label: 'Line Height'
-          },
-          color: {
-            label: 'Color'
-          }
+          label: "Text Style"
+        },
+        subTextStyle: {
+          label: "Subtitle Style"
+        }
+      },
+      textStyle: {
+        label: 'Text Style',
+        fontFamily: {
+          label: 'Font'
+        },
+        fontSize: {
+          label: 'Font Size'
+        },
+        fontWeight: {
+          label: 'Font Weight'
+        },
+        lineHeight: {
+          label: 'Line Height'
+        },
+        color: {
+          label: 'Color'
         }
       },
       series: {

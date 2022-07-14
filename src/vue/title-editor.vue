@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <text-style-editor :t="t" v-model="title.textStyle"></text-style-editor>
+            <text-style-editor :title="t('grapesjs-echarts-presets.config.title.textStyle.label')" :t="t" v-model="title.textStyle"></text-style-editor>
             <div class="gjs-trt-trait">
                 <div class="gjs-label-wrp" data-label>
                     <div class="gjs-label" title="subtext">
@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <text-style-editor :t="t" v-model="title.subTextStyle"></text-style-editor>
+            <text-style-editor :title="t('grapesjs-echarts-presets.config.title.subTextStyle.label')" :t="t" v-model="title.subtextStyle"></text-style-editor>
             <div class="gjs-trt-trait">
                 <div class="gjs-label-wrp" data-label>
                     <div class="gjs-label" title="textAlign">
@@ -197,7 +197,7 @@
             fontSize: 18,
             lineHeight: 24
           },
-          subTextStyle: {
+          subtextStyle: {
             color: '#333',
             fontStyle: 'normal',
             fontWeight: 'bolder',

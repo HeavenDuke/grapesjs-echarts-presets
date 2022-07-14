@@ -162,22 +162,28 @@ export default {
           label: "位置"
         },
         textStyle: {
-          label: "文字样式",
-          fontFamily: {
-            label: '字体'
-          },
-          fontSize: {
-            label: '字号'
-          },
-          fontWeight: {
-            label: '粗细'
-          },
-          lineHeight: {
-            label: '行高'
-          },
-          color: {
-            label: '颜色'
-          }
+          label: "标题样式"
+        },
+        subTextStyle: {
+          label: "副标题样式"
+        }
+      },
+      textStyle: {
+        label: "文字样式",
+        fontFamily: {
+          label: '字体'
+        },
+        fontSize: {
+          label: '字号'
+        },
+        fontWeight: {
+          label: '粗细'
+        },
+        lineHeight: {
+          label: '行高'
+        },
+        color: {
+          label: '颜色'
         }
       },
       series: {
