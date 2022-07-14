@@ -9,8 +9,8 @@
                     <input type="text" placeholder="auto" v-model="value">
                 </span>
                 <div class="gjs-field-arrows" data-arrows="">
-                    <div class="gjs-field-arrow-u" @click="value = value + 1"></div>
-                    <div class="gjs-field-arrow-d" @click="value = value - 1"></div>
+                    <div class="gjs-field-arrow-u" @click="value = value + step"></div>
+                    <div class="gjs-field-arrow-d" @click="value = value - step"></div>
                 </div>
             </div>
         </div>
@@ -23,7 +23,13 @@
     name: "ep-number-input",
     props: {
       label: String,
-      value: Number
+      value: Number,
+      min: Number,
+      max: Number,
+      step: {
+        type: Number,
+        default: 1
+      }
     },
     data() {
       return {}
