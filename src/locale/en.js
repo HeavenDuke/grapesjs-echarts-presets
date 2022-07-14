@@ -49,6 +49,9 @@ export default {
     actions: {
       edit: "Edit"
     },
+    dialogs: {
+      textStyle: 'Edit Text Style'
+    },
     config: {
       basic:{
         label: 'Basic',
@@ -94,8 +97,6 @@ export default {
         useUTC:{
           label:"UseUTC"
         }
-
-
       },
       grid: {
         label: 'Grid',

@@ -40,7 +40,7 @@ export default {
       style: {},
       dialog: {
         visibility: false,
-        title: 'test'
+        title: this.t('grapesjs-echarts-presets.dialogs.textStyle')
       }
     }
   },

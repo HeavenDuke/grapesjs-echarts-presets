@@ -49,6 +49,9 @@ export default {
     actions: {
       edit: "编辑"
     },
+    dialogs: {
+      textStyle: '编辑文本样式'
+    },
     config: {
       basic:{
         label: '基础配置',
