@@ -6,6 +6,7 @@ export default build({
     const basic=options.basic ||{};
     const title = options.title || {};
     const grid = options.grid || {};
+    const tooltip = options.tooltip || {};
     const series = [
       {
         type: "bar",
@@ -33,7 +34,7 @@ export default build({
       angleAxis:{
 
       },
-      tooltip: {},
+      tooltip,
       polar:{
         radius:[30,'80%']
       }

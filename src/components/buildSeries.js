@@ -16,6 +16,7 @@ export default ({
           this.on("change:attributes:data-ecg-title", this.updateChart);
           this.on("change:attributes:data-ecg-grid", this.updateChart);
           this.on("change:attributes:data-ecg-basic", this.updateChart);
+          this.on("change:attributes:data-ecg-tooltip", this.updateChart);
           setTimeout(() => {
             this.updateChart();
           }, 100);
@@ -23,15 +24,15 @@ export default ({
         updateChart () {
           //基础项
           const basic = JSON.parse(this.get("attributes")["data-ecg-basic"] || "{}");
-
+          const tooltip= JSON.parse(this.get("attributes")["data-ecg-tooltip"] || "{}");
           const title = JSON.parse(this.get("attributes")["data-ecg-title"] || "{}");
           const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "[]");
           const grid = JSON.parse(this.get("attributes")["data-ecg-grid"] || "{}");
           const theme = this.get("attributes")["data-ecg-theme"] || null;
 
-          const option = this.getOptions({basic,series, title, grid });
+          const option = this.getOptions({basic, tooltip, series, title, grid });
 
-          console.log(grid)
+          // console.log(option)
           this.renderChart(option, theme);
         },
         getOptions,
@@ -60,6 +61,8 @@ export default ({
             },
             {
               type: "echarts-grid-trait"
+            },{
+              type: "echarts-tooltip-trait"
             },
             {
               type: "echarts-title-trait"

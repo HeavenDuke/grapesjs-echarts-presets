@@ -6,6 +6,7 @@ export default build({
     const title = options.title || {};
     const basic=options.basic ||{};
     const grid = options.grid || {};
+    const tooltip = options.tooltip || {};
     const series = [
       {
         type: "bar",
@@ -28,9 +29,7 @@ export default build({
       title,
       series,
       xAxis,
-      tooltip: {
-        trigger: 'item'
-      },
+      tooltip,
       yAxis: [
         {
           type: "value",

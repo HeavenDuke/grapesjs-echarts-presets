@@ -6,6 +6,7 @@ export default build({
     const basic=options.basic ||{};
     const title = options.title || {};
     const grid = options.grid || {};
+    const tooltip = options.tooltip || null;
     const series = [
       {
         type: "scatter",
@@ -16,6 +17,9 @@ export default build({
         })),
       },
     ];
+    // const tooltip={
+    //   formatter: 'Group {a}: ({c})'
+    // }
 
     const xAxis = [
       {
@@ -28,9 +32,7 @@ export default build({
       title,
       series,
       xAxis,
-      tooltip: {
-        formatter: 'Group {a}: ({c})'
-      },
+      tooltip,
       yAxis: [
         {
           type: "value",

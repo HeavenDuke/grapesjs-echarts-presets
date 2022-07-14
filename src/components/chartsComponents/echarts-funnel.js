@@ -6,6 +6,7 @@ export default build({
     const basic=options.basic ||{};
     const title = options.title || {};
     const grid = options.grid || {};
+    const tooltip = options.tooltip || {};
     const series = [
 
       {
@@ -14,12 +15,7 @@ export default build({
         top: 60,
         bottom: 60,
         width: '80%',
-        // min: 0,
-        // max: 1000,
-        // minSize: '0%',
-        // maxSize: '100%',
         sort: 'descending',
-        // gap: 2,
         label: {
           show: true,
           position: 'inside'
@@ -32,19 +28,22 @@ export default build({
       },
 
     ];
+    // const tooltip= {
+    //
+    //   trigger: 'item',
+    //   formatter: '{b} : {c}'
+    // }
     return  {
       ...basic,
       grid,
       title,
+      tooltip,
       series,
       legend: {
         bottom:'5%',
         left:'center'
       },
-      tooltip: {
-        trigger: 'item',
-        formatter: '{b} : {c}'
-      }
+
     };
 
   },

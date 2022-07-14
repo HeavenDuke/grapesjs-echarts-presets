@@ -50,6 +50,76 @@ export default {
       edit: "Edit"
     },
     config: {
+      tooltip:{
+        label:'Tooltip',
+        show:{
+          label:"Show"
+        },
+        trigger:{
+          label:"Trigger",
+          placeholder: "Select trigger type"
+        },
+        axisPointer:{
+          label:"AxisPointer"
+        },
+        showContent:{
+          label:"ShowContent"
+        },
+        alwaysShowContent:{
+          label:"AlwaysShowContent"
+        },
+        triggerOn:{
+          label:"TriggerOn"
+        },
+        showDelay:{
+          label:"ShowDelay"
+        },
+        hideDelay:{
+          label:"HideDelay"
+        },
+        enterable:{
+          label:"Enterable"
+        },
+        renderMode:{
+          label:"RenderMode"
+        },
+        confine:{
+          label:"Confine"
+        },
+        appendToBody: {
+          label:"AppendToBody"
+        },
+        transitionDuration:{
+          label:"TransitionDuration"
+        },
+        position:{
+          label:"Position"
+        },
+        formatter:{
+          label:"Formatter"
+        },
+        valueFormatter:{
+          label:"ValueFormatter"
+        },
+        backgroundColor: {
+          label:"BackgroundColor"
+        },
+        borderColor: {
+          label:"BorderColor"
+        },
+        borderWidth: {
+          label:"BorderWidth"
+        },
+        padding:{
+          label:"Padding"
+        },
+        textStyle:{
+          label:"TextStyle"
+        },
+        order:{
+          label:"Order"
+        }
+      },
       basic:{
         label: 'Basic',
         color: {

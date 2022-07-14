@@ -6,6 +6,7 @@ export default build({
     const title = options.title || {};
     const basic=options.basic ||{};
     const grid = options.grid || {};
+    const tooltip = options.tooltip || {};
     const series = [
 
       {
@@ -32,9 +33,7 @@ export default build({
         bottom:'5%',
         left:'center'
       },
-      tooltip: {
-        trigger: 'item'
-      }
+      tooltip
     };
 
   },
