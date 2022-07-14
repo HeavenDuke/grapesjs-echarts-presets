@@ -34,8 +34,7 @@
       value(val) {
         this.$emit('input', val)
       }
-    },
-
+    }
   };
 </script>
 
