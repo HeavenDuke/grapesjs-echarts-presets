@@ -31,9 +31,17 @@
                         <input type="number" placeholder="eg. 2000" v-model="serie.value" />
                     </div>
                 </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text" data-input>
-                    <div class="gjs-field gjs-field-text" data-input>
-                        <input type="text" placeholder="Color" v-model="serie.color" />
+                <div class="gjs-field-wrp gjs-field-wrp--color" data-input>
+                    <div class="gjs-field gjs-field-color">
+                        <div class="gjs-input-holder">
+                            <input type="text" placeholder="none" v-model="serie.color">
+                        </div>
+                        <div class="gjs-field-colorp">
+                            <div class="gjs-field-colorp-c" data-colorp-c="">
+                                <div class="gjs-checker-bg"></div>
+                                <input class="gjs-field-color-picker" :style="{ background: serie.color }" type="color" v-model="serie.color">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="gjs-field-wrp gjs-field-wrp--text" data-input>
@@ -78,6 +86,9 @@ export default {
         color: null
       });
     },
+    change(event) {
+      console.log(event)
+    },
     remove(serie) {
       this.series = this.series.filter(({ id }) => id !== serie);
     },
@@ -104,6 +115,20 @@ export default {
                 width: calc(100% - 12px);
             }
         }
+
+        input.gjs-field-color-picker {
+            background-color: #ddd !important;
+            cursor: pointer !important;
+            height: 100% !important;
+            width: 100% !important;
+            box-shadow: none !important;
+            border-radius: 1px !important;
+            border: none;
+            position: absolute !important;
+            top: 0 !important;
+            padding: 0;
+        }
+
         .btn {
             background: transparent;
             color: white;
