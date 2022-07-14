@@ -25,6 +25,18 @@
             </div>
             <div class="gjs-trt-trait">
                 <div class="gjs-label-wrp" data-label>
+                    <div class="gjs-label" title="text">{{t('grapesjs-echarts-presets.config.title.link.label')}}</div>
+                </div>
+                <div class="gjs-field-wrp gjs-field-wrp--text">
+                    <div class="gjs-field gjs-field-text">
+                        <input v-model="title.link" data-input
+                               :placeholder="t('grapesjs-echarts-presets.config.title.link.placeholder')"/>
+                    </div>
+                </div>
+            </div>
+            <text-style-editor :title="t('grapesjs-echarts-presets.config.title.textStyle.label')" :t="t" v-model="title.textStyle"></text-style-editor>
+            <div class="gjs-trt-trait">
+                <div class="gjs-label-wrp" data-label>
                     <div class="gjs-label" title="subtext">
                         {{t('grapesjs-echarts-presets.config.title.subtext.label')}}
                     </div>
@@ -36,6 +48,18 @@
                     </div>
                 </div>
             </div>
+            <div class="gjs-trt-trait">
+                <div class="gjs-label-wrp" data-label>
+                    <div class="gjs-label" title="text">{{t('grapesjs-echarts-presets.config.title.sublink.label')}}</div>
+                </div>
+                <div class="gjs-field-wrp gjs-field-wrp--text">
+                    <div class="gjs-field gjs-field-text">
+                        <input v-model="title.sublink" data-input
+                               :placeholder="t('grapesjs-echarts-presets.config.title.sublink.placeholder')"/>
+                    </div>
+                </div>
+            </div>
+            <text-style-editor :title="t('grapesjs-echarts-presets.config.title.subTextStyle.label')" :t="t" v-model="title.subtextStyle"></text-style-editor>
             <div class="gjs-trt-trait">
                 <div class="gjs-label-wrp" data-label>
                     <div class="gjs-label" title="textAlign">
@@ -76,7 +100,6 @@
                     </div>
                 </div>
             </div>
-            <text-style-editor :t="t" v-model="title.textStyle"></text-style-editor>
             <div class="gjs-sm-property gjs-sm-composite gjs-sm-property__margin gjs-sm-property--full" style="">
                 <div class="gjs-sm-label" data-sm-label="">
                     <span class="gjs-sm-icon " title="position">
@@ -166,7 +189,22 @@
           shadowColor: "rgba(0, 0, 0, 0)",
           shadowOffsetX: "",
           shadowOffsetY: "",
-          textStyle: {}
+          textStyle: {
+            color: '#333',
+            fontStyle: 'normal',
+            fontWeight: 'bolder',
+            fontFamily: 'sans-serif',
+            fontSize: 18,
+            lineHeight: 24
+          },
+          subtextStyle: {
+            color: '#333',
+            fontStyle: 'normal',
+            fontWeight: 'bolder',
+            fontFamily: 'sans-serif',
+            fontSize: 18,
+            lineHeight: 24
+          }
         },
         positions: [{
           name: "top",

@@ -59,7 +59,7 @@
         height: 100vh;
         left: 0;
         top: 0;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;

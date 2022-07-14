@@ -49,6 +49,10 @@ export default {
     actions: {
       edit: "编辑"
     },
+    dialogs: {
+      textStyle: '编辑文本样式',
+      lineStyle: '编辑线条样式'
+    },
     config: {
       basic:{
         label: '基础配置',
@@ -135,9 +139,17 @@ export default {
           label: "标题",
           placeholder: "请输入标题"
         },
+        link: {
+          label: "标题链接",
+          placeholder: "请输入标题关联的链接"
+        },
         subtext: {
           label: "副标题",
           placeholder: "请输入副标题"
+        },
+        sublink: {
+          label: "副标题",
+          placeholder: "请输入副标题关联的链接"
         },
         textAlign: {
           label: "文本对齐",
@@ -151,7 +163,40 @@ export default {
           label: "位置"
         },
         textStyle: {
-          label: "文字样式"
+          label: "标题样式"
+        },
+        subTextStyle: {
+          label: "副标题样式"
+        }
+      },
+      textStyle: {
+        label: "文字样式",
+        fontFamily: {
+          label: '字体'
+        },
+        fontSize: {
+          label: '字号'
+        },
+        fontWeight: {
+          label: '粗细'
+        },
+        lineHeight: {
+          label: '行高'
+        },
+        color: {
+          label: '颜色'
+        }
+      },
+      lineStyle: {
+        label: '线条样式',
+        color: {
+          label: '颜色'
+        },
+        width: {
+          label: '粗细'
+        },
+        type: {
+          label: '线形'
         }
       },
       series: {

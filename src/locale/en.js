@@ -49,6 +49,10 @@ export default {
     actions: {
       edit: "Edit"
     },
+    dialogs: {
+      textStyle: 'Edit Text Style',
+      lineStyle: 'Edit Line Style'
+    },
     config: {
       tooltip:{
         label:'Tooltip',
@@ -208,9 +212,17 @@ export default {
           label: "Title",
           placeholder: "Input title"
         },
+        link: {
+          label: "Title Link",
+          placeholder: "Input title link"
+        },
         subtext: {
           label: "Subtitle",
-          placeholder: "Input subtitle."
+          placeholder: "Input subtitle"
+        },
+        sublink: {
+          label: "Subtitle Link",
+          placeholder: "Input subtitle link"
         },
         textAlign: {
           label: "Alignment",
@@ -225,6 +237,39 @@ export default {
         },
         textStyle: {
           label: "Text Style"
+        },
+        subTextStyle: {
+          label: "Subtitle Style"
+        }
+      },
+      textStyle: {
+        label: 'Text Style',
+        fontFamily: {
+          label: 'Font'
+        },
+        fontSize: {
+          label: 'Font Size'
+        },
+        fontWeight: {
+          label: 'Font Weight'
+        },
+        lineHeight: {
+          label: 'Line Height'
+        },
+        color: {
+          label: 'Color'
+        }
+      },
+      lineStyle: {
+        label: 'Line Style',
+        color: {
+          label: 'Color'
+        },
+        width: {
+          label: 'Thickness'
+        },
+        type: {
+          label: 'Line Type'
         }
       },
       series: {
