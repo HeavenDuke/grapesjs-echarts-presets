@@ -16,26 +16,26 @@ export default {
       bar: {
         name: "Bar Chart",
       },
-      line:{
+      line: {
         name: "Line Chart",
       },
-      pie:{
+      pie: {
         name: "Pie Chart",
       },
-      polarHistogram:{
-        name:"Polar histogram Chart"
+      polarHistogram: {
+        name: "Polar histogram Chart"
       },
-      roundedPie:{
-        name:"Rounded Pie Chart"
+      roundedPie: {
+        name: "Rounded Pie Chart"
       },
-      rose:{
-        name:"Rose Chart"
+      rose: {
+        name: "Rose Chart"
       },
-      funnel:{
-        name:"Funnel Chart"
+      funnel: {
+        name: "Funnel Chart"
       },
-      scatter:{
-        name:"Scatter Chart"
+      scatter: {
+        name: "Scatter Chart"
       }
     },
     dict: {
@@ -54,27 +54,27 @@ export default {
       lineStyle: 'Edit Line Style'
     },
     config: {
-      basic:{
+      basic: {
         label: 'Basic',
         color: {
           label: "Color"
         },
-        backgroundColor:{
-          label:"BackgroundColor"
+        backgroundColor: {
+          label: "BackgroundColor"
         },
-        animation:{
+        animation: {
           label: "Animation",
 
         },
-        animationThreshold:{
-          label:"AnimationThreshold"
+        animationThreshold: {
+          label: "AnimationThreshold"
         },
-        animationDuration:{
-          label:"AnimationDuration"
+        animationDuration: {
+          label: "AnimationDuration"
         },
         animationEasing: {
           label: "AnimationEasing",
-          placeholder:"Choose an initial animation"
+          placeholder: "Choose an initial animation"
         },
         animationDelay: {
           label: "AnimationDelay"
@@ -84,19 +84,19 @@ export default {
         },
         animationEasingUpdate: {
           label: "AnimationEasingUpdate",
-          placeholder:"Select data update animation"
+          placeholder: "Select data update animation"
         },
         animationDelayUpdate: {
           label: "AnimationDelayUpdate"
         },
-        blendMode:{
-          label:"BlendMode"
+        blendMode: {
+          label: "BlendMode"
         },
-        hoverLayerThreshold:{
-          label:"HoverLayerThreshold"
+        hoverLayerThreshold: {
+          label: "HoverLayerThreshold"
         },
-        useUTC:{
-          label:"UseUTC"
+        useUTC: {
+          label: "UseUTC"
         }
       },
       grid: {
@@ -128,7 +128,7 @@ export default {
         },
         shadowBlur: {
           label: "Shadow Blur",
-          placeholder:"Specify the shadow blur size"
+          placeholder: "Specify the shadow blur size"
         },
       },
       title: {
