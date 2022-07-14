@@ -8,7 +8,7 @@
         "url": "git@github.com:HeavenDuke/grapesjs-echarts-presets.git"
     },
     "scripts": {
-        "start": "webpack-dev-server --open --watch",
+        "start": "webpack-dev-server --open --watch --host=0.0.0.0",
         "build": "webpack --env.production",
         "lint": "eslint ./src --fix",
         "bump": "npm version patch -m 'Bump v%s'"

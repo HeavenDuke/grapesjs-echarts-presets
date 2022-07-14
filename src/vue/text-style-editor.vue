@@ -5,18 +5,27 @@
         </div>
         <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
             <label class="gjs-field gjs-field-text" data-input="">
-                <button class="btn btn-full" @click="">{{t('grapesjs-echarts-presets.actions.edit')}}</button>
+                <button class="btn btn-full" @click="showDialog">{{t('grapesjs-echarts-presets.actions.edit')}}</button>
             </label>
         </div>
+        <content-dialog v-if="dialog.visibility" :dialog-visibility="dialog.visibility" :title="dialog.title" @close="dialog.visibility = false">
+
+        </content-dialog>
     </div>
 </template>
 
 <script>
+
+    import ContentDialog from "./widgets/content-dialog"
+
 export default {
   name: "text-style-editor",
   props: {
     value: Object,
     t: Function
+  },
+  components: {
+    ContentDialog
   },
   watch: {
     value: {
@@ -28,7 +37,16 @@ export default {
   },
   data () {
     return {
-      style: {}
+      style: {},
+      dialog: {
+        visibility: false,
+        title: 'test'
+      }
+    }
+  },
+  methods: {
+    showDialog () {
+      this.dialog.visibility = true
     }
   }
 };
