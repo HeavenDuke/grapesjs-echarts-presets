@@ -6,6 +6,7 @@
         <div class="gjs-field-wrp gjs-field-wrp--text">
             <div class="gjs-field gjs-select">
                 <select v-model="value" data-input>
+                    <ep-option value="">{{placeholder}}</ep-option>
                     <slot></slot>
                 </select>
                 <div class="gjs-sel-arrow">
@@ -17,11 +18,18 @@
 </template>
 
 <script>
+
+  import EpOption from './option'
+
   export default {
     name: "ep-select",
     props: {
       label: String,
-      value: String
+      value: String,
+      placeholder: String
+    },
+    components: {
+      EpOption
     },
     watch: {
       value(val) {

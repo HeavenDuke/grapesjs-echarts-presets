@@ -8,16 +8,20 @@
             <ep-input :label="t('grapesjs-echarts-presets.config.title.subtext.label')" v-model="title.subtext"></ep-input>
             <ep-input :label="t('grapesjs-echarts-presets.config.title.sublink.label')" v-model="title.sublink"></ep-input>
             <text-style-editor :title="t('grapesjs-echarts-presets.config.title.subTextStyle.label')" :t="t" v-model="title.subtextStyle"></text-style-editor>
-            <ep-input type="number" :label="t('grapesjs-echarts-presets.config.title.itemGap.label')" v-model="title.itemGap"></ep-input>
-            <ep-select :label="t('grapesjs-echarts-presets.config.title.textAlign.label')" v-model="title.textAlign">
-                <ep-option value="" :label="t('grapesjs-echarts-presets.config.title.textAlign.placeholder')"></ep-option>
+            <ep-number-input :label="t('grapesjs-echarts-presets.config.title.itemGap.label')" v-model="title.itemGap"></ep-number-input>
+            <ep-select
+                    v-model="title.textAlign"
+                    :label="t('grapesjs-echarts-presets.config.title.textAlign.label')"
+                    :placeholder="t('grapesjs-echarts-presets.config.title.textAlign.placeholder')">
                 <ep-option value="auto">auto</ep-option>
                 <ep-option value="left">left</ep-option>
                 <ep-option value="right">right</ep-option>
                 <ep-option value="center">center</ep-option>
             </ep-select>
-            <ep-select :label="t('grapesjs-echarts-presets.config.title.textVerticalAlign.label')" v-model="title.textVerticalAlign">
-                <ep-option value="" :label="t('grapesjs-echarts-presets.config.title.textVerticalAlign.placeholder')"></ep-option>
+            <ep-select
+                    v-model="title.textVerticalAlign"
+                    :label="t('grapesjs-echarts-presets.config.title.textVerticalAlign.label')"
+                    :placeholder="t('grapesjs-echarts-presets.config.title.textVerticalAlign.placeholder')">
                 <ep-option value="auto">auto</ep-option>
                 <ep-option value="top">top</ep-option>
                 <ep-option value="bottom">bottom</ep-option>
@@ -78,6 +82,7 @@
   import EpSelect from "../editor-components/select"
   import EpOption from "../editor-components/option"
   import EpInput from "../editor-components/input"
+  import EpNumberInput from "../editor-components/number-input"
   import EpCheckBox from "../editor-components/checkbox"
   import EpColorPicker from "../editor-components/color-picker"
 
@@ -91,6 +96,7 @@
       EpSelect,
       EpOption,
       EpInput,
+      EpNumberInput,
       EpColorPicker
     },
     data() {
@@ -172,7 +178,6 @@
             let pos = newValue[i];
             this.title[pos.name] = `${pos.value}${pos.unit}`;
           }
-          console.log(this.title);
           this.onChange();
         },
         deep: true

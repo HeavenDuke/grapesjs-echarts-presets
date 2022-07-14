@@ -15,9 +15,9 @@
                 <ep-select :label="t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')" v-model="value.fontFamily">
                     <ep-option v-for="font in fonts" :key="font.value" :value="font.value" :label="font.name">{{font.name}}</ep-option>
                 </ep-select>
-                <ep-input type="number" :label="t('grapesjs-echarts-presets.config.textStyle.fontSize.label')" v-model="value.fontSize"></ep-input>
-                <ep-input type="number" :label="t('grapesjs-echarts-presets.config.textStyle.fontWeight.label')" v-model="value.fontWeight"></ep-input>
-                <ep-input type="number" :label="t('grapesjs-echarts-presets.config.textStyle.lineHeight.label')" v-model="value.lineHeight"></ep-input>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.fontSize.label')" v-model="value.fontSize"></ep-number-input>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.fontWeight.label')" v-model="value.fontWeight"></ep-number-input>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.lineHeight.label')" v-model="value.lineHeight"></ep-number-input>
                 <ep-color-picker :label="t('grapesjs-echarts-presets.config.textStyle.color.label')" v-model="value.color"></ep-color-picker>
             </div>
         </content-dialog>
@@ -33,6 +33,7 @@
   import EpInput from "./editor-components/input"
   import EpCheckBox from "./editor-components/checkbox"
   import EpColorPicker from "./editor-components/color-picker"
+  import EpNumberInput from "./editor-components/number-input"
 
   export default {
     name: "text-style-editor",
@@ -47,7 +48,8 @@
       EpSelect,
       EpOption,
       EpInput,
-      EpColorPicker
+      EpColorPicker,
+      EpNumberInput
     },
     watch: {
       value: {
