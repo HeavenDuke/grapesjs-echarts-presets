@@ -138,9 +138,17 @@ export default {
           label: "标题",
           placeholder: "请输入标题"
         },
+        link: {
+          label: "标题链接",
+          placeholder: "请输入标题关联的链接"
+        },
         subtext: {
           label: "副标题",
           placeholder: "请输入副标题"
+        },
+        sublink: {
+          label: "副标题",
+          placeholder: "请输入副标题关联的链接"
         },
         textAlign: {
           label: "文本对齐",
@@ -154,7 +162,22 @@ export default {
           label: "位置"
         },
         textStyle: {
-          label: "文字样式"
+          label: "文字样式",
+          fontFamily: {
+            label: '字体'
+          },
+          fontSize: {
+            label: '字号'
+          },
+          fontWeight: {
+            label: '粗细'
+          },
+          lineHeight: {
+            label: '行高'
+          },
+          color: {
+            label: '颜色'
+          }
         }
       },
       series: {

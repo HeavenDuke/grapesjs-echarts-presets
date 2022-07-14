@@ -139,9 +139,17 @@ export default {
           label: "Title",
           placeholder: "Input title"
         },
+        link: {
+          label: "Title Link",
+          placeholder: "Input title link"
+        },
         subtext: {
           label: "Subtitle",
-          placeholder: "Input subtitle."
+          placeholder: "Input subtitle"
+        },
+        sublink: {
+          label: "Subtitle Link",
+          placeholder: "Input subtitle link"
         },
         textAlign: {
           label: "Alignment",
@@ -155,7 +163,22 @@ export default {
           label: "Position"
         },
         textStyle: {
-          label: "Text Style"
+          label: "Text Style",
+          fontFamily: {
+            label: 'Font'
+          },
+          fontSize: {
+            label: 'Font Size'
+          },
+          fontWeight: {
+            label: 'Font Weight'
+          },
+          lineHeight: {
+            label: 'Line Height'
+          },
+          color: {
+            label: 'Color'
+          }
         }
       },
       series: {
