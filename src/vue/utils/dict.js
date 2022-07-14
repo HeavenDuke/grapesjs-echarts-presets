@@ -15,7 +15,7 @@ export let FONTS = [
   { value: "Verdana, Geneva, sans-serif", name: "Verdana"},
 ]
 
-export let BORDER_TYPES = [
+export let LINE_TYPES = [
   { value: 'solid', name: 'solid' },
   { value: 'dashed', name: 'dashed' },
   { value: 'dotted', name: 'dotted' },

@@ -50,7 +50,8 @@ export default {
       edit: "Edit"
     },
     dialogs: {
-      textStyle: 'Edit Text Style'
+      textStyle: 'Edit Text Style',
+      lineStyle: 'Edit Line Style'
     },
     config: {
       basic:{
@@ -185,6 +186,18 @@ export default {
         },
         color: {
           label: 'Color'
+        }
+      },
+      lineStyle: {
+        label: 'Line Style',
+        color: {
+          label: 'Color'
+        },
+        width: {
+          label: 'Thickness'
+        },
+        type: {
+          label: 'Line Type'
         }
       },
       series: {

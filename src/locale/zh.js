@@ -50,7 +50,8 @@ export default {
       edit: "编辑"
     },
     dialogs: {
-      textStyle: '编辑文本样式'
+      textStyle: '编辑文本样式',
+      lineStyle: '编辑线条样式'
     },
     config: {
       basic:{
@@ -184,6 +185,18 @@ export default {
         },
         color: {
           label: '颜色'
+        }
+      },
+      lineStyle: {
+        label: '线条样式',
+        color: {
+          label: '颜色'
+        },
+        width: {
+          label: '粗细'
+        },
+        type: {
+          label: '线形'
         }
       },
       series: {

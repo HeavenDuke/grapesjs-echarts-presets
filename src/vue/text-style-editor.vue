@@ -8,24 +8,30 @@
                 <button class="btn btn-full" @click="showDialog">{{t('grapesjs-echarts-presets.actions.edit')}}</button>
             </label>
         </div>
-        <content-dialog v-if="dialog.visibility" width="350px" :dialog-visibility="dialog.visibility" :title="dialog.title"
+        <content-dialog v-if="dialog.visibility" width="350px" :dialog-visibility="dialog.visibility"
+                        :title="dialog.title"
                         @close="dialog.visibility = false">
             <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
                 <div class="gjs-trt-trait">
                     <div data-label="" class="gjs-label-wrp">
-                        <div title="fontSize" class="gjs-label">{{t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')}}</div>
+                        <div title="fontSize" class="gjs-label">
+                            {{t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')}}
+                        </div>
                     </div>
                     <div class="gjs-field-wrp gjs-field-wrp--text">
                         <div class="gjs-field gjs-field-text">
                             <select v-model="value.fontFamily">
-                                <option v-for="font in fonts" :key="font.value" :value="font.value">{{font.name}}</option>
+                                <option v-for="font in fonts" :key="font.value" :value="font.value">{{font.name}}
+                                </option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="gjs-trt-trait">
                     <div data-label="" class="gjs-label-wrp">
-                        <div title="fontSize" class="gjs-label">{{t('grapesjs-echarts-presets.config.textStyle.fontSize.label')}}</div>
+                        <div title="fontSize" class="gjs-label">
+                            {{t('grapesjs-echarts-presets.config.textStyle.fontSize.label')}}
+                        </div>
                     </div>
                     <div class="gjs-field-wrp gjs-field-wrp--text">
                         <div class="gjs-field gjs-field-text">
@@ -35,7 +41,9 @@
                 </div>
                 <div class="gjs-trt-trait">
                     <div data-label="" class="gjs-label-wrp">
-                        <div title="fontWeight" class="gjs-label">{{t('grapesjs-echarts-presets.config.textStyle.fontWeight.label')}}</div>
+                        <div title="fontWeight" class="gjs-label">
+                            {{t('grapesjs-echarts-presets.config.textStyle.fontWeight.label')}}
+                        </div>
                     </div>
                     <div class="gjs-field-wrp gjs-field-wrp--text">
                         <div class="gjs-field gjs-field-text">
@@ -45,7 +53,9 @@
                 </div>
                 <div class="gjs-trt-trait">
                     <div data-label="" class="gjs-label-wrp">
-                        <div title="lineHeight" class="gjs-label">{{t('grapesjs-echarts-presets.config.textStyle.lineHeight.label')}}</div>
+                        <div title="lineHeight" class="gjs-label">
+                            {{t('grapesjs-echarts-presets.config.textStyle.lineHeight.label')}}
+                        </div>
                     </div>
                     <div class="gjs-field-wrp gjs-field-wrp--text">
                         <div class="gjs-field gjs-field-text">
@@ -55,7 +65,9 @@
                 </div>
                 <div class="gjs-trt-trait">
                     <div data-label="" class="gjs-label-wrp">
-                        <div title="color" class="gjs-label">{{t('grapesjs-echarts-presets.config.textStyle.color.label')}}</div>
+                        <div title="color" class="gjs-label">
+                            {{t('grapesjs-echarts-presets.config.textStyle.color.label')}}
+                        </div>
                     </div>
                     <div class="gjs-field-wrp gjs-field-wrp--text">
                         <div class="gjs-field gjs-field-text">
@@ -70,8 +82,8 @@
 
 <script>
 
-    import { FONTS, BORDER_TYPES } from "./utils/dict";
-    import ContentDialog from "./widgets/content-dialog"
+  import {FONTS, BORDER_TYPES} from "./utils/dict";
+  import ContentDialog from "./widgets/content-dialog"
 
   export default {
     name: "text-style-editor",
