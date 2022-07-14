@@ -135,7 +135,7 @@
 
 <script>
 
-  import ChartSection from "./widgets/chart-section"
+  import ChartSection from "../widgets/chart-section"
 
   export default {
     name: "grid-editor",
@@ -206,5 +206,5 @@
 </script>
 
 <style lang='scss' scoped>
-    @import "./assets/style.scss";
+    @import "../assets/style";
 </style>

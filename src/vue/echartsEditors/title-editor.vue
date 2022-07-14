@@ -127,8 +127,8 @@
 
 <script>
 
-  import ChartSection from "./widgets/chart-section"
-  import TextStyleEditor from "./text-style-editor";
+  import ChartSection from "../widgets/chart-section"
+  import TextStyleEditor from "../text-style-editor";
 
   export default {
     name: "title-editor",
@@ -212,5 +212,5 @@
 </script>
 
 <style lang='scss' scoped>
-    @import "./assets/style.scss";
+    @import "../assets/style";
 </style>

@@ -1,4 +1,4 @@
-import BasicEditor from "../../vue/basic-editor"
+import BasicEditor from "../../vue/echartsEditors/basic-editor"
 
 export default {
   noLabel:true,

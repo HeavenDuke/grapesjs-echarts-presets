@@ -1,4 +1,4 @@
-import GridEditor from "../../vue/grid-editor.vue";
+import GridEditor from "../../vue/echartsEditors/grid-editor.vue";
 export default {
   // Expects as return a simple HTML string or an HTML element
   noLabel: true,

@@ -79,7 +79,7 @@
                  <span class="gjs-sm-icon " title="animationEasing">{{t("grapesjs-echarts-presets.config.basic.animationEasing.label")}}</span>
                </div>
               <div class="gjs-field-wrp gjs-field-wrp--text">
-                <div class="gjs-field gjs-field-text">
+                <div class="gjs-field gjs-select">
 
                     <select v-model="basic.animationEasing" data-input >
                       <option value disabled selected>{{t("grapesjs-echarts-presets.config.basic.animationEasing.placeholder")}}</option>
@@ -96,7 +96,7 @@
                  <span class="gjs-sm-icon " title="animationEasingUpdate">{{t("grapesjs-echarts-presets.config.basic.animationEasingUpdate.label")}}</span>
                </div>
               <div class="gjs-field-wrp gjs-field-wrp--text">
-                <div class="gjs-field gjs-field-text">
+                <div class="gjs-field gjs-select">
 
                     <select v-model="basic.animationEasingUpdate" data-input >
                       <option value disabled selected>{{t("grapesjs-echarts-presets.config.basic.animationEasingUpdate.placeholder")}}</option>
@@ -154,7 +154,7 @@
           <div class="gjs-label" title="blendMode">{{t('grapesjs-echarts-presets.config.basic.blendMode.label')}}</div>
         </div>
         <div class="gjs-field-wrp gjs-field-wrp--text">
-          <div class="gjs-field gjs-field-text">
+          <div class="gjs-field gjs-select">
             <select v-model="basic.blendMode" data-input>
               <option value disabled selected>{{t("grapesjs-echarts-presets.config.basic.blendMode.placeholder")}}</option>
               <option v-for="name in blendMode" :value="name">{{ name }}</option>
@@ -180,7 +180,7 @@
 
 <script>
 
-import ChartSection from "./widgets/chart-section";
+import ChartSection from "../widgets/chart-section";
 
 export default {
   name: "basic-editor",
@@ -203,7 +203,7 @@ export default {
         animationEasingUpdate:'cubicOut',
         animationDelay:'0',
         animationDelayUpdate: '0',
-        blendMode:'source-over',
+        blendMode:"source-over",
         hoverLayerThreshold:'3000'
       },
       easing:[{name:"linear"},
@@ -295,5 +295,5 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import "./assets/style.scss";
+@import "../assets/style";
 </style>
