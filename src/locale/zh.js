@@ -172,6 +172,20 @@ export default {
           label: "副标题样式"
         }
       },
+      xAxis: {
+        label: 'X轴'
+      },
+      yAxis: {
+        label: 'Y轴'
+      },
+      axis: {
+        show: {
+          label: "显示/隐藏"
+        },
+        name: {
+          label: "名称"
+        }
+      },
       textStyle: {
         label: "文字样式",
         fontFamily: {

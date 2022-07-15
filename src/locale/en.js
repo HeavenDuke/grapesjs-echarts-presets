@@ -248,6 +248,20 @@ export default {
           label: "Subtitle Style"
         }
       },
+      xAxis: {
+        label: 'X Axis'
+      },
+      yAxis: {
+        label: 'Y Axis'
+      },
+      axis: {
+        show: {
+          label: "Show"
+        },
+        name: {
+          label: "Name"
+        }
+      },
       textStyle: {
         label: 'Text Style',
         fontFamily: {

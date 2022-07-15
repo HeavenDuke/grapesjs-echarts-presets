@@ -4,6 +4,7 @@ import echartsGrid from "./echartsTraits/echarts-grid";
 import echartsBasic from "./echartsTraits/echarts-basic";
 import echartsTooltip from "./echartsTraits/echarts-tooltip";
 import echartsXAxis from "./echartsTraits/echarts-x-axis"
+import echartsYAxis from "./echartsTraits/echarts-y-axis"
 
 export default {
   "echarts-series-trait": echartsSeries,
@@ -11,5 +12,6 @@ export default {
   "echarts-grid-trait": echartsGrid,
   "echarts-basic-trait": echartsBasic,
   "echarts-tooltip-trait":echartsTooltip,
-  "echarts-x-axis-trait": echartsXAxis
+  "echarts-x-axis-trait": echartsXAxis,
+  "echarts-y-axis-trait": echartsYAxis
 };
