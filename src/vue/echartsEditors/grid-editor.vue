@@ -1,48 +1,14 @@
 <template>
     <chart-section :title="t('grapesjs-echarts-presets.config.grid.label')">
         <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="show">{{t('grapesjs-echarts-presets.config.grid.show.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--checkbox" data-input="">
-                    <label class="gjs-field gjs-field-checkbox" data-input="">
-                        <input type="checkbox" v-model="grid.show">
-                        <i class="gjs-chk-icon"></i>
-                    </label>
-                </div>
-            </div>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="zlevel">{{t('grapesjs-echarts-presets.config.grid.zlevel.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-                    <label class="gjs-field gjs-field-text" data-input="">
-                        <input type="number" v-model="grid.zlevel">
-                    </label>
-                </div>
-            </div>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="z">{{t('grapesjs-echarts-presets.config.grid.z.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-                    <label class="gjs-field gjs-field-text" data-input="">
-                        <input type="number" v-model="grid.z">
-                    </label>
-                </div>
-            </div>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="containLabel">{{t('grapesjs-echarts-presets.config.grid.containLabel.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--checkbox" data-input="">
-                    <label class="gjs-field gjs-field-checkbox" data-input="">
-                        <input type="checkbox" v-model="grid.containLabel">
-                        <i class="gjs-chk-icon"></i>
-                    </label>
-                </div>
-            </div>
+
+          <ep-check-box v-model="grid.show" :label="t('grapesjs-echarts-presets.config.grid.show.label')"></ep-check-box>
+
+
+          <ep-number-input v-model="grid.zlevel" :label="t('grapesjs-echarts-presets.config.grid.zlevel.label')" ></ep-number-input>
+          <ep-number-input v-model="grid.z" :label="t('grapesjs-echarts-presets.config.grid.z.label')" ></ep-number-input>
+          <ep-check-box v-model="grid.containLabel" :label="t('grapesjs-echarts-presets.config.grid.containLabel.label')"></ep-check-box>
+<!--        position-->
             <div class="gjs-trt-trait">
                 <div class="gjs-sm-property gjs-sm-composite gjs-sm-property__margin gjs-sm-property--full" style="">
                     <div class="gjs-sm-label" data-sm-label="">
@@ -89,59 +55,38 @@
                     </div>
                 </div>
             </div>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="borderColor">{{t('grapesjs-echarts-presets.config.grid.borderColor.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-                    <label class="gjs-field gjs-field-text" data-input="">
-                        <input type="color" v-model="grid.borderColor">
-                    </label>
-                </div>
-            </div>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp gjs-field-wrp--text" data-label>
-                    <div class="gjs-label" title="borderWidth">{{t('grapesjs-echarts-presets.config.grid.borderWidth.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-                    <label class="gjs-field gjs-field-text" data-input="">
-                        <input type="number" v-model="grid.borderWidth" data-input="" :placeholder="t('grapesjs-echarts-presets.config.grid.borderWidth.placeholder')">
-                    </label>
-                </div>
-            </div>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="shadowColor">{{t('grapesjs-echarts-presets.config.grid.shadowColor.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-                    <label class="gjs-field gjs-field-text" data-input="">
-                        <input type="color" v-model="grid.shadowColor">
-                    </label>
-                </div>
-            </div>
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp gjs-field-wrp--text" data-label>
-                    <div class="gjs-label" title="shadowBlur">{{t('grapesjs-echarts-presets.config.grid.shadowBlur.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-                    <label class="gjs-field gjs-field-text" data-input="">
-                        <input type="number" v-model="grid.shadowBlur" data-input="" :placeholder="t('grapesjs-echarts-presets.config.grid.shadowBlur.placeholder')">
-                    </label>
-                </div>
-            </div>
+          <ep-color-picker v-model="grid.borderColor" :label="t('grapesjs-echarts-presets.config.grid.borderColor.label')"></ep-color-picker>
+
+            <ep-number-input v-model="grid.borderWidth" :label="t('grapesjs-echarts-presets.config.grid.borderWidth.label')" ></ep-number-input>
+
+
+          <ep-color-picker v-model="grid.shadowColor" :label="t('grapesjs-echarts-presets.config.grid.shadowColor.label')"></ep-color-picker>
+          <ep-number-input v-model="grid.shadowBlur" :label="t('grapesjs-echarts-presets.config.grid.shadowBlur.label')" ></ep-number-input>
+
         </div>
     </chart-section>
 </template>
 
 <script>
-
+import EpCheckBox from "../editor-components/checkbox";
+import EpSelect from "../editor-components/select";
+import EpInput from "../editor-components/input";
+import EpNumberInput from "../editor-components/number-input";
+import EpOption from "../editor-components/option";
+import EpColorPicker from "../editor-components/color-picker";
   import ChartSection from "../widgets/chart-section"
 
   export default {
     name: "grid-editor",
     props: ["t", "editor", "onChange"],
     components: {
-      ChartSection
+      ChartSection,
+      EpNumberInput,
+      EpOption,
+      EpInput,
+      EpCheckBox,
+      EpSelect,
+      EpColorPicker
     },
     data() {
       return {

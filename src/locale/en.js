@@ -87,6 +87,9 @@ export default {
         renderMode:{
           label:"RenderMode"
         },
+        className:{
+          label:"ClassName"
+        },
         confine:{
           label:"Confine"
         },
