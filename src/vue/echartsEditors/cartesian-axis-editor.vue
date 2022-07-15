@@ -4,7 +4,23 @@
 
 <script>
   export default {
-    name: "cartesian-axis-editor"
+    name: "cartesian-axis-editor",
+    props: ["t", "editor", "onChange", "axis"],
+    data () {
+      return {
+        axis: {
+
+        }
+      }
+    },
+    watch: {
+      title: {
+        handler() {
+          this.onChange();
+        },
+        deep: true
+      }
+    },
   }
 </script>
 
