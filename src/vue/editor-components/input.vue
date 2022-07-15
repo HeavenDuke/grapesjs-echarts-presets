@@ -5,7 +5,7 @@
     </div>
     <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
       <label class="gjs-field gjs-field-text" data-input="">
-        <input :type="Type" v-model="value">
+        <input :type="Type" :rows="rows" v-model="value">
       </label>
     </div>
   </div>
