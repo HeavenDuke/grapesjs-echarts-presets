@@ -101,7 +101,7 @@ export default {
         confine: false,
         appendToBody: false,
         // className:'',
-        transitionDuration: "0.4",
+        transitionDuration: 0.4,
         position: "none",
         // formatter:'',
         // valueFormatter:'',
