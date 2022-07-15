@@ -36,7 +36,13 @@
     },
     watch: {
       value(val) {
-        console.log('number', val)
+        if (this.min || this.min === 0) {
+          this.value = Math.max(this.min, val)
+        }
+        if (this.max || this.max === 0) {
+          this.value = Math.min(this.max, val)
+        }
+        val = this.value
         this.$emit('input', parseFloat(val))
       }
     },

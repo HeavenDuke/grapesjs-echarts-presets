@@ -32,7 +32,7 @@
       <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.confine.label')" v-model="tooltip.confine"/>
       <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.appendToBody.label')"
                     v-model="tooltip.appendToBody"/>
-      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.transitionDuration.label')" Type="number"
+      <ep-number-input :label="t('grapesjs-echarts-presets.config.tooltip.transitionDuration.label')" :min="0" :max="1" :step="0.1"
                 v-model="tooltip.transitionDuration"/>
       <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.position.label')"
                  :placeholder="t('grapesjs-echarts-presets.config.tooltip.position.placeholder')"
@@ -49,6 +49,8 @@
       <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.padding.label')" Type="number"
                 v-model="tooltip.padding"/>
       <text-style-editor :title="t('grapesjs-echarts-presets.config.tooltip.textStyle.label')" :t="t" v-model="tooltip.textStyle"></text-style-editor>
+      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.extraCssText.label')" Type="textarea" rows="4"
+                v-model="tooltip.extraCssText"/>
       <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.order.label')"
                  :placeholder="t('grapesjs-echarts-presets.config.tooltip.order.placeholder')"
                  v-model="tooltip.order">
@@ -60,10 +62,11 @@
 </template>
 
 <script>
-import EpCheckBox from "../editor-components/checkbox";
 import ChartSection from "../widgets/chart-section";
+import EpCheckBox from "../editor-components/checkbox";
 import EpSelect from "../editor-components/select";
 import EpInput from "../editor-components/input";
+import EpNumberInput from "../editor-components/number-input";
 import EpOption from "../editor-components/option";
 import EpColorPicker from "../editor-components/color-picker";
 import {TOOLTIP} from "@/vue/utils/smallDict";
@@ -77,6 +80,7 @@ export default {
     EpCheckBox,
     EpSelect,
     EpInput,
+    EpNumberInput,
     EpOption,
     EpColorPicker,
     TextStyleEditor
@@ -112,7 +116,7 @@ export default {
           fontFamily: 'sans-serif',
           fontSize: 14,
         },
-        // extraCssText:'',
+        extraCssText:'',
         order:'seriesAsc'
 
       },
