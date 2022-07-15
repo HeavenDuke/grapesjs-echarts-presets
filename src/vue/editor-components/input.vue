@@ -17,7 +17,8 @@ export default {
   props:{
     label:String,
     Type:String,
-    value:String
+    value:String,
+    rows: String
   },
   data(){
     return{
