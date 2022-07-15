@@ -6,7 +6,7 @@
         <div class="gjs-field-wrp gjs-field-wrp--text">
             <div class="gjs-field gjs-select">
                 <select v-model="value" data-input>
-                    <ep-option value="">{{placeholder}}</ep-option>
+                    <ep-option :value="placeholder" disabled>{{placeholder}}</ep-option>
                     <slot></slot>
                 </select>
                 <div class="gjs-sel-arrow">
@@ -26,7 +26,10 @@
     props: {
       label: String,
       value: String,
-      placeholder: String
+      placeholder: {
+        type:String,
+        default:'-select-'
+      }
     },
     components: {
       EpOption

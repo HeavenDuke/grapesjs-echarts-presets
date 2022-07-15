@@ -24,7 +24,6 @@
     name: "ep-color-picker",
     props: {
       label: String,
-      Type: String,
       value: String
     },
     data() {

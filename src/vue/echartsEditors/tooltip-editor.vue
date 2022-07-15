@@ -1,138 +1,127 @@
 <template>
   <chart-section :title="t('grapesjs-echarts-presets.config.tooltip.label')">
     <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
-<!--      内容区-->
+      <!--      内容区-->
+      <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.show.label')" v-model="tooltip.show"/>
+      <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.trigger.label')"
+                 :placeholder="t('grapesjs-echarts-presets.config.tooltip.trigger.placeholder')"
+                 v-model="tooltip.trigger"
+      >
 
-      <check-box :label="t('grapesjs-echarts-presets.config.tooltip.show.label')" v-model="tooltip.show"></check-box>
-      <Select :label="t('grapesjs-echarts-presets.config.tooltip.trigger')" v-model="tooltip.trigger" :data="trigger"></Select>
-      <check-box :label="t('grapesjs-echarts-presets.config.tooltip.showContent.label')" v-model="tooltip.showContent"></check-box>
-      <check-box :label="t('grapesjs-echarts-presets.config.tooltip.alwaysShowContent.label')" v-model="tooltip.alwaysShowContent"></check-box>
-      <Select :label="t('grapesjs-echarts-presets.config.tooltip.triggerOn')" v-model="tooltip.triggerOn" :data="triggerOn"></Select>
-      <Input :label="t('grapesjs-echarts-presets.config.tooltip.showDelay.label')" Type="number" v-model="tooltip.showDelay"></Input>
-      <Input :label="t('grapesjs-echarts-presets.config.tooltip.hideDelay.label')" Type="number" v-model="tooltip.hideDelay"></Input>
+        <ep-option v-for="val in trigger" :value="val.value" :label="val.name"></ep-option>
+      </ep-select>
+      <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.showContent.label')"
+                    v-model="tooltip.showContent"/>
+      <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.alwaysShowContent.label')"
+                    v-model="tooltip.alwaysShowContent"/>
+      <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.triggerOn.label')"
+                 :placeholder="t('grapesjs-echarts-presets.config.tooltip.triggerOn.placeholder')"
+                 v-model="tooltip.triggerOn">
+        <ep-option v-for="val in triggerOn" :value="val.value" :label="val.name"></ep-option>
+      </ep-select>
+      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.showDelay.label')" Type="number"
+                v-model="tooltip.showDelay"/>
+      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.hideDelay.label')" Type="number"
+                v-model="tooltip.hideDelay"/>
+      <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.enterable.label')" v-model="tooltip.enterable"/>
+      <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.renderMode.label')"
+                 :placeholder="t('grapesjs-echarts-presets.config.tooltip.renderMode.placeholder')"
+                 v-model="tooltip.renderMode">
+        <ep-option v-for="val in renderMode" :value="val.value" :label="val.name"></ep-option>
+      </ep-select>
+      <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.confine.label')" v-model="tooltip.confine"/>
+      <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.appendToBody.label')"
+                    v-model="tooltip.appendToBody"/>
+      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.transitionDuration.label')" Type="number"
+                v-model="tooltip.transitionDuration"/>
+      <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.position.label')"
+                 :placeholder="t('grapesjs-echarts-presets.config.tooltip.position.placeholder')"
+                 v-model="tooltip.position">
+        <ep-option v-for="val in position" :value="val.value" :label="val.name"></ep-option>
+      </ep-select>
 
-
-      <div class="gjs-trt-trait">
-        <div class="gjs-label-wrp" data-label>
-          <div class="gjs-label" title="enterable">{{t('grapesjs-echarts-presets.config.tooltip.enterable.label')}}</div>
-        </div>
-        <div class="gjs-field-wrp gjs-field-wrp--checkbox" data-input="">
-          <label class="gjs-field gjs-field-checkbox" data-input="">
-            <input type="checkbox" v-model="tooltip.enterable">
-            <i class="gjs-chk-icon"></i>
-          </label>
-        </div>
-      </div>
-      <div class="gjs-trt-trait">
-        <div class="gjs-label-wrp" data-label>
-          <div class="gjs-label" title="triggerOn">{{t('grapesjs-echarts-presets.config.tooltip.renderMode.label')}}</div>
-        </div>
-        <div class="gjs-field-wrp gjs-field-wrp--text">
-          <div class="gjs-field gjs-select">
-
-            <select v-model="tooltip.renderMode" data-input>
-              <option disabled selected>{{t('grapesjs-echarts-presets.config.tooltip.renderMode.placeholder')}}</option>
-              <option  v-for="val in renderMode" :value="val">{{val}}</option>
-            </select>
-            <div class="gjs-sel-arrow">
-              <div class="gjs-d-s-arrow"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="gjs-trt-trait">
-        <div class="gjs-label-wrp" data-label>
-          <div class="gjs-label" title="confine">{{t('grapesjs-echarts-presets.config.tooltip.confine.label')}}</div>
-        </div>
-        <div class="gjs-field-wrp gjs-field-wrp--checkbox" data-input="">
-          <label class="gjs-field gjs-field-checkbox" data-input="">
-            <input type="checkbox" v-model="tooltip.confine">
-            <i class="gjs-chk-icon"></i>
-          </label>
-        </div>
-      </div>
-
-<!--      <CheckBox :data="tooltip.appendToBody" :show-name="t('grapesjs-echarts-presets.config.tooltip.appendToBody.label')"></CheckBox>-->
-      <div class="gjs-trt-trait">
-        <div class="gjs-label-wrp" data-label>
-          <div class="gjs-label" title="appendToBody">{{t('grapesjs-echarts-presets.config.tooltip.appendToBody.label')}}</div>
-        </div>
-        <div class="gjs-field-wrp gjs-field-wrp--checkbox" data-input="">
-          <label class="gjs-field gjs-field-checkbox" data-input="">
-            <input type="checkbox" v-model="tooltip.appendToBody">
-            <i class="gjs-chk-icon"></i>
-          </label>
-        </div>
-      </div>
+      <ep-color-picker :label="t('grapesjs-echarts-presets.config.tooltip.backgroundColor.label')"
+                       v-model="tooltip.backgroundColor"/>
+      <ep-color-picker :label="t('grapesjs-echarts-presets.config.tooltip.borderColor.label')"
+                       v-model="tooltip.borderColor"/>
+      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.borderWidth.label')" Type="number"
+                v-model="tooltip.borderWidth"/>
+      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.padding.label')" Type="number"
+                v-model="tooltip.padding"/>
+      <text-style-editor :title="t('grapesjs-echarts-presets.config.tooltip.textStyle.label')" :t="t" v-model="tooltip.textStyle"></text-style-editor>
+      <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.order.label')"
+                 :placeholder="t('grapesjs-echarts-presets.config.tooltip.order.placeholder')"
+                 v-model="tooltip.order">
+        <ep-option v-for="val in order" :value="val.value" :label="val.name"></ep-option>
+      </ep-select>
 
     </div>
   </chart-section>
 </template>
 
 <script>
-import CheckBox from "../editor-components/checkbox"
-import ChartSection from "../widgets/chart-section"
-import Select from "../editor-components/select"
-import Input from "../editor-components/input"
+import EpCheckBox from "../editor-components/checkbox";
+import ChartSection from "../widgets/chart-section";
+import EpSelect from "../editor-components/select";
+import EpInput from "../editor-components/input";
+import EpOption from "../editor-components/option";
+import EpColorPicker from "../editor-components/color-picker";
+import {TOOLTIP} from "@/vue/utils/smallDict";
+import TextStyleEditor from "../text-style-editor"
+
 export default {
   name: "tooltip-editor",
   props: ["t", "editor", "onChange"],
   components: {
     ChartSection,
-    CheckBox,
-    Select,
-    Input
+    EpCheckBox,
+    EpSelect,
+    EpInput,
+    EpOption,
+    EpColorPicker,
+    TextStyleEditor
   },
   data() {
     return {
       tooltip: {
         show: true,
-        trigger:"item",
+        trigger: "item",
         // axisPointer:{},
-        showContent:true,
-        alwaysShowContent:false,
-        triggerOn:"mousemove|click",
-        showDelay:'0',
-        hideDelay:'100',
-        enterable:false,
-        renderMode:'html',
-        confine:false,
-        appendToBody:false,
+        showContent: true,
+        alwaysShowContent: false,
+        triggerOn: "mousemove|click",
+        showDelay: "0",
+        hideDelay: "100",
+        enterable: false,
+        renderMode: "html",
+        confine: false,
+        appendToBody: false,
         // className:'',
-        // transitionDuration:'0.4',
-        // position:'',
+        transitionDuration: "0.4",
+        position: "none",
         // formatter:'',
         // valueFormatter:'',
-        // backgroundColor:'rgba(50,50,50,0.7)',
-        // borderColor:'#333',
-        // borderWidth:'0',
-        // padding:'5',
-        // textStyle:{},
+        backgroundColor: "rgba(50,50,50,0.7)",
+        borderColor:"#333333",
+        borderWidth:'0',
+        padding:'5',
+        textStyle:{
+          color:'#ffffff',
+          fontStyle: 'normal',
+          fontWeight: 'normal',
+          fontFamily: 'sans-serif',
+          fontSize: 14,
+        },
         // extraCssText:'',
-        // order:['seriesAsc','seriesDesc','valueAsc','valueDesc']
+        order:'seriesAsc'
 
       },
-      trigger:['item','axis','none'],
-      triggerOn:['mousemove','click','mousemove|click','none'],
-      renderMode:['html','richText'],
-      positions: [{
-        name: "top",
-        value: "60",
-        unit: "px"
-      }, {
-        name: "right",
-        value: "10",
-        unit: "%"
-      }, {
-        name: "bottom",
-        value: "60",
-        unit: "px"
-      }, {
-        name: "left",
-        value: "10",
-        unit: "%"
-      }],
-      units: ["px", "%", "em", "rem", "vh", "vw"],
+      order:TOOLTIP.order,
+      trigger: TOOLTIP.trigger,
+      triggerOn: TOOLTIP.triggerOn,
+      renderMode: TOOLTIP.renderMode,
+      position: TOOLTIP.position,
+
     };
   },
   watch: {
@@ -142,20 +131,8 @@ export default {
       },
       deep: true
     },
-    positions: {
-      handler(newValue) {
-        for (let i = 0; i < newValue.length; i++) {
-          let pos = newValue[i];
-          this.tooltip[pos.name] = `${pos.value}${pos.unit}`;
-        }
-        this.onChange();
-      },
-      deep: true
-    }
   },
-  methods: {
-
-  }
+  methods: {}
 };
 </script>
 
