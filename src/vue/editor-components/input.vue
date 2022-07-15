@@ -5,7 +5,7 @@
     </div>
     <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
       <label class="gjs-field gjs-field-text" data-input="">
-        <input type="text" :name="label" v-model="value">
+        <input type="text" :name="label" v-model="value" :placeholder="placeholder">
       </label>
     </div>
   </div>
@@ -16,6 +16,10 @@ export default {
   name: "ep-input",
   props:{
     label:String,
+    placeholder:{
+      type:String,
+      default:'please input'
+    },
     value:String
   },
   data(){

@@ -2,11 +2,11 @@
     <chart-section :title="t('grapesjs-echarts-presets.config.title.label')">
         <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
             <ep-check-box :label="t('grapesjs-echarts-presets.config.title.show.label')" v-model="title.show"></ep-check-box>
-            <ep-input :label="t('grapesjs-echarts-presets.config.title.text.label')" v-model="title.text"></ep-input>
-            <ep-input :label="t('grapesjs-echarts-presets.config.title.link.label')" v-model="title.link"></ep-input>
+            <ep-input :label="t('grapesjs-echarts-presets.config.title.text.label')" :placeholder="t('grapesjs-echarts-presets.config.title.text.placeholder')" v-model="title.text"></ep-input>
+            <ep-input :label="t('grapesjs-echarts-presets.config.title.link.label')" :placeholder="t('grapesjs-echarts-presets.config.title.link.placeholder')" v-model="title.link"></ep-input>
             <text-style-editor :title="t('grapesjs-echarts-presets.config.title.textStyle.label')" :t="t" v-model="title.textStyle"></text-style-editor>
-            <ep-input :label="t('grapesjs-echarts-presets.config.title.subtext.label')" v-model="title.subtext"></ep-input>
-            <ep-input :label="t('grapesjs-echarts-presets.config.title.sublink.label')" v-model="title.sublink"></ep-input>
+            <ep-input :label="t('grapesjs-echarts-presets.config.title.subtext.label')" :placeholder="t('grapesjs-echarts-presets.config.title.subtext.placeholder')" v-model="title.subtext"></ep-input>
+            <ep-input :label="t('grapesjs-echarts-presets.config.title.sublink.label')" :placeholder="t('grapesjs-echarts-presets.config.title.sublink.placeholder')" v-model="title.sublink"></ep-input>
             <text-style-editor :title="t('grapesjs-echarts-presets.config.title.subTextStyle.label')" :t="t" v-model="title.subtextStyle"></text-style-editor>
             <ep-number-input :label="t('grapesjs-echarts-presets.config.title.itemGap.label')" v-model="title.itemGap"></ep-number-input>
             <ep-select
