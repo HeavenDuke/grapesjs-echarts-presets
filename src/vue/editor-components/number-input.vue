@@ -9,8 +9,8 @@
                     <input type="text" placeholder="auto" v-model="value">
                 </span>
                 <div class="gjs-field-arrows" data-arrows="">
-                    <div class="gjs-field-arrow-u" @click="value = value + step"></div>
-                    <div class="gjs-field-arrow-d" @click="value = value - step"></div>
+                    <div class="gjs-field-arrow-u" @click="value = (max || max === 0) && value + step > max ? max : value + step"></div>
+                    <div class="gjs-field-arrow-d" @click="value = (min || min === 0) && value - step < min ? min : value - step"></div>
                 </div>
             </div>
         </div>
@@ -36,17 +36,17 @@
     },
     watch: {
       value(val) {
-        if (this.min || this.min === 0) {
-          this.value = Math.max(this.min, val)
+        if (typeof val === 'string') {
+          val = parseFloat(val)
         }
-        if (this.max || this.max === 0) {
-          this.value = Math.min(this.max, val)
-        }
-        val = this.value
-        this.$emit('input', parseFloat(val))
+        this.$emit('input', parseFloat(val.toFixed(this.getPrecision())))
       }
     },
-
+    methods: {
+      getPrecision () {
+        return Math.round(-Math.log10(this.step) + 6)
+      }
+    }
   };
 </script>
 
