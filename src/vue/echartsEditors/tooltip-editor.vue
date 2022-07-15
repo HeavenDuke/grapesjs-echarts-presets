@@ -19,10 +19,10 @@
                  v-model="tooltip.triggerOn">
         <ep-option v-for="val in triggerOn" :value="val.value" :label="val.name"></ep-option>
       </ep-select>
-      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.showDelay.label')" Type="number"
-                v-model="tooltip.showDelay"/>
-      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.hideDelay.label')" Type="number"
-                v-model="tooltip.hideDelay"/>
+      <ep-number-input :label="t('grapesjs-echarts-presets.config.tooltip.showDelay.label')" :min="0"
+                       v-model="tooltip.showDelay"/>
+      <ep-number-input :label="t('grapesjs-echarts-presets.config.tooltip.hideDelay.label')" :min="0"
+                       v-model="tooltip.hideDelay"/>
       <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.enterable.label')" v-model="tooltip.enterable"/>
       <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.renderMode.label')"
                  :placeholder="t('grapesjs-echarts-presets.config.tooltip.renderMode.placeholder')"
@@ -32,25 +32,32 @@
       <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.confine.label')" v-model="tooltip.confine"/>
       <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.appendToBody.label')"
                     v-model="tooltip.appendToBody"/>
-      <ep-number-input :label="t('grapesjs-echarts-presets.config.tooltip.transitionDuration.label')" :min="0" :max="1" :step="0.1"
-                v-model="tooltip.transitionDuration"/>
+      <ep-input v-model="tooltip.className" :label="t('grapesjs-echarts-presets.config.tooltip.className.label')" :placeholder="t('grapesjs-echarts-presets.config.tooltip.className.placeholder')"></ep-input>
+      <ep-number-input :label="t('grapesjs-echarts-presets.config.tooltip.transitionDuration.label')" :min="0" :max="1"
+                       :step="0.1"
+                       v-model="tooltip.transitionDuration"/>
       <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.position.label')"
                  :placeholder="t('grapesjs-echarts-presets.config.tooltip.position.placeholder')"
                  v-model="tooltip.position">
         <ep-option v-for="val in position" :value="val.value" :label="val.name"></ep-option>
       </ep-select>
+      <ep-text-area v-model="tooltip.formatter"
+                    :label="t('grapesjs-echarts-presets.config.tooltip.formatter.label')"
+                    :placeholder="t('grapesjs-echarts-presets.config.tooltip.formatter.placeholder')"></ep-text-area>
 
       <ep-color-picker :label="t('grapesjs-echarts-presets.config.tooltip.backgroundColor.label')"
                        v-model="tooltip.backgroundColor"/>
       <ep-color-picker :label="t('grapesjs-echarts-presets.config.tooltip.borderColor.label')"
                        v-model="tooltip.borderColor"/>
-      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.borderWidth.label')" Type="number"
-                v-model="tooltip.borderWidth"/>
-      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.padding.label')" Type="number"
-                v-model="tooltip.padding"/>
-      <text-style-editor :title="t('grapesjs-echarts-presets.config.tooltip.textStyle.label')" :t="t" v-model="tooltip.textStyle"></text-style-editor>
-      <ep-input :label="t('grapesjs-echarts-presets.config.tooltip.extraCssText.label')" Type="textarea" rows="4"
-                v-model="tooltip.extraCssText"/>
+      <ep-number-input :label="t('grapesjs-echarts-presets.config.tooltip.borderWidth.label')"
+                       v-model="tooltip.borderWidth"/>
+      <ep-number-input :label="t('grapesjs-echarts-presets.config.tooltip.padding.label')"
+                       v-model="tooltip.padding"/>
+      <text-style-editor :title="t('grapesjs-echarts-presets.config.tooltip.textStyle.label')" :t="t"
+                         v-model="tooltip.textStyle"></text-style-editor>
+      <ep-text-area v-model="tooltip.extraCssText"
+                    :label="t('grapesjs-echarts-presets.config.tooltip.extraCssText.label')"
+                    :placeholder="t('grapesjs-echarts-presets.config.tooltip.extraCssText.placeholder')"></ep-text-area>
       <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.order.label')"
                  :placeholder="t('grapesjs-echarts-presets.config.tooltip.order.placeholder')"
                  v-model="tooltip.order">
@@ -69,8 +76,9 @@ import EpInput from "../editor-components/input";
 import EpNumberInput from "../editor-components/number-input";
 import EpOption from "../editor-components/option";
 import EpColorPicker from "../editor-components/color-picker";
+import EpTextArea from "../editor-components/textarea";
 import {TOOLTIP} from "@/vue/utils/smallDict";
-import TextStyleEditor from "../text-style-editor"
+import TextStyleEditor from "../text-style-editor";
 
 export default {
   name: "tooltip-editor",
@@ -83,7 +91,8 @@ export default {
     EpNumberInput,
     EpOption,
     EpColorPicker,
-    TextStyleEditor
+    TextStyleEditor,
+    EpTextArea
   },
   data() {
     return {
@@ -100,27 +109,27 @@ export default {
         renderMode: "html",
         confine: false,
         appendToBody: false,
-        // className:'',
+        className:'',
         transitionDuration: 0.4,
-        position: "none",
-        // formatter:'',
+        position: "",
+        formatter:'',
         // valueFormatter:'',
         backgroundColor: "rgba(50,50,50,0.7)",
-        borderColor:"#333333",
-        borderWidth:'0',
-        padding:'5',
-        textStyle:{
-          color:'#ffffff',
-          fontStyle: 'normal',
-          fontWeight: 'normal',
-          fontFamily: 'sans-serif',
+        borderColor: "#333333",
+        borderWidth: "0",
+        padding: "5",
+        textStyle: {
+          color: "#ffffff",
+          fontStyle: "normal",
+          fontWeight: "normal",
+          fontFamily: "sans-serif",
           fontSize: 14,
         },
-        extraCssText:'',
-        order:'seriesAsc'
+        extraCssText: "",
+        order: "seriesAsc"
 
       },
-      order:TOOLTIP.order,
+      order: TOOLTIP.order,
       trigger: TOOLTIP.trigger,
       triggerOn: TOOLTIP.triggerOn,
       renderMode: TOOLTIP.renderMode,
