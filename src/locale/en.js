@@ -120,6 +120,9 @@ export default {
         textStyle:{
           label:"TextStyle"
         },
+        extraCssText:{
+          label:"ExtraCssText"
+        },
         order:{
           label:"Order"
         }

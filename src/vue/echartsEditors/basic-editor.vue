@@ -1,55 +1,17 @@
 <template>
   <chart-section :title="t('grapesjs-echarts-presets.config.basic.label')">
     <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
-      <div class="gjs-trt-trait">
-        <div class="gjs-label-wrp" data-label>
-          <div class="gjs-label" title="Color">{{ t("grapesjs-echarts-presets.config.basic.color.label") }}</div>
-        </div>
-        <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-          <label class="gjs-field gjs-field-text" data-input="">
-            <input type="color" v-model="basic.color">
-          </label>
-        </div>
-      </div>
-      <div class="gjs-trt-trait">
-        <div class="gjs-label-wrp" data-label>
-          <div class="gjs-label" title="BackgroundColor">
-            {{ t("grapesjs-echarts-presets.config.basic.backgroundColor.label") }}
-          </div>
-        </div>
-        <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-          <label class="gjs-field gjs-field-text" data-input="">
-            <input type="color" v-model="basic.backgroundColor">
-          </label>
-        </div>
-      </div>
-      <div class="gjs-trt-trait">
-        <div class="gjs-label-wrp" data-label>
-          <div class="gjs-label" title="Animation">{{ t("grapesjs-echarts-presets.config.basic.animation.label") }}
-          </div>
-        </div>
-        <div class="gjs-field-wrp gjs-field-wrp--checkbox" data-input="">
-          <label class="gjs-field gjs-field-checkbox" data-input="" >
-            <input type="checkbox" v-model="basic.animation" @click="animationShow=!animationShow">
-            <i class="gjs-chk-icon"></i>
-          </label>
-        </div>
 
-        </div>
-      <div class="gjs-fields" data-sm-fields="" v-show="!animationShow">
+      <ep-color-picker v-model="basic.color" :label='t("grapesjs-echarts-presets.config.basic.color.label")'/>
+      <ep-color-picker v-model="basic.backgroundColor" :label='t("grapesjs-echarts-presets.config.basic.backgroundColor.label")'/>
+      <ep-check-box v-model="basic.animation"  :label='t("grapesjs-echarts-presets.config.basic.animation.label")'></ep-check-box>
+
+
+      <div class="gjs-fields" data-sm-fields="" v-show="basic.animation">
         <div class="gjs-sm-field gjs-sm-composite">
           <span id="gjs-sm-input-holder">
-            <div class="gjs-trt-trait">
-                <div class="gjs-label-wrp" data-label>
-                    <div class="gjs-label" title="animationThreshold">{{t('grapesjs-echarts-presets.config.basic.animationThreshold.label')}}</div>
-                </div>
-                <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-                    <label class="gjs-field gjs-field-text" data-input="">
-                        <input type="number" v-model="basic.animationThreshold">
-                    </label>
-                </div>
 
-            </div>
+            <ep-input v-model="basic.animationThreshold" :label="t('grapesjs-echarts-presets.config.basic.animationThreshold.label')" Type="number"></ep-input>
             <div class="gjs-sm-property gjs-sm-number gjs-sm-integer gjs-sm-property__margin-top">
                <div class="gjs-sm-label" data-sm-label="">
                  <span class="gjs-sm-icon " title="animationDuration">{{t("grapesjs-echarts-presets.config.basic.animationDuration.label")}}</span>
@@ -136,19 +98,8 @@
           </span>
         </div>
       </div>
-      <div class="gjs-trt-trait">
-        <div class="gjs-label-wrp" data-label>
-          <div class="gjs-label" title="useUTC">{{ t("grapesjs-echarts-presets.config.basic.useUTC.label") }}
-          </div>
-        </div>
-        <div class="gjs-field-wrp gjs-field-wrp--checkbox" data-input="">
-          <label class="gjs-field gjs-field-checkbox" data-input="" >
-            <input type="checkbox" v-model="basic.useUTC">
-            <i class="gjs-chk-icon"></i>
-          </label>
-        </div>
 
-      </div>
+      <ep-check-box v-model="basic.useUTC" :label='t("grapesjs-echarts-presets.config.basic.useUTC.label")'></ep-check-box>
       <div class="gjs-trt-trait">
         <div class="gjs-label-wrp" data-label>
           <div class="gjs-label" title="blendMode">{{t('grapesjs-echarts-presets.config.basic.blendMode.label')}}</div>
@@ -163,36 +114,49 @@
           </div>
         </div>
       </div>
+      <ep-select v-model="basic.blendMode" :label="t('grapesjs-echarts-presets.config.basic.blendMode.label')" :placeholder='t("grapesjs-echarts-presets.config.basic.blendMode.placeholder")'>
+        <ep-option v-for="val in blendMode" v-model="val.value" :label="val.name"></ep-option>
+      </ep-select>
+      <div class="gjs-trt-trait">
+        <div class="gjs-label-wrp" data-label>
+          <div class="gjs-label" title="hoverLayerThreshold">{{t('grapesjs-echarts-presets.config.basic.hoverLayerThreshold.label')}}</div>
+        </div>
+        <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+          <label class="gjs-field gjs-field-text" data-input="">
+            <input type="number" v-model="basic.hoverLayerThreshold">
+          </label>
+        </div>
+      </div>
+      </div>
 
-      </div>
-    <div class="gjs-trt-trait">
-      <div class="gjs-label-wrp" data-label>
-        <div class="gjs-label" title="hoverLayerThreshold">{{t('grapesjs-echarts-presets.config.basic.hoverLayerThreshold.label')}}</div>
-      </div>
-      <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-        <label class="gjs-field gjs-field-text" data-input="">
-          <input type="number" v-model="basic.hoverLayerThreshold">
-        </label>
-      </div>
-    </div>
   </chart-section>
 </template>
 
 <script>
 
 import ChartSection from "../widgets/chart-section";
+import EpCheckBox from "../editor-components/checkbox";
+import EpSelect from "../editor-components/select";
+import EpInput from "../editor-components/input";
+import EpOption from "../editor-components/option";
+import EpColorPicker from "../editor-components/color-picker";
 
 export default {
   name: "basic-editor",
   props: ["t", "editor", "onChange"],
   components: {
-    ChartSection
+    ChartSection,
+    EpColorPicker,
+    EpSelect,
+    EpCheckBox,
+    EpInput,
+    EpOption
   },
   data() {
     return {
       basic: {
         color: "rgba(0, 0, 0, 0)",
-        backgroundColor: "transparent",
+        backgroundColor: "none",
         animation: true,
         // animationShow: false,
         useUTC:false,
