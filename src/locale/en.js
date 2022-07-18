@@ -180,8 +180,6 @@ export default {
         useUTC:{
           label:"UseUTC"
         }
-
-
       },
       grid: {
         label: 'Grid',
@@ -335,21 +333,42 @@ export default {
         }
       },
       textStyle: {
-        label: 'Text Style',
+        label: "Text Style",
         fontFamily: {
-          label: 'Font'
+          label: "Font"
         },
         fontSize: {
-          label: 'Font Size'
+          label: "Font Size"
         },
         fontWeight: {
-          label: 'Font Weight'
+          label: "Font Weight"
         },
         lineHeight: {
-          label: 'Line Height'
+          label: "Line Height"
         },
         color: {
-          label: 'Color'
+          label: "Color"
+        },
+        backgroundColor: {
+          label: "Background"
+        },
+        align: {
+          label: "Align"
+        },
+        verticalAlign: {
+          label: "Vertical Align"
+        },
+        borderColor: {
+          label: "Border Color"
+        },
+        borderWidth: {
+          label: "Border Width"
+        },
+        borderType: {
+          label: "Border Type"
+        },
+        padding: {
+          label: "Padding"
         }
       },
       lineStyle: {

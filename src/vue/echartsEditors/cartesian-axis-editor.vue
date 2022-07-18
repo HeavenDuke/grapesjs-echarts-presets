@@ -20,6 +20,7 @@
             <ep-number-input v-if="axis.type === 'value'" :label="t('grapesjs-echarts-presets.config.axis.interval.label')" v-model="axis.interval"></ep-number-input>
             <ep-number-input :label="t('grapesjs-echarts-presets.config.axis.z.label')" v-model="axis.z"></ep-number-input>
             <ep-number-input :label="t('grapesjs-echarts-presets.config.axis.zlevel.label')" v-model="axis.zlevel"></ep-number-input>
+            <text-style-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.nameTextStyle.label')" v-model="axis.nameTextStyle"></text-style-editor>
         </div>
     </chart-section>
 </template>
@@ -35,6 +36,7 @@
   import EpCheckBox from "../editor-components/checkbox"
   import EpColorPicker from "../editor-components/color-picker"
   import { SERIES_TYPES } from "@/vue/utils/smallDict";
+  import { TEXT_STYLE } from "@/vue/utils/templates";
 
   export default {
     name: "cartesian-axis-editor",
@@ -59,36 +61,21 @@
           type: 'category',
           name: '',
           nameLocation: 'end',
-          nameTextStyle: {
-            color: '',
-            fontStyle: 'normal',
-            fontWeight: 'normal',
-            fontFamily: 'sans-serif',
-            fontSize: 12,
-          },
+          nameTextStyle: Object.assign({}, TEXT_STYLE),
           nameGap: 15,
           nameRotate: 0,
           inverse: false,
-          boundaryGap: '',
+          boundaryGap: true,
           min: '',
           max: '',
-          scale: false ,
-          splitNumber: 5,
-          minInterval: 0,
+          scale: false,
+          splitNumber: '',
+          minInterval: '',
           maxInterval: '',
           interval: '',
           logBase: 10,
           silent: false,
           triggerEvent: false,
-          axisLine: {} ,
-          axisTick: {} ,
-          minorTick: {} ,
-          axisLabel: {} ,
-          splitLine: {} ,
-          minorSplitLine: {} ,
-          splitArea: {} ,
-          data: [] ,
-          axisPointer: {} ,
           zlevel: 0 ,
           z: 0 ,
         },

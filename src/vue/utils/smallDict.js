@@ -39,3 +39,5 @@ export let SERIES_TYPES = [
   'time',
   'log'
 ]
+
+export let UNITS = ["px", "%", "em", "rem", "vh", "vw"]

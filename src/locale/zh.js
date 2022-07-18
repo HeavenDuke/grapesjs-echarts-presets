@@ -271,6 +271,27 @@ export default {
         },
         color: {
           label: '颜色'
+        },
+        backgroundColor: {
+          label: "背景色"
+        },
+        align: {
+          label: "水平对齐"
+        },
+        verticalAlign: {
+          label: "垂直对齐"
+        },
+        borderColor: {
+          label: "边框颜色"
+        },
+        borderWidth: {
+          label: "边框粗细"
+        },
+        borderType: {
+          label: "边框类型"
+        },
+        padding: {
+          label: "内边距"
         }
       },
       lineStyle: {
