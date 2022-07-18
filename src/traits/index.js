@@ -8,6 +8,7 @@ import echartsYAxis from "./echartsTraits/echarts-y-axis";
 import echartsRadiusAxis from "./echartsTraits/echarts-radius-axis";
 import echartsAngleAxis from "./echartsTraits/echarts-angle-axis";
 import echartsSingleAxis from "./echartsTraits/echarts-single-axis";
+import echartsParallelAxis from "./echartsTraits/echarts-parallel-axis";
 import echartsToolbox from "./echartsTraits/echarts-toolbox";
 
 export default {
@@ -21,5 +22,6 @@ export default {
   "echarts-radius-axis-trait": echartsRadiusAxis,
   "echarts-angle-axis-trait": echartsAngleAxis,
   "echarts-single-axis-trait": echartsSingleAxis,
+  "echarts-parallel-axis-trait": echartsParallelAxis,
   "echarts-toolbox-trait": echartsToolbox,
 };

@@ -23,6 +23,7 @@ export default ({
           this.on("change:attributes:data-ecg-radius-axis", this.updateChart);
           this.on("change:attributes:data-ecg-angle-axis", this.updateChart);
           this.on("change:attributes:data-ecg-single-axis", this.updateChart);
+          this.on("change:attributes:data-ecg-parallel-axis", this.updateChart);
           setTimeout(() => {
             this.updateChart();
           }, 100);
@@ -43,6 +44,7 @@ export default ({
           const radiusAxis = JSON.parse(this.get("attributes")["data-ecg-radius-axis"] || "{}");
           const angleAxis = JSON.parse(this.get("attributes")["data-ecg-angle-axis"] || "{}");
           const singleAxis = JSON.parse(this.get("attributes")["data-ecg-single-axis"] || "{}");
+          const parallelAxis = JSON.parse(this.get("attributes")["data-ecg-parallel-axis"] || "{}");
 
           const option = this.getOptions({
             basic,
@@ -55,7 +57,8 @@ export default ({
             yAxis,
             radiusAxis,
             angleAxis,
-            singleAxis
+            singleAxis,
+            parallelAxis
           });
 
           // console.log(option)
@@ -108,6 +111,9 @@ export default ({
             },
             {
               type: "echarts-angle-axis-trait"
+            },
+            {
+              type: "echarts-parallel-axis-trait"
             },
             {
               type: "echarts-title-trait"

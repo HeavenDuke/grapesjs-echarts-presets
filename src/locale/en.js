@@ -321,12 +321,27 @@ export default {
       singleAxis: {
         label: "Single Axis"
       },
+      parallelAxis: {
+        label: "Parallel Axis"
+      },
       axis: {
         show: {
           label: "Show"
         },
         polarIndex: {
           label: "Polar Index"
+        },
+        parallelIndex: {
+          label: "Parallel Index"
+        },
+        realtime: {
+          label: "Realtime Rendering"
+        },
+        areaSelectStyle: {
+          label: "Area Select Style"
+        },
+        dim: {
+          label: "Dimension Index"
         },
         name: {
           label: "Name"

@@ -210,6 +210,18 @@ export default {
         polarIndex: {
           label: "径向轴索引"
         },
+        parallelIndex: {
+          label: "坐标系索引"
+        },
+        realtime: {
+          label: "实时刷新"
+        },
+        areaSelectStyle: {
+          label: "框选设置"
+        },
+        dim: {
+          label: "数据维度"
+        },
         name: {
           label: "名称"
         },

@@ -1,4 +1,4 @@
-import AxisEditor from "../../vue/echartsEditors/single-axis-editor.vue";
+import AxisEditor from "../../vue/echartsEditors/parallel-axis-editor.vue";
 export default {
   // Expects as return a simple HTML string or an HTML element
   noLabel: true,
@@ -25,13 +25,13 @@ export default {
   onEvent({ component }) {
     const { axis } = this.inputInstance;
     component.addAttributes({
-      "data-ecg-single-axis": JSON.stringify(axis)
+      "data-ecg-parallel-axis": JSON.stringify(axis)
     });
     component.clearChart()
     component.view.render();
   },
   onUpdate({ component }) {
-    const axis = component.getAttributes()["data-ecg-single-axis"] || null;
+    const axis = component.getAttributes()["data-ecg-parallel-axis"] || null;
 
     if (axis) {
       this.inputInstance.axis = JSON.parse(axis);
