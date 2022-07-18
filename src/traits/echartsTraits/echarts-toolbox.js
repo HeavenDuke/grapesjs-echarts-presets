@@ -1,4 +1,4 @@
-import TooltipEditor from "../../vue/echartsEditors/tooltip-editor.vue";
+import ToolboxEditor from "../../vue/echartsEditors/toolbox-editor.vue";
 export default {
   // Expects as return a simple HTML string or an HTML element
   noLabel: true,
@@ -9,7 +9,7 @@ export default {
     const { Vue } = editor;
     const vueInstance = new Vue({
       render: (h) =>
-        h(TooltipEditor, {
+        h(ToolboxEditor, {
           props: {
             editor,
             t: (key) => intl.t(key),
@@ -23,19 +23,19 @@ export default {
   },
   // Update the component based element changes
   onEvent({ component }) {
-    const { tooltip } = this.inputInstance;
-    // console.log(tooltip)
+    const { toolbox } = this.inputInstance;
+    // console.log(toolbox)
     component.addAttributes({
-      "data-ecg-tooltip": JSON.stringify(tooltip)
+      "data-ecg-toolbox": JSON.stringify(toolbox)
     });
     component.clearChart()
     component.view.render();
   },
   onUpdate({ component }) {
-    const tooltip = component.getAttributes()["data-ecg-tooltip"] || null;
+    const toolbox = component.getAttributes()["data-ecg-toolbox"] || null;
 
-    if (tooltip) {
-      this.inputInstance.tooltip = JSON.parse(tooltip);
+    if (toolbox) {
+      this.inputInstance.toolbox = JSON.parse(toolbox);
     }
   },
 };

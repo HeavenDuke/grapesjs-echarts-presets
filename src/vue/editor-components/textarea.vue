@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "ep-input",
+  name: "textarea",
   props:{
     label:String,
     placeholder:{

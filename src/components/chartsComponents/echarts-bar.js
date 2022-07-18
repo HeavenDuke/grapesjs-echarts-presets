@@ -7,6 +7,7 @@ export default build({
     const basic=options.basic ||{};
     const grid = options.grid || {};
     const tooltip = options.tooltip || {};
+    const toolbox = options.toolbox || {};
     const series = [
       {
         type: "bar",
@@ -27,6 +28,7 @@ export default build({
       ...basic,
       grid,
       title,
+      toolbox,
       series,
       xAxis,
       tooltip,

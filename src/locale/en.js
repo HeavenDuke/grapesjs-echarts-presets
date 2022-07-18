@@ -44,6 +44,10 @@ export default {
         right: "Right",
         top: "Top",
         bottom: "Bottom"
+      },
+      size:{
+        width: "Width",
+        height:"Height"
       }
     },
     actions: {
@@ -54,6 +58,43 @@ export default {
       lineStyle: 'Edit Line Style'
     },
     config: {
+      toolbox:{
+        label:"Toolbox",
+        show:{
+          label:"Show"
+        },
+        orient:{
+          label:"Orient"
+        },
+        itemSize:{
+          label:"ItemSize"
+        },
+        itemGap:{
+          label:"ItemGap"
+        },
+        showTitle:{
+          label:"ShowTitle"
+        },
+        feature:{
+          label:"Feature"
+        },
+        iconStyle:{
+          label:"IconStyle"
+        },
+        emphasis:{
+          label:"Emphasis"
+        },
+        zlevel: {
+          label: "Z Level"
+        },
+        z: {
+          label: "Z"
+        },
+        position: {
+          label: "Position"
+        },
+
+      },
       tooltip:{
         label:'Tooltip',
         show:{

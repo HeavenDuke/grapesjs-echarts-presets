@@ -7,6 +7,7 @@ export default build({
     const title = options.title || {};
     const grid = options.grid || {};
     const tooltip = options.tooltip || {};
+    const toolbox = options.toolbox || {};
     const series = [
       {
         type: "bar",
@@ -30,6 +31,7 @@ export default build({
       grid,
       title,
       series,
+      toolbox,
       radiusAxis,
       angleAxis:{
 
