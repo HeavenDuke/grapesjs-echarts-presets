@@ -112,28 +112,28 @@ export default {
           placeholder: "Select trigger type"
         },
         axisPointer:{
-          label:"AxisPointer"
+          label:"Axis Pointer"
         },
         showContent:{
-          label:"ShowContent"
+          label:"Show Content"
         },
         alwaysShowContent:{
-          label:"AlwaysShowContent"
+          label:"Always Show Content"
         },
         triggerOn:{
           label:"TriggerOn"
         },
         showDelay:{
-          label:"ShowDelay"
+          label:"Show Delay"
         },
         hideDelay:{
-          label:"HideDelay"
+          label:"Hide Delay"
         },
         enterable:{
           label:"Enterable"
         },
         renderMode:{
-          label:"RenderMode"
+          label:"Render Mode"
         },
         className:{
           label:"ClassName"
@@ -142,10 +142,10 @@ export default {
           label:"Confine"
         },
         appendToBody: {
-          label:"AppendToBody"
+          label:"Append To Body"
         },
         transitionDuration:{
-          label:"TransitionDuration"
+          label:"Transition Duration"
         },
         position:{
           label:"Position"
@@ -154,7 +154,7 @@ export default {
           label:"Formatter"
         },
         valueFormatter:{
-          label:"ValueFormatter"
+          label:"Value Formatter"
         },
         backgroundColor: {
           label:"BackgroundColor"
@@ -163,16 +163,16 @@ export default {
           label:"BorderColor"
         },
         borderWidth: {
-          label:"BorderWidth"
+          label:"Border Width"
         },
         padding:{
           label:"Padding"
         },
         textStyle:{
-          label:"TextStyle"
+          label:"Text Style"
         },
         extraCssText:{
-          label:"ExtraCssText"
+          label:"Extra Css Text"
         },
         order:{
           label:"Order"

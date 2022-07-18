@@ -23,63 +23,18 @@
       <div class="gjs-trt-trait">
         <div class="gjs-sm-field gjs-sm-composite">
           <span>
-            <ep-check-box v-for="(val, index) in toolbox.feature" :key="index" v-model="val.show" :label="index"></ep-check-box>
+            <ep-check-box v-for="(val, index) in toolbox.feature" :key="index" v-model="val.show"
+                          :label="index"></ep-check-box>
           </span>
         </div>
       </div>
       <ep-number-input v-model="toolbox.zlevel" :label="t('grapesjs-echarts-presets.config.toolbox.zlevel.label')"/>
       <ep-number-input v-model="toolbox.z" :label="t('grapesjs-echarts-presets.config.toolbox.z.label')"/>
-      <!--        position-->
-      <div class="gjs-trt-trait">
-        <div class="gjs-sm-property gjs-sm-composite gjs-sm-property__margin gjs-sm-property--full" style="">
-          <div class="gjs-sm-label" data-sm-label="">
-            <span class="gjs-sm-icon " title="position">
-              {{ t("grapesjs-echarts-presets.config.toolbox.position.label") }}
-            </span>
-          </div>
-          <div class="gjs-fields" data-sm-fields="">
-            <div class="gjs-sm-field gjs-sm-composite">
-              <span id="gjs-sm-input-holder">
-                <div class="gjs-sm-properties">
-                  <div :key="pos.name" v-for="pos in positions"
-                       class="gjs-sm-property gjs-sm-number gjs-sm-integer gjs-sm-property__margin-top">
-                    <div class="gjs-sm-label" data-sm-label="">
-                      <span class="gjs-sm-icon "
-                            title="">{{ t(`grapesjs-echarts-presets.dict.position.${pos.name}`) }}</span>
-                      <!--                      标题×符号 -->
-                      <div class="gjs-sm-clear" style="display: none" data-clear-style="">
-                        <svg viewBox="0 0 24 24">
-                          <path fill="currentColor"
-                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="gjs-fields" data-sm-fields="">
-                      <div class="gjs-field gjs-field-integer">
-                        <span class="gjs-input-holder">
-                          <input v-model="pos.value" type="text">
-                        </span>
-                        <span class="gjs-field-units">
-                          <select v-model="pos.unit" class="gjs-input-unit">
-                            <option value="" disabled="" hidden="">-</option>
-                            <option :key="unit" v-for="unit in units">{{ unit }}</option>
-                          </select>
-                        </span>
-                        <div class="gjs-field-arrows" data-arrows="">
-                          <div class="gjs-field-arrow-u" data-arrow-up=""></div>
-                          <div class="gjs-field-arrow-d" data-arrow-down=""></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
 
-
+      <ep-input v-model="toolbox.width" :label="t('grapesjs-echarts-presets.dict.size.width')"></ep-input>
+      <ep-input v-model="toolbox.height" :label="t('grapesjs-echarts-presets.dict.size.height')"></ep-input>
+      <ep-position :title="t('grapesjs-echarts-presets.config.toolbox.position.label')" :t="t" :use-unit="true"
+                   v-model="positions"></ep-position>
     </div>
   </chart-section>
 </template>
@@ -93,6 +48,7 @@ import EpNumberInput from "../editor-components/number-input";
 import EpOption from "../editor-components/option";
 import EpColorPicker from "../editor-components/color-picker";
 import EpTextArea from "../editor-components/textarea";
+import EpPosition from "../widgets/position-selector";
 
 export default {
   name: "toolbox-editor",
@@ -105,7 +61,8 @@ export default {
     EpInput,
     EpOption,
     EpNumberInput,
-    EpTextArea
+    EpTextArea,
+    EpPosition
   },
   data() {
     return {
@@ -116,12 +73,12 @@ export default {
         itemGap: 8,
         showTitle: true,
         feature: {
-          saveAsImage: {show: true},
-          restore: {show: true},
-          dataView: {show: true},
-          dataZoom:{show:true},
-          magicType: {show: true},
-          brush: {show: true}
+          saveAsImage: {show: false},
+          restore: {show: false},
+          dataView: {show: false},
+          dataZoom: {show: false},
+          magicType: {show: false},
+          brush: {show: false}
         },
         iconStyle: {},
         emphasis: {},
@@ -134,30 +91,14 @@ export default {
         width: "",
         height: ""
       },
-      positions: [{
-        name: "top",
-        value: "auto",
-        unit: "px"
-      }, {
-        name: "right",
-        value: "auto",
-        unit: "%"
-      }, {
-        name: "bottom",
-        value: "auto",
-        unit: "px"
-      }, {
-        name: "left",
-        value: "auto",
-        unit: "%"
-      }],
-      units: ["px", "%", "em", "rem", "vh", "vw"],
+      positions: {top: "0", right: "0", bottom: "0", left: "0"},
+
     };
   },
   watch: {
     toolbox: {
       handler() {
-        // this.toolbox.feature={...this.toolbox.feature};
+
         this.onChange();
       },
       deep: true
@@ -165,10 +106,12 @@ export default {
 
     positions: {
       handler(newValue) {
-        for (let i = 0; i < newValue.length; i++) {
-          let pos = newValue[i];
-          this.toolbox[pos.name] = `${pos.value}${pos.unit}`;
-        }
+
+        this.toolbox.top = newValue.top;
+        this.toolbox.right = newValue.right;
+        this.toolbox.bottom = newValue.bottom;
+        this.toolbox.left = newValue.left;
+
         this.onChange();
       },
       deep: true
