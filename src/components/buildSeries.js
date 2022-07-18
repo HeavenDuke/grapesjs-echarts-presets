@@ -17,6 +17,7 @@ export default ({
           this.on("change:attributes:data-ecg-grid", this.updateChart);
           this.on("change:attributes:data-ecg-basic", this.updateChart);
           this.on("change:attributes:data-ecg-tooltip", this.updateChart);
+          this.on("change:attributes:data-ecg-toolbox", this.updateChart);
           this.on("change:attributes:data-ecg-x-axis", this.updateChart);
           this.on("change:attributes:data-ecg-y-axis", this.updateChart);
           setTimeout(() => {
@@ -30,13 +31,16 @@ export default ({
           const title = JSON.parse(this.get("attributes")["data-ecg-title"] || "{}");
           const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "[]");
           const grid = JSON.parse(this.get("attributes")["data-ecg-grid"] || "{}");
-          const xAxis = JSON.parse(this.get("attributes")["data-ecg-x-axis"] || "{}");
-          const yAxis = JSON.parse(this.get("attributes")["data-ecg-y-axis"] || "{}");
+          const toolbox = JSON.parse(this.get("attributes")["data-ecg-toolbox"] || "{}");
           const theme = this.get("attributes")["data-ecg-theme"] || null;
 
-          const option = this.getOptions({basic, tooltip, series, title, grid, xAxis, yAxis });
 
-          console.log(option)
+          const xAxis = JSON.parse(this.get("attributes")["data-ecg-x-axis"] || "{}");
+          const yAxis = JSON.parse(this.get("attributes")["data-ecg-y-axis"] || "{}");
+
+          const option = this.getOptions({basic, tooltip,toolbox, series, title, grid,xAxis,yAxis });
+
+          // console.log(option)
           this.renderChart(option, theme);
         },
         getOptions,
@@ -68,6 +72,8 @@ export default ({
             },
             {
               type: "echarts-tooltip-trait"
+            },{
+              type: "echarts-toolbox-trait"
             },
             {
               type: "echarts-x-axis-trait"

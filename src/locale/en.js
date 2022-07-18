@@ -45,6 +45,10 @@ export default {
         top: "Top",
         bottom: "Bottom"
       },
+      size: {
+        width: "Width",
+        height: "Height"
+      },
       seriesType: {
         value: 'Value',
         category: 'Category',
@@ -61,6 +65,43 @@ export default {
       axisLineStyle: 'Edit Axis Line',
     },
     config: {
+      toolbox:{
+        label:"Toolbox",
+        show:{
+          label:"Show"
+        },
+        orient:{
+          label:"Orient"
+        },
+        itemSize:{
+          label:"ItemSize"
+        },
+        itemGap:{
+          label:"ItemGap"
+        },
+        showTitle:{
+          label:"ShowTitle"
+        },
+        feature:{
+          label:"Feature"
+        },
+        iconStyle:{
+          label:"IconStyle"
+        },
+        emphasis:{
+          label:"Emphasis"
+        },
+        zlevel: {
+          label: "Z Level"
+        },
+        z: {
+          label: "Z"
+        },
+        position: {
+          label: "Position"
+        },
+
+      },
       tooltip:{
         label:'Tooltip',
         show:{

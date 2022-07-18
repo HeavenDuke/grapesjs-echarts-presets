@@ -7,6 +7,7 @@ export default build({
     const grid = options.grid || {};
     const title = options.title || {};
     const tooltip = options.tooltip || {};
+    const toolbox = options.toolbox || {};
     const series = [
 
       {
@@ -24,6 +25,7 @@ export default build({
       ...basic,
       grid,
       title,
+      toolbox,
       series,
       selectedMode: 'single',
       legend: {
