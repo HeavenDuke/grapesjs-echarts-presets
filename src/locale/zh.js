@@ -190,6 +190,12 @@ export default {
       yAxis: {
         label: 'Y轴'
       },
+      radiusAxis: {
+        label: "极坐标系径向轴"
+      },
+      angleAxis: {
+        label: "极坐标系角度轴"
+      },
       axis: {
         show: {
           label: "显示/隐藏"

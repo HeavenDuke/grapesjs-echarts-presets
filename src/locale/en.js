@@ -311,6 +311,9 @@ export default {
       radiusAxis: {
         label: "Radius Axis"
       },
+      angleAxis: {
+        label: "Angle Axis"
+      },
       axis: {
         show: {
           label: "Show"

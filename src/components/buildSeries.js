@@ -1,12 +1,12 @@
-const DEFAULT_GET_OPTIONS = function(options = {}) {
+const DEFAULT_GET_OPTIONS = function (options = {}) {
   return options;
 };
 
 export default ({
-  getOptions = DEFAULT_GET_OPTIONS,
-  name = "grapesjs-echarts.components.MY_COMPONENT.name",
-}) => {
-  return function(editor) {
+                  getOptions = DEFAULT_GET_OPTIONS,
+                  name = "grapesjs-echarts.components.MY_COMPONENT.name",
+                }) => {
+  return function (editor) {
     return {
       extend: "default",
       model: {
@@ -21,14 +21,15 @@ export default ({
           this.on("change:attributes:data-ecg-x-axis", this.updateChart);
           this.on("change:attributes:data-ecg-y-axis", this.updateChart);
           this.on("change:attributes:data-ecg-radius-axis", this.updateChart);
+          this.on("change:attributes:data-ecg-angle-axis", this.updateChart);
           setTimeout(() => {
             this.updateChart();
           }, 100);
         },
-        updateChart () {
+        updateChart() {
           //基础项
           const basic = JSON.parse(this.get("attributes")["data-ecg-basic"] || "{}");
-          const tooltip= JSON.parse(this.get("attributes")["data-ecg-tooltip"] || "{}");
+          const tooltip = JSON.parse(this.get("attributes")["data-ecg-tooltip"] || "{}");
           const title = JSON.parse(this.get("attributes")["data-ecg-title"] || "{}");
           const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "[]");
           const grid = JSON.parse(this.get("attributes")["data-ecg-grid"] || "{}");
@@ -39,10 +40,22 @@ export default ({
           const xAxis = JSON.parse(this.get("attributes")["data-ecg-x-axis"] || "{}");
           const yAxis = JSON.parse(this.get("attributes")["data-ecg-y-axis"] || "{}");
           const radiusAxis = JSON.parse(this.get("attributes")["data-ecg-radius-axis"] || "{}");
+          const angleAxis = JSON.parse(this.get("attributes")["data-ecg-angle-axis"] || "{}");
 
-          const option = this.getOptions({basic, tooltip,toolbox, series, title, grid,xAxis,yAxis, radiusAxis });
+          const option = this.getOptions({
+            basic,
+            tooltip,
+            toolbox,
+            series,
+            title,
+            grid,
+            xAxis,
+            yAxis,
+            radiusAxis,
+            angleAxis
+          });
 
-          console.log(option)
+          // console.log(option)
           this.renderChart(option, theme);
         },
         getOptions,
@@ -57,7 +70,7 @@ export default ({
               renderer: "canvas",
             });
             chart.setOption(options);
-            this.addAttributes({ "data-ecg-options": JSON.stringify(options) });
+            this.addAttributes({"data-ecg-options": JSON.stringify(options)});
             this.chart = chart;
           }
         },
@@ -88,6 +101,9 @@ export default ({
               type: "echarts-radius-axis-trait"
             },
             {
+              type: "echarts-angle-axis-trait"
+            },
+            {
               type: "echarts-title-trait"
             },
             {
@@ -97,7 +113,7 @@ export default ({
         },
       },
       view: {
-        onRender({ model }) {
+        onRender({model}) {
           setTimeout(() => {
             model.updateChart();
           }, 50);
