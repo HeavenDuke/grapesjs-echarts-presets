@@ -63,6 +63,8 @@ export default {
       textStyle: 'Edit Text Style',
       lineStyle: 'Edit Line Style',
       axisLineStyle: 'Edit Axis Line',
+      axisSplitLine: 'Edit Axis Split Line',
+      axisTick: "Edit Axis Tick"
     },
     config: {
       toolbox:{
@@ -392,6 +394,42 @@ export default {
           },
           symbolOffset: {
             label: "Symbol Offset"
+          }
+        },
+        splitLine: {
+          label: "Split Line",
+          show: {
+            label: "Show"
+          },
+          interval: {
+            label: "Interval"
+          }
+        },
+        minorSplitLine: {
+          label: 'Minor Split Line'
+        },
+        axisTick: {
+          label: "Axis Tick",
+          show: {
+            label: "Show"
+          },
+          alignWithLabel: {
+            label: "Align With Label"
+          },
+          interval: {
+            label: "Interval"
+          },
+          inside: {
+            label: "Inside"
+          },
+          length: {
+            label: "Length"
+          }
+        },
+        minorAxisTick: {
+          label: "Minor Axis Tick",
+          splitNumber: {
+            label: "Split Number"
           }
         }
       },

@@ -79,9 +79,6 @@
       showDialog() {
         this.dialog.visibility = true
       }
-    },
-    created() {
-      console.log(this.value)
     }
   };
 </script>

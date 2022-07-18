@@ -43,13 +43,19 @@
             <text-style-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.nameTextStyle.label')"
                                v-model="axis.nameTextStyle"></text-style-editor>
             <axis-line-editor :t="t" v-model="axis.axisLine"></axis-line-editor>
+            <split-line-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.splitLine.label')" v-model="axis.splitLine"></split-line-editor>
+            <split-line-editor :t="t" minor :title="t('grapesjs-echarts-presets.config.axis.minorSplitLine.label')" v-model="axis.minorSplitLine"></split-line-editor>
+            <tick-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.axisTick.label')" v-model="axis.axisTick"></tick-editor>
+            <tick-editor :t="t" minor :title="t('grapesjs-echarts-presets.config.axis.minorAxisTick.label')" v-model="axis.minorTick"></tick-editor>
         </div>
     </chart-section>
 </template>
 
 <script>
 
+    import TickEditor from "../tick-editor"
   import AxisLineEditor from "../axis-line-editor"
+  import SplitLineEditor from "../split-line-editor"
   import TextStyleEditor from "../text-style-editor"
   import ChartSection from "../widgets/chart-section"
   import EpSelect from "../editor-components/select"
@@ -73,7 +79,9 @@
       EpInput,
       EpNumberInput,
       EpColorPicker,
-      AxisLineEditor
+      AxisLineEditor,
+      SplitLineEditor,
+      TickEditor
     },
     data() {
       return {
@@ -95,20 +103,20 @@
             symbolOffset: [0, 0],
             lineStyle: Object.assign({}, LINE_STYLE)
           },
-          // axisTick: {
-          //   show: true,
-          //   alignWithLabel: false,
-          //   interval: 'auto',
-          //   inside: false,
-          //   length: 5,
-          //   lineStyle: Object.assign({}, LINE_STYLE)
-          // },
-          // minorTick: {
-          //   show: false,
-          //   splitNumber: 5,
-          //   length: 3,
-          //   lineStyle: Object.assign({}, LINE_STYLE)
-          // },
+          axisTick: {
+            show: true,
+            alignWithLabel: false,
+            interval: 'auto',
+            inside: false,
+            length: 5,
+            lineStyle: Object.assign({}, LINE_STYLE)
+          },
+          minorTick: {
+            show: false,
+            splitNumber: 5,
+            length: 3,
+            lineStyle: Object.assign({}, LINE_STYLE)
+          },
           // axisLabel: Object.assign({
           //   show: true,
           //   interval: 'auto',
@@ -119,15 +127,15 @@
           //   showMaxLabel: false,
           //   hideOverlap: true,
           // }, TEXT_STYLE),
-          // splitLine: {
-          //   show: true,
-          //   interval: 'auto',
-          //   lineStyle: Object.assign({}, LINE_STYLE)
-          // },
-          // minorSplitLine: {
-          //   show: true,
-          //   lineStyle: Object.assign({}, LINE_STYLE)
-          // },
+          splitLine: {
+            show: true,
+            interval: 'auto',
+            lineStyle: Object.assign({}, LINE_STYLE)
+          },
+          minorSplitLine: {
+            show: true,
+            lineStyle: Object.assign({}, LINE_STYLE)
+          },
           // splitArea: {
           //   show: true,
           //   interval: 'auto',

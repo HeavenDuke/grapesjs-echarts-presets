@@ -59,6 +59,8 @@ export default {
       textStyle: '编辑文本样式',
       lineStyle: '编辑线条样式',
       axisLineStyle: '配置坐标轴线',
+      axisSplitLine: '配置坐标轴分隔线',
+      axisTick: "配置坐标轴刻度"
     },
     config: {
       basic:{
@@ -274,6 +276,42 @@ export default {
           },
           symbolOffset: {
             label: "端点偏移量"
+          }
+        },
+        splitLine: {
+          label: "分隔线",
+          show: {
+            label: "显示"
+          },
+          interval: {
+            label: "间隔"
+          }
+        },
+        minorSplitLine: {
+          label: '次分隔线'
+        },
+        axisTick: {
+          label: "刻度",
+          show: {
+            label: "显示"
+          },
+          alignWithLabel: {
+            label: "与标签对齐"
+          },
+          interval: {
+            label: "间隔"
+          },
+          inside: {
+            label: "朝内"
+          },
+          length: {
+            label: "长度"
+          }
+        },
+        minorAxisTick: {
+          label: "次级刻度",
+          splitNumber: {
+            label: "分割数"
           }
         }
       },
