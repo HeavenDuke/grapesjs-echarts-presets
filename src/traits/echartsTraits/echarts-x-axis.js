@@ -11,7 +11,7 @@ export default {
       render: (h) =>
         h(AxisEditor, {
           props: {
-            axis: 'x',
+            type: 'x',
             editor,
             t: (key) => intl.t(key),
             onChange: () => this.onEvent({ component }),

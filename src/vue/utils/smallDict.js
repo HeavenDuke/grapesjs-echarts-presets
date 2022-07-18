@@ -32,3 +32,12 @@ export const TOOLTIP = {
     value: 'valueDesc'
   }]
 };
+
+export let SERIES_TYPES = [
+  'category',
+  'value',
+  'time',
+  'log'
+]
+
+export let UNITS = ["px", "%", "em", "rem", "vh", "vw"]

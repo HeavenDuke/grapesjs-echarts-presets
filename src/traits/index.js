@@ -5,6 +5,7 @@ import echartsBasic from "./echartsTraits/echarts-basic";
 import echartsTooltip from "./echartsTraits/echarts-tooltip";
 import echartsXAxis from "./echartsTraits/echarts-x-axis";
 import echartsToolbox from "./echartsTraits/echarts-toolbox"
+import echartsYAxis from "./echartsTraits/echarts-y-axis"
 
 export default {
   "echarts-series-trait": echartsSeries,
@@ -14,4 +15,5 @@ export default {
   "echarts-tooltip-trait":echartsTooltip,
   "echarts-x-axis-trait": echartsXAxis,
   "echarts-toolbox-trait": echartsToolbox
+  "echarts-y-axis-trait": echartsYAxis
 };

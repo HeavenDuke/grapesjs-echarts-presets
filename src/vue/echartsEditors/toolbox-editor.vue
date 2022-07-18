@@ -23,7 +23,7 @@
       <div class="gjs-trt-trait">
         <div class="gjs-sm-field gjs-sm-composite">
           <span>
-            <ep-check-box v-for="(index,val) in toolbox.feature" :key="index" v-model="val.show" :label="val"></ep-check-box>
+            <ep-check-box v-for="(val, index) in toolbox.feature" :key="index" v-model="val.show" :label="index"></ep-check-box>
           </span>
         </div>
       </div>

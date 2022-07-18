@@ -12,21 +12,56 @@
                         :title="dialog.title"
                         @close="dialog.visibility = false">
             <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
-                <ep-select :label="t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')" v-model="value.fontFamily">
-                    <ep-option v-for="font in fonts" :key="font.value" :value="font.value" :label="font.name">{{font.name}}</ep-option>
+                <ep-select :label="t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')"
+                           v-model="value.fontFamily">
+                    <ep-option v-for="font in fonts" :key="font.value" :value="font.value" :label="font.name">
+                        {{font.name}}
+                    </ep-option>
                 </ep-select>
-                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.fontSize.label')" v-model="value.fontSize"></ep-number-input>
-                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.fontWeight.label')" v-model="value.fontWeight"></ep-number-input>
-                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.lineHeight.label')" v-model="value.lineHeight"></ep-number-input>
-                <ep-color-picker :label="t('grapesjs-echarts-presets.config.textStyle.color.label')" v-model="value.color"></ep-color-picker>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.fontSize.label')"
+                                 v-model="value.fontSize"></ep-number-input>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.fontWeight.label')"
+                                 v-model="value.fontWeight"></ep-number-input>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.lineHeight.label')"
+                                 v-model="value.lineHeight"></ep-number-input>
+                <ep-color-picker :label="t('grapesjs-echarts-presets.config.textStyle.color.label')"
+                                 v-model="value.color"></ep-color-picker>
+                <ep-color-picker :label="t('grapesjs-echarts-presets.config.textStyle.backgroundColor.label')"
+                                 v-model="value.backgroundColor"></ep-color-picker>
+                <ep-select
+                        v-model="value.textAlign"
+                        :label="t('grapesjs-echarts-presets.config.textStyle.align.label')">
+                    <ep-option value="auto">auto</ep-option>
+                    <ep-option value="left">left</ep-option>
+                    <ep-option value="right">right</ep-option>
+                    <ep-option value="center">center</ep-option>
+                </ep-select>
+                <ep-select
+                        v-model="value.textVerticalAlign"
+                        :label="t('grapesjs-echarts-presets.config.textStyle.verticalAlign.label')">
+                    <ep-option value="auto">auto</ep-option>
+                    <ep-option value="top">top</ep-option>
+                    <ep-option value="bottom">bottom</ep-option>
+                    <ep-option value="middle">middle</ep-option>
+                </ep-select>
+                <ep-select :label="t('grapesjs-echarts-presets.config.textStyle.borderType.label')"
+                           v-model="value.borderType">
+                    <ep-option v-for="type in lineTypes" :key="type.value" :value="type.value"
+                               :label="type.name"></ep-option>
+                </ep-select>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.borderWidth.label')"
+                                 v-model="value.borderWidth"></ep-number-input>
+                <ep-color-picker :label="t('grapesjs-echarts-presets.config.textStyle.borderColor.label')"
+                                 v-model="value.borderColor"></ep-color-picker>
+                <ep-position-selector :t="t" :use-unit="false" :title="t('grapesjs-echarts-presets.config.textStyle.padding.label')" v-model="value.padding"></ep-position-selector>
             </div>
         </content-dialog>
     </div>
 </template>
 
 <script>
-
-  import {FONTS} from "./utils/dict";
+  import {UNITS} from "@/vue/utils/smallDict";
+  import {FONTS, LINE_TYPES} from "./utils/dict";
   import ContentDialog from "./widgets/content-dialog"
   import EpSelect from "./editor-components/select"
   import EpOption from "./editor-components/option"
@@ -34,6 +69,7 @@
   import EpCheckBox from "./editor-components/checkbox"
   import EpColorPicker from "./editor-components/color-picker"
   import EpNumberInput from "./editor-components/number-input"
+  import EpPositionSelector from "./widgets/position-selector"
 
   export default {
     name: "text-style-editor",
@@ -49,7 +85,8 @@
       EpOption,
       EpInput,
       EpColorPicker,
-      EpNumberInput
+      EpNumberInput,
+      EpPositionSelector
     },
     watch: {
       value: {
@@ -65,7 +102,8 @@
           visibility: false,
           title: this.t('grapesjs-echarts-presets.dialogs.textStyle')
         },
-        fonts: FONTS
+        fonts: FONTS,
+        lineTypes: LINE_TYPES
       }
     },
     methods: {

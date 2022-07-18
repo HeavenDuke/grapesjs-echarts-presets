@@ -8,6 +8,8 @@ export default build({
     const grid = options.grid || {};
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
+    let xAxis = options.xAxis || {}
+    const yAxis = options.yAxis || {}
     const series = [
       {
         type: "bar",
@@ -19,11 +21,9 @@ export default build({
       },
     ];
 
-    const xAxis = [
-      {
-        data: map.map(({ label }) => label),
-      },
-    ];
+    console.log(xAxis)
+
+    xAxis.data = map.map(({ label }) => label)
     return {
       ...basic,
       grid,
@@ -32,11 +32,7 @@ export default build({
       series,
       xAxis,
       tooltip,
-      yAxis: [
-        {
-          type: "value",
-        },
-      ],
+      yAxis
     };
   },
 });

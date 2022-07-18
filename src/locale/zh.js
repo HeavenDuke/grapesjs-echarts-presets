@@ -44,6 +44,12 @@ export default {
         right: "右",
         top: "上",
         bottom: "下"
+      },
+      seriesType: {
+        value: '连续型',
+        category: '离散型',
+        time: '时间型',
+        log: '对数型'
       }
     },
     actions: {
@@ -172,6 +178,83 @@ export default {
           label: "副标题样式"
         }
       },
+      xAxis: {
+        label: 'X轴'
+      },
+      yAxis: {
+        label: 'Y轴'
+      },
+      axis: {
+        show: {
+          label: "显示/隐藏"
+        },
+        name: {
+          label: "名称"
+        },
+        type: {
+          label: "类型",
+        },
+        alignTicks: {
+          label: "对齐刻度"
+        },
+        position: {
+          label: "位置"
+        },
+        nameLocation: {
+          label: "名牌的位置"
+        },
+        nameGap: {
+          label: "名牌-轴线间距"
+        },
+        nameTextStyle: {
+          label: "名牌样式"
+        },
+        nameRotate: {
+          label: "旋转角度"
+        },
+        inverse: {
+          label: "反转坐标轴"
+        },
+        boundaryGap: {
+          label: "两端边距"
+        },
+        min: {
+          label: "最小值"
+        },
+        max: {
+          label: "最大值"
+        },
+        scale: {
+          label: "脱离零值"
+        },
+        splitNumber: {
+          label: "分割段数"
+        },
+        minInterval: {
+          label: "刻度最小间隔"
+        },
+        maxInterval: {
+          label: "刻度最大间隔"
+        },
+        interval: {
+          label: "刻度间隔"
+        },
+        logBase: {
+          label: "对数底"
+        },
+        silent: {
+          label: "静默模式"
+        },
+        triggerEvent: {
+          label: "响应鼠标事件"
+        },
+        z: {
+          label: "Z"
+        },
+        zlevel: {
+          label: "Z Level"
+        }
+      },
       textStyle: {
         label: "文字样式",
         fontFamily: {
@@ -188,6 +271,27 @@ export default {
         },
         color: {
           label: '颜色'
+        },
+        backgroundColor: {
+          label: "背景色"
+        },
+        align: {
+          label: "水平对齐"
+        },
+        verticalAlign: {
+          label: "垂直对齐"
+        },
+        borderColor: {
+          label: "边框颜色"
+        },
+        borderWidth: {
+          label: "边框粗细"
+        },
+        borderType: {
+          label: "边框类型"
+        },
+        padding: {
+          label: "内边距"
         }
       },
       lineStyle: {

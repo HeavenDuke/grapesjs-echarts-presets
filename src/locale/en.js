@@ -48,6 +48,11 @@ export default {
       size:{
         width: "Width",
         height:"Height"
+      seriesType: {
+        value: 'Value',
+        category: 'Category',
+        time: 'Time',
+        log: 'Logarithm'
       }
     },
     actions: {
@@ -215,8 +220,6 @@ export default {
         useUTC:{
           label:"UseUTC"
         }
-
-
       },
       grid: {
         label: 'Grid',
@@ -292,22 +295,120 @@ export default {
           label: "Subtitle Style"
         }
       },
+      xAxis: {
+        label: 'X Axis'
+      },
+      yAxis: {
+        label: 'Y Axis'
+      },
+      axis: {
+        show: {
+          label: "Show"
+        },
+        name: {
+          label: "Name"
+        },
+        type: {
+          label: "Type",
+        },
+        alignTicks: {
+          label: "Align Ticks"
+        },
+        position: {
+          label: "Position"
+        },
+        nameLocation: {
+          label: "Name Location"
+        },
+        nameGap: {
+          label: "Name-Axis Gap"
+        },
+        nameTextStyle: {
+          label: "Name Style"
+        },
+        nameRotate: {
+          label: "Rotation"
+        },
+        inverse: {
+          label: "Inverse"
+        },
+        boundaryGap: {
+          label: "Boundary Gap"
+        },
+        min: {
+          label: "Minimum"
+        },
+        max: {
+          label: "Maximum"
+        },
+        scale: {
+          label: "Scale"
+        },
+        splitNumber: {
+          label: "Split Number"
+        },
+        minInterval: {
+          label: "Minimum Interval"
+        },
+        maxInterval: {
+          label: "Maximum Interval"
+        },
+        interval: {
+          label: "Interval"
+        },
+        logBase: {
+          label: "Logarithm Base"
+        },
+        silent: {
+          label: "Silent Mode"
+        },
+        triggerEvent: {
+          label: "Trigger Event"
+        },
+        z: {
+          label: "Z"
+        },
+        zlevel: {
+          label: "Z Level"
+        }
+      },
       textStyle: {
-        label: 'Text Style',
+        label: "Text Style",
         fontFamily: {
-          label: 'Font'
+          label: "Font"
         },
         fontSize: {
-          label: 'Font Size'
+          label: "Font Size"
         },
         fontWeight: {
-          label: 'Font Weight'
+          label: "Font Weight"
         },
         lineHeight: {
-          label: 'Line Height'
+          label: "Line Height"
         },
         color: {
-          label: 'Color'
+          label: "Color"
+        },
+        backgroundColor: {
+          label: "Background"
+        },
+        align: {
+          label: "Align"
+        },
+        verticalAlign: {
+          label: "Vertical Align"
+        },
+        borderColor: {
+          label: "Border Color"
+        },
+        borderWidth: {
+          label: "Border Width"
+        },
+        borderType: {
+          label: "Border Type"
+        },
+        padding: {
+          label: "Padding"
         }
       },
       lineStyle: {
