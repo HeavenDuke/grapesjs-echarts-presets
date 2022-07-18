@@ -57,7 +57,8 @@ export default {
     },
     dialogs: {
       textStyle: '编辑文本样式',
-      lineStyle: '编辑线条样式'
+      lineStyle: '编辑线条样式',
+      axisLineStyle: '配置坐标轴线',
     },
     config: {
       basic:{
@@ -253,6 +254,27 @@ export default {
         },
         zlevel: {
           label: "Z Level"
+        },
+        axisLine: {
+          label: "轴线",
+          show: {
+            label: "显示"
+          },
+          onZero: {
+            label: "对齐零刻度"
+          },
+          onZeroAxisIndex: {
+            label: "零刻度坐标轴"
+          },
+          symbol: {
+            label: "端点类型"
+          },
+          symbolSize: {
+            label: "端点大小"
+          },
+          symbolOffset: {
+            label: "端点偏移量"
+          }
         }
       },
       textStyle: {
@@ -304,6 +326,24 @@ export default {
         },
         type: {
           label: '线形'
+        },
+        meterLimit: {
+          label: "斜接面限制比例"
+        },
+        shadowColor: {
+          label: "阴影颜色"
+        },
+        shadowBlur: {
+          label: "阴影模糊"
+        },
+        shadowOffsetX: {
+          label: "阴影水平偏移量"
+        },
+        shadowOffsetY: {
+          label: "阴影垂直偏移量"
+        },
+        opacity: {
+          label: "透明度"
         }
       },
       series: {

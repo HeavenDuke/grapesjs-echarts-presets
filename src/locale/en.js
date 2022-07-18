@@ -57,7 +57,8 @@ export default {
     },
     dialogs: {
       textStyle: 'Edit Text Style',
-      lineStyle: 'Edit Line Style'
+      lineStyle: 'Edit Line Style',
+      axisLineStyle: 'Edit Axis Line',
     },
     config: {
       tooltip:{
@@ -330,6 +331,27 @@ export default {
         },
         zlevel: {
           label: "Z Level"
+        },
+        axisLine: {
+          label: "Axis Line",
+          show: {
+            label: "Show"
+          },
+          onZero: {
+            label: "On Zero"
+          },
+          onZeroAxisIndex: {
+            label: "On Zero Axis Index"
+          },
+          symbol: {
+            label: "Symbol"
+          },
+          symbolSize: {
+            label: "Symbol Size"
+          },
+          symbolOffset: {
+            label: "Symbol Offset"
+          }
         }
       },
       textStyle: {
@@ -381,6 +403,24 @@ export default {
         },
         type: {
           label: 'Line Type'
+        },
+        meterLimit: {
+          label: "Meter Limit"
+        },
+        shadowColor: {
+          label: "Shadow Color"
+        },
+        shadowBlur: {
+          label: "Shadow Blur"
+        },
+        shadowOffsetX: {
+          label: "Shadow Offset X"
+        },
+        shadowOffsetY: {
+          label: "Shadow Offset Y"
+        },
+        opacity: {
+          label: "Opacity"
         }
       },
       series: {

@@ -8,43 +8,44 @@
                 <button class="btn btn-full" @click="showDialog">{{t('grapesjs-echarts-presets.actions.edit')}}</button>
             </label>
         </div>
-        <content-dialog v-if="dialog.visibility" width="350px" :dialog-visibility="dialog.visibility" :title="dialog.title"
+        <content-dialog v-if="dialog.visibility" width="450px" :dialog-visibility="dialog.visibility"
+                        :title="dialog.title"
                         @close="dialog.visibility = false">
             <div class="gjs-trt-traits gjs-one-bg gjs-two-color">
-                <div class="gjs-trt-trait">
-                    <div data-label="" class="gjs-label-wrp">
-                        <div title="color" class="gjs-label">{{t('grapesjs-echarts-presets.config.lineStyle.color.label')}}</div>
-                    </div>
-                    <div class="gjs-field-wrp gjs-field-wrp--text">
-                        <div class="gjs-field gjs-field-text">
-                            <input name="color" type="color" v-model="value.color" data-input/>
-                        </div>
-                    </div>
-                </div>
-                <div class="gjs-trt-trait">
-                    <div data-label="" class="gjs-label-wrp">
-                        <div title="width" class="gjs-label">{{t('grapesjs-echarts-presets.config.lineStyle.width.label')}}</div>
-                    </div>
-                    <div class="gjs-field-wrp gjs-field-wrp--text">
-                        <div class="gjs-field gjs-field-text">
-                            <input name="width" type="number" v-model="value.width" data-input/>
-                        </div>
-                    </div>
-                </div>
-                <div class="gjs-trt-trait">
-                    <div data-label="" class="gjs-label-wrp">
-                        <div title="fontSize" class="gjs-label">
-                            {{t('grapesjs-echarts-presets.config.lineStyle.type.label')}}
-                        </div>
-                    </div>
-                    <div class="gjs-field-wrp gjs-field-wrp--text">
-                        <div class="gjs-field gjs-field-text">
-                            <select v-model="value.type">
-                                <option v-for="type in lineTypes" :key="type.value" :value="type.value">{{type.name}}</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+                <ep-color-picker :label="t('grapesjs-echarts-presets.config.lineStyle.color.label')"
+                                 v-model="value.color"></ep-color-picker>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.lineStyle.width.label')"
+                                 v-model="value.width"></ep-number-input>
+                <ep-select :label="t('grapesjs-echarts-presets.config.lineStyle.type.label')"
+                           v-model="value.type">
+                    <ep-option v-for="type in lineTypes" :key="type.value" :value="type.value" :label="type.name"></ep-option>
+                </ep-select>
+<!--                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.lineHeight.label')"-->
+<!--                                 v-model="value.dashOffset"></ep-number-input>-->
+<!--                <ep-select :label="t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')"-->
+<!--                           v-model="value.cap">-->
+<!--                    <ep-option v-for="font in fonts" :key="font.value" :value="font.value" :label="font.name">-->
+<!--                        {{font.name}}-->
+<!--                    </ep-option>-->
+<!--                </ep-select>-->
+<!--                <ep-select :label="t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')"-->
+<!--                           v-model="value.join">-->
+<!--                    <ep-option v-for="font in fonts" :key="font.value" :value="font.value" :label="font.name">-->
+<!--                        {{font.name}}-->
+<!--                    </ep-option>-->
+<!--                </ep-select>-->
+                <ep-number-input v-if="value.join === 'miter'" :label="t('grapesjs-echarts-presets.config.lineStyle.miterLimit.label')"
+                                 v-model="value.miterLimit" :min="0"></ep-number-input>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.lineStyle.shadowBlur.label')"
+                                 v-model="value.shadowBlur"></ep-number-input>
+                <ep-color-picker :label="t('grapesjs-echarts-presets.config.lineStyle.shadowColor.label')"
+                                 v-model="value.shadowColor"></ep-color-picker>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.lineStyle.shadowOffsetX.label')"
+                                 v-model="value.shadowOffsetX"></ep-number-input>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.lineStyle.shadowOffsetY.label')"
+                                 v-model="value.shadowOffsetY"></ep-number-input>
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.lineStyle.opacity.label')"
+                                 v-model="value.opacity" :max="1" :min="0" :step="0.1"></ep-number-input>
             </div>
         </content-dialog>
     </div>
@@ -53,9 +54,17 @@
 <script>
 
   import ContentDialog from "./widgets/content-dialog"
+  import EpSelect from "./editor-components/select"
+  import EpOption from "./editor-components/option"
+  import EpInput from "./editor-components/input"
+  import EpCheckBox from "./editor-components/checkbox"
+  import EpColorPicker from "./editor-components/color-picker"
+  import EpNumberInput from "./editor-components/number-input"
+  import EpPositionSelector from "./widgets/position-selector"
   import {LINE_TYPES, FONTS} from "./utils/dict";
+  import { LINE_CAPS, LINE_JOINS } from "@/vue/utils/smallDict";
 
-export default {
+  export default {
   name: "line-style-editor",
   props: {
     value: Object,
@@ -63,7 +72,14 @@ export default {
     title: String
   },
   components: {
-    ContentDialog
+    ContentDialog,
+    EpCheckBox,
+    EpSelect,
+    EpOption,
+    EpInput,
+    EpColorPicker,
+    EpNumberInput,
+    EpPositionSelector
   },
   watch: {
     value: {
@@ -81,6 +97,11 @@ export default {
       },
       fonts: FONTS,
       lineTypes: LINE_TYPES
+    }
+  },
+  methods: {
+    showDialog() {
+      this.dialog.visibility = true
     }
   }
 };

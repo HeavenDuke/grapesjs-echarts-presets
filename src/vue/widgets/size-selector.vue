@@ -8,17 +8,8 @@
                 <div class="gjs-sm-field gjs-sm-composite">
                 <span id="gjs-sm-input-holder">
                     <div class="gjs-sm-properties">
-                        <div :key="pos.name" v-for="pos in positions"
+                        <div :key="pos.name" v-for="pos in sizes"
                              class="gjs-sm-property gjs-sm-number gjs-sm-integer gjs-sm-property__margin-top">
-                            <div class="gjs-sm-label" data-sm-label="">
-                                <span class="gjs-sm-icon " title="">{{t(`grapesjs-echarts-presets.dict.position.${pos.name}`)}}</span>
-                                <div class="gjs-sm-clear" style="display: none" data-clear-style="">
-                                    <svg viewBox="0 0 24 24">
-                                        <path fill="currentColor"
-                                              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
-                                    </svg>
-                                </div>
-                            </div>
                             <div class="gjs-fields" data-sm-fields="">
                                 <div class="gjs-field gjs-field-integer">
                                     <span class="gjs-input-holder">
@@ -49,29 +40,19 @@
   import {UNITS} from "@/vue/utils/smallDict";
 
   export default {
-    name: "position-selector",
+    name: "size-selector",
     props: {
       t: Function,
       title: String,
       useUnit: Boolean,
-      value: [Object, Array]
+      value: Array
     },
     data() {
       return {
-        positions: [{
-          name: "top",
+        sizes: [{
           value: "",
           unit: "px"
         }, {
-          name: "right",
-          value: "",
-          unit: "px"
-        }, {
-          name: "bottom",
-          value: "",
-          unit: "px"
-        }, {
-          name: "left",
           value: "",
           unit: "px"
         }],
@@ -79,28 +60,13 @@
       }
     },
     watch: {
-      positions: {
+      sizes: {
         handler(newValue) {
-          if (this.value instanceof Array) {
-            if (this.useUnit) {
-              this.$emit('input', this.positions.map(pos => `${pos.value}${this.useUnit ? pos.unit : ''}`))
-            }
-            else {
-              this.$emit('input', this.positions.map(pos => parseFloat(pos.value)))
-            }
-          } else {
-            if (this.useUnit) {
-              this.$emit('input', this.positions.reduce((result, pos) => {
-                result[pos.name] = pos.value ? `${pos.value}${this.useUnit ? pos.unit : ''}` : ''
-                return result
-              }, {}))
-            }
-            else {
-              this.$emit('input', this.positions.reduce((result, pos) => {
-                result[pos.name] = pos.value ? parseFloat(pos.value) : null
-                return result
-              }, {}))
-            }
+          if (this.useUnit) {
+            this.$emit('input', this.sizes.map(pos => `${pos.value}${this.useUnit ? pos.unit : ''}`))
+          }
+          else {
+            this.$emit('input', this.sizes.map(pos => parseFloat(pos.value)))
           }
         },
         deep: true

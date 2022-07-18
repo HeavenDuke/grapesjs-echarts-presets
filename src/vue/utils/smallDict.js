@@ -41,3 +41,7 @@ export let SERIES_TYPES = [
 ]
 
 export let UNITS = ["px", "%", "em", "rem", "vh", "vw"]
+
+export let LINE_CAPS = ["butt", "round", "square"]
+
+export let LINE_JOINS = ["bevel", "round", "miter"]
