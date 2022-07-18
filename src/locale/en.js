@@ -44,6 +44,12 @@ export default {
         right: "Right",
         top: "Top",
         bottom: "Bottom"
+      },
+      seriesType: {
+        value: 'Value',
+        category: 'Category',
+        time: 'Time',
+        log: 'Logarithm'
       }
     },
     actions: {
@@ -263,6 +269,69 @@ export default {
         },
         name: {
           label: "Name"
+        },
+        type: {
+          label: "Type",
+        },
+        alignTicks: {
+          label: "Align Ticks"
+        },
+        position: {
+          label: "Position"
+        },
+        nameLocation: {
+          label: "Name Location"
+        },
+        nameGap: {
+          label: "Name-Axis Gap"
+        },
+        nameTextStyle: {
+          label: "Name Style"
+        },
+        nameRotate: {
+          label: "Rotation"
+        },
+        inverse: {
+          label: "Inverse"
+        },
+        boundaryGap: {
+          label: "Boundary Gap"
+        },
+        min: {
+          label: "Minimum"
+        },
+        max: {
+          label: "Maximum"
+        },
+        scale: {
+          label: "Scale"
+        },
+        splitNumber: {
+          label: "Split Number"
+        },
+        minInterval: {
+          label: "Minimum Interval"
+        },
+        maxInterval: {
+          label: "Maximum Interval"
+        },
+        interval: {
+          label: "Interval"
+        },
+        logBase: {
+          label: "Logarithm Base"
+        },
+        silent: {
+          label: "Silent Mode"
+        },
+        triggerEvent: {
+          label: "Trigger Event"
+        },
+        z: {
+          label: "Z"
+        },
+        zlevel: {
+          label: "Z Level"
         }
       },
       textStyle: {

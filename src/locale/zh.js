@@ -44,6 +44,12 @@ export default {
         right: "右",
         top: "上",
         bottom: "下"
+      },
+      seriesType: {
+        value: '连续型',
+        category: '离散型',
+        time: '时间型',
+        log: '对数型'
       }
     },
     actions: {
@@ -184,6 +190,69 @@ export default {
         },
         name: {
           label: "名称"
+        },
+        type: {
+          label: "类型",
+        },
+        alignTicks: {
+          label: "对齐刻度"
+        },
+        position: {
+          label: "位置"
+        },
+        nameLocation: {
+          label: "名牌的位置"
+        },
+        nameGap: {
+          label: "名牌-轴线间距"
+        },
+        nameTextStyle: {
+          label: "名牌样式"
+        },
+        nameRotate: {
+          label: "旋转角度"
+        },
+        inverse: {
+          label: "反转坐标轴"
+        },
+        boundaryGap: {
+          label: "两端边距"
+        },
+        min: {
+          label: "最小值"
+        },
+        max: {
+          label: "最大值"
+        },
+        scale: {
+          label: "脱离零值"
+        },
+        splitNumber: {
+          label: "分割段数"
+        },
+        minInterval: {
+          label: "刻度最小间隔"
+        },
+        maxInterval: {
+          label: "刻度最大间隔"
+        },
+        interval: {
+          label: "刻度间隔"
+        },
+        logBase: {
+          label: "对数底"
+        },
+        silent: {
+          label: "静默模式"
+        },
+        triggerEvent: {
+          label: "响应鼠标事件"
+        },
+        z: {
+          label: "Z"
+        },
+        zlevel: {
+          label: "Z Level"
         }
       },
       textStyle: {

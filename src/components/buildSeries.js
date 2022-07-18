@@ -36,7 +36,7 @@ export default ({
 
           const option = this.getOptions({basic, tooltip, series, title, grid, xAxis, yAxis });
 
-          // console.log(option)
+          console.log(option)
           this.renderChart(option, theme);
         },
         getOptions,
