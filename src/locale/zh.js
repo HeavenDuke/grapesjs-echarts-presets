@@ -62,7 +62,8 @@ export default {
       axisLineStyle: '配置坐标轴线',
       axisSplitLine: '配置坐标轴分隔线',
       axisTick: "配置坐标轴刻度",
-      axisSplitArea: '配置坐标轴分割区域'
+      axisSplitArea: '配置坐标轴分割区域',
+      axisLabel: '配置坐标轴刻度标签'
     },
     config: {
       basic:{
@@ -324,6 +325,33 @@ export default {
           splitNumber: {
             label: "分割数"
           }
+        },
+        axisLabel: {
+          label: "刻度标签",
+          show: {
+            label: "显示"
+          },
+          interval: {
+            label: "间距"
+          },
+          inside: {
+            label: "朝内"
+          },
+          rotate: {
+            label: "旋转角度"
+          },
+          margin: {
+            label: "与坐标轴距离"
+          },
+          showMinLabel: {
+            label: "显示最小值"
+          },
+          showMaxLabel: {
+            label: "显示最大值"
+          },
+          hideOverlap: {
+            label: "隐藏重叠标签"
+          },
         }
       },
       textStyle: {

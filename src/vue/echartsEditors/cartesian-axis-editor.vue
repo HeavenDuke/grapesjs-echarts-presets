@@ -42,6 +42,8 @@
                              v-model="axis.zlevel"></ep-number-input>
             <text-style-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.nameTextStyle.label')"
                                v-model="axis.nameTextStyle"></text-style-editor>
+            <label-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.axisLabel.label')"
+                               v-model="axis.axisLabel"></label-editor>
             <axis-line-editor :t="t" v-model="axis.axisLine"></axis-line-editor>
             <split-line-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.splitLine.label')"
                                v-model="axis.splitLine"></split-line-editor>
@@ -63,6 +65,7 @@
   import AxisLineEditor from "../axis-line-editor"
   import SplitLineEditor from "../split-line-editor"
   import TextStyleEditor from "../text-style-editor"
+  import LabelEditor from "../label-editor"
   import ChartSection from "../widgets/chart-section"
   import EpSelect from "../editor-components/select"
   import EpOption from "../editor-components/option"
@@ -88,7 +91,8 @@
       AxisLineEditor,
       SplitLineEditor,
       TickEditor,
-      SplitAreaEditor
+      SplitAreaEditor,
+      LabelEditor
     },
     data() {
       return {
@@ -124,16 +128,16 @@
             length: 3,
             lineStyle: Object.assign({}, LINE_STYLE)
           },
-          // axisLabel: Object.assign({
-          //   show: true,
-          //   interval: 'auto',
-          //   inside: false,
-          //   rotate: 0,
-          //   margin: [8, 8, 8, 8],
-          //   showMinLabel: false,
-          //   showMaxLabel: false,
-          //   hideOverlap: true,
-          // }, TEXT_STYLE),
+          axisLabel: Object.assign({
+            show: true,
+            interval: 'auto',
+            inside: false,
+            rotate: 0,
+            margin: 8,
+            showMinLabel: true,
+            showMaxLabel: true,
+            hideOverlap: true,
+          }, TEXT_STYLE),
           splitLine: {
             show: true,
             interval: 'auto',

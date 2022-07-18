@@ -66,7 +66,8 @@ export default {
       axisLineStyle: 'Edit Axis Line',
       axisSplitLine: 'Edit Axis Split Line',
       axisTick: "Edit Axis Tick",
-      axisSplitArea: 'Edit Axis Split Area'
+      axisSplitArea: 'Edit Axis Split Area',
+      axisLabel: 'Edit Axis Label'
     },
     config: {
       toolbox:{
@@ -442,6 +443,33 @@ export default {
           splitNumber: {
             label: "Split Number"
           }
+        },
+        axisLabel: {
+          label: "Axis Label",
+          show: {
+            label: "Show"
+          },
+          interval: {
+            label: "Interval"
+          },
+          inside: {
+            label: "Inside"
+          },
+          rotate: {
+            label: "Rotate"
+          },
+          margin: {
+            label: "Margin"
+          },
+          showMinLabel: {
+            label: "Show Minimum Label"
+          },
+          showMaxLabel: {
+            label: "Show Maximum Label"
+          },
+          hideOverlap: {
+            label: "Hide Overlap"
+          },
         }
       },
       textStyle: {
