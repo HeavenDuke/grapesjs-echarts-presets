@@ -20,6 +20,7 @@ export default ({
           this.on("change:attributes:data-ecg-toolbox", this.updateChart);
           this.on("change:attributes:data-ecg-x-axis", this.updateChart);
           this.on("change:attributes:data-ecg-y-axis", this.updateChart);
+          this.on("change:attributes:data-ecg-radius-axis", this.updateChart);
           setTimeout(() => {
             this.updateChart();
           }, 100);
@@ -37,8 +38,9 @@ export default ({
 
           const xAxis = JSON.parse(this.get("attributes")["data-ecg-x-axis"] || "{}");
           const yAxis = JSON.parse(this.get("attributes")["data-ecg-y-axis"] || "{}");
+          const radiusAxis = JSON.parse(this.get("attributes")["data-ecg-radius-axis"] || "{}");
 
-          const option = this.getOptions({basic, tooltip,toolbox, series, title, grid,xAxis,yAxis });
+          const option = this.getOptions({basic, tooltip,toolbox, series, title, grid,xAxis,yAxis, radiusAxis });
 
           console.log(option)
           this.renderChart(option, theme);
@@ -72,7 +74,8 @@ export default ({
             },
             {
               type: "echarts-tooltip-trait"
-            },{
+            },
+            {
               type: "echarts-toolbox-trait"
             },
             {
@@ -80,6 +83,9 @@ export default ({
             },
             {
               type: "echarts-y-axis-trait"
+            },
+            {
+              type: "echarts-radius-axis-trait"
             },
             {
               type: "echarts-title-trait"

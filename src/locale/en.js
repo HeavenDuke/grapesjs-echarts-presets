@@ -308,9 +308,15 @@ export default {
       yAxis: {
         label: 'Y Axis'
       },
+      radiusAxis: {
+        label: "Radius Axis"
+      },
       axis: {
         show: {
           label: "Show"
+        },
+        polarIndex: {
+          label: "Polar Index"
         },
         name: {
           label: "Name"

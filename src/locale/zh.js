@@ -194,6 +194,9 @@ export default {
         show: {
           label: "显示/隐藏"
         },
+        polarIndex: {
+          label: "径向轴索引"
+        },
         name: {
           label: "名称"
         },
