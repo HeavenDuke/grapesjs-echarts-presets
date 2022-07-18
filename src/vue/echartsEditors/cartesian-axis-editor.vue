@@ -21,9 +21,9 @@
             <ep-number-input :label="t('grapesjs-echarts-presets.config.axis.nameRotate.label')"
                              v-model="axis.nameRotate"></ep-number-input>
             <ep-input v-if="axis.type === 'value'" :label="t('grapesjs-echarts-presets.config.axis.min.label')"
-                             v-model="axis.min"></ep-input>
+                      v-model="axis.min"></ep-input>
             <ep-input v-if="axis.type === 'value'" :label="t('grapesjs-echarts-presets.config.axis.max.label')"
-                             v-model="axis.max"></ep-input>
+                      v-model="axis.max"></ep-input>
             <ep-number-input v-if="axis.type === 'value'"
                              :label="t('grapesjs-echarts-presets.config.axis.splitNumber.label')"
                              v-model="axis.splitNumber"></ep-number-input>
@@ -43,17 +43,23 @@
             <text-style-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.nameTextStyle.label')"
                                v-model="axis.nameTextStyle"></text-style-editor>
             <axis-line-editor :t="t" v-model="axis.axisLine"></axis-line-editor>
-            <split-line-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.splitLine.label')" v-model="axis.splitLine"></split-line-editor>
-            <split-line-editor :t="t" minor :title="t('grapesjs-echarts-presets.config.axis.minorSplitLine.label')" v-model="axis.minorSplitLine"></split-line-editor>
-            <tick-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.axisTick.label')" v-model="axis.axisTick"></tick-editor>
-            <tick-editor :t="t" minor :title="t('grapesjs-echarts-presets.config.axis.minorAxisTick.label')" v-model="axis.minorTick"></tick-editor>
+            <split-line-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.splitLine.label')"
+                               v-model="axis.splitLine"></split-line-editor>
+            <split-area-editor :t="t" v-model="axis.splitArea"></split-area-editor>
+            <split-line-editor :t="t" minor :title="t('grapesjs-echarts-presets.config.axis.minorSplitLine.label')"
+                               v-model="axis.minorSplitLine"></split-line-editor>
+            <tick-editor :t="t" :title="t('grapesjs-echarts-presets.config.axis.axisTick.label')"
+                         v-model="axis.axisTick"></tick-editor>
+            <tick-editor :t="t" minor :title="t('grapesjs-echarts-presets.config.axis.minorAxisTick.label')"
+                         v-model="axis.minorTick"></tick-editor>
         </div>
     </chart-section>
 </template>
 
 <script>
 
-    import TickEditor from "../tick-editor"
+  import SplitAreaEditor from "../split-area-editor"
+  import TickEditor from "../tick-editor"
   import AxisLineEditor from "../axis-line-editor"
   import SplitLineEditor from "../split-line-editor"
   import TextStyleEditor from "../text-style-editor"
@@ -81,7 +87,8 @@
       EpColorPicker,
       AxisLineEditor,
       SplitLineEditor,
-      TickEditor
+      TickEditor,
+      SplitAreaEditor
     },
     data() {
       return {
@@ -136,11 +143,11 @@
             show: true,
             lineStyle: Object.assign({}, LINE_STYLE)
           },
-          // splitArea: {
-          //   show: true,
-          //   interval: 'auto',
-          //   areaStyle: Object.assign({}, AREA_STYLE)
-          // },
+          splitArea: {
+            show: true,
+            interval: 'auto',
+            areaStyle: Object.assign({}, AREA_STYLE)
+          },
           nameGap: 15,
           nameRotate: 0,
           inverse: false,

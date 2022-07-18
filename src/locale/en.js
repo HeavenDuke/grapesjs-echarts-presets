@@ -62,9 +62,11 @@ export default {
     dialogs: {
       textStyle: 'Edit Text Style',
       lineStyle: 'Edit Line Style',
+      areaStyle: 'Edit Area Style',
       axisLineStyle: 'Edit Axis Line',
       axisSplitLine: 'Edit Axis Split Line',
-      axisTick: "Edit Axis Tick"
+      axisTick: "Edit Axis Tick",
+      axisSplitArea: 'Edit Axis Split Area'
     },
     config: {
       toolbox:{
@@ -396,6 +398,15 @@ export default {
             label: "Symbol Offset"
           }
         },
+        splitArea: {
+          label: "Split Area",
+          show: {
+            label: "Show"
+          },
+          interval: {
+            label: "Interval"
+          }
+        },
         splitLine: {
           label: "Split Line",
           show: {
@@ -494,6 +505,27 @@ export default {
         },
         miterLimit: {
           label: "Miter Limit"
+        },
+        shadowColor: {
+          label: "Shadow Color"
+        },
+        shadowBlur: {
+          label: "Shadow Blur"
+        },
+        shadowOffsetX: {
+          label: "Shadow Offset X"
+        },
+        shadowOffsetY: {
+          label: "Shadow Offset Y"
+        },
+        opacity: {
+          label: "Opacity"
+        }
+      },
+      areaStyle: {
+        label: 'Area Style',
+        color: {
+          label: 'Color'
         },
         shadowColor: {
           label: "Shadow Color"
