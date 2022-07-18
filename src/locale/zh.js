@@ -50,6 +50,10 @@ export default {
         category: '离散型',
         time: '时间型',
         log: '对数型'
+      },
+      direction: {
+        vertical: '垂直',
+        horizontal: '水平'
       }
     },
     actions: {
@@ -196,6 +200,9 @@ export default {
       angleAxis: {
         label: "极坐标系角度轴"
       },
+      singleAxis: {
+        label: "单坐标轴"
+      },
       axis: {
         show: {
           label: "显示/隐藏"
@@ -214,6 +221,12 @@ export default {
         },
         position: {
           label: "位置"
+        },
+        size: {
+          label: "大小"
+        },
+        orient: {
+          label: "朝向"
         },
         nameLocation: {
           label: "名牌的位置"

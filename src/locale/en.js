@@ -54,6 +54,10 @@ export default {
         category: 'Category',
         time: 'Time',
         log: 'Logarithm'
+      },
+      direction: {
+        vertical: 'Vertical',
+        horizontal: 'Horizontal'
       }
     },
     actions: {
@@ -314,6 +318,9 @@ export default {
       angleAxis: {
         label: "Angle Axis"
       },
+      singleAxis: {
+        label: "Single Axis"
+      },
       axis: {
         show: {
           label: "Show"
@@ -332,6 +339,12 @@ export default {
         },
         position: {
           label: "Position"
+        },
+        size: {
+          label: "Size"
+        },
+        orient: {
+          label: "Orientation"
         },
         nameLocation: {
           label: "Name Location"
