@@ -14,6 +14,6 @@ export default {
   "echarts-basic-trait": echartsBasic,
   "echarts-tooltip-trait":echartsTooltip,
   "echarts-x-axis-trait": echartsXAxis,
-  "echarts-toolbox-trait": echartsToolbox
+  "echarts-toolbox-trait": echartsToolbox,
   "echarts-y-axis-trait": echartsYAxis
 };

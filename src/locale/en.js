@@ -45,9 +45,10 @@ export default {
         top: "Top",
         bottom: "Bottom"
       },
-      size:{
+      size: {
         width: "Width",
-        height:"Height"
+        height: "Height"
+      },
       seriesType: {
         value: 'Value',
         category: 'Category',
