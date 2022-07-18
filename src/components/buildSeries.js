@@ -34,13 +34,13 @@ export default ({
           const toolbox = JSON.parse(this.get("attributes")["data-ecg-toolbox"] || "{}");
           const theme = this.get("attributes")["data-ecg-theme"] || null;
 
-          const option = this.getOptions({basic, tooltip,toolbox, series, title, grid });
+
           const xAxis = JSON.parse(this.get("attributes")["data-ecg-x-axis"] || "{}");
           const yAxis = JSON.parse(this.get("attributes")["data-ecg-y-axis"] || "{}");
-          const theme = this.get("attributes")["data-ecg-theme"] || null;
 
+          const option = this.getOptions({basic, tooltip,toolbox, series, title, grid,xAxis,yAxis });
 
-          console.log(option)
+          // console.log(option)
           this.renderChart(option, theme);
         },
         getOptions,
