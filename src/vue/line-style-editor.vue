@@ -18,23 +18,21 @@
                                  v-model="value.width"></ep-number-input>
                 <ep-select :label="t('grapesjs-echarts-presets.config.lineStyle.type.label')"
                            v-model="value.type">
-                    <ep-option v-for="type in lineTypes" :key="type.value" :value="type.value" :label="type.name"></ep-option>
+                    <ep-option v-for="type in lineTypes" :key="type.value" :value="type.value"
+                               :label="type.name"></ep-option>
                 </ep-select>
-<!--                <ep-number-input :label="t('grapesjs-echarts-presets.config.textStyle.lineHeight.label')"-->
-<!--                                 v-model="value.dashOffset"></ep-number-input>-->
-<!--                <ep-select :label="t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')"-->
-<!--                           v-model="value.cap">-->
-<!--                    <ep-option v-for="font in fonts" :key="font.value" :value="font.value" :label="font.name">-->
-<!--                        {{font.name}}-->
-<!--                    </ep-option>-->
-<!--                </ep-select>-->
-<!--                <ep-select :label="t('grapesjs-echarts-presets.config.textStyle.fontFamily.label')"-->
-<!--                           v-model="value.join">-->
-<!--                    <ep-option v-for="font in fonts" :key="font.value" :value="font.value" :label="font.name">-->
-<!--                        {{font.name}}-->
-<!--                    </ep-option>-->
-<!--                </ep-select>-->
-                <ep-number-input v-if="value.join === 'miter'" :label="t('grapesjs-echarts-presets.config.lineStyle.miterLimit.label')"
+                <ep-number-input :label="t('grapesjs-echarts-presets.config.lineStyle.dashOffset.label')"
+                                 v-model="value.dashOffset"></ep-number-input>
+                <ep-select :label="t('grapesjs-echarts-presets.config.lineStyle.cap.label')"
+                           v-model="value.cap">
+                    <ep-option v-for="cap in lineCaps" :key="cap" :value="cap" :label="cap"></ep-option>
+                </ep-select>
+                <ep-select :label="t('grapesjs-echarts-presets.config.lineStyle.join.label')"
+                           v-model="value.join">
+                    <ep-option v-for="join in lineJoins" :key="join" :value="join" :label="join"></ep-option>
+                </ep-select>
+                <ep-number-input v-if="value.join === 'miter'"
+                                 :label="t('grapesjs-echarts-presets.config.lineStyle.miterLimit.label')"
                                  v-model="value.miterLimit" :min="0"></ep-number-input>
                 <ep-number-input :label="t('grapesjs-echarts-presets.config.lineStyle.shadowBlur.label')"
                                  v-model="value.shadowBlur"></ep-number-input>
@@ -62,49 +60,51 @@
   import EpNumberInput from "./editor-components/number-input"
   import EpPositionSelector from "./widgets/position-selector"
   import {LINE_TYPES, FONTS} from "./utils/dict";
-  import { LINE_CAPS, LINE_JOINS } from "@/vue/utils/smallDict";
+  import {LINE_CAPS, LINE_JOINS} from "@/vue/utils/smallDict";
 
   export default {
-  name: "line-style-editor",
-  props: {
-    value: Object,
-    t: Function,
-    title: String
-  },
-  components: {
-    ContentDialog,
-    EpCheckBox,
-    EpSelect,
-    EpOption,
-    EpInput,
-    EpColorPicker,
-    EpNumberInput,
-    EpPositionSelector
-  },
-  watch: {
-    value: {
-      handler (newValue) {
-        this.$emit('input', newValue)
-      },
-      deep: true
+    name: "line-style-editor",
+    props: {
+      value: Object,
+      t: Function,
+      title: String
+    },
+    components: {
+      ContentDialog,
+      EpCheckBox,
+      EpSelect,
+      EpOption,
+      EpInput,
+      EpColorPicker,
+      EpNumberInput,
+      EpPositionSelector
+    },
+    watch: {
+      value: {
+        handler(newValue) {
+          this.$emit('input', newValue)
+        },
+        deep: true
+      }
+    },
+    data() {
+      return {
+        dialog: {
+          visibility: false,
+          title: this.t('grapesjs-echarts-presets.dialogs.lineStyle')
+        },
+        fonts: FONTS,
+        lineTypes: LINE_TYPES,
+        lineCaps: LINE_CAPS,
+        lineJoins: LINE_JOINS
+      }
+    },
+    methods: {
+      showDialog() {
+        this.dialog.visibility = true
+      }
     }
-  },
-  data () {
-    return {
-      dialog: {
-        visibility: false,
-        title: this.t('grapesjs-echarts-presets.dialogs.lineStyle')
-      },
-      fonts: FONTS,
-      lineTypes: LINE_TYPES
-    }
-  },
-  methods: {
-    showDialog() {
-      this.dialog.visibility = true
-    }
-  }
-};
+  };
 </script>
 
 <style scoped>

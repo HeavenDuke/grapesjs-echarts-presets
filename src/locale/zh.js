@@ -327,8 +327,17 @@ export default {
         type: {
           label: '线形'
         },
-        meterLimit: {
+        miterLimit: {
           label: "斜接面限制比例"
+        },
+        dashOffset: {
+          label: "虚线段间距"
+        },
+        join: {
+          label: "线段相连方式"
+        },
+        cap: {
+          label: "末端绘制方式"
         },
         shadowColor: {
           label: "阴影颜色"

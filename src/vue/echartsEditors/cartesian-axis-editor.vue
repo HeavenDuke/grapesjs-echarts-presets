@@ -20,10 +20,10 @@
                              v-model="axis.nameGap"></ep-number-input>
             <ep-number-input :label="t('grapesjs-echarts-presets.config.axis.nameRotate.label')"
                              v-model="axis.nameRotate"></ep-number-input>
-            <ep-number-input v-if="axis.type === 'value'" :label="t('grapesjs-echarts-presets.config.axis.min.label')"
-                             v-model="axis.min"></ep-number-input>
-            <ep-number-input v-if="axis.type === 'value'" :label="t('grapesjs-echarts-presets.config.axis.max.label')"
-                             v-model="axis.max"></ep-number-input>
+            <ep-input v-if="axis.type === 'value'" :label="t('grapesjs-echarts-presets.config.axis.min.label')"
+                             v-model="axis.min"></ep-input>
+            <ep-input v-if="axis.type === 'value'" :label="t('grapesjs-echarts-presets.config.axis.max.label')"
+                             v-model="axis.max"></ep-input>
             <ep-number-input v-if="axis.type === 'value'"
                              :label="t('grapesjs-echarts-presets.config.axis.splitNumber.label')"
                              v-model="axis.splitNumber"></ep-number-input>
@@ -82,7 +82,7 @@
           alignTicks: false,
           position: '',
           offset: 0,
-          type: 'category',
+          type: this.type === 'x' ? "category" : "value",
           name: '',
           nameLocation: 'end',
           nameTextStyle: Object.assign({}, TEXT_STYLE),
@@ -137,13 +137,13 @@
           nameRotate: 0,
           inverse: false,
           boundaryGap: true,
-          min: '',
-          max: '',
+          min: 'dataMin',
+          max: 'dataMax',
           scale: false,
-          splitNumber: '',
-          minInterval: '',
-          maxInterval: '',
-          interval: '',
+          splitNumber: 5,
+          minInterval: null,
+          maxInterval: null,
+          interval: null,
           logBase: 10,
           silent: false,
           triggerEvent: false,

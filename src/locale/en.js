@@ -445,8 +445,17 @@ export default {
         type: {
           label: 'Line Type'
         },
-        meterLimit: {
-          label: "Meter Limit"
+        dashOffset: {
+          label: "Dash Offset"
+        },
+        join: {
+          label: "Line Join"
+        },
+        cap: {
+          label: "Line Cap"
+        },
+        miterLimit: {
+          label: "Miter Limit"
         },
         shadowColor: {
           label: "Shadow Color"
