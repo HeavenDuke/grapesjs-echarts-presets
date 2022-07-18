@@ -56,6 +56,15 @@ export let AREA_STYLE = {
   opacity: 1,
 }
 
+export let SHADOW_STYLE = {
+  color: "rgba(150,150,150,0.3)",
+  shadowBlur: 10,
+  shadowColor: "transparent",
+  shadowOffsetX: 0,
+  shadowOffsetY: 0,
+  opacity: 1,
+}
+
 export let AXIS_TICK_STYLE = {
   show: true,
   alignWithLabel: false,
