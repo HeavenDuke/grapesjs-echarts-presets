@@ -18,6 +18,7 @@ export default ({
           this.on("change:attributes:data-ecg-basic", this.updateChart);
           this.on("change:attributes:data-ecg-tooltip", this.updateChart);
           this.on("change:attributes:data-ecg-toolbox", this.updateChart);
+          this.on("change:attributes:data-ecg-legend", this.updateChart);
           this.on("change:attributes:data-ecg-x-axis", this.updateChart);
           this.on("change:attributes:data-ecg-y-axis", this.updateChart);
           this.on("change:attributes:data-ecg-radius-axis", this.updateChart);
@@ -36,6 +37,7 @@ export default ({
           const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "[]");
           const grid = JSON.parse(this.get("attributes")["data-ecg-grid"] || "{}");
           const toolbox = JSON.parse(this.get("attributes")["data-ecg-toolbox"] || "{}");
+          const legend = JSON.parse(this.get("attributes")["data-ecg-legend"] || "{}");
           const theme = this.get("attributes")["data-ecg-theme"] || null;
 
 
@@ -50,6 +52,7 @@ export default ({
             basic,
             tooltip,
             toolbox,
+            legend,
             series,
             title,
             grid,
@@ -96,6 +99,9 @@ export default ({
             },
             {
               type: "echarts-toolbox-trait"
+            },
+            {
+              type: "echarts-legend-trait"
             },
             {
               type: "echarts-single-axis-trait"

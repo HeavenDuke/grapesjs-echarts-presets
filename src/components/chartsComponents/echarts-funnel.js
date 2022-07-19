@@ -6,6 +6,7 @@ export default build({
     const basic=options.basic ||{};
     const title = options.title || {};
     const grid = options.grid || {};
+    const legend = options.legend || {};
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const series = [
@@ -38,13 +39,11 @@ export default build({
       ...basic,
       grid,
       title,
+      legend,
       tooltip,
       toolbox,
       series,
-      legend: {
-        bottom:'5%',
-        left:'center'
-      },
+
 
     };
 

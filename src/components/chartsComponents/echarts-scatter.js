@@ -8,6 +8,7 @@ export default build({
     const grid = options.grid || {};
     const tooltip = options.tooltip || null;
     const toolbox = options.toolbox || {};
+    const legend = options.legend || {};
     const series = [
       {
         type: "scatter",
@@ -35,6 +36,7 @@ export default build({
       toolbox,
       xAxis,
       tooltip,
+      legend,
       yAxis: [
         {
           type: "value",

@@ -8,6 +8,7 @@ export default build({
     const grid = options.grid || {};
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
+    const legend = options.legend || {};
     const series = [
 
       {
@@ -33,10 +34,7 @@ export default build({
       toolbox,
       series,
       selectedMode: 'single',
-      legend: {
-        bottom:'5%',
-        left:'center'
-      },
+      legend,
       tooltip
     };
 
