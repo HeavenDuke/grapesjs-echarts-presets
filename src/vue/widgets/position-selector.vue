@@ -26,7 +26,7 @@
                                     </span>
                                     <span class="gjs-field-units" v-if="useUnit">
                                         <select v-model="pos.unit" class="gjs-input-unit">
-                                            <option value="" disabled="" hidden="">-</option>
+                                            <option value="-" disabled="" hidden="">-</option>
                                             <option :key="unit" v-for="unit in units">{{unit}}</option>
                                         </select>
                                     </span>

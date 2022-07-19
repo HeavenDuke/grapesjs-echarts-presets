@@ -10,6 +10,7 @@ import echartsAngleAxis from "./echartsTraits/echarts-angle-axis";
 import echartsSingleAxis from "./echartsTraits/echarts-single-axis";
 import echartsParallelAxis from "./echartsTraits/echarts-parallel-axis";
 import echartsToolbox from "./echartsTraits/echarts-toolbox";
+import echartsLegend from "./echartsTraits/echarts-legend";
 
 export default {
   "echarts-series-trait": echartsSeries,
@@ -24,4 +25,5 @@ export default {
   "echarts-single-axis-trait": echartsSingleAxis,
   "echarts-parallel-axis-trait": echartsParallelAxis,
   "echarts-toolbox-trait": echartsToolbox,
+  "echarts-legend-trait": echartsLegend,
 };

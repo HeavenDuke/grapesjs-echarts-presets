@@ -85,7 +85,7 @@
       AxisLineEditor,
       SplitLineEditor,
       TickEditor,
-      SplitAreaEditor,
+      // SplitAreaEditor,
       LabelEditor
     },
     data() {

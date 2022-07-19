@@ -91,7 +91,7 @@ export default {
         width: "",
         height: ""
       },
-      positions: {top: "0", right: "0", bottom: "0", left: "0"},
+      positions: {top: '', right: '', bottom: '', left: ''},
 
     };
   },
