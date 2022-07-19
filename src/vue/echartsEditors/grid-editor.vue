@@ -24,14 +24,14 @@
 </template>
 
 <script>
-import EpCheckBox from "../editor-components/checkbox";
-import EpSelect from "../editor-components/select";
-import EpInput from "../editor-components/input";
-import EpNumberInput from "../editor-components/number-input";
-import EpOption from "../editor-components/option";
-import EpColorPicker from "../editor-components/color-picker";
+import EpCheckBox from "../basic-template/checkbox";
+import EpSelect from "../basic-template/select";
+import EpInput from "../basic-template/input";
+import EpNumberInput from "../basic-template/number-input";
+import EpOption from "../basic-template/option";
+import EpColorPicker from "../basic-template/color-picker";
   import ChartSection from "../widgets/chart-section";
-  import EpPosition from "../widgets/position-selector"
+  import EpPosition from "../basic-template/position-selector"
 
   export default {
     name: "grid-editor",

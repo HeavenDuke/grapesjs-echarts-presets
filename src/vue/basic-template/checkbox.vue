@@ -13,6 +13,7 @@
 </template>
 
 <script>
+//单选框复用模板组件
 export default {
   name: "ep-checkbox",
   props: {

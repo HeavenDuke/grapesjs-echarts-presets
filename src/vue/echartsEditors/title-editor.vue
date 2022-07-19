@@ -35,15 +35,15 @@
 
 <script>
 
-  import TextStyleEditor from "../text-style-editor"
+  import TextStyleEditor from "../popups-template/text-style-editor"
   import ChartSection from "../widgets/chart-section"
-  import EpSelect from "../editor-components/select"
-  import EpOption from "../editor-components/option"
-  import EpInput from "../editor-components/input"
-  import EpNumberInput from "../editor-components/number-input"
-  import EpCheckBox from "../editor-components/checkbox"
-  import EpColorPicker from "../editor-components/color-picker"
-  import EpPosition from "../widgets/position-selector"
+  import EpSelect from "../basic-template/select"
+  import EpOption from "../basic-template/option"
+  import EpInput from "../basic-template/input"
+  import EpNumberInput from "../basic-template/number-input"
+  import EpCheckBox from "../basic-template/checkbox"
+  import EpColorPicker from "../basic-template/color-picker"
+  import EpPosition from "../basic-template/position-selector"
 
   export default {
     name: "title-editor",

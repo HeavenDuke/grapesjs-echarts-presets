@@ -3,6 +3,7 @@
 </template>
 
 <script>
+//下拉框option复用模板组件
   export default {
     name: "ep-option",
     props: {

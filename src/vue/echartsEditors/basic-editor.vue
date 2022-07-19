@@ -130,13 +130,13 @@
 <script>
 
 import ChartSection from "../widgets/chart-section";
-import EpCheckBox from "../editor-components/checkbox";
-import EpSelect from "../editor-components/select";
-import EpInput from "../editor-components/input";
-import EpOption from "../editor-components/option";
-import EpColorPicker from "../editor-components/color-picker";
+import EpCheckBox from "../basic-template/checkbox";
+import EpSelect from "../basic-template/select";
+import EpInput from "../basic-template/input";
+import EpOption from "../basic-template/option";
+import EpColorPicker from "../basic-template/color-picker";
 import {ANIMATIONEASING, BLENDMODE} from "@/vue/utils/dict";
-import EpNumberInput from "@/vue/editor-components/number-input";
+import EpNumberInput from "@/vue/basic-template/number-input";
 
 export default {
   name: "basic-editor",

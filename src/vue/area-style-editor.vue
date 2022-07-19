@@ -32,13 +32,13 @@
 <script>
 
   import ContentDialog from "./widgets/content-dialog"
-  import EpSelect from "./editor-components/select"
-  import EpOption from "./editor-components/option"
-  import EpInput from "./editor-components/input"
-  import EpCheckBox from "./editor-components/checkbox"
-  import EpColorPicker from "./editor-components/color-picker"
-  import EpNumberInput from "./editor-components/number-input"
-  import EpPositionSelector from "./widgets/position-selector"
+  import EpSelect from "./basic-template/select"
+  import EpOption from "./basic-template/option"
+  import EpInput from "./basic-template/input"
+  import EpCheckBox from "./basic-template/checkbox"
+  import EpColorPicker from "./basic-template/color-picker"
+  import EpNumberInput from "./basic-template/number-input"
+  import EpPositionSelector from "./basic-template/position-selector"
 
   export default {
     name: "area-style-editor",

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-
+//下拉框复用模板组件
   import EpOption from './option'
 
   export default {

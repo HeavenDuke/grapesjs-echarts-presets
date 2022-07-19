@@ -19,6 +19,7 @@
 </template>
 
 <script>
+//数字输入框复用模板组件
   export default {
     name: "ep-number-input",
     props: {

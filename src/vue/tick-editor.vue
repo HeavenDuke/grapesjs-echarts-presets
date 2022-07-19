@@ -26,15 +26,15 @@
 
 <script>
   import ContentDialog from "@/vue/widgets/content-dialog";
-  import EpCheckBox from "@/vue/editor-components/checkbox";
-  import EpSelect from "@/vue/editor-components/select";
-  import EpOption from "@/vue/editor-components/option";
-  import EpInput from "@/vue/editor-components/input";
-  import EpColorPicker from "@/vue/editor-components/color-picker";
-  import EpNumberInput from "@/vue/editor-components/number-input";
-  import EpPositionSelector from "@/vue/widgets/position-selector";
-  import EpSizeSelector from "@/vue/widgets/size-selector";
-  import LineStyleEditor from "@/vue/line-style-editor";
+  import EpCheckBox from "@/vue/basic-template/checkbox";
+  import EpSelect from "@/vue/basic-template/select";
+  import EpOption from "@/vue/basic-template/option";
+  import EpInput from "@/vue/basic-template/input";
+  import EpColorPicker from "@/vue/basic-template/color-picker";
+  import EpNumberInput from "@/vue/basic-template/number-input";
+  import EpPositionSelector from "@/vue/basic-template/position-selector";
+  import EpSizeSelector from "@/vue/basic-template/size-selector";
+  import LineStyleEditor from "@/vue/popups-template/line-style-editor";
   import {FONTS, LINE_TYPES} from "@/vue/utils/dict";
 
   export default {

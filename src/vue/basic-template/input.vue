@@ -12,6 +12,7 @@
 </template>
 
 <script>
+//文本输入框复用模板组件
 export default {
   name: "ep-input",
   props:{

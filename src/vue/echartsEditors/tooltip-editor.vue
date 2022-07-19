@@ -68,15 +68,15 @@
 
 <script>
 import ChartSection from "../widgets/chart-section";
-import EpCheckBox from "../editor-components/checkbox";
-import EpSelect from "../editor-components/select";
-import EpInput from "../editor-components/input";
-import EpNumberInput from "../editor-components/number-input";
-import EpOption from "../editor-components/option";
-import EpColorPicker from "../editor-components/color-picker";
-import EpTextArea from "../editor-components/textarea";
+import EpCheckBox from "../basic-template/checkbox";
+import EpSelect from "../basic-template/select";
+import EpInput from "../basic-template/input";
+import EpNumberInput from "../basic-template/number-input";
+import EpOption from "../basic-template/option";
+import EpColorPicker from "../basic-template/color-picker";
+import EpTextArea from "../basic-template/textarea";
 import {TOOLTIP} from "@/vue/utils/smallDict";
-import TextStyleEditor from "../text-style-editor";
+import TextStyleEditor from "../popups-template/text-style-editor";
 
 export default {
   name: "tooltip-editor",

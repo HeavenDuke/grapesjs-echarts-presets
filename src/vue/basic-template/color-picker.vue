@@ -20,6 +20,7 @@
 </template>
 
 <script>
+//颜色选择器复用模板组件
   export default {
     name: "ep-color-picker",
     props: {

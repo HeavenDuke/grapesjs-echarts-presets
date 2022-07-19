@@ -58,15 +58,15 @@
     import TickEditor from "../tick-editor"
   import AxisLineEditor from "../axis-line-editor"
   import SplitLineEditor from "../split-line-editor"
-  import TextStyleEditor from "../text-style-editor"
+  import TextStyleEditor from "../popups-template/text-style-editor"
   import LabelEditor from "../label-editor"
   import ChartSection from "../widgets/chart-section"
-  import EpSelect from "../editor-components/select"
-  import EpOption from "../editor-components/option"
-  import EpInput from "../editor-components/input"
-  import EpNumberInput from "../editor-components/number-input"
-  import EpCheckBox from "../editor-components/checkbox"
-  import EpColorPicker from "../editor-components/color-picker"
+  import EpSelect from "../basic-template/select"
+  import EpOption from "../basic-template/option"
+  import EpInput from "../basic-template/input"
+  import EpNumberInput from "../basic-template/number-input"
+  import EpCheckBox from "../basic-template/checkbox"
+  import EpColorPicker from "../basic-template/color-picker"
   import {SERIES_TYPES} from "@/vue/utils/smallDict";
   import {TEXT_STYLE, LINE_STYLE, AREA_STYLE} from "@/vue/utils/templates";
 

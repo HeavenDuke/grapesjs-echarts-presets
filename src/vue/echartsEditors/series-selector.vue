@@ -48,9 +48,9 @@
 </template>
 
 <script>
-import EpSelect from "@/vue/editor-components/select";
+import EpSelect from "@/vue/basic-template/select";
 
-import ChartSection from "./widgets/chart-section";
+import ChartSection from "../widgets/chart-section";
 
 export default {
   props: ["t", "editor", "onChange"],
