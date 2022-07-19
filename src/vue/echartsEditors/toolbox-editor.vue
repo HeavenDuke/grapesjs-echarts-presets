@@ -107,12 +107,7 @@ export default {
     positions: {
       handler(newValue) {
 
-        this.toolbox.top = newValue.top;
-        this.toolbox.right = newValue.right;
-        this.toolbox.bottom = newValue.bottom;
-        this.toolbox.left = newValue.left;
-
-        this.onChange();
+        Object.assign(this.toolbox, newValue)
       },
       deep: true
     }
