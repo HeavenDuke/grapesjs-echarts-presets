@@ -4,6 +4,7 @@ export default {
       label: "Theme",
       placeholder: "Select a theme",
     },
+
     items: {
       label: "Items",
       name: "Item",
@@ -66,7 +67,6 @@ export default {
     dialogs: {
       textStyle: 'Edit Text Style',
       lineStyle: 'Edit Line Style',
-      areaStyle: 'Edit Area Style',
       axisLineStyle: 'Edit Axis Line',
       axisSplitLine: 'Edit Axis Split Line',
       axisTick: "Edit Axis Tick",
@@ -185,6 +185,147 @@ export default {
         },
         order:{
           label:"Order"
+        }
+      },
+      legend: {
+        label: "Legend",
+        type: {
+          label: "Type"
+        },
+        show: {
+          label: "Show"
+        },
+        zlevel: {
+          label: "Z Level"
+        },
+        z: {
+          label: "Z"
+        },
+        position: {
+          label: "Position"
+        },
+        orient: {
+          label: "Orient"
+        },
+        align: {
+          label: "Align"
+        },
+        padding: {
+          label: "Padding"
+        },
+        itemGap: {
+          label: "ItemGap"
+        },
+        itemWidth: {
+          label: "ItemWidth"
+        },
+        itemHeight: {
+          label: "ItemHeight"
+        },
+        itemStyle: {
+          label: "ItemStyle"
+        },
+        lineStyle: {
+          label: "LineStyle"
+        },
+        symbolRotate: {
+          label: "Symbol Rotate"
+        },
+        formatter: {
+          label: "Formatter"
+        },
+        selectedMode: {
+          label: "Selected Mode"
+        },
+        inactiveColor: {
+          label: "Inactive Color"
+        },
+        inactiveBorderColor: {
+          label: "Inactive BorderColor"
+        },
+        inactiveBorderWidth: {
+          label: "Inactive BorderWidth"
+        },
+        selected: {
+          label: "Selected"
+        },
+        icon:{
+          label:'Icon'
+        },
+        backgroundColor:{
+          label:'BackgroundColor'
+        },
+        borderColor:{
+          label:'BorderColor'
+        },
+        borderWidth: {
+          label:"BorderWidth"
+        },
+        borderRadius:{
+          label:'BorderRadius'
+        },
+        shadowBlur:{
+          label:'Shadow Blur'
+        },
+        shadowColor:{
+          label:'Shadow Color'
+        },
+        shadowOffsetX: {
+          label:'Shadow OffsetX'
+        },
+        shadowOffsetY: {
+          label:'Shadow OffsetY'
+        },
+        scrollDataIndex:{
+          label:'Scroll DataIndex'
+        },
+        pageButtonItemGap:{
+          label:'PageButtonItemGap'
+        },
+        pageButtonGap:{
+          label:'PageButtonGap'
+        },
+        pageButtonPosition:{
+          label:'PageButtonPosition'
+        },
+        pageIcons:{
+          label:'PageIcons'
+        },
+        pageIconColor:{
+          label:'PageIconColor'
+        },
+        pageIconInactiveColor:{
+          label:'PageIconInactiveColor'
+        },
+        pageIconSize:{
+          label:'PageIconSize'
+        },
+        pageTextStyle:{
+          label:'PageTextStyle'
+        },
+        animation:{
+          label:'Animation'
+        },
+        animationDurationUpdate: {
+          label:'AnimationDurationUpdate'
+        },
+        emphasis: {
+          label:'Emphasis'
+        },
+        selector:{
+          label:'Selector'
+        },
+        selectorLabel:{
+          label:'SelectorLabel'
+        },
+        selectorPosition:{
+          label:'SelectorPosition'
+        },
+        selectorItemGap:{
+          label:'SelectorItemGap'
+        },
+        selectorButtonGap:{
+          label:'SelectorButtonGap'
         }
       },
       basic:{
@@ -436,15 +577,6 @@ export default {
             label: "Symbol Offset"
           }
         },
-        splitArea: {
-          label: "Split Area",
-          show: {
-            label: "Show"
-          },
-          interval: {
-            label: "Interval"
-          }
-        },
         splitLine: {
           label: "Split Line",
           show: {
@@ -570,27 +702,6 @@ export default {
         },
         miterLimit: {
           label: "Miter Limit"
-        },
-        shadowColor: {
-          label: "Shadow Color"
-        },
-        shadowBlur: {
-          label: "Shadow Blur"
-        },
-        shadowOffsetX: {
-          label: "Shadow Offset X"
-        },
-        shadowOffsetY: {
-          label: "Shadow Offset Y"
-        },
-        opacity: {
-          label: "Opacity"
-        }
-      },
-      areaStyle: {
-        label: 'Area Style',
-        color: {
-          label: 'Color'
         },
         shadowColor: {
           label: "Shadow Color"

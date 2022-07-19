@@ -62,7 +62,6 @@ export default {
     dialogs: {
       textStyle: '编辑文本样式',
       lineStyle: '编辑线条样式',
-      areaStyle: '编辑区域样式',
       axisLineStyle: '配置坐标轴线',
       axisSplitLine: '配置坐标轴分隔线',
       axisTick: "配置坐标轴刻度",
@@ -315,15 +314,6 @@ export default {
             label: "端点偏移量"
           }
         },
-        splitArea: {
-          label: "分隔区域",
-          show: {
-            label: "显示"
-          },
-          interval: {
-            label: "间距"
-          }
-        },
         splitLine: {
           label: "分隔线",
           show: {
@@ -449,27 +439,6 @@ export default {
         },
         cap: {
           label: "末端绘制方式"
-        },
-        shadowColor: {
-          label: "阴影颜色"
-        },
-        shadowBlur: {
-          label: "阴影模糊"
-        },
-        shadowOffsetX: {
-          label: "阴影水平偏移量"
-        },
-        shadowOffsetY: {
-          label: "阴影垂直偏移量"
-        },
-        opacity: {
-          label: "透明度"
-        }
-      },
-      areaStyle: {
-        label: '区域样式',
-        color: {
-          label: '颜色'
         },
         shadowColor: {
           label: "阴影颜色"
