@@ -5,10 +5,8 @@
       <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.show.label')" v-model="tooltip.show"/>
       <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.trigger.label')"
                  :placeholder="t('grapesjs-echarts-presets.config.tooltip.trigger.placeholder')"
-                 v-model="tooltip.trigger"
-      >
-
-        <ep-option v-for="val in trigger" :value="val.value" :label="val.name"></ep-option>
+                 v-model="tooltip.trigger">
+        <ep-option v-for="val in trigger" :value="val" :label="val"></ep-option>
       </ep-select>
       <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.showContent.label')"
                     v-model="tooltip.showContent"/>
@@ -17,7 +15,7 @@
       <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.triggerOn.label')"
                  :placeholder="t('grapesjs-echarts-presets.config.tooltip.triggerOn.placeholder')"
                  v-model="tooltip.triggerOn">
-        <ep-option v-for="val in triggerOn" :value="val.value" :label="val.name"></ep-option>
+        <ep-option v-for="val in triggerOn" :value="val" :label="val"></ep-option>
       </ep-select>
       <ep-number-input :label="t('grapesjs-echarts-presets.config.tooltip.showDelay.label')" :min="0"
                        v-model="tooltip.showDelay"/>
@@ -27,7 +25,7 @@
       <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.renderMode.label')"
                  :placeholder="t('grapesjs-echarts-presets.config.tooltip.renderMode.placeholder')"
                  v-model="tooltip.renderMode">
-        <ep-option v-for="val in renderMode" :value="val.value" :label="val.name"></ep-option>
+        <ep-option v-for="val in renderMode" :value="val" :label="val"></ep-option>
       </ep-select>
       <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.confine.label')" v-model="tooltip.confine"/>
       <ep-check-box :label="t('grapesjs-echarts-presets.config.tooltip.appendToBody.label')"
@@ -39,7 +37,7 @@
       <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.position.label')"
                  :placeholder="t('grapesjs-echarts-presets.config.tooltip.position.placeholder')"
                  v-model="tooltip.position">
-        <ep-option v-for="val in position" :value="val.value" :label="val.name"></ep-option>
+        <ep-option v-for="val in position" :value="val" :label="val"></ep-option>
       </ep-select>
       <ep-text-area v-model="tooltip.formatter"
                     :label="t('grapesjs-echarts-presets.config.tooltip.formatter.label')"
@@ -61,7 +59,7 @@
       <ep-select :label="t('grapesjs-echarts-presets.config.tooltip.order.label')"
                  :placeholder="t('grapesjs-echarts-presets.config.tooltip.order.placeholder')"
                  v-model="tooltip.order">
-        <ep-option v-for="val in order" :value="val.value" :label="val.name"></ep-option>
+        <ep-option v-for="val in order" :value="val" :label="val"></ep-option>
       </ep-select>
 
     </div>
