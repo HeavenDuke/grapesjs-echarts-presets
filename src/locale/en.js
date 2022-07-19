@@ -285,6 +285,9 @@ export default {
         pageButtonGap:{
           label:'PageButtonGap'
         },
+        pageFormatter:{
+          label:'PageFormatter'
+        },
         pageButtonPosition:{
           label:'PageButtonPosition'
         },
