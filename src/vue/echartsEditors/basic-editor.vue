@@ -128,7 +128,7 @@
 </template>
 
 <script>
-
+//已完成，待完善
 import ChartSection from "../widgets/chart-section";
 import EpCheckBox from "../basic-template/checkbox";
 import EpSelect from "../basic-template/select";
@@ -182,16 +182,6 @@ export default {
       },
       deep: true
     },
-    positions: {
-      handler(newValue) {
-        for (let i = 0; i < newValue.length; i++) {
-          let pos = newValue[i];
-          this.basic[pos.name] = `${pos.value}${pos.unit}`;
-        }
-        this.onChange();
-      },
-      deep: true
-    }
   },
   methods: {}
 };

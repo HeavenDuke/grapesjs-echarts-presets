@@ -34,7 +34,7 @@
 </template>
 
 <script>
-
+//已完成，待完善
   import TextStyleEditor from "../popups-template/text-style-editor"
   import ChartSection from "../widgets/chart-section"
   import EpSelect from "../basic-template/select"

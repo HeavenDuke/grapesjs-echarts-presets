@@ -48,6 +48,7 @@
 </template>
 
 <script>
+//已完成，已完善，待对接
 import EpSelect from "@/vue/basic-template/select";
 
 import ChartSection from "../widgets/chart-section";

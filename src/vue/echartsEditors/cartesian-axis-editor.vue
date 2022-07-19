@@ -54,7 +54,7 @@
 </template>
 
 <script>
-
+//已完成，待完善
     import TickEditor from "../tick-editor"
   import AxisLineEditor from "../axis-line-editor"
   import SplitLineEditor from "../split-line-editor"
