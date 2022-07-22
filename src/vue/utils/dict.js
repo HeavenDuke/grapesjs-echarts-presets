@@ -21,7 +21,7 @@ export let LINE_TYPES = [
   { value: 'dotted', name: 'dotted' },
 ]
 
-export let ANIMATIONEASING=[{name:"linear"},
+export let ANIMATIONEASING=[{name:"linear",value:"quadraticLn"},
   {name:"quadraticLn",value:"quadraticLn"},
   {name:"quadraticOut",value:"quadraticOut"},
   {name:"quadraticInOut",value:"quadraticInOut"},

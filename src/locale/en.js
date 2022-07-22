@@ -59,6 +59,41 @@ export default {
       direction: {
         vertical: 'Vertical',
         horizontal: 'Horizontal'
+      },
+      animation:{
+        label:"Animation",
+        animationThreshold: {
+          label:'Animation Threshold'
+        },
+        animationDuration:{
+          label:'Animation Duration'
+        },
+        animationDurationUpdate:{
+          label:'Animation Duration Update'
+        },
+        animationEasing:{
+          label:'Animation Easing'
+        },
+        animationEasingUpdate:{
+          label:'Animation Easing Update'
+        },
+        animationDelay:{
+          label:'Animation Delay'
+        },
+        animationDelayUpdate:{
+          label:'Animation Delay Update'
+        }
+      },
+      shadow:{
+        shadowBlur:{
+          label:'Shadow Blur'
+        },shadowColor:{
+          label:'Shadow Color'
+        },shadowOffsetX:{
+          label:'Shadow Offset X'
+        },shadowOffsetY:{
+          label:'Shadow Offset Y'
+        },
       }
     },
     actions: {
@@ -74,6 +109,7 @@ export default {
       axisLabel: 'Edit Axis Label'
     },
     config: {
+
       toolbox:{
         label:"Toolbox",
         show:{
@@ -655,6 +691,9 @@ export default {
         fontWeight: {
           label: "Font Weight"
         },
+        fontStyle:{
+          label:'Font Style'
+        },
         lineHeight: {
           label: "Line Height"
         },
@@ -664,23 +703,52 @@ export default {
         backgroundColor: {
           label: "Background"
         },
-        align: {
-          label: "Align"
-        },
-        verticalAlign: {
-          label: "Vertical Align"
-        },
+        // align: {
+        //   label: "Align"
+        // },
+        // verticalAlign: {
+        //   label: "Vertical Align"
+        // },
         borderColor: {
           label: "Border Color"
+        },
+        textBorderColor: {
+          label: "Text Border Color"
         },
         borderWidth: {
           label: "Border Width"
         },
+        textBorderWidth: {
+          label: "Text Border Width"
+        },
         borderType: {
           label: "Border Type"
+        },borderDashOffset:{
+          label:'BorderDashOffset'
+        },
+        textBorderDashOffset:{
+          label:'Text Border Dash Offset'
+        },
+        textBorderType: {
+          label: "Text Border Type"
+        },borderRadius:{
+          label:'Border Radius'
         },
         padding: {
           label: "Padding"
+        },
+        textShadowColor:{
+          label:'Text ShadowColor'
+        },textShadowBlur:{
+          label:'Text ShadowBlur'
+        },textShadowOffsetX:{
+          label:'Text Shadow OffsetX'
+        },textShadowOffsetY:{
+          label:'Text Shadow OffsetY'
+        },overflow:{
+          label:'Overflow'
+        },ellipsis:{
+          label:'Ellipsis'
         }
       },
       lineStyle: {
@@ -721,6 +789,9 @@ export default {
         opacity: {
           label: "Opacity"
         }
+      },
+      itemStyle:{
+        label:"Item Style"
       },
       series: {
         label: 'Series'

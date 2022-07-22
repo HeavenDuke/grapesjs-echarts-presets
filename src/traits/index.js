@@ -11,7 +11,7 @@ import echartsSingleAxis from "./echartsTraits/echarts-single-axis";
 import echartsParallelAxis from "./echartsTraits/echarts-parallel-axis";
 import echartsToolbox from "./echartsTraits/echarts-toolbox";
 import echartsLegend from "./echartsTraits/echarts-legend";
-
+import universal from "./echartsTraits/universal"
 export default {
   "echarts-series-trait": echartsSeries,
   "echarts-title-trait": echartsTitle,
