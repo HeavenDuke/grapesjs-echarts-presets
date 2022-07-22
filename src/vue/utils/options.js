@@ -1,9 +1,11 @@
 import {BLENDMODE, ANIMATIONEASING, FONTS} from "@/vue/utils/dict";
-import {TOOLTIP, BORDER_TYPE} from "@/vue/utils/smallDict";
+import {TOOLTIP, BORDER_TYPE, LINE_CAPS, LINE_JOINS} from "@/vue/utils/smallDict";
+
 // main export
 export function options(t) {
   return [...grid(t)];
 }
+
 //function for translate data
 export function constructOptions(meta) {
   let obj = {};
@@ -108,6 +110,7 @@ function animation(t) {
     default: 0,
   }];
 }
+
 //finished 4 shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
 function shadow(t) {
   return [{
@@ -132,10 +135,34 @@ function shadow(t) {
     default: 0
   }];
 }
+//finished 4 borderColor,borderWidth,borderType,borderDashOffset
+function border(t) {
+  return [{
+    name: "borderColor",
+    type: "Color",
+    label: t("grapesjs-echarts-presets.border.borderColor.label"),
+    default: ""
+  }, {
+    name: "borderWidth",
+    type: "number",
+    label: t("grapesjs-echarts-presets.border.borderWidth.label"),
+    default: "auto"
+  }, {
+    name: "borderType",
+    type: "Enum",
+    label: t("grapesjs-echarts-presets.border.borderType.label"),
+    default: ""
+  }, {
+    name: "borderDashOffset",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.border.borderDashOffset.label"),
+    default: 0
+  }];
+}
 
-//branchs
-
-function textstyle(t, complex) {
+//branch
+//finished
+function textStyle(t, complex = false) {
   let basic = [{
     name: "color",
     type: "Color",
@@ -198,7 +225,7 @@ function textstyle(t, complex) {
     name: "textShadowColor",
     type: "Color",
     label: t("grapesjs-echarts-presets.config.textStyle.textShadowColor.label"),
-    default: "transparent"
+    default: ""
   }, {
     name: "textShadowBlur",
     type: "Number",
@@ -233,29 +260,7 @@ function textstyle(t, complex) {
     type: "Color",
     label: t("grapesjs-echarts-presets.config.textStyle.backgroundColor.label"),
     default: ""
-  }, {
-    name: "borderColor",
-    type: "Color",
-    label: t("grapesjs-echarts-presets.config.textStyle.borderColor.label"),
-    default: ""
-  }, {
-    name: "borderWidth",
-    type: "Number",
-    label: t("grapesjs-echarts-presets.config.textStyle.borderWidth.label"),
-    default: 0
-  }, {
-    name: "borderType",
-    type: "Enum",
-    label: t("grapesjs-echarts-presets.config.textStyle.borderType.label"),
-    placeholder: t("grapesjs-echarts-presets.config.textStyle.borderType.placeholder"),
-    default: "solid",
-    candidate: BORDER_TYPE
-  }, {
-    name: "borderDashOffset",
-    type: "Number",
-    label: t("grapesjs-echarts-presets.config.textStyle.borderDashOffset.label"),
-    default: 0
-  }, {
+  }, ...border(t), {
     name: "borderRadius",
     type: "Number",
     label: t("grapesjs-echarts-presets.config.textStyle.borderRadius.label"),
@@ -273,11 +278,104 @@ function textstyle(t, complex) {
   }
 }
 
-function linestyle(t) {
+//finished
+function lineStyle(t) {
+  return [{
+    name: "color",
+    type: "Color",
+    label: t("grapesjs-echarts-presets.config.lineStyle.color.label"),
+    default: ""
+  }, {
+    name: "width",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.config.lineStyle.width.label"),
+    default: ""
+  }, {
+    name: "type",
+    type: "Enum",
+    label: t("grapesjs-echarts-presets.config.lineStyle.type.label"),
+    placeholder: t("grapesjs-echarts-presets.config.lineStyle.type.placeholder"),
+    default: "",
+    candidate: BORDER_TYPE
+  }, {
+    name: "dashOffset",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.config.lineStyle.dashOffset.label"),
+    default: 0
+  }, {
+    name: "cap",
+    type: "Enum",
+    label: t("grapesjs-echarts-presets.config.lineStyle.cap.label"),
+    placeholder: t("grapesjs-echarts-presets.config.lineStyle.cap.placeholder"),
+    default: "butt",
+    candidate: LINE_CAPS
+  }, {
+    name: "join",
+    type: "Enum",
+    label: t("grapesjs-echarts-presets.config.lineStyle.join.label"),
+    placeholder: t("grapesjs-echarts-presets.config.lineStyle.join.placeholder"),
+    default: "bevel",
+    candidate: LINE_JOINS
+  }, {
+    name: "miterLimit",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.config.lineStyle.miterLimit.label"),
+    default: 10
+  }, ...shadow(t), {
+    name: "opacity",
+    type: "Number",
+    step: 0.1,
+    min: 0,
+    max: 1,
+    label: t("grapesjs-echarts-presets.config.lineStyle.opacity.label"),
+    default: 1
+  }];
+}
+//finished
+function itemStyle(t) {
+  return [{
+    name: "color",
+    type: "Color",
+    label: t("grapesjs-echarts-presets.config.itemStyle.color.label"),
+    default: ""
+  }, ...border(t), {
+    name: "borderCap",
+    type: "Enum",
+    label: t("grapesjs-echarts-presets.config.itemStyle.borderCap.label"),
+    placeholder: t("grapesjs-echarts-presets.config.itemStyle.borderCap.placeholder"),
+    candidate: LINE_CAPS,
+    default: ""
+  }, {
+    name: "borderJoin",
+    type: "Enum",
+    label: t("grapesjs-echarts-presets.config.itemStyle.borderJoin.label"),
+    placeholder: t("grapesjs-echarts-presets.config.itemStyle.borderJoin.placeholder"),
+    candidate: LINE_JOINS,
+    default: ""
+  }, {
+    name: "borderMiterLimit",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.config.itemStyle.borderMiterLimit.label"),
+    default: 10
+  }, ...shadow(t), {
+    name: "opacity",
+    type: "Number",
+    step: 0.1,
+    min: 0,
+    max: 1,
+    label: t("grapesjs-echarts-presets.config.itemStyle.opacity.label"),
+    default: 1
+  }, {
+    name: "decal",
+    type: "Textarea",
+    label: t("grapesjs-echarts-presets.config.itemStyle.decal.label"),
+    default: ""
+  }];
 }
 
 function iconStyle(t) {
 }
+
 //unfinished
 function tooltip(t) {
   return [{
@@ -406,7 +504,7 @@ function grid(t) {
     }, ...shadow(t), {
       name: "tooltip",
       type: "Object",
-      label: t("grapesjs-echarts-presets.config.grid.shadowOffsetY.label"),
+      label: t("grapesjs-echarts-presets.config.tooltip.label"),
       children: tooltip(t)
     }
   ];
@@ -423,51 +521,7 @@ function basic(t) {
     type: "Color",
     label: t("grapesjs-echarts-presets.config.basic.backgroundColor.label"),
     default: "",
-  }, {
-    name: "animation",
-    type: "Boolean",
-    label: t("grapesjs-echarts-presets.config.basic.animation.label"),
-    default: true,
-  }, {
-    name: "animationThreshold",
-    type: "Number",
-    label: t("grapesjs-echarts-presets.config.basic.animationThreshold.label"),
-    default: 2000,
-  }, {
-    name: "animationDuration",
-    type: "Number",
-    label: t("grapesjs-echarts-presets.config.basic.animationDuration.label"),
-    default: 1000,
-  }, {
-    name: "animationDurationUpdate",
-    type: "Number",
-    label: t("grapesjs-echarts-presets.config.basic.animationDurationUpdate.label"),
-    default: 300,
-  }, {
-    name: "animationEasing",
-    type: "Enum",
-    label: t("grapesjs-echarts-presets.config.basic.animationEasing.label"),
-    default: "cubicOut",
-    placeholder: t("grapesjs-echarts-presets.config.basic.animationEasing.placeholder"),
-    candidate: ANIMATIONEASING
-  }, {
-    name: "animationEasingUpdate",
-    type: "Enum",
-    label: t("grapesjs-echarts-presets.config.basic.animationEasingUpdate.label"),
-    placeholder: t("grapesjs-echarts-presets.config.basic.animationEasingUpdate.placeholder"),
-    default: "cubicOut",
-    candidate: ANIMATIONEASING
-  }, {
-    name: "animationDelay",
-    type: "Number",
-    label: t("grapesjs-echarts-presets.config.basic.animationDelay.label"),
-    default: 0,
-  }, {
-    name: "animationDelayUpdate",
-    type: "Number",
-    label: t("grapesjs-echarts-presets.config.basic.animationDelayUpdate.label"),
-    default: 0,
-  }, {
+  }, ...animation(t), {
     name: "useUTC",
     type: "Boolean",
     label: t("grapesjs-echarts-presets.config.basic.useUTC.label"),
