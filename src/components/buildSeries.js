@@ -109,9 +109,9 @@ export default ({
             // {
             //   type: "echarts-legend-trait"
             // },
-            // {
-            //   type: "echarts-single-axis-trait"
-            // },
+            {
+              type: "echarts-single-axis-trait"
+            },
             // {
             //   type: "echarts-radius-axis-trait"
             // },

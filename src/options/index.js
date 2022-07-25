@@ -1,15 +1,21 @@
-import TitleOptions from "@/options/title";
-import PolarOptions from "@/options/polar";
-import RadarOptions from "@/options/radar";
-import ParallelOptions from "@/options/parallel";
-import GridOptions from "@/options/grid";
+
+// import BasicOptions from "@/options/basic"
+import TitleOptions from "@/options/title"
 import LegendOption from "@/options/legend"
+import PolarOptions from "@/options/polar"
+import RadarOptions from "@/options/radar"
+import ParallelOptions from "@/options/parallel"
+import GridOptions from "@/options/grid"
+import CartesianAxisOptions from "@/options/cartesian-axis"
 
 export default {
-  title: TitleOptions,
-  polar: PolarOptions,
-  radar: RadarOptions,
-  parallel: ParallelOptions,
-  grid: GridOptions,
-  legend:LegendOption
-};
+  // basic: BasicOptions,
+  "x-axis": CartesianAxisOptions("x"),
+  "y-axis": CartesianAxisOptions("y"),
+  "grid": GridOptions,
+  "title": TitleOptions,
+  "polar": PolarOptions,
+  "radar": RadarOptions,
+  "parallel": ParallelOptions,
+  "legend": LegendOption
+}
