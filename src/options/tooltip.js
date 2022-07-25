@@ -1,5 +1,5 @@
 //unfinished
-import { TOOLTIP } from "@/utils/smallDict";
+import {TOOLTIP} from "@/utils/smallDict";
 
 export function tooltip(t) {
   return [{

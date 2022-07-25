@@ -2,13 +2,13 @@
   <div>
     <div class="gjs-trt-traits gjs-one-bg gjs-two-color aa">
       <div v-for="(item,index) in meta" :key="index">
-        <ep-input v-if="item.type==='Text'" v-model="value[item.name]" :label="item.label"
+        <ep-input v-if="item.type==='String'" v-model="value[item.name]" :label="item.label"
                   :placeholder="item.placeholder"></ep-input>
         <ep-check-box v-if="item.type==='Boolean'" v-model="value[item.name]" :label="item.label"></ep-check-box>
         <ep-color-picker v-if="item.type==='Color'" v-model="value[item.name]" :label="item.label"></ep-color-picker>
         <ep-number-input v-if="item.type==='Number'" v-model="value[item.name]" :label="item.label" :step="item.step"
                          :max="item.max" :min="item.min"></ep-number-input>
-        <ep-text-area v-if="item.type==='Textarea'" v-model="value[item.name]" :label="item.label"
+        <ep-text-area v-if="item.type==='Text'" v-model="value[item.name]" :label="item.label"
                       :placeholder="item.placeholder"></ep-text-area>
         <ep-select v-if="item.type==='Enum'" v-model="value[item.name]" :label="item.label" :placeholder="item.placeholder">
           <ep-option v-for="val in item.candidate" :value="val.value||val" :label="val.name||val"></ep-option>
