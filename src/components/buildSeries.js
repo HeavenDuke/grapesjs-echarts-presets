@@ -2,6 +2,8 @@ const DEFAULT_GET_OPTIONS = function (options = {}) {
   return options;
 };
 
+import Traits from "@/traits";
+
 export default ({
                   getOptions = DEFAULT_GET_OPTIONS,
                   name = "grapesjs-echarts.components.MY_COMPONENT.name",
