@@ -381,8 +381,41 @@ export function itemStyle(t) {
     default: ""
   }];
 }
-
+//finished
 export function iconStyle(t) {
+  return [{
+    name:'color',
+    label:t("grapesjs-echarts-presets.config.iconStyle.color.label"),
+    type:'Color',
+    default:''
+  },...border(t),{
+    name: "borderCap",
+    type: "Enum",
+    label: t("grapesjs-echarts-presets.config.iconStyle.borderCap.label"),
+    placeholder: t("grapesjs-echarts-presets.config.iconStyle.borderCap.placeholder"),
+    candidate: LINE_CAPS,
+    default: ""
+  }, {
+    name: "borderJoin",
+    type: "Enum",
+    label: t("grapesjs-echarts-presets.config.iconStyle.borderJoin.label"),
+    placeholder: t("grapesjs-echarts-presets.config.iconStyle.borderJoin.placeholder"),
+    candidate: LINE_JOINS,
+    default: ""
+  }, {
+    name: "borderMiterLimit",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.config.iconStyle.borderMiterLimit.label"),
+    default: 10
+  },...shadow(t),{
+    name: "opacity",
+    type: "Number",
+    step: 0.1,
+    min: 0,
+    max: 1,
+    label: t("grapesjs-echarts-presets.config.iconStyle.opacity.label"),
+    default: 1
+  }]
 }
 
 export function areaStyle(t) {

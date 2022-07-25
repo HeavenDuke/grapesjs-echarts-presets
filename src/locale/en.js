@@ -532,6 +532,12 @@ export default {
           label: "Title Link",
           placeholder: "Input title link"
         },
+        target:{
+          label:'Title Target'
+        },
+        subtarget:{
+          label:'Subtitle Target'
+        },
         subtext: {
           label: "Subtitle",
           placeholder: "Input subtitle"
@@ -559,7 +565,17 @@ export default {
         },
         subTextStyle: {
           label: "Subtitle Style"
-        }
+        },
+        padding:{
+          label:'Padding'
+        },
+        backgroundColor:{
+          label:'BackgroundColor'
+        },
+        borderRadius:{
+          label:'Border Radius'
+        } ,
+
       },
       xAxis: {
         label: "X Axis"
@@ -874,6 +890,24 @@ export default {
         },
         decal:{
           label:'Decal'
+        }
+      },
+      iconStyle:{
+        label:'Icon Style',
+        color:{
+          label:'Color'
+        },
+        borderCap:{
+          label:'Border Cap'
+        },
+        borderJoin: {
+          label:'Border Join'
+        },
+        borderMiterLimit: {
+          label:'Border Miter Limit'
+        },
+        opacity:{
+          label:'Opacity'
         }
       },
       series: {
