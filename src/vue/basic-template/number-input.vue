@@ -6,11 +6,11 @@
         <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
             <div class="gjs-field gjs-field-integer">
                 <span class="gjs-input-holder">
-                    <input type="text" placeholder="auto" v-model="value">
+                    <input type="text" placeholder="auto" v-model="number">
                 </span>
                 <div class="gjs-field-arrows" data-arrows="">
-                    <div class="gjs-field-arrow-u" @click="value = (max || max === 0) && value + step > max ? max : value + step"></div>
-                    <div class="gjs-field-arrow-d" @click="value = (min || min === 0) && value - step < min ? min : value - step"></div>
+                    <div class="gjs-field-arrow-u" @click="number = (max || max === 0) && number + step > max ? max : number + step"></div>
+                    <div class="gjs-field-arrow-d" @click="number = (min || min === 0) && number - step < min ? min : number - step"></div>
                 </div>
             </div>
         </div>
@@ -24,7 +24,9 @@
     name: "ep-number-input",
     props: {
       label: String,
-      value: Number,
+      value: {
+        type: [Number, String]
+      },
       min: Number,
       max: Number,
       step: {
@@ -33,20 +35,33 @@
       }
     },
     data() {
-      return {}
+      return {
+        number: ''
+      }
     },
     watch: {
-      value(val) {
-        if (typeof val === 'string') {
-          val = parseFloat(val)
+      number(val) {
+        if (val === "auto") {
+          this.$emit('input', val)
         }
-        this.$emit('input', parseFloat(val.toFixed(this.getPrecision())))
+        else if (typeof val === 'string') {
+          val = parseFloat(val)
+          if (!isNaN(val)) {
+            this.$emit('input', parseFloat(val.toFixed(this.getPrecision())))
+          }
+        }
+        else if (typeof val === 'number') {
+          this.$emit('input', parseFloat(val.toFixed(this.getPrecision())))
+        }
       }
     },
     methods: {
       getPrecision () {
         return Math.round(-Math.log10(this.step) + 6)
       }
+    },
+    created() {
+      this.number = this.value
     }
   };
 </script>
