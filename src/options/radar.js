@@ -82,12 +82,12 @@ export default function (t) {
       name: "splitLine",
       label: t("grapesjs-echarts-presets.config.axis.splitLine.label"),
       type: "Object",
-      children: splitLine(t)
+      children: splitLine(t, false, true)
     }, {
       name: "splitArea",
       label: t("grapesjs-echarts-presets.config.axis.splitArea.label"),
       type: "Object",
-      children: splitArea(t)
+      children: splitArea(t, true)
     }, ...zIndex(t, 2, 0)]
   }
 }

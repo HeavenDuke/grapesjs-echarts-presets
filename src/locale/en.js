@@ -755,7 +755,24 @@ export default {
           },
         },
         splitArea: {
-          label: "Split Area"
+          label: "Split Area",
+          show: {
+            label: "Show"
+          },
+          interval: {
+            label: "Interval"
+          },
+          areaStyle: {
+            label: "Style"
+          }
+        }
+      },
+      areaStyle: {
+        color: {
+          label: "Color"
+        },
+        opacity: {
+          label: "Opacity"
         }
       },
       textStyle: {

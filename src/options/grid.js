@@ -1,5 +1,5 @@
 import {tooltip} from "@/options/tooltip";
-import {position, shadow,size} from "@/options/shared";
+import {position, shadow, size, border} from "@/options/shared";
 //finished
 export default function (t) {
   return {
@@ -45,7 +45,7 @@ export default function (t) {
       }, ...shadow(t), {
         name: "tooltip",
         type: "Object",
-        label: t("grapesjs-echarts-presets.config.tooltip."),
+        label: t("grapesjs-echarts-presets.config.tooltip.label"),
         children: tooltip(t)
       }]
   }

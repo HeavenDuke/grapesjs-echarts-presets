@@ -30,7 +30,7 @@
       }
     },
     created() {
-      // console.log(this.options)
+      console.log(this.meta, this.options)
     }
   };
 </script>

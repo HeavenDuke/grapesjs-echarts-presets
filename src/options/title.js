@@ -79,7 +79,6 @@ function title(t) {
 }
 
 export default function (t) {
-  console.log(t)
   return {
     name: "title",
     label: t("grapesjs-echarts-presets.dict.group.title"),
@@ -90,6 +89,7 @@ export default function (t) {
       default: false
     }, {
       name: "textStyle",
+      label: "",
       type: "Object",
       children: textStyle(t)
     }]

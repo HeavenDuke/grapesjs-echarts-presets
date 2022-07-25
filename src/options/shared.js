@@ -386,7 +386,20 @@ export function iconStyle(t) {
 }
 
 export function areaStyle(t) {
-
+  return [{
+    name: "color",
+    label: t("grapesjs-echarts-presets.config.areaStyle.color.label"),
+    type: "Color",
+    default: "#333"
+  }, {
+    name: "opacity",
+    label: t("grapesjs-echarts-presets.config.areaStyle.opacity.label"),
+    type: "Number",
+    max: 1,
+    min: 0,
+    step: 0.05,
+    default: 1
+  }, ...shadow(t)]
 }
 
 export function axisTick (t, minor = false) {
@@ -401,10 +414,45 @@ export function axisLine (t) {
   return []
 }
 
-export function splitLine (t, minor = false) {
-  return []
+export function splitLine (t, minor = false, show = true) {
+  let result = [{
+    name: "show",
+    label: t("grapesjs-echarts-presets.config.axis.show.label"),
+    type: "Boolean",
+    default: show
+  }]
+  if (!minor) {
+    result.push({
+      name: "interval",
+      label: t("grapesjs-echarts-presets.config.axis.interval.label"),
+      type: "Number",
+      default: "auto"
+    })
+  }
+  result.push({
+    name: "lineStyle",
+    label: t("grapesjs-echarts-presets.config.lineStyle.label"),
+    type: "Object",
+    children: lineStyle(t)
+  })
+  return result
 }
 
-export function splitArea (t) {
-  return []
+export function splitArea (t, show = true) {
+  return [{
+    name: "show",
+    label: t("grapesjs-echarts-presets.config.axis.splitArea.show.label"),
+    type: "Boolean",
+    default: show
+  }, {
+    name: "interval",
+    label: t("grapesjs-echarts-presets.config.axis.splitArea.interval.label"),
+    type: "Number",
+    default: "auto"
+  }, {
+    name: "areaStyle",
+    label: t("grapesjs-echarts-presets.config.axis.splitArea.areaStyle.label"),
+    type: "Object",
+    children: areaStyle(t)
+  }]
 }
