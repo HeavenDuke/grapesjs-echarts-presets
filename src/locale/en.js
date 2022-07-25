@@ -42,10 +42,8 @@ export default {
       group: {
         title: "Title",
         polar: "Polar Coordinate",
-        grid: "Cartesian Coordinate",
         xAxis: "X Axis",
         yAxis: "Y Axis",
-        singleAxis: "Single Axis",
         radar: "Radar Coordinate",
         parallel: "Parallel Coordinate",
         geo: "Geo Coordinate",
