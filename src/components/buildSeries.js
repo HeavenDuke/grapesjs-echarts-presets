@@ -132,9 +132,6 @@ export default ({
             },
             {
               type: "echarts-parallel-trait"
-            },
-            {
-              type: "echarts-geo-trait"
             }
             // {
             //   type: "echarts-series-trait",
