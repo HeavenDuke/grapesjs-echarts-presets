@@ -22,7 +22,7 @@ export default function (t) {
       name: "tooltip",
       label: t("grapesjs-echarts-presets.config.polar.tooltip.label"),
       type: "Object",
-      children: ToolTip(t)
+      children: ToolTip(t).options
     }, ...zIndex(t, 2, 0)]
   }
 }

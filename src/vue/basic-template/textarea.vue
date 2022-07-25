@@ -14,7 +14,7 @@
 <script>
 //文本区域输入复用模板组件
 export default {
-  name: "textarea",
+  name: "ep-textarea",
   props:{
     label:String,
     placeholder:{

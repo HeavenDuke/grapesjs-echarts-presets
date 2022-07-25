@@ -65,11 +65,7 @@ export default {
     ContentDialog
   },
   data () {
-    return {
-
-        visibility: false,
-
-    }
+    return {}
   }
 };
 </script>
