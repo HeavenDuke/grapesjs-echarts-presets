@@ -1,5 +1,5 @@
 import {BLENDMODE, ANIMATIONEASING, FONTS} from "@/utils/dict";
-import {TOOLTIP, BORDER_TYPE, LINE_CAPS, LINE_JOINS} from "@/utils/smallDict";
+import {TOOLTIP, BORDER_TYPE, LINE_CAPS, LINE_JOINS, POINTER_TYPES, VISIBLE_STATUS, TRIGGERS} from "@/utils/smallDict";
 
 //function for translate data
 export function constructOptions(meta) {
@@ -487,5 +487,98 @@ export function splitArea (t, show = true) {
     label: t("grapesjs-echarts-presets.config.axis.splitArea.areaStyle.label"),
     type: "Object",
     children: areaStyle(t)
+  }]
+}
+
+export function axisPointer (t) {
+  return [{
+    name: "show",
+    label: t("grapesjs-echarts-presets.config.axisPointer.show.label"),
+    type: "Boolean",
+    default: false
+  }, {
+    name: "type",
+    label: t("grapesjs-echarts-presets.config.axisPointer.type.label"),
+    type: "Enum",
+    candidate: POINTER_TYPES,
+    default: "line"
+  }, {
+    name: "snap",
+    label: t("grapesjs-echarts-presets.config.axisPointer.snap.label"),
+    type: "Boolean",
+    default: false
+  }, {
+    name: "z",
+    label: t("grapesjs-echarts-presets.config.axisPointer.z.label"),
+    type: "Number",
+    default: 0
+  }, {
+    name: "label",
+    label: t("grapesjs-echarts-presets.config.axisPointer.label.label"),
+    type: "Object",
+    children: textStyle(t, true)
+  }, {
+    name: "lineStyle",
+    label: t("grapesjs-echarts-presets.config.lineStyle.label"),
+    type: "Object",
+    children: lineStyle(t)
+  }, {
+    name: "shadowStyle",
+    label: t("grapesjs-echarts-presets.config.shadowStyle.label"),
+    type: "Object",
+    children: shadow(t)
+  }, {
+    name: "triggerTooltip",
+    label: t("grapesjs-echarts-presets.config.axisPointer.triggerTooltip.label"),
+    type: "Boolean",
+    default: true
+  }, {
+    name: "value",
+    label: t("grapesjs-echarts-presets.config.axisPointer.value.label"),
+    type: "Number",
+    default: 0
+  }, {
+    name: "status",
+    label: t("grapesjs-echarts-presets.config.axisPointer.status.label"),
+    type: "Enum",
+    candidate: VISIBLE_STATUS,
+    default: "hide"
+  }, {
+    name: "handle",
+    label: t("grapesjs-echarts-presets.config.axisPointer.handle.label"),
+    type: "Object",
+    children: [{
+      name: "show",
+      label: t("grapesjs-echarts-presets.config.axisPointer.handle.show.label"),
+      type: "Boolean",
+      default: false
+    }, {
+      name: "icon",
+      label: t("grapesjs-echarts-presets.config.axisPointer.handle.icon.label"),
+      type: "Image",
+      default: false
+    }, {
+      name: "size",
+      label: t("grapesjs-echarts-presets.config.axisPointer.handle.size.label"),
+      type: "Size",
+      useUnit: false,
+      default: [45, 45]
+    }, {
+      name: "margin",
+      label: t("grapesjs-echarts-presets.config.axisPointer.handle.margin.label"),
+      type: "Number",
+      default: 50
+    }, {
+      name: "color",
+      label: t("grapesjs-echarts-presets.config.axisPointer.handle.color.label"),
+      type: "Color",
+      default: "#333"
+    }, ...shadow(t)]
+  }, {
+    name: "triggerOn",
+    label: t("grapesjs-echarts-presets.config.axisPointer.triggerOn.label"),
+    type: "Enum",
+    candidate: TRIGGERS,
+    default: "mousemove|click"
   }]
 }

@@ -22,4 +22,8 @@ export let LINE_JOINS = ["bevel", "round", "miter"];
 
 export let DIRECTIONS = ["vertical", "horizontal"];
 
-export let TRIGGERS = ["click", "mousemove"];
+export let TRIGGERS = ["mousemove|click", "click", "mousemove", "none"];
+
+export let POINTER_TYPES = ["line", "shadow", "none"]
+
+export let VISIBLE_STATUS = ["show", "hide"]

@@ -453,7 +453,9 @@ export default {
         },
         animation: {
           label: "Animation",
-
+        },
+        axisPointer: {
+          label: "Axis Pointer"
         },
         animationThreshold: {
           label: "AnimationThreshold"
@@ -909,6 +911,53 @@ export default {
         },
         opacity:{
           label:'Opacity'
+        }
+      },
+      axisPointer: {
+        show: {
+          label: "Show"
+        },
+        type: {
+          label: "Type"
+        },
+        snap: {
+          label: "Snap"
+        },
+        z: {
+          label: "Z Index"
+        },
+        label: {
+          label: "Show"
+        },
+        triggerTooltip: {
+          label: "Trigger Tooltip"
+        },
+        value: {
+          label: "Value"
+        },
+        status: {
+          label: "Status"
+        },
+        handle: {
+          label: "Handle",
+          show: {
+            label: "Show"
+          },
+          icon: {
+            label: "Icon"
+          },
+          size: {
+            label: "Size"
+          },
+          margin: {
+            label: "Margin"
+          },
+          color: {
+            label: "Color"
+          },
+        },
+        triggerOn: {
+          label: "Trigger On"
         }
       },
       series: {
