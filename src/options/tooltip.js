@@ -1,12 +1,16 @@
 //unfinished
 import {TOOLTIP} from "@/utils/smallDict";
 
-export function tooltip(t) {
-  return [{
-    name: "show",
-    type: "Boolean",
-    label: t("grapesjs-echarts-presets.config.tooltip.show.label"),
-    default: false
+export default function (t) {
+  return {
+    name:'tooltip',
+    label: t("grapesjs-echarts-presets.dict.group.title"),
+    options:[{
+      name: "show",
+      type: "Boolean",
+      label: t("grapesjs-echarts-presets.config.tooltip.show.label"),
+      default: false
+
   }, {
     name: "trigger",
     type: "Enum",
@@ -83,5 +87,6 @@ export function tooltip(t) {
     type: "Text",
     label: t("grapesjs-echarts-presets.config.tooltip.className.label"),
     default: ""
-  }];
+  }],
+}
 }
