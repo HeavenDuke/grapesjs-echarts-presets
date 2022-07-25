@@ -44,6 +44,7 @@ export default {
         polar: "Polar Coordinate",
         radar: "Radar Coordinate",
         parallel: "Parallel Coordinate",
+        geo: "Geo Coordinate",
         tooltip: "ToolTip"
       },
       position: {

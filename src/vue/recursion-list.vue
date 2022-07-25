@@ -14,6 +14,7 @@
           <ep-option v-for="val in item.candidate" :value="val.value || val" :label="val.name||val"></ep-option>
         </ep-select>
         <ep-size v-if="item.type ==='Size'" :use-unit="item.useUnit" :label="item.label" v-model="value[item.name]"></ep-size>
+        <ep-function v-if="item.type ==='Function'" :label="item.label" v-model="value[item.name]"></ep-function>
         <ep-position v-if="false"></ep-position>
         <ep-more v-if="item.type==='Object'" :label="item.label">
           <recursion-list v-model="value[item.name]" :meta="item.children"></recursion-list>
@@ -32,6 +33,7 @@ import EpNumberInput from "./basic-template/number-input";
 import EpOption from "./basic-template/option";
 import EpColorPicker from "./basic-template/color-picker";
 import EpTextArea from "./basic-template/textarea";
+import EpFunction from "./basic-template/function-editor"
 import EpPosition from "./basic-template/position-selector";
 import EpSize from "./basic-template/size-selector";
 import EpMore from "./basic-template/editor-more";
@@ -52,6 +54,7 @@ export default {
   },
   components: {
     // ChartSection,
+    EpFunction,
     EpSize,
     EpColorPicker,
     EpSelect,
