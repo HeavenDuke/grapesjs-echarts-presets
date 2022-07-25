@@ -2,7 +2,7 @@
     <div class="gjs-trt-trait">
         <div class="gjs-sm-property gjs-sm-composite gjs-sm-property__margin gjs-sm-property--full" style="">
             <div class="gjs-sm-label" data-sm-label="">
-                <span class="gjs-sm-icon " title="position">{{title}}</span>
+                <span class="gjs-sm-icon " title="position">{{label}}</span>
             </div>
             <div class="gjs-fields" data-sm-fields="">
                 <div class="gjs-sm-field gjs-sm-composite">
@@ -43,7 +43,7 @@
     name: "size-selector",
     props: {
       t: Function,
-      title: String,
+      label: String,
       useUnit: Boolean,
       value: Array
     },
@@ -82,20 +82,10 @@
       }
     },
     created() {
-      if (this.value instanceof Array) {
-        for (let i = 0; i < this.value.length; i++) {
-          let res = this.parseValue(this.value[i])
-          if (res) {
-            [this.positions[i].value, this.positions[i].unit] = res
-          }
-        }
-      }
-      else {
-        for(let i = 0; i < this.positions.length; i++) {
-          let res = this.parseValue(this.value[this.positions[i].name])
-          if (res) {
-            [this.positions[i].value, this.positions[i].unit] = res
-          }
+      for (let i = 0; i < this.value.length; i++) {
+        let res = this.parseValue(this.value[i])
+        if (res) {
+          [this.sizes[i].value, this.sizes[i].unit] = res
         }
       }
     }

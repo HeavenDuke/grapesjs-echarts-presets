@@ -124,6 +124,9 @@ export default ({
             {
               type: "echarts-title-trait"
             },
+            {
+              type: "echarts-polar-trait"
+            }
             // {
             //   type: "echarts-series-trait",
             // }

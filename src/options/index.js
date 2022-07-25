@@ -1,6 +1,8 @@
 
-import TitleOptions from "@/options/title";
+import TitleOptions from "@/options/title"
+import PolarOptions from "@/options/polar"
 
 export default {
-  title: TitleOptions
+  title: TitleOptions,
+  polar: PolarOptions
 }

@@ -13,6 +13,7 @@
         <ep-select v-if="item.type==='Enum'" v-model="value[item.name]" :label="item.label" :placeholder="item.placeholder">
           <ep-option v-for="val in item.candidate" :value="val.value||val" :label="val.name||val"></ep-option>
         </ep-select>
+        <ep-size v-if="item.type ==='Size'" :use-unit="item.useUnit" :label="item.label" v-model="value[item.name]"></ep-size>
         <ep-position v-if="false"></ep-position>
         <ep-more v-if="item.type==='Object'" :label="item.label">
           <recursion-list v-model="value[item.name]" :meta="item.children"></recursion-list>
@@ -32,6 +33,7 @@ import EpOption from "./basic-template/option";
 import EpColorPicker from "./basic-template/color-picker";
 import EpTextArea from "./basic-template/textarea";
 import EpPosition from "./basic-template/position-selector";
+import EpSize from "./basic-template/size-selector";
 import EpMore from "./basic-template/editor-more";
 import ContentDialog from "./widgets/content-dialog";
 
@@ -50,6 +52,7 @@ export default {
   },
   components: {
     // ChartSection,
+    EpSize,
     EpColorPicker,
     EpSelect,
     EpCheckBox,
