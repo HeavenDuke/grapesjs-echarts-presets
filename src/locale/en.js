@@ -41,7 +41,8 @@ export default {
     dict: {
       group: {
         title: "Title",
-        polar: "Polar Coordinate"
+        polar: "Polar Coordinate",
+        tooltip: "ToolTip"
       },
       position: {
         left: "Left",
