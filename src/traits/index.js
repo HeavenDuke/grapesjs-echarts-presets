@@ -1,29 +1,51 @@
-import echartsSeries from "./echartsTraits/echarts-series";
-import echartsTitle from "./echartsTraits/echarts-title";
-import echartsGrid from "./echartsTraits/echarts-grid";
-import echartsBasic from "./echartsTraits/echarts-basic";
-import echartsTooltip from "./echartsTraits/echarts-tooltip";
-import echartsXAxis from "./echartsTraits/echarts-x-axis";
-import echartsYAxis from "./echartsTraits/echarts-y-axis";
-import echartsRadiusAxis from "./echartsTraits/echarts-radius-axis";
-import echartsAngleAxis from "./echartsTraits/echarts-angle-axis";
-import echartsSingleAxis from "./echartsTraits/echarts-single-axis";
-import echartsParallelAxis from "./echartsTraits/echarts-parallel-axis";
-import echartsToolbox from "./echartsTraits/echarts-toolbox";
-import echartsLegend from "./echartsTraits/echarts-legend";
-import universal from "./echartsTraits/universal"
-export default {
-  "echarts-series-trait": echartsSeries,
-  "echarts-title-trait": echartsTitle,
-  "echarts-grid-trait": echartsGrid,
-  "echarts-basic-trait": echartsBasic,
-  "echarts-tooltip-trait":echartsTooltip,
-  "echarts-x-axis-trait": echartsXAxis,
-  "echarts-y-axis-trait": echartsYAxis,
-  "echarts-radius-axis-trait": echartsRadiusAxis,
-  "echarts-angle-axis-trait": echartsAngleAxis,
-  "echarts-single-axis-trait": echartsSingleAxis,
-  "echarts-parallel-axis-trait": echartsParallelAxis,
-  "echarts-toolbox-trait": echartsToolbox,
-  "echarts-legend-trait": echartsLegend,
-};
+import main from "@/vue/index"
+import options from "@/options"
+
+function constructTrait(ec_option) {
+  let name = ec_option.name;
+  return {
+    noLabel: true,
+    createInput({component}){
+      const editor = component.em.get("Editor");
+      const intl = editor.I18n;
+      const {Vue} = editor;
+      let option = ec_option((key) => intl.t(key))
+      const vueInstance = new Vue({
+        render: (h) =>
+          h(main, {
+            props: {
+              editor,
+              meta: option,
+              t: (key) => intl.t(key),
+              onChange: () => this.onEvent({ component }),
+            },
+          }),
+      }).$mount();
+      const [inputInstance] = vueInstance.$children;
+      this.inputInstance = inputInstance;
+      return vueInstance.$el;
+    },
+    onEvent({component}){
+      const { options } = this.inputInstance;
+      component.addAttributes({
+        [`data-ecg-${name}`]: JSON.stringify(options)
+      });
+      component.clearChart()
+      component.view.render();
+    },
+    onUpdate({component}){
+      const index = component.getAttributes()[`data-ecg-${name}`] || null;
+      if (index) {
+        this.inputInstance.options = JSON.parse(index);
+      }
+    }
+  }
+}
+
+let traits = {}
+
+for(let group in options) {
+  traits[`echarts-${group}-trait`] = constructTrait(options[group])
+}
+
+export default traits
