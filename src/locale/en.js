@@ -40,7 +40,8 @@ export default {
     },
     dict: {
       group: {
-        title: 'Title'
+        title: "Title",
+        polar: "Polar Coordinate"
       },
       position: {
         left: "Left",
@@ -86,6 +87,14 @@ export default {
           label: "Animation Delay Update"
         }
       },
+      zIndex: {
+        z: {
+          label: "Z"
+        },
+        zlevel: {
+          label: "Z Level"
+        }
+      },
       shadow: {
         shadowBlur: {
           label: "Shadow Blur"
@@ -125,7 +134,17 @@ export default {
       axisLabel: "Edit Axis Label"
     },
     config: {
-
+      polar: {
+        center: {
+          label: "Center"
+        },
+        radius: {
+          label: "Radius"
+        },
+        tooltip: {
+          label: "Tooltip"
+        }
+      },
       toolbox: {
         label: "Toolbox",
         show: {

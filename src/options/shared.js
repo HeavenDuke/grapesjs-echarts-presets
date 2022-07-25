@@ -106,6 +106,20 @@ export function animation(t) {
   }];
 }
 
+export function zIndex(t, z = 0, zLevel = 0) {
+  return [{
+    name: "z",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.dict.zIndex.z.label"),
+    default: z
+  }, {
+    name: "zlevel",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.dict.zIndex.zlevel.label"),
+    default: zLevel
+  }]
+}
+
 //finished 4 shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
 export function shadow(t) {
   return [{
