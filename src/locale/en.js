@@ -47,7 +47,9 @@ export default {
         radar: "Radar Coordinate",
         parallel: "Parallel Coordinate",
         geo: "Geo Coordinate",
-        tooltip: "ToolTip"
+        tooltip: "ToolTip",
+        grid:"Grid",
+        legend: "Legend"
       },
       position: {
         left: "Left",
@@ -309,15 +311,6 @@ export default {
         show: {
           label: "Show"
         },
-        zlevel: {
-          label: "Z Level"
-        },
-        z: {
-          label: "Z"
-        },
-        position: {
-          label: "Position"
-        },
         orient: {
           label: "Orient"
         },
@@ -378,18 +371,6 @@ export default {
         borderRadius: {
           label: "BorderRadius"
         },
-        shadowBlur: {
-          label: "Shadow Blur"
-        },
-        shadowColor: {
-          label: "Shadow Color"
-        },
-        shadowOffsetX: {
-          label: "Shadow OffsetX"
-        },
-        shadowOffsetY: {
-          label: "Shadow OffsetY"
-        },
         scrollDataIndex: {
           label: "Scroll DataIndex"
         },
@@ -420,14 +401,12 @@ export default {
         pageTextStyle: {
           label: "PageTextStyle"
         },
-        animation: {
-          label: "Animation"
-        },
-        animationDurationUpdate: {
-          label: "AnimationDurationUpdate"
-        },
+
         emphasis: {
-          label: "Emphasis"
+          label: "Emphasis",
+          selectorLabel: {
+            label:'SelectorLabel'
+          }
         },
         selector: {
           label: "Selector"

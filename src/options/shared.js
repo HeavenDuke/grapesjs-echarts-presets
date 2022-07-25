@@ -17,42 +17,42 @@ export function constructOptions(meta) {
 //tool
 
 //finished 4 top,right,bottom,left
-export function position(t) {
-  return [{
-    name: "left",
-    type: "String",
-    label: t("grapesjs-echarts-presets.dict.position.left"),
-    default: "10%"
-  }, {
+export function position(t,top='auto'||0,right='auto'||0,bottom='auto'||0,left='auto'||0) {
+  return [ {
     name: "top",
     type: "String",
     label: t("grapesjs-echarts-presets.dict.position.top"),
-    default: "60px"
+    default: top
   }, {
     name: "right",
     type: "String",
     label: t("grapesjs-echarts-presets.dict.position.right"),
-    default: "10%"
-  }, {
+    default: right
+  },{
     name: "bottom",
     type: "String",
     label: t("grapesjs-echarts-presets.dict.position.bottom"),
-    default: "60px"
-  }];
+    default: bottom
+  },{
+    name: "left",
+    type: "String",
+    label: t("grapesjs-echarts-presets.dict.position.left"),
+    default: left
+  }, ];
 }
 
 //finished 2 width,height
-export function size(t) {
+export function size(t,width="auto",height="auto") {
   return [{
     name: "width",
     type: "String",
     label: t("grapesjs-echarts-presets.dict.size.width"),
-    default: "auto"
+    default: width
   }, {
     name: "height",
     type: "String",
     label: t("grapesjs-echarts-presets.dict.size.height"),
-    default: "auto"
+    default: height
   }];
 }
 
