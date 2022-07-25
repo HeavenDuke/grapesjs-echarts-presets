@@ -129,6 +129,9 @@ export default ({
             },
             {
               type: "echarts-radar-trait"
+            },
+            {
+              type: "echarts-parallel-trait"
             }
             // {
             //   type: "echarts-series-trait",

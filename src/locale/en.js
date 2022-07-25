@@ -43,6 +43,7 @@ export default {
         title: "Title",
         polar: "Polar Coordinate",
         radar: "Radar Coordinate",
+        parallel: "Parallel Coordinate",
         tooltip: "ToolTip"
       },
       position: {
@@ -162,6 +163,26 @@ export default {
         },
         shape: {
           label: "Axis Name"
+        }
+      },
+      parallel: {
+        layout: {
+          label: "Layout"
+        },
+        axisExpandable: {
+          label: "Expandable"
+        },
+        axisExpandCenter: {
+          label: "Expand Center"
+        },
+        axisExpandCount: {
+          label: "Expand Count"
+        },
+        axisExpandWidth: {
+          label: "Expand Width"
+        },
+        axisExpandTriggerOn: {
+          label: "Expand On"
         }
       },
       toolbox: {
