@@ -126,6 +126,12 @@ export default ({
             },
             {
               type: "echarts-polar-trait"
+            },
+            {
+              type: "echarts-radar-trait"
+            },
+            {
+              type: "echarts-parallel-trait"
             }
             // {
             //   type: "echarts-series-trait",

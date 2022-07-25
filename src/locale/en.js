@@ -42,6 +42,8 @@ export default {
       group: {
         title: "Title",
         polar: "Polar Coordinate",
+        radar: "Radar Coordinate",
+        parallel: "Parallel Coordinate",
         tooltip: "ToolTip"
       },
       position: {
@@ -144,6 +146,43 @@ export default {
         },
         tooltip: {
           label: "Tooltip"
+        }
+      },
+      radar: {
+        center: {
+          label: "Center"
+        },
+        radius: {
+          label: "Radius"
+        },
+        startAngle: {
+          label: "Start Angle"
+        },
+        axisName: {
+          label: "Axis Name"
+        },
+        shape: {
+          label: "Axis Name"
+        }
+      },
+      parallel: {
+        layout: {
+          label: "Layout"
+        },
+        axisExpandable: {
+          label: "Expandable"
+        },
+        axisExpandCenter: {
+          label: "Expand Center"
+        },
+        axisExpandCount: {
+          label: "Expand Count"
+        },
+        axisExpandWidth: {
+          label: "Expand Width"
+        },
+        axisExpandTriggerOn: {
+          label: "Expand On"
         }
       },
       toolbox: {
@@ -730,6 +769,9 @@ export default {
           hideOverlap: {
             label: "Hide Overlap"
           },
+        },
+        splitArea: {
+          label: "Split Area"
         }
       },
       textStyle: {

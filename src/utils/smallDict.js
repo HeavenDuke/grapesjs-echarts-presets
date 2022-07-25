@@ -21,3 +21,5 @@ export let LINE_CAPS = ["butt", "round", "square"];
 export let LINE_JOINS = ["bevel", "round", "miter"];
 
 export let DIRECTIONS = ["vertical", "horizontal"];
+
+export let TRIGGERS = ["click", "mousemove"];

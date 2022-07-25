@@ -1,4 +1,4 @@
-import options from "./options";
+import options from "./options"
 import main from "@/vue/index"
 
 function constructTrait(ec_option) {

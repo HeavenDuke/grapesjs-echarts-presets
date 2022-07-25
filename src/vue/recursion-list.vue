@@ -11,7 +11,7 @@
         <ep-text-area v-if="item.type==='Text'" v-model="value[item.name]" :label="item.label"
                       :placeholder="item.placeholder"></ep-text-area>
         <ep-select v-if="item.type==='Enum'" v-model="value[item.name]" :label="item.label" :placeholder="item.placeholder">
-          <ep-option v-for="val in item.candidate" :value="val.value||val" :label="val.name||val"></ep-option>
+          <ep-option v-for="val in item.candidate" :value="val.value || val" :label="val.name||val"></ep-option>
         </ep-select>
         <ep-size v-if="item.type ==='Size'" :use-unit="item.useUnit" :label="item.label" v-model="value[item.name]"></ep-size>
         <ep-position v-if="false"></ep-position>
