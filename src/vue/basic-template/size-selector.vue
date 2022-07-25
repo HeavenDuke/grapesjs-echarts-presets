@@ -37,7 +37,7 @@
 </template>
 
 <script>
-  import {UNITS} from "@/vue/utils/smallDict";
+  import {UNITS} from "@/utils/smallDict";
 
   export default {
     name: "size-selector",

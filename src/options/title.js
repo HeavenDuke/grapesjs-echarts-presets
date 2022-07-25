@@ -79,41 +79,15 @@ function title(t) {
 }
 
 export default function (t) {
+  console.log(t)
   return {
     name: "title",
-    label: t(""),
+    label: t("grapesjs-echarts-presets.dict.group.title"),
     options: [{
       name: "show",
       label: t(""),
       type: "Boolean",
-    }, {
-      name: "text",
-      label: t(""),
-      type: "String",
-    }, {
-      name: "link",
-      label: t(""),
-      type: "String",
-    }, {
-      name: "target",
-      label: "",
-      type: "String",
-    }, {
-      name: "subtext",
-      label: "",
-      type: "String",
-    }, {
-      name: "sublink",
-      label: "",
-      type: "String",
-    }, {
-      name: "subtarget",
-      label: "",
-      type: "String",
-    }, {
-      name: "triggerEvent",
-      label: "",
-      type: "Boolean",
+      default: false
     }, {
       name: "textStyle",
       type: "Object",

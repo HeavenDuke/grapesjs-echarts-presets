@@ -135,7 +135,6 @@ function shadow(t) {
     default: 0
   }];
 }
-
 //finished 4 borderColor,borderWidth,borderType,borderDashOffset
 function border(t) {
   return [{
@@ -162,7 +161,6 @@ function border(t) {
 }
 
 //branch
-
 //finished
 function textStyle(t, complex = false) {
   let basic = [{
@@ -333,7 +331,6 @@ function lineStyle(t) {
     default: 1
   }];
 }
-
 //finished
 function itemStyle(t) {
   return [{
@@ -376,90 +373,10 @@ function itemStyle(t) {
   }];
 }
 
-//
 function iconStyle(t) {
-
 }
 
 //unfinished
-function title(t) {
-  return [{
-    name: "show",
-    type: "Boolean",
-    label: t("grapesjs-echarts-presets.config.title.show.label"),
-    default: true
-  }, {
-    name: "text",
-    type: "Text",
-    label: t("grapesjs-echarts-presets.config.title.text.label"),
-    placeholder: t("grapesjs-echarts-presets.config.title.text.placeholder"),
-    default: ""
-  }, {
-    name: "link",
-    type: "Text",
-    label: t("grapesjs-echarts-presets.config.title.link.label"),
-    placeholder: t("grapesjs-echarts-presets.config.title.link.placeholder"),
-    default: ""
-  }, {
-    //   name:'target',
-    //   type:'Enum',
-    //   label:t("grapesjs-echarts-presets.config.title.link.label"),
-    //   placeholder:t("grapesjs-echarts-presets.config.title.link.placeholder"),
-    //   default:''
-    // },{
-    name: "textStyle",
-    type: Object,
-    label: t("grapesjs-echarts-presets.config.textStyle.label"),
-    children: textStyle(t)
-  }, {
-    name: "subtext",
-    type: "Text",
-    label: t("grapesjs-echarts-presets.config.title.subtext.label"),
-    placeholder: t("grapesjs-echarts-presets.config.title.subtext.placeholder"),
-    default: ""
-  }, {
-    name: "sublink",
-    type: "Text",
-    label: t("grapesjs-echarts-presets.config.title.sublink.label"),
-    placeholder: t("grapesjs-echarts-presets.config.title.sublink.placeholder"),
-    default: ""
-  }, {
-    name: "subtextStyle",
-    type: Object,
-    label: t("grapesjs-echarts-presets.config.subtextStyle.label"),
-    children: textStyle(t)
-  }, {
-    name: "textAlign",
-    type: "Enum",
-    label: t("grapesjs-echarts-presets.config.title.textAlign.label"),
-    placeholder: t("grapesjs-echarts-presets.config.title.textAlign.placeholder"),
-    default: "auto",
-    candidate:['auto','left','right','center']
-  }, {
-    name: "textVerticalAlign",
-    type: "Enum",
-    label: t("grapesjs-echarts-presets.config.title.textVerticalAlign.label"),
-    placeholder: t("grapesjs-echarts-presets.config.title.textVerticalAlign.placeholder"),
-    default: "auto",
-    candidate:['auto','top','bottom','middle']
-  }, {
-    name: "triggerEvent",
-    type: "Boolean",
-    label: t("grapesjs-echarts-presets.config.title.triggerEvent.label"),
-    default: false,
-  }, {
-    name: "itemGap",
-    type: "Boolean",
-    label: t("grapesjs-echarts-presets.config.title.triggerEvent.label"),
-    default: false,
-  }, {
-    name: "padding",
-    type: "Boolean",
-    label: t("grapesjs-echarts-presets.config.title.triggerEvent.label"),
-    default: false,
-  }];
-}
-
 function tooltip(t) {
   return [{
     name: "show",

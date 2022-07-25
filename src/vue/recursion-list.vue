@@ -13,7 +13,7 @@
         <ep-select v-if="item.type==='Enum'" v-model="value[item.name]" :label="item.label" :placeholder="item.placeholder">
           <ep-option v-for="val in item.candidate" :value="val.value||val" :label="val.name||val"></ep-option>
         </ep-select>
-        <ep-position v-if=""></ep-position>
+        <ep-position v-if="false"></ep-position>
         <ep-more v-if="item.type==='Object'" :label="item.label">
           <recursion-list v-model="value[item.name]" :meta="item.children"></recursion-list>
         </ep-more>
@@ -46,7 +46,6 @@ export default {
     },
     value: {
       type: Object,
-
     }
   },
   components: {
