@@ -4,7 +4,6 @@ export default {
       label: "Theme",
       placeholder: "Select a theme",
     },
-
     items: {
       label: "Items",
       name: "Item",
@@ -40,6 +39,9 @@ export default {
       }
     },
     dict: {
+      group: {
+        title: 'Title'
+      },
       position: {
         left: "Left",
         right: "Right",

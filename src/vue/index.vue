@@ -7,11 +7,11 @@
 <script>
   import RecursionList from "./recursion-list";
   import ChartSection from "./widgets/chart-section"
-  import {constructOptions} from "@/vue/utils/options";
+  import {constructOptions} from "@/options/shared";
 
   export default {
     name: "index",
-    props: ["t", "editor", "onChange", "meta", "title"],
+    props: ["editor", "onChange", "meta", "title"],
     components: {
       RecursionList,
       ChartSection
@@ -26,7 +26,7 @@
     },
     data() {
       return {
-        options: constructOptions(this.meta)
+        options: constructOptions(this.meta.options)
       }
     },
     created() {

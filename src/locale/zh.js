@@ -39,6 +39,9 @@ export default {
       }
     },
     dict: {
+      group: {
+        title: '标题'
+      },
       position: {
         left: "左",
         right: "右",

@@ -2,8 +2,6 @@ const DEFAULT_GET_OPTIONS = function (options = {}) {
   return options;
 };
 
-import Traits from "@/traits";
-
 export default ({
                   getOptions = DEFAULT_GET_OPTIONS,
                   name = "grapesjs-echarts.components.MY_COMPONENT.name",
@@ -90,45 +88,45 @@ export default ({
           name: editor.I18n.t(name),
           resizable: true,
           traits: [
-            {
-              type: "echarts-basic-trait"
-            },
-            {
-              type: "echarts-grid-trait"
-            },
-            {
-              type: "echarts-tooltip-trait"
-            },
-            {
-              type: "echarts-toolbox-trait"
-            },
-            {
-              type: "echarts-legend-trait"
-            },
-            {
-              type: "echarts-single-axis-trait"
-            },
-            {
-              type: "echarts-x-axis-trait"
-            },
-            {
-              type: "echarts-y-axis-trait"
-            },
-            {
-              type: "echarts-radius-axis-trait"
-            },
-            {
-              type: "echarts-angle-axis-trait"
-            },
-            {
-              type: "echarts-parallel-axis-trait"
-            },
+            // {
+            //   type: "echarts-basic-trait"
+            // },
+            // {
+            //   type: "echarts-grid-trait"
+            // },
+            // {
+            //   type: "echarts-tooltip-trait"
+            // },
+            // {
+            //   type: "echarts-toolbox-trait"
+            // },
+            // {
+            //   type: "echarts-legend-trait"
+            // },
+            // {
+            //   type: "echarts-single-axis-trait"
+            // },
+            // {
+            //   type: "echarts-x-axis-trait"
+            // },
+            // {
+            //   type: "echarts-y-axis-trait"
+            // },
+            // {
+            //   type: "echarts-radius-axis-trait"
+            // },
+            // {
+            //   type: "echarts-angle-axis-trait"
+            // },
+            // {
+            //   type: "echarts-parallel-axis-trait"
+            // },
             {
               type: "echarts-title-trait"
             },
-            {
-              type: "echarts-series-trait",
-            }
+            // {
+            //   type: "echarts-series-trait",
+            // }
           ],
         },
       },
