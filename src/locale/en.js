@@ -42,6 +42,8 @@ export default {
       group: {
         title: "Title",
         polar: "Polar Coordinate",
+        xAxis: "X Axis",
+        yAxis: "Y Axis",
         radar: "Radar Coordinate",
         parallel: "Parallel Coordinate",
         geo: "Geo Coordinate",
@@ -784,6 +786,9 @@ export default {
           areaStyle: {
             label: "Style"
           }
+        },
+        axisPointer: {
+          label: "Axis Pointer"
         }
       },
       areaStyle: {

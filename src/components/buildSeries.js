@@ -91,9 +91,15 @@ export default ({
             // {
             //   type: "echarts-basic-trait"
             // },
-            // {
-            //   type: "echarts-grid-trait"
-            // },
+            {
+              type: "echarts-grid-trait"
+            },
+            {
+              type: "echarts-x-axis-trait"
+            },
+            {
+              type: "echarts-y-axis-trait"
+            },
             // {
             //   type: "echarts-tooltip-trait"
             // },
@@ -105,12 +111,6 @@ export default ({
             // },
             // {
             //   type: "echarts-single-axis-trait"
-            // },
-            // {
-            //   type: "echarts-x-axis-trait"
-            // },
-            // {
-            //   type: "echarts-y-axis-trait"
             // },
             // {
             //   type: "echarts-radius-axis-trait"

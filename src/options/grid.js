@@ -1,4 +1,4 @@
-import {tooltip} from "@/options/tooltip";
+import Tooltip from "@/options/tooltip";
 import {position, shadow, size, border} from "@/options/shared";
 //finished
 export default function (t) {
@@ -46,7 +46,7 @@ export default function (t) {
         name: "tooltip",
         type: "Object",
         label: t("grapesjs-echarts-presets.config.tooltip.label"),
-        children: tooltip(t)
+        children: Tooltip(t).options
       }]
   }
   ;
