@@ -7,7 +7,7 @@
 <script>
 import RecursionList from "./recursion-list";
 import ChartSection from "./widgets/chart-section"
-import { constructOptions } from "@/vue/utils/options";
+import { constructOptions } from "@/options/shared";
 
 export default {
   name: "index",
