@@ -20,22 +20,22 @@ export function constructOptions(meta) {
 export function position(t) {
   return [{
     name: "left",
-    type: "Text",
+    type: "String",
     label: t("grapesjs-echarts-presets.dict.position.left"),
     default: "10%"
   }, {
     name: "top",
-    type: "Text",
+    type: "String",
     label: t("grapesjs-echarts-presets.dict.position.top"),
     default: "60px"
   }, {
     name: "right",
-    type: "Text",
+    type: "String",
     label: t("grapesjs-echarts-presets.dict.position.right"),
     default: "10%"
   }, {
     name: "bottom",
-    type: "Text",
+    type: "String",
     label: t("grapesjs-echarts-presets.dict.position.bottom"),
     default: "60px"
   }];
@@ -45,12 +45,12 @@ export function position(t) {
 export function size(t) {
   return [{
     name: "width",
-    type: "Text",
+    type: "String",
     label: t("grapesjs-echarts-presets.dict.size.width"),
     default: "auto"
   }, {
     name: "height",
-    type: "Text",
+    type: "String",
     label: t("grapesjs-echarts-presets.dict.size.height"),
     default: "auto"
   }];
@@ -245,7 +245,7 @@ export function textStyle(t, complex = false) {
     candidate: ["none", "truncate", "break", "breakAll"]
   }, {
     name: "ellipsis",
-    type: "Textarea",
+    type: "Text",
     label: t("grapesjs-echarts-presets.config.textStyle.ellipsis.label"),
     placeholder: t("grapesjs-echarts-presets.config.textStyle.ellipsis.placeholder"),
     default: ""
@@ -362,7 +362,7 @@ export function itemStyle(t) {
     default: 1
   }, {
     name: "decal",
-    type: "Textarea",
+    type: "Text",
     label: t("grapesjs-echarts-presets.config.itemStyle.decal.label"),
     default: ""
   }];
