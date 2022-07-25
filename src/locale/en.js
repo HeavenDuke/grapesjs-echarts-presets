@@ -42,6 +42,7 @@ export default {
       group: {
         title: "Title",
         polar: "Polar Coordinate",
+        radar: "Radar Coordinate",
         tooltip: "ToolTip"
       },
       position: {
@@ -144,6 +145,23 @@ export default {
         },
         tooltip: {
           label: "Tooltip"
+        }
+      },
+      radar: {
+        center: {
+          label: "Center"
+        },
+        radius: {
+          label: "Radius"
+        },
+        startAngle: {
+          label: "Start Angle"
+        },
+        axisName: {
+          label: "Axis Name"
+        },
+        shape: {
+          label: "Axis Name"
         }
       },
       toolbox: {
@@ -714,6 +732,9 @@ export default {
           hideOverlap: {
             label: "Hide Overlap"
           },
+        },
+        splitArea: {
+          label: "Split Area"
         }
       },
       textStyle: {

@@ -388,3 +388,23 @@ export function iconStyle(t) {
 export function areaStyle(t) {
 
 }
+
+export function axisTick (t, minor = false) {
+  return []
+}
+
+export function axisLabel (t) {
+  return []
+}
+
+export function axisLine (t) {
+  return []
+}
+
+export function splitLine (t, minor = false) {
+  return []
+}
+
+export function splitArea (t) {
+  return []
+}
