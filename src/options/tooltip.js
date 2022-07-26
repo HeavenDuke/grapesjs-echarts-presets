@@ -74,11 +74,6 @@ export default function (t) {
       label: t("grapesjs-echarts-presets.config.tooltip.appendToBody.label"),
       default: false
     }, {
-      name: "appendToBody",
-      type: "Boolean",
-      label: t("grapesjs-echarts-presets.config.tooltip.appendToBody.label"),
-      default: false
-    }, {
       name: "className",
       type: "String",
       label: t("grapesjs-echarts-presets.config.tooltip.className.label"),

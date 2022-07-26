@@ -7,6 +7,7 @@ import RadarOptions from "@/options/radar"
 import ParallelOptions from "@/options/parallel"
 import GridOptions from "@/options/grid"
 import TooltipOptions from "@/options/tooltip"
+import ToolboxOptions from "@/options/toolbox"
 import CartesianAxisOptions from "@/options/cartesian-axis"
 
 export default {
@@ -19,5 +20,6 @@ export default {
   "radar": RadarOptions,
   "parallel": ParallelOptions,
   "legend": LegendOption,
-  "tooltip":TooltipOptions
+  "tooltip":TooltipOptions,
+  "toolbox":ToolboxOptions
 }

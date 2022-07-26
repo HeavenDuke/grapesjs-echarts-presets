@@ -1,3 +1,6 @@
+import {DIRECTIONS} from "@/utils/smallDict";
+import {iconStyle, position, size, zIndex} from "@/options/shared";
+import tooltip from "@/options/tooltip";
 
 export default function (t) {
   return {
@@ -9,81 +12,47 @@ export default function (t) {
       label: t("grapesjs-echarts-presets.config.toolbox.show.label"),
       default: false
     }, {
-      name: "trigger",
+      name: "orient",
       type: "Enum",
-      label: t("grapesjs-echarts-presets.config.tooltip.trigger.label"),
-      placeholder: t("grapesjs-echarts-presets.config.tooltip.trigger.placeholder"),
-      candidate: TOOLTIP.trigger,
-      default: "item"
+      label: t("grapesjs-echarts-presets.config.toolbox.orient.label"),
+      placeholder: t("grapesjs-echarts-presets.config.toolbox.orient.placeholder"),
+      candidate: DIRECTIONS,
+      default: "horizontal"
     }, {
-      name: "axisPointer",
-      type: "Object",
-      label: t("grapesjs-echarts-presets.config.tooltip.trigger.label"),
-      placeholder: t("grapesjs-echarts-presets.config.tooltip.trigger.placeholder"),
-      children: []
+      name:'itemSize',
+      type:'Number',
+      label: t("grapesjs-echarts-presets.config.toolbox.itemSize.label"),
+      default: 15
     }, {
-      name: "showContent",
-      type: "Boolean",
-      label: t("grapesjs-echarts-presets.config.tooltip.showContent.label"),
-      placeholder: t("grapesjs-echarts-presets.config.tooltip.showContent.placeholder"),
-      default: true
+      name:'itemGap',
+      type:'Number',
+      label: t("grapesjs-echarts-presets.config.toolbox.itemGap.label"),
+      default: 8
     }, {
-      name: "alwaysShowContent",
-      type: "Boolean",
-      label: t("grapesjs-echarts-presets.config.tooltip.alwaysShowContent.label"),
-      placeholder: t("grapesjs-echarts-presets.config.tooltip.alwaysShowContent.placeholder"),
-      default: false
-    }, {
-      name: "triggerOn",
-      type: "Enum",
-      label: t("grapesjs-echarts-presets.config.tooltip.triggerOn.label"),
-      placeholder: t("grapesjs-echarts-presets.config.tooltip.triggerOn.placeholder"),
-      candidate: TOOLTIP.triggerOn,
-      default: "mousemove|click"
-    }, {
-      name: "showDelay",
-      type: "Number",
-      label: t("grapesjs-echarts-presets.config.tooltip.showDelay.label"),
-      placeholder: t("grapesjs-echarts-presets.config.tooltip.showDelay.placeholder"),
-      default: 0
-    }, {
-      name: "hideDelay",
-      type: "Number",
-      label: t("grapesjs-echarts-presets.config.tooltip.hideDelay.label"),
-      placeholder: t("grapesjs-echarts-presets.config.tooltip.hideDelay.placeholder"),
-      default: 100
-    }, {
-      name: "enterable",
-      type: "Boolean",
-      label: t("grapesjs-echarts-presets.config.tooltip.enterable.label"),
-      default: false
-    }, {
-      name: "renderMode",
-      type: "Enum",
-      label: t("grapesjs-echarts-presets.config.tooltip.renderMode.label"),
-      placeholder: t("grapesjs-echarts-presets.config.tooltip.renderMode.placeholder"),
-      candidate: TOOLTIP.renderMode,
-      default: "html"
-    }, {
-      name: "confine",
-      type: "Boolean",
-      label: t("grapesjs-echarts-presets.config.tooltip.confine.label"),
-      default: false
-    }, {
-      name: "appendToBody",
-      type: "Boolean",
-      label: t("grapesjs-echarts-presets.config.tooltip.appendToBody.label"),
-      default: false
-    }, {
-      name: "appendToBody",
-      type: "Boolean",
-      label: t("grapesjs-echarts-presets.config.tooltip.appendToBody.label"),
-      default: false
-    }, {
-      name: "className",
-      type: "Text",
-      label: t("grapesjs-echarts-presets.config.tooltip.className.label"),
-      default: ""
-    }],
+      name:'showTitle',
+      type:'Boolean',
+      label: t("grapesjs-echarts-presets.config.toolbox.showTitle.label"),
+      default: 8
+    },{
+      name: 'feature',
+      type: 'Object',
+      label:  t("grapesjs-echarts-presets.config.toolbox.feature.label"),
+      children:[]
+    },{
+      name: 'iconStyle',
+      type: 'Object',
+      label: t("grapesjs-echarts-presets.config.iconStyle.label"),
+      children: iconStyle(t)
+    },{
+      name: 'emphasis',
+      type: 'Object',
+      label:  t("grapesjs-echarts-presets.config.toolbox.emphasis.label"),
+      children:iconStyle(t)
+    },...zIndex(t,2,0),...position(t),...size(t),{
+      name: 'tooltip',
+      type: 'Object',
+      label: t("grapesjs-echarts-presets.config.tooltip.label"),
+      children: tooltip(t).options
+    }]
   }
 }
