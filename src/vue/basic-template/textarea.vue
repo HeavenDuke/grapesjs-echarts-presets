@@ -1,40 +1,42 @@
 <template>
-  <div class="gjs-trt-trait">
-    <div class="gjs-label-wrp" data-label>
-      <div class="gjs-label" :title="label">{{label}}</div>
+    <div class="gjs-trt-trait">
+        <div class="gjs-label-wrp" data-label>
+            <div class="gjs-label" :title="label">{{label}}</div>
+        </div>
+        <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+            <label class="gjs-field gjs-field-text" data-input="">
+                <textarea :name="label" v-model="value" :placeholder="placeholder"></textarea>
+            </label>
+        </div>
     </div>
-    <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
-      <label class="gjs-field gjs-field-text" data-input="">
-        <textarea :name="label" v-model="value" :placeholder="placeholder"></textarea>
-      </label>
-    </div>
-  </div>
 </template>
 
 <script>
-//文本区域输入复用模板组件
-export default {
-  name: "ep-textarea",
-  props:{
-    label:String,
-    placeholder:{
-      type:String,
-      default:'please input'
+  //文本区域输入复用模板组件
+  export default {
+    name: "ep-textarea",
+    props: {
+      label: String,
+      placeholder: String,
+      value: String
     },
-    value:String
-  },
-  data(){
-    return{
-
+    data() {
+      return {
+        text: ''
+      }
+    },
+    watch: {
+      value(val) {
+        this.text = val
+      },
+      text (val) {
+        this.$emit('input', val)
+      }
+    },
+    created() {
+      this.text = this.value
     }
-  },
-  watch:{
-    value(val){
-      this.$emit('input',val)
-    }
-  },
-
-};
+  };
 </script>
 
 <style scoped>

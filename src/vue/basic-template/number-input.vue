@@ -9,17 +9,18 @@
                     <input type="text" placeholder="auto" v-model="number">
                 </span>
                 <div class="gjs-field-arrows" data-arrows="">
-                    <div class="gjs-field-arrow-u" @click="number = (max || max === 0) && number + step > max ? max : number + step"></div>
-                    <div class="gjs-field-arrow-d" @click="number = (min || min === 0) && number - step < min ? min : number - step"></div>
+                    <div class="gjs-field-arrow-u"
+                         @click="number = (max || max === 0) && number + step > max ? max : number + step"></div>
+                    <div class="gjs-field-arrow-d"
+                         @click="number = (min || min === 0) && number - step < min ? min : number - step"></div>
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
-//数字输入框复用模板组件
+  //数字输入框复用模板组件
   export default {
     name: "ep-number-input",
     props: {
@@ -43,20 +44,21 @@
       number(val) {
         if (val === "auto") {
           this.$emit('input', val)
-        }
-        else if (typeof val === 'string') {
+        } else if (typeof val === 'string') {
           val = parseFloat(val)
           if (!isNaN(val)) {
             this.$emit('input', parseFloat(val.toFixed(this.getPrecision())))
           }
-        }
-        else if (typeof val === 'number') {
+        } else if (typeof val === 'number') {
           this.$emit('input', parseFloat(val.toFixed(this.getPrecision())))
         }
+      },
+      value(val) {
+        this.number = val
       }
     },
     methods: {
-      getPrecision () {
+      getPrecision() {
         return Math.round(-Math.log10(this.step) + 6)
       }
     },

@@ -35,7 +35,6 @@
     watch: {
       list: {
         handler(newValue) {
-          console.log(newValue.map(item => item.value))
           this.$emit('input', newValue.map(item => item.value))
         },
         deep: true

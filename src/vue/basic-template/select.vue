@@ -18,7 +18,7 @@
 </template>
 
 <script>
-//下拉框复用模板组件
+  //下拉框复用模板组件
   import EpOption from './option'
 
   export default {
@@ -27,18 +27,29 @@
       label: String,
       value: String,
       placeholder: {
-        type:String,
-        default:'-select-'
+        type: String,
+        default: '-select-'
       }
     },
     components: {
       EpOption
     },
+    data () {
+      return {
+        selection: ''
+      }
+    },
     watch: {
       value(val) {
+        this.selection = val
+      },
+      selection(val) {
         this.$emit('input', val)
       }
     },
+    created() {
+      this.selection= this.value
+    }
   }
 </script>
 

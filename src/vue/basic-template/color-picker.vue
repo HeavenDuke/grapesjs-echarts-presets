@@ -11,7 +11,8 @@
                 <div class="gjs-field-colorp">
                     <div data-colorp-c="" class="gjs-field-colorp-c">
                         <div class="gjs-checker-bg"></div>
-                        <input class="gjs-field-color-picker" :style="{ background: value }" type="color" v-model="value">
+                        <input class="gjs-field-color-picker" :style="{ background: color }" type="color"
+                               v-model="color">
                     </div>
                 </div>
             </div>
@@ -20,7 +21,7 @@
 </template>
 
 <script>
-//颜色选择器复用模板组件
+  //颜色选择器复用模板组件
   export default {
     name: "ep-color-picker",
     props: {
@@ -28,12 +29,20 @@
       value: String
     },
     data() {
-      return {}
+      return {
+        color: ''
+      }
     },
     watch: {
-      value(val) {
+      color(val) {
         this.$emit('input', val)
+      },
+      value(newValue) {
+        this.color = newValue
       }
+    },
+    created() {
+      this.color = this.value
     }
   };
 </script>
