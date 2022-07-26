@@ -41,6 +41,7 @@ export default {
     dict: {
       group: {
         title: "Title",
+        basic:'Basic',
         polar: "Polar Coordinate",
         xAxis: "X Axis",
         yAxis: "Y Axis",
@@ -432,34 +433,17 @@ export default {
         backgroundColor: {
           label: "BackgroundColor"
         },
-        animation: {
-          label: "Animation",
-        },
         axisPointer: {
           label: "Axis Pointer"
         },
-        animationThreshold: {
-          label: "AnimationThreshold"
-        },
-        animationDuration: {
-          label: "AnimationDuration"
-        },
-        animationEasing: {
-          label: "AnimationEasing",
-          placeholder: "Choose an initial animation"
-        },
-        animationDelay: {
-          label: "AnimationDelay"
-        },
-        animationDurationUpdate: {
-          label: "AnimationDurationUpdate"
-        },
-        animationEasingUpdate: {
-          label: "AnimationEasingUpdate",
-          placeholder: "Select data update animation"
-        },
-        animationDelayUpdate: {
-          label: "AnimationDelayUpdate"
+        stateAnimation:{
+          label:'State Animation',
+          duration:{
+            label:'Duration'
+          },
+          easing:{
+            label:'Easing'
+          }
         },
         blendMode: {
           label: "BlendMode"

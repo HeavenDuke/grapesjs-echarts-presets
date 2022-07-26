@@ -15,7 +15,7 @@
         </ep-select>
         <ep-size v-if="item.type ==='Size'" :use-unit="item.useUnit" :label="item.label" v-model="value[item.name]"></ep-size>
         <ep-function v-if="item.type ==='Function'" :label="item.label" v-model="value[item.name]"></ep-function>
-        <ep-position v-if="false"></ep-position>
+        <ep-position v-if="item.type==='Position'" :title="item.label" v-model="value[item.name]" :use-unit="item.useUnit"></ep-position>
         <ep-more v-if="item.type==='Object'" :label="item.label">
           <recursion-list v-model="value[item.name]" :meta="item.children"></recursion-list>
         </ep-more>
