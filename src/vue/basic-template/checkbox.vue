@@ -17,7 +17,10 @@
   export default {
     name: "ep-checkbox",
     props: {
-      label: String,
+      label: {
+        label: String,
+        default: ""
+      },
       value: Boolean,
     },
     data() {
@@ -34,7 +37,7 @@
       }
     },
     created() {
-      this.status = val
+      this.status = this.value
     }
   };
 </script>

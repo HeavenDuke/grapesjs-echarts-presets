@@ -16,7 +16,10 @@
   export default {
     name: "ep-input",
     props: {
-      label: String,
+      label: {
+        type: String,
+        default: ""
+      },
       placeholder: String,
       value: String
     },

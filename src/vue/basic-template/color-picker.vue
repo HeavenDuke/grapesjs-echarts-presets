@@ -25,7 +25,10 @@
   export default {
     name: "ep-color-picker",
     props: {
-      label: String,
+      label: {
+        type: String,
+        default: ""
+      },
       value: String
     },
     data() {

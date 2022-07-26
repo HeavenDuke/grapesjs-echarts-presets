@@ -61,17 +61,17 @@
     watch: {
       value: {
         handler(newValue) {
-            this.flushData()
+            this.flushData(newValue)
         },
         deep: true
       },
       sizes: {
         handler(newValue) {
           if (this.useUnit) {
-            this.$emit('input', this.sizes.map(pos => `${pos.value}${this.useUnit ? pos.unit : ''}`))
+            this.$emit('input', newValue.map(pos => `${pos.value}${this.useUnit ? pos.unit : ''}`))
           }
           else {
-            this.$emit('input', this.sizes.map(pos => parseFloat(pos.value)))
+            this.$emit('input', newValue.map(pos => parseFloat(pos.value)))
           }
         },
         deep: true
@@ -85,9 +85,9 @@
         }
         return null
       },
-      flushData () {
-        for (let i = 0; i < this.value.length; i++) {
-          let res = this.parseValue(this.value[i])
+      flushData (val) {
+        for (let i = 0; i < val.length; i++) {
+          let res = this.parseValue(val[i])
           if (res) {
             [this.sizes[i].value, this.sizes[i].unit] = res
           }
@@ -95,7 +95,7 @@
       }
     },
     created() {
-      this.flushData()
+      this.flushData(this.value)
     }
   }
 </script>

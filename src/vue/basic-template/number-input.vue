@@ -24,7 +24,10 @@
   export default {
     name: "ep-number-input",
     props: {
-      label: String,
+      label: {
+        type: String,
+        default: ""
+      },
       value: {
         type: [Number, String]
       },

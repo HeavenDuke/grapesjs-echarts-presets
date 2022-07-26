@@ -39,33 +39,40 @@ export default ({
           const tooltip = JSON.parse(this.get("attributes")["data-ecg-tooltip"] || "{}");
           const title = JSON.parse(this.get("attributes")["data-ecg-title"] || "{}");
           const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "[]");
-          const grid = JSON.parse(this.get("attributes")["data-ecg-grid"] || "{}");
           const toolbox = JSON.parse(this.get("attributes")["data-ecg-toolbox"] || "{}");
           const legend = JSON.parse(this.get("attributes")["data-ecg-legend"] || "{}");
           const theme = this.get("attributes")["data-ecg-theme"] || null;
 
           const dataset = JSON.parse(this.get("attributes")["data-ecg-dataset-axis"] || "{}");
+
+          const singleAxis = JSON.parse(this.get("attributes")["data-ecg-single-axis"] || "{}");
+          const grid = JSON.parse(this.get("attributes")["data-ecg-grid"] || "{}");
           const xAxis = JSON.parse(this.get("attributes")["data-ecg-x-axis"] || "{}");
           const yAxis = JSON.parse(this.get("attributes")["data-ecg-y-axis"] || "{}");
+          const polar = JSON.parse(this.get("attributes")["data-ecg-polar"] || "{}");
           const radiusAxis = JSON.parse(this.get("attributes")["data-ecg-radius-axis"] || "{}");
           const angleAxis = JSON.parse(this.get("attributes")["data-ecg-angle-axis"] || "{}");
-          const singleAxis = JSON.parse(this.get("attributes")["data-ecg-single-axis"] || "{}");
+          const radar = JSON.parse(this.get("attributes")["data-ecg-radar"] || "{}");
+          const parallel = JSON.parse(this.get("attributes")["data-ecg-parallel"] || "{}");
           const parallelAxis = JSON.parse(this.get("attributes")["data-ecg-parallel-axis"] || "{}");
 
           const option = this.getOptions({
             basic,
+            title,
             tooltip,
             toolbox,
             legend,
+            dataset,
             series,
-            title,
+            singleAxis,
             grid,
             xAxis,
             yAxis,
-            dataset,
+            polar,
             radiusAxis,
             angleAxis,
-            singleAxis,
+            radar,
+            parallel,
             parallelAxis
           });
 
@@ -125,12 +132,6 @@ export default ({
             },
             {
               type: "echarts-polar-trait"
-            },
-            {
-              type: "echarts-radius-axis-trait"
-            },
-            {
-              type: "echarts-angle-axis-trait"
             },
             {
               type: "echarts-radius-axis-trait"
