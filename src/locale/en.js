@@ -41,18 +41,21 @@ export default {
     dict: {
       group: {
         title: "Title",
-        polar: "Polar Coordinate",
-        radiusAxis: "Radius Axis",
-        angleAxis: "Angle Axis",
+        basic:'Basic',
+        singleAxis: "Single Axis",
         grid: "Cartesian Coordinate",
         xAxis: "X Axis",
         yAxis: "Y Axis",
-        singleAxis: "Single Axis",
+        polar: "Polar Coordinate",
+        radiusAxis: "Radius Axis",
+        angleAxis: "Angle Axis",
         radar: "Radar Coordinate",
         parallel: "Parallel Coordinate",
         parallelAxis: "Parallel Axis",
         geo: "Geo Coordinate",
-        tooltip: "ToolTip"
+        tooltip: "ToolTip",
+        grid:"Grid",
+        legend: "Legend"
       },
       position: {
         left: "Left",
@@ -317,15 +320,6 @@ export default {
         show: {
           label: "Show"
         },
-        zlevel: {
-          label: "Z Level"
-        },
-        z: {
-          label: "Z"
-        },
-        position: {
-          label: "Position"
-        },
         orient: {
           label: "Orient"
         },
@@ -386,18 +380,6 @@ export default {
         borderRadius: {
           label: "BorderRadius"
         },
-        shadowBlur: {
-          label: "Shadow Blur"
-        },
-        shadowColor: {
-          label: "Shadow Color"
-        },
-        shadowOffsetX: {
-          label: "Shadow OffsetX"
-        },
-        shadowOffsetY: {
-          label: "Shadow OffsetY"
-        },
         scrollDataIndex: {
           label: "Scroll DataIndex"
         },
@@ -428,14 +410,11 @@ export default {
         pageTextStyle: {
           label: "PageTextStyle"
         },
-        animation: {
-          label: "Animation"
-        },
-        animationDurationUpdate: {
-          label: "AnimationDurationUpdate"
-        },
         emphasis: {
-          label: "Emphasis"
+          label: "Emphasis",
+          selectorLabel: {
+            label:'SelectorLabel'
+          }
         },
         selector: {
           label: "Selector"
@@ -461,34 +440,17 @@ export default {
         backgroundColor: {
           label: "BackgroundColor"
         },
-        animation: {
-          label: "Animation",
-        },
         axisPointer: {
           label: "Axis Pointer"
         },
-        animationThreshold: {
-          label: "AnimationThreshold"
-        },
-        animationDuration: {
-          label: "AnimationDuration"
-        },
-        animationEasing: {
-          label: "AnimationEasing",
-          placeholder: "Choose an initial animation"
-        },
-        animationDelay: {
-          label: "AnimationDelay"
-        },
-        animationDurationUpdate: {
-          label: "AnimationDurationUpdate"
-        },
-        animationEasingUpdate: {
-          label: "AnimationEasingUpdate",
-          placeholder: "Select data update animation"
-        },
-        animationDelayUpdate: {
-          label: "AnimationDelayUpdate"
+        stateAnimation:{
+          label:'State Animation',
+          duration:{
+            label:'Duration'
+          },
+          easing:{
+            label:'Easing'
+          }
         },
         blendMode: {
           label: "BlendMode"

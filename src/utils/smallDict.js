@@ -12,8 +12,8 @@ export let SERIES_TYPES = [
   "time",
   "log"
 ];
-
-export let BORDER_TYPE=["solid", "dashed", "dotted"]
+export let TARGET = ["self", "blank"];
+export let BORDER_TYPE = ["solid", "dashed", "dotted"];
 export let UNITS = ["px", "%", "em", "rem", "vh", "vw"];
 
 export let LINE_CAPS = ["butt", "round", "square"];
