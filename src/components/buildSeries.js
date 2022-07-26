@@ -14,16 +14,20 @@ export default ({
           this.on("change:attributes:data-ecg-series", this.updateChart);
           this.on("change:attributes:data-ecg-theme", this.updateChart);
           this.on("change:attributes:data-ecg-title", this.updateChart);
-          this.on("change:attributes:data-ecg-grid", this.updateChart);
           this.on("change:attributes:data-ecg-basic", this.updateChart);
           this.on("change:attributes:data-ecg-tooltip", this.updateChart);
           this.on("change:attributes:data-ecg-toolbox", this.updateChart);
           this.on("change:attributes:data-ecg-legend", this.updateChart);
+          this.on("change:attributes:data-ecg-dataset", this.updateChart);
+          this.on("change:attributes:data-ecg-single-axis", this.updateChart);
+          this.on("change:attributes:data-ecg-grid", this.updateChart);
           this.on("change:attributes:data-ecg-x-axis", this.updateChart);
           this.on("change:attributes:data-ecg-y-axis", this.updateChart);
+          this.on("change:attributes:data-ecg-polar", this.updateChart);
           this.on("change:attributes:data-ecg-radius-axis", this.updateChart);
           this.on("change:attributes:data-ecg-angle-axis", this.updateChart);
-          this.on("change:attributes:data-ecg-single-axis", this.updateChart);
+          this.on("change:attributes:data-ecg-radar", this.updateChart);
+          this.on("change:attributes:data-ecg-parallel", this.updateChart);
           this.on("change:attributes:data-ecg-parallel-axis", this.updateChart);
           setTimeout(() => {
             this.updateChart();
@@ -40,7 +44,7 @@ export default ({
           const legend = JSON.parse(this.get("attributes")["data-ecg-legend"] || "{}");
           const theme = this.get("attributes")["data-ecg-theme"] || null;
 
-
+          const dataset = JSON.parse(this.get("attributes")["data-ecg-dataset-axis"] || "{}");
           const xAxis = JSON.parse(this.get("attributes")["data-ecg-x-axis"] || "{}");
           const yAxis = JSON.parse(this.get("attributes")["data-ecg-y-axis"] || "{}");
           const radiusAxis = JSON.parse(this.get("attributes")["data-ecg-radius-axis"] || "{}");
@@ -58,6 +62,7 @@ export default ({
             grid,
             xAxis,
             yAxis,
+            dataset,
             radiusAxis,
             angleAxis,
             singleAxis,

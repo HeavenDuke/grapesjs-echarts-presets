@@ -9,6 +9,17 @@ export default function (t) {
       type: "String",
       array: true,
       default: []
+    }, {
+      name: "source",
+      label: t("grapesjs-echarts-presets.config.dataset.source.label"),
+      type: "String",
+      array: true,
+      default: []
+    }, {
+      name: "sourceHeader",
+      label: t("grapesjs-echarts-presets.config.dataset.sourceHeader.label"),
+      type: "Boolean",
+      default: false
     }]
   }
 }
