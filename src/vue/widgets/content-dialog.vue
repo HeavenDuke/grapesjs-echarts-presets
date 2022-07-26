@@ -1,6 +1,6 @@
 <template>
     <div class="gjs-ep-dialog" @click="close">
-        <div class="gjs-ep-dialog-body" :style="{ width }" @click.stop>
+        <div class="gjs-traits gjs-ep-dialog-body" :style="{ width }" @click.stop>
             <div class="gjs-ep-dialog-header">
                 <div class="gjs-ep-dialog-title">{{title}}</div>
                 <i class="gjs-ep-dialog-close" @click="close">×</i>
@@ -67,7 +67,7 @@
         .gjs-ep-dialog-body {
             background: #463a3c;
             max-height: 75%;
-
+          //overflow: auto;
             .gjs-ep-dialog-header {
                 padding: 15px;
                 border-bottom: 1px solid #b9a5a6;
@@ -76,16 +76,15 @@
                 justify-content: space-between;
                 font-size: 20px;
                 color: #b9a5a6;
-
                 .gjs-ep-dialog-close {
                     cursor: pointer;
                     font-style: normal;
                 }
-
             }
-
             .gjs-ep-dialog-content {
+              max-height: 545px;
                 padding: 15px;
+              overflow: auto;
             }
 
         }
