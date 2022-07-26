@@ -22,7 +22,6 @@ export default build({
       },
     ];
 
-    // console.log(xAxis)
 
     xAxis.data = map.map(({ label }) => label)
     return {

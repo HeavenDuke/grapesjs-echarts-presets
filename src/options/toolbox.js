@@ -1,5 +1,5 @@
 import {DIRECTIONS} from "@/utils/smallDict";
-import {iconStyle, position, size, zIndex} from "@/options/shared";
+import {feature, iconStyle, position, size, zIndex} from "@/options/shared";
 import tooltip from "@/options/tooltip";
 
 export default function (t) {
@@ -37,7 +37,37 @@ export default function (t) {
       name: 'feature',
       type: 'Object',
       label:  t("grapesjs-echarts-presets.config.toolbox.feature.label"),
-      children:[]
+      children:[{
+        name:'saveAsImage',
+        type:'Object',
+        label:t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.label"),
+        children:feature(t).saveAsImage
+      },{
+        name:'restore',
+        type:'Object',
+        label:t("grapesjs-echarts-presets.config.toolbox.feature.restore.label"),
+        children:feature(t).restore
+      },{
+        name:'dataView',
+        type:'Object',
+        label:t("grapesjs-echarts-presets.config.toolbox.feature.dataView.label"),
+        children:feature(t).dataView
+      },{
+        name:'dataZoom',
+        type:'Object',
+        label:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.label"),
+        children:feature(t).dataZoom
+      },{
+        name:'magicType',
+        type:'Object',
+        label:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.label"),
+        children:feature(t).magicType
+      },{
+        name:'brush',
+        type:'Object',
+        label:t("grapesjs-echarts-presets.config.toolbox.feature.brush.label"),
+        children:feature(t).brush
+      },]
     },{
       name: 'iconStyle',
       type: 'Object',

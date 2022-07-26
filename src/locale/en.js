@@ -133,6 +133,15 @@ export default {
         },
         borderDashOffset: {
           label: "Border Dash Offset"
+        },
+        borderCap:{
+          label:'Border Cap'
+        },
+        borderJoin:{
+          label:'Border Join'
+        },
+        borderMiterLimit:{
+          label:'Border Miter Limit'
         }
       }
     },
@@ -224,7 +233,26 @@ export default {
           label: "ShowTitle"
         },
         feature: {
-          label: "Feature"
+          label: "Feature",
+          saveAsImage:{
+            label:'Save As Image',
+
+          },
+          restore:{
+            label:'Restore',
+          },
+          dataView:{
+            label:'Data View'
+          },
+          dataZoom:{
+            label:'Data Zoom'
+          },
+          magicType:{
+            label:'Magic Type'
+          },
+          brush:{
+            label:'Brush'
+          }
         },
         iconStyle: {
           label: "IconStyle"
