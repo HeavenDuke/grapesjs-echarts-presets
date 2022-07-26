@@ -582,3 +582,17 @@ export function axisPointer (t) {
     default: "mousemove|click"
   }]
 }
+
+export function actionTrigger (t) {
+  return [{
+    name: "silent",
+    label: t("grapesjs-echarts-presets.config.event.silent.label"),
+    type: "Boolean",
+    default: false
+  }, {
+    name: "triggerEvent",
+    label: t("grapesjs-echarts-presets.config.event.triggerEvent.label"),
+    type: "Boolean",
+    default: false
+  }]
+}

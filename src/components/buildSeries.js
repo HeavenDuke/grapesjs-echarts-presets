@@ -92,6 +92,12 @@ export default ({
             //   type: "echarts-basic-trait"
             // },
             {
+              type: "echarts-title-trait"
+            },
+            {
+              type: "echarts-single-axis-trait"
+            },
+            {
               type: "echarts-grid-trait"
             },
             {
@@ -110,29 +116,29 @@ export default ({
             //   type: "echarts-legend-trait"
             // },
             {
-              type: "echarts-single-axis-trait"
-            },
-            // {
-            //   type: "echarts-radius-axis-trait"
-            // },
-            // {
-            //   type: "echarts-angle-axis-trait"
-            // },
-            // {
-            //   type: "echarts-parallel-axis-trait"
-            // },
-            {
-              type: "echarts-title-trait"
-            },
-            {
               type: "echarts-polar-trait"
+            },
+            {
+              type: "echarts-radius-axis-trait"
+            },
+            {
+              type: "echarts-angle-axis-trait"
+            },
+            {
+              type: "echarts-radius-axis-trait"
+            },
+            {
+              type: "echarts-angle-axis-trait"
+            },
+            {
+              type: "echarts-parallel-trait"
+            },
+            {
+              type: "echarts-parallel-axis-trait"
             },
             {
               type: "echarts-radar-trait"
             },
-            {
-              type: "echarts-parallel-trait"
-            }
             // {
             //   type: "echarts-series-trait",
             // }

@@ -42,12 +42,15 @@ export default {
       group: {
         title: "Title",
         polar: "Polar Coordinate",
+        radiusAxis: "Radius Axis",
+        angleAxis: "Angle Axis",
         grid: "Cartesian Coordinate",
         xAxis: "X Axis",
         yAxis: "Y Axis",
         singleAxis: "Single Axis",
         radar: "Radar Coordinate",
         parallel: "Parallel Coordinate",
+        parallelAxis: "Parallel Axis",
         geo: "Geo Coordinate",
         tooltip: "ToolTip"
       },
@@ -188,6 +191,9 @@ export default {
         },
         axisExpandTriggerOn: {
           label: "Expand On"
+        },
+        parallelAxisDefault: {
+          label: "Default Axis"
         }
       },
       toolbox: {
@@ -582,7 +588,6 @@ export default {
         borderRadius:{
           label:'Border Radius'
         } ,
-
       },
       xAxis: {
         label: "X Axis"
@@ -594,13 +599,43 @@ export default {
         label: "Radius Axis"
       },
       angleAxis: {
-        label: "Angle Axis"
+        label: "Angle Axis",
+        startAngle: {
+          label: "Start Angle"
+        },
+        clockwise: {
+          label: "Clockwise"
+        }
       },
       singleAxis: {
         label: "Single Axis"
       },
       parallelAxis: {
-        label: "Parallel Axis"
+        label: "Parallel Axis",
+        dim: {
+          label: "Dimension Index"
+        },
+        realtime: {
+          label: "Realtime Rendering"
+        },
+        areaSelectStyle: {
+          label: "Area Select Style",
+          width: {
+            label: "Width"
+          },
+          borderWidth: {
+            label: "Border Width"
+          },
+          borderColor: {
+            label: "Border Color"
+          },
+          color: {
+            label: "Color"
+          },
+          opacity: {
+            label: "Opacity"
+          }
+        },
       },
       axis: {
         show: {
@@ -611,15 +646,6 @@ export default {
         },
         parallelIndex: {
           label: "Parallel Index"
-        },
-        realtime: {
-          label: "Realtime Rendering"
-        },
-        areaSelectStyle: {
-          label: "Area Select Style"
-        },
-        dim: {
-          label: "Dimension Index"
         },
         name: {
           label: "Name"
@@ -965,6 +991,14 @@ export default {
         },
         triggerOn: {
           label: "Trigger On"
+        }
+      },
+      event: {
+        silent: {
+          label: "Silent Mode"
+        },
+        triggerEvent:{
+          label: "Trigger Event"
         }
       },
       series: {

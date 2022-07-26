@@ -1,5 +1,6 @@
 import {zIndex, position, size} from "@/options/shared"
 import {DIRECTIONS, TRIGGERS} from "@/utils/smallDict";
+import ParallelAxis from "@/options/parallel-axis"
 
 export default function (t) {
   return {
@@ -37,6 +38,11 @@ export default function (t) {
       type: "Enum",
       candidate: TRIGGERS,
       default: "click"
+    }, {
+      name: "parallelAxisDefault",
+      label: t("grapesjs-echarts-presets.config.parallel.parallelAxisDefault.label"),
+      type: "Object",
+      children: ParallelAxis(t).options
     }]
   }
 }
