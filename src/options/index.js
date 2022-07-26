@@ -1,5 +1,6 @@
 
 import BasicOptions from "@/options/basic"
+import DatasetOptions from "@/options/dataset"
 import TitleOptions from "@/options/title"
 import LegendOption from "@/options/legend"
 import TooltipOptions from "@/options/tooltip"
@@ -16,6 +17,7 @@ import ParallelAxisOptions from "@/options/parallel-axis"
 
 export default {
   "basic": BasicOptions,
+  "dataset": DatasetOptions,
   "title": TitleOptions,
   "legend": LegendOption,
   "tooltip":TooltipOptions,

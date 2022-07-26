@@ -1,6 +1,6 @@
 <template>
     <div class="gjs-trt-trait">
-        <div class="gjs-label-wrp" data-label>
+        <div class="gjs-label-wrp" data-label v-if="label">
             <div class="gjs-label" :title="label">{{label}}</div>
         </div>
         <div data-input="" class="gjs-field-wrp gjs-field-wrp--color">

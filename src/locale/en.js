@@ -43,7 +43,7 @@ export default {
         title: "Title",
         basic:'Basic',
         singleAxis: "Single Axis",
-        grid: "Cartesian Coordinate",
+        grid: "Grid Coordinate",
         xAxis: "X Axis",
         yAxis: "Y Axis",
         polar: "Polar Coordinate",
@@ -54,8 +54,9 @@ export default {
         parallelAxis: "Parallel Axis",
         geo: "Geo Coordinate",
         tooltip: "ToolTip",
-        grid:"Grid",
-        legend: "Legend"
+        toolbox: "ToolBox",
+        legend: "Legend",
+        dataset: "Dataset"
       },
       position: {
         left: "Left",
@@ -136,6 +137,7 @@ export default {
       }
     },
     actions: {
+      addItem: "Add Item",
       edit: "Edit"
     },
     dialogs: {
@@ -148,6 +150,11 @@ export default {
       axisLabel: "Edit Axis Label"
     },
     config: {
+      dataset: {
+        dimensions: {
+          label: "Dimensions"
+        }
+      },
       polar: {
         center: {
           label: "Center"

@@ -92,6 +92,9 @@ export default ({
               type: "echarts-basic-trait"
             },
             {
+              type: "echarts-dataset-trait"
+            },
+            {
               type: "echarts-title-trait"
             },
             {
