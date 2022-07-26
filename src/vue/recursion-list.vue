@@ -4,11 +4,11 @@
       <div v-for="(item,index) in meta" :key="index">
         <ep-list-editor v-if="item.array" :label="item.label" v-model="value[item.name]">
           <template v-slot:default="scope">
-            <ep-input v-if="item.type==='String'" v-model="scope.item" :placeholder="item.placeholder"></ep-input>
-            <ep-color-picker v-else-if="item.type==='Color'" v-model="scope.item"></ep-color-picker>
-            <ep-number-input v-else-if="item.type==='Number'" v-model="scope.item" :step="item.step"
+            <ep-input v-if="item.type==='String'" v-model="scope.item.value" :placeholder="item.placeholder"></ep-input>
+            <ep-color-picker v-else-if="item.type==='Color'" v-model="scope.item.value"></ep-color-picker>
+            <ep-number-input v-else-if="item.type==='Number'" v-model="scope.item.value" :step="item.step"
                              :max="item.max" :min="item.min"></ep-number-input>
-            <ep-select v-else-if="item.type==='Enum'" v-model="scope.item" :placeholder="item.placeholder">
+            <ep-select v-else-if="item.type==='Enum'" v-model="scope.item.value" :placeholder="item.placeholder">
               <ep-option v-for="val in item.candidate" :value="val.value || val" :label="val.name||val"></ep-option>
             </ep-select>
           </template>
