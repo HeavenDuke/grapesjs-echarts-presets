@@ -2,7 +2,7 @@
 import { zIndex, textStyle, axisLine, axisTick, axisLabel, splitLine, splitArea } from "@/options/shared"
 import ToolTip from "@/options/tooltip"
 
-export default function (t) {
+export default function (t, multiple = false) {
   return {
     name: "radar",
     label: t("grapesjs-echarts-presets.dict.group.radar"),

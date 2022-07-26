@@ -2,7 +2,7 @@
 import { zIndex } from "@/options/shared"
 import ToolTip from "@/options/tooltip"
 
-export default function (t) {
+export default function (t, multiple = false) {
   return {
     name: "polar",
     label: t("grapesjs-echarts-presets.dict.group.polar"),

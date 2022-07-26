@@ -3,7 +3,7 @@ import { SERIES_TYPES } from "@/utils/smallDict";
 import {zIndex, textStyle, axisLine, axisTick, axisLabel, splitLine, splitArea, axisPointer} from "@/options/shared"
 import ToolTip from "@/options/tooltip"
 
-export default function (type = "x") {
+export default function (type = "x", multiple = false) {
   return function (t) {
     return {
       name: `${type}-axis`,

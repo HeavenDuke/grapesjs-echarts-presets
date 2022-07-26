@@ -2,7 +2,7 @@ import {DIRECTIONS} from "@/utils/smallDict";
 import {feature, iconStyle, position, size, zIndex} from "@/options/shared";
 import tooltip from "@/options/tooltip";
 
-export default function (t) {
+export default function (t, multiple = false) {
   return {
     name: 'toolbox',
     label: t("grapesjs-echarts-presets.dict.group.toolbox"),

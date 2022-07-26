@@ -2,7 +2,7 @@ import {itemStyle, lineStyle, position, shadow, size, textStyle, zIndex} from "@
 import {DIRECTIONS} from "@/utils/smallDict";
 import tooltip from "@/options/tooltip";
 //finished
-export default function (t) {
+export default function (t, multiple = false) {
   return {
     name: "legend",
     label: t("grapesjs-echarts-presets.dict.group.legend"),

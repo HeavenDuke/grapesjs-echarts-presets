@@ -13,7 +13,7 @@ import {
 } from "@/options/shared"
 import ToolTip from "@/options/tooltip"
 
-export default function (t) {
+export default function (t, multiple = false) {
   return {
     name: `radius-axis`,
     label: t(`grapesjs-echarts-presets.dict.group.radiusAxis`),

@@ -2,7 +2,7 @@ import {zIndex, position, size} from "@/options/shared"
 import {DIRECTIONS, TRIGGERS} from "@/utils/smallDict";
 import ParallelAxis from "@/options/parallel-axis"
 
-export default function (t) {
+export default function (t, multiple = false) {
   return {
     name: "parallel",
     label: t("grapesjs-echarts-presets.dict.group.parallel"),

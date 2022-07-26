@@ -1,7 +1,7 @@
 import tooltip from "@/options/tooltip";
 import {position, shadow, size, zIndex} from "@/options/shared";
 //finished
-export default function (t) {
+export default function (t, multiple = false) {
   return {
     name:'grid',
     label: t("grapesjs-echarts-presets.dict.group.grid"),

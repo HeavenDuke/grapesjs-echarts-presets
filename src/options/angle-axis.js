@@ -10,7 +10,7 @@ import {
   actionTrigger
 } from "@/options/shared"
 
-export default function (t) {
+export default function (t, multiple = false) {
   return {
     name: `angle-axis`,
     label: t(`grapesjs-echarts-presets.dict.group.angleAxis`),

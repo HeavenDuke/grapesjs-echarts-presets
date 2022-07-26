@@ -1,7 +1,7 @@
 import {position, shadow, textStyle, zIndex} from "@/options/shared";
 import {TARGET} from "@/utils/smallDict";
 //finished
-export default function (t) {
+export default function (t, multiple = false) {
   return {
     name: "title",
     label: t("grapesjs-echarts-presets.dict.group.title"),

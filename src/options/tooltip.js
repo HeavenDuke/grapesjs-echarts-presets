@@ -1,7 +1,7 @@
 import {TOOLTIP} from "@/utils/smallDict";
 import {axisPointer, textStyle} from "@/options/shared";
 //finished
-export default function (t) {
+export default function (t, multiple = false) {
   return {
     name: "tooltip",
     label: t("grapesjs-echarts-presets.dict.group.tooltip"),
