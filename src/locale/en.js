@@ -225,16 +225,6 @@ export default {
         emphasis: {
           label: "Emphasis"
         },
-        zlevel: {
-          label: "Z Level"
-        },
-        z: {
-          label: "Z"
-        },
-        position: {
-          label: "Position"
-        },
-
       },
       tooltip: {
         label: "Tooltip",

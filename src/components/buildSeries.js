@@ -88,9 +88,9 @@ export default ({
           name: editor.I18n.t(name),
           resizable: true,
           traits: [
-            // {
-            //   type: "echarts-basic-trait"
-            // },
+            {
+              type: "echarts-basic-trait"
+            },
             {
               type: "echarts-title-trait"
             },
@@ -106,15 +106,15 @@ export default ({
             {
               type: "echarts-y-axis-trait"
             },
-            // {
-            //   type: "echarts-tooltip-trait"
-            // },
-            // {
-            //   type: "echarts-toolbox-trait"
-            // },
-            // {
-            //   type: "echarts-legend-trait"
-            // },
+            {
+              type: "echarts-tooltip-trait"
+            },
+            {
+              type: "echarts-toolbox-trait"
+            },
+            {
+              type: "echarts-legend-trait"
+            },
             {
               type: "echarts-polar-trait"
             },
