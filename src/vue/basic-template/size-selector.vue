@@ -42,10 +42,9 @@
   export default {
     name: "size-selector",
     props: {
-      t: Function,
       label: String,
-      useUnit: Boolean,
-      value: Array
+      useUnit: Boolean, // 用不用单位
+      value: Array // 二维数组
     },
     data() {
       return {
@@ -60,6 +59,12 @@
       }
     },
     watch: {
+      value: {
+        handler(newValue) {
+            this.flushData()
+        },
+        deep: true
+      },
       sizes: {
         handler(newValue) {
           if (this.useUnit) {
@@ -79,15 +84,18 @@
           return [res[1], res[2]]
         }
         return null
+      },
+      flushData () {
+        for (let i = 0; i < this.value.length; i++) {
+          let res = this.parseValue(this.value[i])
+          if (res) {
+            [this.sizes[i].value, this.sizes[i].unit] = res
+          }
+        }
       }
     },
     created() {
-      for (let i = 0; i < this.value.length; i++) {
-        let res = this.parseValue(this.value[i])
-        if (res) {
-          [this.sizes[i].value, this.sizes[i].unit] = res
-        }
-      }
+      this.flushData()
     }
   }
 </script>
