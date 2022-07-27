@@ -30,7 +30,7 @@ export default function (t, multiple = false) {
       name: "axisName",
       label: t("grapesjs-echarts-presets.config.radar.axisName.label"),
       type: "Object",
-      children: textStyle(t, true)
+      children: textStyle(t, {complex:true})
     }, {
       name: "nameGap",
       label: t("grapesjs-echarts-presets.config.axis.nameGap.label"),

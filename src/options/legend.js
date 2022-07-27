@@ -102,7 +102,7 @@ export default function (t, multiple = false) {
       name: "textStyle",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.textStyle.label"),
-      children: textStyle(t)
+      children: textStyle(t,{complex:true,color:'#333333',})
     }, {
       name: "tooltip",
       type: "Object",

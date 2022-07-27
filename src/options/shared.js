@@ -38,8 +38,8 @@ export function removeItems(options, names) {
 //tool
 
 //finished 4 top,right,bottom,left
-export function position(t,top='auto'||0,right='auto'||0,bottom='auto'||0,left='auto'||0) {
-  return [ {
+export function position(t, top = "auto" || 0, right = "auto" || 0, bottom = "auto" || 0, left = "auto" || 0) {
+  return [{
     name: "top",
     type: "String",
     label: t("grapesjs-echarts-presets.dict.position.top"),
@@ -49,21 +49,21 @@ export function position(t,top='auto'||0,right='auto'||0,bottom='auto'||0,left='
     type: "String",
     label: t("grapesjs-echarts-presets.dict.position.right"),
     default: right
-  },{
+  }, {
     name: "bottom",
     type: "String",
     label: t("grapesjs-echarts-presets.dict.position.bottom"),
     default: bottom
-  },{
+  }, {
     name: "left",
     type: "String",
     label: t("grapesjs-echarts-presets.dict.position.left"),
     default: left
-  }, ];
+  },];
 }
 
 //finished 2 width,height
-export function size(t,width="auto",height="auto") {
+export function size(t, width = "auto", height = "auto") {
   return [{
     name: "width",
     type: "String",
@@ -126,6 +126,7 @@ export function animation(t) {
     default: 0,
   }];
 }
+
 //finished 2 z,zlevel
 export function zIndex(t, z = 0, zLevel = 0) {
   return [{
@@ -138,7 +139,7 @@ export function zIndex(t, z = 0, zLevel = 0) {
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.zIndex.zlevel.label"),
     default: zLevel
-  }]
+  }];
 }
 
 //finished 4 shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
@@ -165,9 +166,10 @@ export function shadow(t) {
     default: 0
   }];
 }
+
 //finished 4 borderColor,borderWidth,borderType,borderDashOffset
-export function border(t,more=false,color='#000000') {
-  let basic=[{
+export function border(t, more = false, color = "#000000") {
+  let basic = [{
     name: "borderColor",
     type: "Color",
     label: t("grapesjs-echarts-presets.dict.border.borderColor.label"),
@@ -183,483 +185,478 @@ export function border(t,more=false,color='#000000') {
     label: t("grapesjs-echarts-presets.dict.border.borderType.label"),
     placeholder: t("grapesjs-echarts-presets.dict.border.borderType.placeholder"),
     default: "solid",
-    candidate:BORDER_TYPE
+    candidate: BORDER_TYPE
   }, {
     name: "borderDashOffset",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.border.borderDashOffset.label"),
     default: 0
   }];
-  let m=[{
+  let m = [{
     name: "borderCap",
     type: "Enum",
     label: t("grapesjs-echarts-presets.dict.border.borderCap.label"),
     placeholder: t("grapesjs-echarts-presets.dict.border.borderCap.placeholder"),
-    candidate:LINE_CAPS,
+    candidate: LINE_CAPS,
     default: "butt"
   }, {
     name: "borderJoin",
     type: "Enum",
     label: t("grapesjs-echarts-presets.dict.border.borderJoin.label"),
     placeholder: t("grapesjs-echarts-presets.dict.border.borderJoin.placeholder"),
-    candidate:LINE_JOINS,
+    candidate: LINE_JOINS,
     default: "bevel"
   }, {
     name: "borderMiterLimit",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.border.borderMiterLimit.label"),
     default: 10
-  }]
-  if(more){
-    return[...basic,...m]
-  }else{
-    return basic
+  }];
+  if (more) {
+    return [...basic, ...m];
+  } else {
+    return basic;
   }
 }
 
-export function feature(t){
-  return{
-    saveAsImage:[{
-      name:'show',
-      type: 'Boolean',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.show.label"),
+export function feature(t) {
+  return {
+    saveAsImage: [{
+      name: "show",
+      type: "Boolean",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.show.label"),
       default: true
-    },{
-      name:'type',
-      type:'Enum',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.type.label"),
-      placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.type.placeholder"),
-      candidate:['png','jpg','svg'],
-      default:'png'
-    },{
-      name:'name',
-      type: 'String',
+    }, {
+      name: "type",
+      type: "Enum",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.type.label"),
+      placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.type.placeholder"),
+      candidate: ["png", "jpg", "svg"],
+      default: "png"
+    }, {
+      name: "name",
+      type: "String",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.name.label"),
       placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.name.placeholder"),
-      default: ''
-    },{
-      name:'backgroundColor',
-      type: 'Color',
+      default: ""
+    }, {
+      name: "backgroundColor",
+      type: "Color",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.backgroundColor.label"),
-      default: ''
-    },{
-      name:'connectBackgroundColor',
-      type: 'Color',
+      default: ""
+    }, {
+      name: "connectBackgroundColor",
+      type: "Color",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.connectBackgroundColor.label"),
-      default: '#ffffff'
-    },{
-      name:'title',
-      type: 'Boolean',
+      default: "#ffffff"
+    }, {
+      name: "title",
+      type: "Boolean",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.title.label"),
       default: true
-    },{
-      name:'icon',
-      type: 'Text',
+    }, {
+      name: "icon",
+      type: "Text",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.icon.label"),
       placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.icon.placeholder"),
-      default: ''
-    },{
-      name:'iconStyle',
-      type: 'Object',
+      default: ""
+    }, {
+      name: "iconStyle",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-      children:iconStyle(t)
-    },{
-      name:'emphasis',
-      type: 'Object',
+      children: iconStyle(t)
+    }, {
+      name: "emphasis",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.emphasis.label"),
-      children:[{
-        name:'iconStyle',
-        type: 'Object',
+      children: [{
+        name: "iconStyle",
+        type: "Object",
         label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-        children:iconStyle(t)
+        children: iconStyle(t)
       }]
-    },{
-      name:'pixelRatio',
-      type: 'Number',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.pixelRatio.label"),
-      min:1,
+    }, {
+      name: "pixelRatio",
+      type: "Number",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.pixelRatio.label"),
+      min: 1,
       default: 1
     }],
-    restore:[{
-      name:'show',
-      type: 'Boolean',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.restore.show.label"),
+    restore: [{
+      name: "show",
+      type: "Boolean",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.restore.show.label"),
       default: true
-    },{
-      name:'title',
-      type: 'Boolean',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.restore.title.label"),
+    }, {
+      name: "title",
+      type: "Boolean",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.restore.title.label"),
       default: true
-    },{
-      name:'icon',
-      type: 'Text',
+    }, {
+      name: "icon",
+      type: "Text",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.restore.icon.label"),
       placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.restore.icon.placeholder"),
-      default: ''
-    },{
-      name:'iconStyle',
-      type: 'Object',
+      default: ""
+    }, {
+      name: "iconStyle",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-      children:iconStyle(t)
-    },{
-      name:'emphasis',
-      type: 'Object',
+      children: iconStyle(t)
+    }, {
+      name: "emphasis",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.restore.emphasis.label"),
-      children:[{
-        name:'iconStyle',
-        type: 'Object',
+      children: [{
+        name: "iconStyle",
+        type: "Object",
         label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-        children:iconStyle(t)
+        children: iconStyle(t)
       }]
     }],
-    dataView:[{
-      name:'show',
-      type: 'Boolean',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataView.show.label"),
+    dataView: [{
+      name: "show",
+      type: "Boolean",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.show.label"),
       default: true
-    },{
-      name:'title',
-      type: 'Boolean',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataView.title.label"),
+    }, {
+      name: "title",
+      type: "Boolean",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.title.label"),
       default: true
-    },{
-      name:'icon',
-      type: 'Text',
+    }, {
+      name: "icon",
+      type: "Text",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.icon.label"),
       placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.icon.placeholder"),
-      default: ''
-    },{
-      name:'iconStyle',
-      type: 'Object',
+      default: ""
+    }, {
+      name: "iconStyle",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-      children:iconStyle(t)
-    },{
-      name:'emphasis',
-      type: 'Object',
+      children: iconStyle(t)
+    }, {
+      name: "emphasis",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.emphasis.label"),
-      children:[{
-        name:'iconStyle',
-        type: 'Object',
-        label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-        children:iconStyle(t)
-      }]
-    },{
-      name:'readOnly',
-      type: 'Boolean',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataView.emphasis.label"),
-      default: false
-    },{
-      name:'optionToContent',
-      type: 'Function',
-      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.optionToContent.label"),
-      default: ''
-    },{
-      name:'contentToOption',
-      type: 'Function',
-      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.contentToOption.label"),
-      default: ''
-    },{
-    //  lang
-    },{
-      name:'backgroundColor',
-      type: 'Color',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataView.backgroundColor.label"),
-      default: '#ffffff'
-    },{
-      name:'textareaColor',
-      type: 'Color',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataView.textareaColor.label"),
-      default: '#ffffff'
-    },{
-      name:'textareaBorderColor',
-      type: 'Color',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataView.textareaBorderColor.label"),
-      default: '#333333'
-    },{
-      name:'textColor',
-      type: 'Color',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataView.textColor.label"),
-      default: '#000000'
-    },{
-      name:'buttonColor',
-      type: 'Color',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataView.buttonColor.label"),
-      default: '#c23531'
-    },{
-      name:'buttonTextColor',
-      type: 'Color',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataView.buttonTextColor.label"),
-      default: '#ffffff'
-    }],
-    dataZoom:[{
-      name:'show',
-      type: 'Boolean',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.show.label"),
-      default: true
-    },{
-      name:'title',
-      type: 'Object',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.title.label"),
       children: [{
-        name:'zoom',
-        type: 'String',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.title.zoom"),
-        label:'Zoom',
-        default:'区域缩放'
-      },{
-        name:'back',
-        label:'Back',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.title.back"),
-        type: 'String',
-        default:'区域缩放还原'
+        name: "iconStyle",
+        type: "Object",
+        label: t("grapesjs-echarts-presets.config.iconStyle.label"),
+        children: iconStyle(t)
+      }]
+    }, {
+      name: "readOnly",
+      type: "Boolean",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.emphasis.label"),
+      default: false
+    }, {
+      name: "optionToContent",
+      type: "Function",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.optionToContent.label"),
+      default: ""
+    }, {
+      name: "contentToOption",
+      type: "Function",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.contentToOption.label"),
+      default: ""
+    }, {
+      //  lang
+    }, {
+      name: "backgroundColor",
+      type: "Color",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.backgroundColor.label"),
+      default: "#ffffff"
+    }, {
+      name: "textareaColor",
+      type: "Color",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.textareaColor.label"),
+      default: "#ffffff"
+    }, {
+      name: "textareaBorderColor",
+      type: "Color",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.textareaBorderColor.label"),
+      default: "#333333"
+    }, {
+      name: "textColor",
+      type: "Color",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.textColor.label"),
+      default: "#000000"
+    }, {
+      name: "buttonColor",
+      type: "Color",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.buttonColor.label"),
+      default: "#c23531"
+    }, {
+      name: "buttonTextColor",
+      type: "Color",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.buttonTextColor.label"),
+      default: "#ffffff"
+    }],
+    dataZoom: [{
+      name: "show",
+      type: "Boolean",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.show.label"),
+      default: true
+    }, {
+      name: "title",
+      type: "Object",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.title.label"),
+      children: [{
+        name: "zoom",
+        type: "String",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.title.zoom"),
+        label: "Zoom",
+        default: "区域缩放"
+      }, {
+        name: "back",
+        label: "Back",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.title.back"),
+        type: "String",
+        default: "区域缩放还原"
       },]
-    },{
-      name:'icon',
-      type: 'Object',
+    }, {
+      name: "icon",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.icon.label"),
       children: [{
-        name:'zoom',
-        type: 'Text',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.icon.zoom"),
-        label:'Zoom',
-        default:''
-      },{
-        name:'back',
-        type: 'Text',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.icon.back"),
-        label:'back',
-        default:''
+        name: "zoom",
+        type: "Text",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.icon.zoom"),
+        label: "Zoom",
+        default: ""
+      }, {
+        name: "back",
+        type: "Text",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.icon.back"),
+        label: "back",
+        default: ""
       }]
-    },{
-      name:'iconStyle',
-      type: 'Object',
+    }, {
+      name: "iconStyle",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-      children:iconStyle(t)
-    },{
-      name:'emphasis',
-      type: 'Object',
+      children: iconStyle(t)
+    }, {
+      name: "emphasis",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.emphasis.label"),
-      children:[{
-        name:'iconStyle',
-        type: 'Object',
-        label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-        children:iconStyle(t)
-      }]
-    },{
-      name:'filterMode',
-      type: 'String',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.filterMode.label"),
-      default: 'filter'
-    },{
-      name:'brushStyle',
-      type: 'Object',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.brushStyle.label"),
       children: [{
-        name:'color',
-        type: 'Color',
-        label:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.brushStyle.color"),
-        default: ''
-      },...border(t,true),...shadow(t),{
+        name: "iconStyle",
+        type: "Object",
+        label: t("grapesjs-echarts-presets.config.iconStyle.label"),
+        children: iconStyle(t)
+      }]
+    }, {
+      name: "filterMode",
+      type: "String",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.filterMode.label"),
+      default: "filter"
+    }, {
+      name: "brushStyle",
+      type: "Object",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.brushStyle.label"),
+      children: [{
+        name: "color",
+        type: "Color",
+        label: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.brushStyle.color"),
+        default: ""
+      }, ...border(t, true), ...shadow(t), {
         name: "opacity",
         type: "Number",
         step: 0.1,
         min: 0,
         max: 1,
-        label:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.brushStyle.opacity"),
+        label: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.brushStyle.opacity"),
         default: 1
       }]
     }],
-    magicType:[{
-      name:'show',
-      type: 'Boolean',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.show.label"),
+    magicType: [{
+      name: "show",
+      type: "Boolean",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.show.label"),
       default: true
-    },{
-      name:'type',
-      type: 'Enum',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.type.label"),
-      placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.type.placeholder"),
-      candidate: ['line','bar','stack'],
-      default: ''
-    },{
-      name:'title',
-      type: 'Object',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.title.label"),
+    }, {
+      name: "type",
+      type: "Enum",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.type.label"),
+      placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.type.placeholder"),
+      candidate: ["line", "bar", "stack"],
+      default: ""
+    }, {
+      name: "title",
+      type: "Object",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.title.label"),
       children: [{
-        name:'line',
-        type: 'String',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.title.line"),
-        label:'Line',
-        default:'切换为折线图'
-      },{
-        name:'bar',
-        label:'Bar',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.title.bar"),
-        type: 'String',
-        default:'切换为柱状图'
-      },{
-        name:'stack',
-        label:'Stack',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.title.stack"),
-        type: 'String',
-        default:'切换为堆叠'
-      },{
-        name:'tiled',
-        label:'Tiled',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.title.tiled"),
-        type: 'String',
-        default:'切换为平铺'
+        name: "line",
+        type: "String",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.title.line"),
+        label: "Line",
+        default: "切换为折线图"
+      }, {
+        name: "bar",
+        label: "Bar",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.title.bar"),
+        type: "String",
+        default: "切换为柱状图"
+      }, {
+        name: "stack",
+        label: "Stack",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.title.stack"),
+        type: "String",
+        default: "切换为堆叠"
+      }, {
+        name: "tiled",
+        label: "Tiled",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.title.tiled"),
+        type: "String",
+        default: "切换为平铺"
       },]
-    },{
-      name:'icon',
-      type: 'Object',
+    }, {
+      name: "icon",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.icon.label"),
       children: [{
-        name:'line',
-        type: 'Text',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.icon.line"),
-        label:'Line',
-        default:''
-      },{
-        name:'bar',
-        label:'Bar',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.icon.bar"),
-        type: 'Text',
-        default:''
-      },{
-        name:'stack',
-        label:'Stack',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.icon.stack"),
-        type: 'Text',
-        default:''
+        name: "line",
+        type: "Text",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.icon.line"),
+        label: "Line",
+        default: ""
+      }, {
+        name: "bar",
+        label: "Bar",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.icon.bar"),
+        type: "Text",
+        default: ""
+      }, {
+        name: "stack",
+        label: "Stack",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.icon.stack"),
+        type: "Text",
+        default: ""
       }]
-    },{
-      name:'iconStyle',
-      type: 'Object',
+    }, {
+      name: "iconStyle",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-      children:iconStyle(t)
-    },{
-      name:'emphasis',
-      type: 'Object',
+      children: iconStyle(t)
+    }, {
+      name: "emphasis",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.emphasis.label"),
-      children:[{
-        name:'iconStyle',
-        type: 'Object',
+      children: [{
+        name: "iconStyle",
+        type: "Object",
         label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-        children:iconStyle(t)
-      },{
-      //  option
-      //  seriesIndex
+        children: iconStyle(t)
+      }, {
+        //  option
+        //  seriesIndex
       }]
     }],
-    brush:[{
-      name:'type',
-      type: 'Enum',
-      label:t("grapesjs-echarts-presets.config.toolbox.feature.brush.type.label"),
-      placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.type.placeholder"),
-      candidate: ['rect','polygon','lineX','lineY','keep','clear'],
-      default: ''
-    },{
-      name: 'icon',
-      type: 'Object',
+    brush: [{
+      name: "type",
+      type: "Enum",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.brush.type.label"),
+      placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.type.placeholder"),
+      candidate: ["rect", "polygon", "lineX", "lineY", "keep", "clear"],
+      default: ""
+    }, {
+      name: "icon",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.label"),
-      children:[{
-        name:'rect',
-        type: 'Text',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.rect"),
-        label:'Rect',
-        default:''
-      },{
-        name:'polygon',
-        label:'Polygon',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.polygon"),
-        type: 'Text',
-        default:''
-      },{
-        name:'lineX',
-        label:'LineX',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.lineX"),
-        type: 'Text',
-        default:''
-      },{
-        name:'lineY',
-        label:'LineY',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.lineY"),
-        type: 'Text',
-        default:''
-      },{
-        name:'keep',
-        label:'Keep',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.keep"),
-        type: 'Text',
-        default:''
-      },{
-        name:'clear',
-        label:'Clear',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.clear"),
-        type: 'Text',
-        default:''
+      children: [{
+        name: "rect",
+        type: "Text",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.rect"),
+        label: "Rect",
+        default: ""
+      }, {
+        name: "polygon",
+        label: "Polygon",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.polygon"),
+        type: "Text",
+        default: ""
+      }, {
+        name: "lineX",
+        label: "LineX",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.lineX"),
+        type: "Text",
+        default: ""
+      }, {
+        name: "lineY",
+        label: "LineY",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.lineY"),
+        type: "Text",
+        default: ""
+      }, {
+        name: "keep",
+        label: "Keep",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.keep"),
+        type: "Text",
+        default: ""
+      }, {
+        name: "clear",
+        label: "Clear",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.icon.clear"),
+        type: "Text",
+        default: ""
       }]
-    },{
-      name: 'title',
-      type: 'Object',
+    }, {
+      name: "title",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.label"),
-      children:[{
-        name:'rect',
-        type: 'String',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.rect"),
-        label:'Rect',
-        default:'矩形选择'
-      },{
-        name:'polygon',
-        label:'Polygon',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.polygon"),
-        type: 'String',
-        default:'圈选'
-      },{
-        name:'lineX',
-        label:'LineX',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.lineX"),
-        type: 'String',
-        default:'横向选择'
-      },{
-        name:'lineY',
-        label:'LineY',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.lineY"),
-        type: 'String',
-        default:'纵向选择'
-      },{
-        name:'keep',
-        label:'Keep',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.keep"),
-        type: 'String',
-        default:'保持选择'
-      },{
-        name:'clear',
-        label:'Clear',
-        placeholder:t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.clear"),
-        type: 'String',
-        default:'清楚选择'
+      children: [{
+        name: "rect",
+        type: "String",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.rect"),
+        label: "Rect",
+        default: "矩形选择"
+      }, {
+        name: "polygon",
+        label: "Polygon",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.polygon"),
+        type: "String",
+        default: "圈选"
+      }, {
+        name: "lineX",
+        label: "LineX",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.lineX"),
+        type: "String",
+        default: "横向选择"
+      }, {
+        name: "lineY",
+        label: "LineY",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.lineY"),
+        type: "String",
+        default: "纵向选择"
+      }, {
+        name: "keep",
+        label: "Keep",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.keep"),
+        type: "String",
+        default: "保持选择"
+      }, {
+        name: "clear",
+        label: "Clear",
+        placeholder: t("grapesjs-echarts-presets.config.toolbox.feature.brush.title.clear"),
+        type: "String",
+        default: "清楚选择"
       }]
     }]
-  }
+  };
 }
-
-
 
 
 //branch
 
 
-
-
-
 //finished
-export function textStyle(t, complex = false,color='#ffffff',fontWeight='normal',fontSize=12) {
+export function textStyle(t, obj={color:"#ffffff",fontWeight:"normal",fontSize:12,padding:[0,0],complex:false}) {
   let basic = [{
     name: "color",
     type: "Color",
-    default: color,
+    default: obj.color||"#ffffff",
     label: t("grapesjs-echarts-presets.config.textStyle.color.label")
   }, {
     name: "fontStyle",
@@ -671,7 +668,7 @@ export function textStyle(t, complex = false,color='#ffffff',fontWeight='normal'
   }, {
     name: "fontWeight",
     type: "Enum",
-    default: fontWeight,
+    default: obj.fontWeight||"normal",
     label: t("grapesjs-echarts-presets.config.textStyle.fontWeight.label"),
     placeholder: t("grapesjs-echarts-presets.config.textStyle.fontWeight.placeholder"),
     candidate: ["normal", "bold", "bolder", "lighter"]
@@ -685,7 +682,7 @@ export function textStyle(t, complex = false,color='#ffffff',fontWeight='normal'
   }, {
     name: "fontSize",
     type: "Number",
-    default: fontSize,
+    default: obj.fontSize||12,
     label: t("grapesjs-echarts-presets.config.textStyle.fontSize.label"),
   }, {
     name: "lineHeight",
@@ -718,7 +715,7 @@ export function textStyle(t, complex = false,color='#ffffff',fontWeight='normal'
     name: "textShadowColor",
     type: "Color",
     label: t("grapesjs-echarts-presets.config.textStyle.textShadowColor.label"),
-    default: null
+    default: ""
   }, {
     name: "textShadowBlur",
     type: "Number",
@@ -760,11 +757,12 @@ export function textStyle(t, complex = false,color='#ffffff',fontWeight='normal'
     default: 0
   }, {
     name: "padding",
-    type: "Number",
+    type: "Size",
     label: t("grapesjs-echarts-presets.config.textStyle.padding.label"),
-    default: 0
+    default: obj.padding||[0,0]
   }, ...shadow(t)];
-  if (complex) {
+  let flag=obj.complex||false;
+  if (flag) {
     return [...basic, ...more];
   } else {
     return basic;
@@ -824,6 +822,7 @@ export function lineStyle(t) {
     default: 1
   }];
 }
+
 //finished
 export function itemStyle(t) {
   return [{
@@ -865,14 +864,15 @@ export function itemStyle(t) {
     default: ""
   }];
 }
+
 //finished
 export function iconStyle(t) {
   return [{
-    name:'color',
-    label:t("grapesjs-echarts-presets.config.iconStyle.color.label"),
-    type:'Color',
-    default:''
-  },...border(t),{
+    name: "color",
+    label: t("grapesjs-echarts-presets.config.iconStyle.color.label"),
+    type: "Color",
+    default: ""
+  }, ...border(t), {
     name: "borderCap",
     type: "Enum",
     label: t("grapesjs-echarts-presets.config.iconStyle.borderCap.label"),
@@ -891,7 +891,7 @@ export function iconStyle(t) {
     type: "Number",
     label: t("grapesjs-echarts-presets.config.iconStyle.borderMiterLimit.label"),
     default: 10
-  },...shadow(t),{
+  }, ...shadow(t), {
     name: "opacity",
     type: "Number",
     step: 0.1,
@@ -899,7 +899,7 @@ export function iconStyle(t) {
     max: 1,
     label: t("grapesjs-echarts-presets.config.iconStyle.opacity.label"),
     default: 1
-  }]
+  }];
 }
 
 export function areaStyle(t) {
@@ -916,46 +916,46 @@ export function areaStyle(t) {
     min: 0,
     step: 0.05,
     default: 1
-  }, ...shadow(t)]
+  }, ...shadow(t)];
 }
 
-export function axisTick (t, minor = false) {
-  return []
+export function axisTick(t, minor = false) {
+  return [];
 }
 
-export function axisLabel (t) {
-  return []
+export function axisLabel(t) {
+  return [];
 }
 
-export function axisLine (t) {
-  return []
+export function axisLine(t) {
+  return [];
 }
 
-export function splitLine (t, minor = false, show = true) {
+export function splitLine(t, minor = false, show = true) {
   let result = [{
     name: "show",
     label: t("grapesjs-echarts-presets.config.axis.show.label"),
     type: "Boolean",
     default: show
-  }]
+  }];
   if (!minor) {
     result.push({
       name: "interval",
       label: t("grapesjs-echarts-presets.config.axis.interval.label"),
       type: "Number",
       default: "auto"
-    })
+    });
   }
   result.push({
     name: "lineStyle",
     label: t("grapesjs-echarts-presets.config.lineStyle.label"),
     type: "Object",
     children: lineStyle(t)
-  })
-  return result
+  });
+  return result;
 }
 
-export function splitArea (t, show = true) {
+export function splitArea(t, show = true) {
   return [{
     name: "show",
     label: t("grapesjs-echarts-presets.config.axis.splitArea.show.label"),
@@ -971,10 +971,10 @@ export function splitArea (t, show = true) {
     label: t("grapesjs-echarts-presets.config.axis.splitArea.areaStyle.label"),
     type: "Object",
     children: areaStyle(t)
-  }]
+  }];
 }
 
-export function axisPointer (t) {
+export function axisPointer(t) {
   return [{
     name: "show",
     label: t("grapesjs-echarts-presets.config.axisPointer.show.label"),
@@ -1000,7 +1000,7 @@ export function axisPointer (t) {
     name: "label",
     label: t("grapesjs-echarts-presets.config.axisPointer.label.label"),
     type: "Object",
-    children: textStyle(t, true)
+    children: textStyle(t, {complex:true})
   }, {
     name: "lineStyle",
     label: t("grapesjs-echarts-presets.config.lineStyle.label"),
@@ -1064,10 +1064,10 @@ export function axisPointer (t) {
     type: "Enum",
     candidate: TRIGGERS,
     default: "mousemove|click"
-  }]
+  }];
 }
 
-export function actionTrigger (t) {
+export function actionTrigger(t) {
   return [{
     name: "silent",
     label: t("grapesjs-echarts-presets.config.event.silent.label"),
@@ -1078,5 +1078,5 @@ export function actionTrigger (t) {
     label: t("grapesjs-echarts-presets.config.event.triggerEvent.label"),
     type: "Boolean",
     default: false
-  }]
+  }];
 }

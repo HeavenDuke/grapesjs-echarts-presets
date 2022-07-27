@@ -4,24 +4,15 @@ import tooltip from "@/options/tooltip";
 import toolbox from "@/options/toolbox";
 //finished
 export default function (t) {
+
   return {
     name: "basic",
     label: t("grapesjs-echarts-presets.dict.group.basic"),
     options: [{
-      //   name: 'tooltip',
-      //   type: 'Object',
-      //   label:t("grapesjs-echarts-presets.config.tooltip.label"),
-      //   children: tooltip(t).options
-      // },{
       name: "axisPointer",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.basic.axisPointer.label"),
       children: axisPointer(t)
-      // }, {
-      //   name: 'toolbox',
-      //   type: 'Object',
-      //   label:t("grapesjs-echarts-presets.config.toolbox.label"),
-      //   children: toolbox(t).options
     }, {
       name: "color",
       type: "Color",
@@ -36,7 +27,7 @@ export default function (t) {
       name: "textStyle",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.textStyle.label"),
-      children: textStyle(t)
+      children: textStyle(t,{complex:true})
     }, ...animation(t), {
       name: "stateAnimation",
       type: "Object",

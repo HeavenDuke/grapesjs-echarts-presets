@@ -2,6 +2,7 @@ import {TOOLTIP} from "@/utils/smallDict";
 import {axisPointer, textStyle} from "@/options/shared";
 //finished
 export default function (t, multiple = false) {
+
   return {
     name: "tooltip",
     label: t("grapesjs-echarts-presets.dict.group.tooltip"),
@@ -9,7 +10,7 @@ export default function (t, multiple = false) {
       name: "show",
       type: "Boolean",
       label: t("grapesjs-echarts-presets.config.tooltip.show.label"),
-      default: false
+      default: true
     }, {
       name: "trigger",
       type: "Enum",
@@ -129,7 +130,7 @@ export default function (t, multiple = false) {
       name:'textStyle',
       type: 'Object',
       label: t("grapesjs-echarts-presets.config.textStyle.label"),
-      children: textStyle(t)
+      children: textStyle(t,{fontSize:14})
     },{
       name: 'extraCssText',
       type: 'Text',

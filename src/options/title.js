@@ -23,17 +23,17 @@ export default function (t, multiple = false) {
       placeholder: t("grapesjs-echarts-presets.config.title.link.placeholder"),
       default: ""
     }, {
-      name:'target',
-      type:'Enum',
-      label:t("grapesjs-echarts-presets.config.title.target.label"),
-      placeholder:t("grapesjs-echarts-presets.config.title.target.placeholder"),
-      candidate:TARGET,
+      name: "target",
+      type: "Enum",
+      label: t("grapesjs-echarts-presets.config.title.target.label"),
+      placeholder: t("grapesjs-echarts-presets.config.title.target.placeholder"),
+      candidate: TARGET,
       default: "blank"
-    },{
+    }, {
       name: "textStyle",
-      type: 'Object',
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.title.textStyle.label"),
-      children: textStyle(t)
+      children: textStyle(t, {color: "#333333", fontWeight: "bolder", fontSize: 18})
     }, {
       name: "subtext",
       type: "String",
@@ -46,32 +46,32 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.title.sublink.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.sublink.placeholder"),
       default: ""
-    },{
+    }, {
       name: "subtarget",
       type: "Enum",
       label: t("grapesjs-echarts-presets.config.title.subtarget.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.subtarget.placeholder"),
-      candidate:TARGET,
+      candidate: TARGET,
       default: "blank"
     }, {
       name: "subtextStyle",
-      type: 'Object',
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.title.subtextStyle.label"),
-      children: textStyle(t,false,'#333333','bolder',18)
+      children: textStyle(t, {color: "#aaaaaa"})
     }, {
       name: "textAlign",
       type: "Enum",
       label: t("grapesjs-echarts-presets.config.title.textAlign.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.textAlign.placeholder"),
       default: "auto",
-      candidate:['auto','left','right','center']
+      candidate: ["auto", "left", "right", "center"]
     }, {
       name: "textVerticalAlign",
       type: "Enum",
       label: t("grapesjs-echarts-presets.config.title.textVerticalAlign.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.textVerticalAlign.placeholder"),
       default: "auto",
-      candidate:['auto','top','bottom','middle']
+      candidate: ["auto", "top", "bottom", "middle"]
     }, {
       name: "triggerEvent",
       type: "Boolean",
@@ -87,26 +87,26 @@ export default function (t, multiple = false) {
       type: "Number",
       label: t("grapesjs-echarts-presets.config.title.padding.label"),
       default: 5,
-    },...zIndex(t,2,0),...position(t),{
-      name:'backgroundColor',
-      type: 'Color',
-      label:t("grapesjs-echarts-presets.config.title.backgroundColor.label"),
-      default: ''
-    },{
-      name:'borderColor',
-      type: 'Color',
-      label:t("grapesjs-echarts-presets.dict.border.borderColor.label"),
-      default: '#cccccc'
-    },{
-      name:'borderWidth',
-      type: 'Number',
-      label:t("grapesjs-echarts-presets.dict.border.borderWidth.label"),
+    }, ...zIndex(t, 2, 0), ...position(t), {
+      name: "backgroundColor",
+      type: "Color",
+      label: t("grapesjs-echarts-presets.config.title.backgroundColor.label"),
+      default: ""
+    }, {
+      name: "borderColor",
+      type: "Color",
+      label: t("grapesjs-echarts-presets.dict.border.borderColor.label"),
+      default: "#cccccc"
+    }, {
+      name: "borderWidth",
+      type: "Number",
+      label: t("grapesjs-echarts-presets.dict.border.borderWidth.label"),
       default: 0
-    },{
-      name:'borderRadius',
-      type: 'Number',
-      label:t("grapesjs-echarts-presets.config.title.borderRadius.label"),
+    }, {
+      name: "borderRadius",
+      type: "Number",
+      label: t("grapesjs-echarts-presets.config.title.borderRadius.label"),
       default: 0
-    },...shadow(t)],
-  }
+    }, ...shadow(t)],
+  };
 }

@@ -90,7 +90,7 @@ export default function (t, multiple = false) {
       name: "nameTextStyle",
       label: t("grapesjs-echarts-presets.config.axis.nameTextStyle.label"),
       type: "Object",
-      children: textStyle(t, false)
+      children: textStyle(t)
     }, {
       name: "nameGap",
       label: t("grapesjs-echarts-presets.config.axis.nameGap.label"),

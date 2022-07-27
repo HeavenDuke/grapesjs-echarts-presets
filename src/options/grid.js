@@ -11,7 +11,7 @@ export default function (t, multiple = false) {
         type: "Boolean",
         label: t("grapesjs-echarts-presets.config.grid.show.label"),
         default: false
-      }, ...zIndex(t,2,0), ...position(t), ...size(t),
+      }, ...zIndex(t,2,0), ...position(t,60,'10%',60,'10%'), ...size(t),
       {
         name: "containLabel",
         type: "Boolean",
@@ -21,12 +21,12 @@ export default function (t, multiple = false) {
         name: "backgroundColor",
         type: "Color",
         label: t("grapesjs-echarts-presets.config.grid.backgroundColor.label"),
-        default: "rgba(0, 0, 0, 0)"
+        default: ""
       }, {
         name: "borderColor",
         type: "Color",
         label: t("grapesjs-echarts-presets.config.grid.borderColor.label"),
-        default: "#ccc"
+        default: "#cccccc"
       }, {
         name: "borderWidth",
         type: "Number",

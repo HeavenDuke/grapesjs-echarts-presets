@@ -61,12 +61,7 @@ export default ({
           const option = this.getOptions({
             basic,
             title,
-            tooltip,
-            toolbox,
             legend,
-            dataset,
-            series,
-            singleAxis,
             grid,
             xAxis,
             yAxis,
@@ -74,8 +69,13 @@ export default ({
             radiusAxis,
             angleAxis,
             radar,
+            tooltip,
+            toolbox,
             parallel,
-            parallelAxis
+            parallelAxis,
+            singleAxis,
+            dataset,
+            series,
           });
 
           // console.log(option)
