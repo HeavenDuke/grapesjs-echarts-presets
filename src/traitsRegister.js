@@ -2,7 +2,6 @@ import options from "./options"
 import main from "@/vue/index"
 
 function constructTrait(ec_option) {
-  let name = ec_option.name;
   return {
     noLabel: true,
     createInput({component}){
@@ -30,15 +29,15 @@ function constructTrait(ec_option) {
       return vueInstance.$el;
     },
     onEvent({component}){
-      const { options } = this.inputInstance;
-      component.addAttributes({
-        [`data-ecg-${name}`]: JSON.stringify(options)
-      });
+      const { options, meta } = this.inputInstance;
+      let attributes = {}
+      attributes[`data-ecg-${meta.name}`] = JSON.stringify(options)
+      component.addAttributes(attributes);
       component.clearChart()
       component.view.render();
     },
     onUpdate({component}){
-      const index = component.getAttributes()[`data-ecg-${name}`] || null;
+      const index = component.getAttributes()[`data-ecg-${this.inputInstance.meta.name}`] || null;
       // console.log(index)
       if (index) {
         this.inputInstance.options = JSON.parse(index);
