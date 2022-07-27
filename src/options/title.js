@@ -25,14 +25,14 @@ export default function (t, multiple = false) {
     }, {
       name:'target',
       type:'Enum',
-      label:t("grapesjs-echarts-presets.config.title.link.label"),
-      placeholder:t("grapesjs-echarts-presets.config.title.link.placeholder"),
+      label:t("grapesjs-echarts-presets.config.title.target.label"),
+      placeholder:t("grapesjs-echarts-presets.config.title.target.placeholder"),
       candidate:TARGET,
       default: "blank"
     },{
       name: "textStyle",
       type: 'Object',
-      label: t("grapesjs-echarts-presets.config.textStyle.label"),
+      label: t("grapesjs-echarts-presets.config.title.textStyle.label"),
       children: textStyle(t)
     }, {
       name: "subtext",
@@ -56,8 +56,8 @@ export default function (t, multiple = false) {
     }, {
       name: "subtextStyle",
       type: 'Object',
-      label: t("grapesjs-echarts-presets.config.subtextStyle.label"),
-      children: textStyle(t)
+      label: t("grapesjs-echarts-presets.config.title.subtextStyle.label"),
+      children: textStyle(t,false,'#333333','bolder',18)
     }, {
       name: "textAlign",
       type: "Enum",
@@ -95,12 +95,12 @@ export default function (t, multiple = false) {
     },{
       name:'borderColor',
       type: 'Color',
-      label:t("grapesjs-echarts-presets.dict.border.borderColor"),
+      label:t("grapesjs-echarts-presets.dict.border.borderColor.label"),
       default: '#cccccc'
     },{
       name:'borderWidth',
       type: 'Number',
-      label:t("grapesjs-echarts-presets.dict.border.borderWidth"),
+      label:t("grapesjs-echarts-presets.dict.border.borderWidth.label"),
       default: 0
     },{
       name:'borderRadius',
