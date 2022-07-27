@@ -77,7 +77,12 @@ export default function (t, multiple = false) {
       name: 'emphasis',
       type: 'Object',
       label:  t("grapesjs-echarts-presets.config.toolbox.emphasis.label"),
-      children:iconStyle(t)
+      children:[{
+        name: 'iconStyle',
+        type: 'Object',
+        label: t("grapesjs-echarts-presets.config.iconStyle.label"),
+        children: iconStyle(t)
+      }]
     },...zIndex(t,2,0),...position(t),...size(t),{
       name: 'tooltip',
       type: 'Object',

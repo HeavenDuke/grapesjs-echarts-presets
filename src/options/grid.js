@@ -35,7 +35,7 @@ export default function (t, multiple = false) {
       }, ...shadow(t), {
         name: "tooltip",
         type: "Object",
-        label: t("grapesjs-echarts-presets.config.tooltip."),
+        label: t("grapesjs-echarts-presets.config.tooltip.label"),
         children: tooltip(t).options
       }]
   }

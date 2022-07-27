@@ -129,16 +129,22 @@ export default {
           label: "Border Width"
         },
         borderType: {
-          label: "Border Type"
+          label: "Border Type",
+          placeholder:'Select Border Type'
+        },
+        borderRadius:{
+          label:'Border Radius'
         },
         borderDashOffset: {
           label: "Border Dash Offset"
         },
         borderCap:{
-          label:'Border Cap'
+          label:'Border Cap',
+          placeholder:'Select BorderCap'
         },
         borderJoin:{
-          label:'Border Join'
+          label:'Border Join',
+          placeholder:'Select BorderJoin'
         },
         borderMiterLimit:{
           label:'Border Miter Limit'
@@ -243,22 +249,171 @@ export default {
           label: "Feature",
           saveAsImage:{
             label:'Save As Image',
-
+            show:{
+              label:'Show'
+            },
+            type:{
+              label:'Image Type',
+              placeholder:'Select Image Type'
+            },
+            name:{
+              label:'Image Name',
+              placeholder:'Input Image Name'
+            },
+            backgroundColor:{
+              label:'Image BackgroundColor'
+            },
+            connectBackgroundColor:{
+              label:'Connect BackgroundColor'
+            },
+            title:{
+              label:'Title'
+            },
+            icon:{
+              label:'Icon Link',
+              placeholder:'Input Icon Link'
+            },
+            emphasis:{
+              label:'Emphasis'
+            },
+            pixelRatio:{
+              label:'Resolution Scale',
+            }
           },
           restore:{
             label:'Restore',
+            show:{
+              label:'Show'
+            },
+            title:{
+              label:'Title'
+            },
+            icon:{
+              label:'Icon Link',
+              placeholder:'Input Icon Link'
+            },
+            emphasis:{
+              label:'Emphasis'
+            },
           },
           dataView:{
-            label:'Data View'
+            label:'Data View',
+            show:{
+              label:'Show'
+            },
+            title:{
+              label:'Title'
+            },
+            icon:{
+              label:'Icon Link',
+              placeholder:'Input Icon Link'
+            },
+            emphasis:{
+              label:'Emphasis'
+            },
+            readOnly:{
+              label:'ReadOnly'
+            },
+            optionToContent:{
+              label:'Option To Content'
+            },
+            contentToOption:{
+              label:'Content To Option'
+            },
+            backgroundColor:{
+              label:'BackgroundColor'
+            },
+            textareaColor:{
+              label:'Textarea Color'
+            },
+            textColor:{
+              label:'Text Color'
+            },
+            buttonColor:{
+              label:'Button Color'
+            },
+            buttonTextColor:{
+              label:'Button Text Color'
+            },
           },
           dataZoom:{
-            label:'Data Zoom'
+            label:'Data Zoom',
+            show:{
+              label:'Show'
+            },
+            title:{
+              label:'Title',
+              zoom:'Input Zoom Title',
+              back:'Input Back Title'
+            },
+            icon:{
+              label:'Icon Link',
+              zoom:'Input Zoom Icon Link',
+              back:'Input Back Icon Link'
+            },
+            emphasis:{
+              label:'Emphasis'
+            },
+            filterMode:{
+              label:'FilterMode'
+            },
+            brushStyle:{
+              label:'Brush Style',
+              color:'Color',
+              opacity:'Opacity'
+            }
           },
           magicType:{
-            label:'Magic Type'
+            label:'Magic Type',
+            show:{
+              label:'Show'
+            },
+            type:{
+              label:'Type',
+              placeholder:'Select Type'
+            },
+            title:{
+              label:'Title',
+              line:'Input Line Title',
+              bar:'Input Bar Title',
+              stack:'Input Stack Title',
+              tiled:'Input Tiled Title',
+            },
+            icon:{
+              label:'Icon Link',
+              line:'Input Line Icon Link',
+              bar:'Input Bar Icon Link',
+              stack:'Input Stack Icon Link',
+              tiled:'Input Tiled Icon Link',
+            },
+            emphasis:{
+              label:'Emphasis'
+            },
           },
           brush:{
-            label:'Brush'
+            label:'Brush',
+            type:{
+              label:'Type',
+              placeholder:'Select Type'
+            },
+            title:{
+              label:'Title',
+              rect:'Input rect Title',
+              polygon:'Input polygon Title',
+              lineX:'Input lineX Title',
+              lineY:'Input lineY Title',
+              keep:'Input keep Title',
+              clear:'Input clear Title',
+            },
+            icon:{
+              label:'Icon Link',
+              rect:'Input rect Icon Link',
+              polygon:'Input polygon Icon Link',
+              lineX:'Input lineX Icon Link',
+              lineY:'Input lineY Icon Link',
+              keep:'Input keep Icon Link',
+              clear:'Input clear Icon Link',
+            },
           }
         },
         iconStyle: {
@@ -406,6 +561,9 @@ export default {
         borderColor: {
           label: "BorderColor"
         },
+        pageIcon:{
+          label:'PageIcon'
+        },
         borderWidth: {
           label: "BorderWidth"
         },
@@ -482,8 +640,9 @@ export default {
           },
           easing:{
             label:'Easing'
-          }
+          },
         },
+
         blendMode: {
           label: "BlendMode"
         },
@@ -504,6 +663,8 @@ export default {
         },
         borderColor: {
           label: "Border Color"
+        },backgroundColor: {
+          label: "BackgroundColor"
         },
         borderWidth: {
           label: "Border Width",
@@ -568,13 +729,16 @@ export default {
           label: "Position"
         },
         textStyle: {
-          label: "Text Style"
+          label: "Title Style"
         },
-        subTextStyle: {
+        subtextStyle: {
           label: "Subtitle Style"
         },
         padding:{
           label:'Padding'
+        },
+        triggerEvent:{
+          label:'Trigger Event'
         },
         backgroundColor:{
           label:'BackgroundColor'
@@ -954,7 +1118,7 @@ export default {
           label: "Z Index"
         },
         label: {
-          label: "Show"
+          label: "Label"
         },
         triggerTooltip: {
           label: "Trigger Tooltip"
@@ -985,6 +1149,9 @@ export default {
         },
         triggerOn: {
           label: "Trigger On"
+        },
+        shadowStyle:{
+          label:"Shadow Style"
         }
       },
       event: {

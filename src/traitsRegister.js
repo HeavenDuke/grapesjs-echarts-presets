@@ -39,8 +39,10 @@ function constructTrait(ec_option) {
     },
     onUpdate({component}){
       const index = component.getAttributes()[`data-ecg-${name}`] || null;
+      // console.log(index)
       if (index) {
         this.inputInstance.options = JSON.parse(index);
+        // console.log(this.inputInstance.options)
       }
     }
   }

@@ -2,7 +2,7 @@
     <div class="gjs-trt-trait">
         <div class="gjs-sm-property gjs-sm-composite gjs-sm-property__margin gjs-sm-property--full" style="">
             <div class="gjs-sm-label" data-sm-label="">
-                <span class="gjs-sm-icon " title="position">{{label}}</span>
+                <span class="gjs-sm-icon " title="size">{{label}}</span>
             </div>
             <div class="gjs-fields" data-sm-fields="">
                 <div class="gjs-sm-field gjs-sm-composite">
