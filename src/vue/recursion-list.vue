@@ -13,6 +13,7 @@
             </ep-select>
           </template>
         </ep-list-editor>
+        <ep-table-editor v-else-if="item.type === 'Table'" :label="item.label" v-model="value[item.name]"></ep-table-editor>
         <ep-input v-else-if="item.type==='String'" v-model="value[item.name]" :label="item.label"
                   :placeholder="item.placeholder"></ep-input>
         <ep-check-box v-else-if="item.type==='Boolean'" v-model="value[item.name]" :label="item.label"></ep-check-box>
@@ -37,6 +38,7 @@
 
 <script>
 // import ChartSection from "./widgets/chart-section";
+import EpTableEditor from "./basic-template/table-editor"
 import EpListEditor from "./basic-template/list-editor"
 import EpCheckBox from "./basic-template/checkbox";
 import EpSelect from "./basic-template/select";
@@ -66,6 +68,7 @@ export default {
   },
   components: {
     // ChartSection,
+    EpTableEditor,
     EpListEditor,
     EpFunction,
     EpSize,

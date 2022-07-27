@@ -147,7 +147,8 @@ export default {
     },
     actions: {
       addItem: "Add Item",
-      edit: "Edit"
+      edit: "Edit",
+      init: "Initialize"
     },
     dialogs: {
       textStyle: "Edit Text Style",
@@ -162,7 +163,13 @@ export default {
       dataset: {
         dimensions: {
           label: "Dimensions"
-        }
+        },
+        source: {
+          label: "Data Source"
+        },
+        sourceHeader: {
+          label: "Has Header"
+        },
       },
       polar: {
         center: {

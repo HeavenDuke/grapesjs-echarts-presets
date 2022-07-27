@@ -12,8 +12,7 @@ export default function (t) {
     }, {
       name: "source",
       label: t("grapesjs-echarts-presets.config.dataset.source.label"),
-      type: "String",
-      array: true,
+      type: "Table",
       default: []
     }, {
       name: "sourceHeader",

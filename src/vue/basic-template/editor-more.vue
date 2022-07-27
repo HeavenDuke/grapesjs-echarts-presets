@@ -8,7 +8,7 @@
         <button class="btn btn-full" @click="showDialog">Edit</button>
       </label>
     </div>
-    <content-dialog v-if="visibility" width="350px" :dialog-visibility="visibility"
+    <content-dialog v-if="visibility" :width="width" :dialog-visibility="visibility"
                     :title="label"
                     @close="visibility = false">
       <slot></slot>
@@ -22,7 +22,11 @@ import ContentDialog from "../widgets/content-dialog";
 export default {
   name: "editor-more",
   props: {
-    label: String
+    label: String,
+    width: {
+      type: String,
+      default: "350px"
+    }
   },
   components: {
     ContentDialog
