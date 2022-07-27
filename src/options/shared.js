@@ -16,6 +16,12 @@ export function constructOptions(meta) {
   return obj;
 }
 
+/**
+ *
+ * @param options | type: Array
+ * @param names | type: Array<String> or String;
+ * @returns {*}
+ */
 export function removeItems(options, names) {
   if (names instanceof Array) {
     let nameMap = names.reduce((result, name) => {
