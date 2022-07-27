@@ -132,6 +132,9 @@ export default {
           label: "Border Type",
           placeholder:'Select Border Type'
         },
+        borderRadius:{
+          label:'Border Radius'
+        },
         borderDashOffset: {
           label: "Border Dash Offset"
         },
@@ -550,6 +553,9 @@ export default {
         },
         borderColor: {
           label: "BorderColor"
+        },
+        pageIcon:{
+          label:'PageIcon'
         },
         borderWidth: {
           label: "BorderWidth"

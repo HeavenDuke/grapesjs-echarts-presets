@@ -123,17 +123,17 @@ export default function (t, multiple = false) {
     }, {
       name: "borderColor",
       type: "Color",
-      label: t("grapesjs-echarts-presets.dict.border.borderColor"),
+      label: t("grapesjs-echarts-presets.dict.border.borderColor.label"),
       default: "#cccccc"
     }, {
       name: "borderWidth",
       type: "Number",
-      label: t("grapesjs-echarts-presets.dict.border.borderWidth"),
+      label: t("grapesjs-echarts-presets.dict.border.borderWidth.label"),
       default: 1
     }, {
       name: "borderRadius",
       type: "Number",
-      label: t("grapesjs-echarts-presets.legend.title.borderRadius.label"),
+      label: t("grapesjs-echarts-presets.dict.border.borderRadius.label"),
       default: 0
     }, ...shadow(t), {
       name: "scrollDataIndex",
