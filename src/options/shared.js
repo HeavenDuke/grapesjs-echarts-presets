@@ -652,11 +652,11 @@ export function feature(t) {
 
 
 //finished
-export function textStyle(t, obj={color:"#ffffff",fontWeight:"normal",fontSize:12,padding:[0,0],complex:false}) {
+export function textStyle(t, {color = "#ffffff", fontWeight = "normal", fontSize = 12, padding = [0,0], complex = false} = {}) {
   let basic = [{
     name: "color",
     type: "Color",
-    default: obj.color||"#ffffff",
+    default: color,
     label: t("grapesjs-echarts-presets.config.textStyle.color.label")
   }, {
     name: "fontStyle",
@@ -668,7 +668,7 @@ export function textStyle(t, obj={color:"#ffffff",fontWeight:"normal",fontSize:1
   }, {
     name: "fontWeight",
     type: "Enum",
-    default: obj.fontWeight||"normal",
+    default: fontWeight,
     label: t("grapesjs-echarts-presets.config.textStyle.fontWeight.label"),
     placeholder: t("grapesjs-echarts-presets.config.textStyle.fontWeight.placeholder"),
     candidate: ["normal", "bold", "bolder", "lighter"]
@@ -682,7 +682,7 @@ export function textStyle(t, obj={color:"#ffffff",fontWeight:"normal",fontSize:1
   }, {
     name: "fontSize",
     type: "Number",
-    default: obj.fontSize||12,
+    default: fontSize,
     label: t("grapesjs-echarts-presets.config.textStyle.fontSize.label"),
   }, {
     name: "lineHeight",
@@ -759,9 +759,9 @@ export function textStyle(t, obj={color:"#ffffff",fontWeight:"normal",fontSize:1
     name: "padding",
     type: "Size",
     label: t("grapesjs-echarts-presets.config.textStyle.padding.label"),
-    default: obj.padding||[0,0]
+    default: padding
   }, ...shadow(t)];
-  let flag=obj.complex||false;
+  let flag= complex
   if (flag) {
     return [...basic, ...more];
   } else {
