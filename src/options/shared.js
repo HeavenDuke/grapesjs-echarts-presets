@@ -16,6 +16,19 @@ export function constructOptions(meta) {
   return obj;
 }
 
+export function removeItems(options, names) {
+  if (names instanceof Array) {
+    let nameMap = names.reduce((result, name) => {
+      result[name] = name
+      return result
+    }, {})
+    return options.filter(item => nameMap[item.name])
+  }
+  else {
+    return options.filter(item => item.name !== names)
+  }
+}
+
 //tool
 
 //finished 4 top,right,bottom,left
