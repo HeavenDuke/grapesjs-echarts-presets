@@ -732,7 +732,13 @@ export default {
           label: "Title Style"
         },
         subtextStyle: {
-          label: "Subtitle Style"
+          label: "Subtitle Style",
+          align:{
+            label:'Align'
+          },
+          verticalAlign:{
+            label:'Vertical Align'
+          }
         },
         padding:{
           label:'Padding'

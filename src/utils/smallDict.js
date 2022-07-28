@@ -12,6 +12,8 @@ export let SERIES_TYPES = [
   "time",
   "log"
 ];
+export let ALIGN=["auto", "left", "right", "center"]
+export let VERTICAL_ALIGN=["auto", "top", "bottom", "middle"]
 export let TARGET = ["self", "blank"];
 export let BORDER_TYPE = ["solid", "dashed", "dotted"];
 export let UNITS = ["px", "%", "em", "rem", "vh", "vw"];

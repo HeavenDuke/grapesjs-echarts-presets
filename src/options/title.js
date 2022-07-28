@@ -1,5 +1,5 @@
 import {position, shadow, textStyle, zIndex} from "@/options/shared";
-import {TARGET} from "@/utils/smallDict";
+import {ALIGN, TARGET, VERTICAL_ALIGN} from "@/utils/smallDict";
 //finished
 export default function (t, multiple = false) {
   return {
@@ -57,21 +57,35 @@ export default function (t, multiple = false) {
       name: "subtextStyle",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.title.subtextStyle.label"),
-      children: textStyle(t, {color: "#aaaaaa"})
+      children: [...textStyle(t, {color: "#aaaaaa"}),{
+        name: "align",
+        type: "Enum",
+        label: t("grapesjs-echarts-presets.config.title.subtextStyle.align.label"),
+        placeholder: t("grapesjs-echarts-presets.config.title.subtextStyle.align.placeholder"),
+        default: "auto",
+        candidate: ALIGN
+      },{
+        name: "verticalAlign",
+        type: "Enum",
+        label: t("grapesjs-echarts-presets.config.title.subtextStyle.verticalAlign.label"),
+        placeholder: t("grapesjs-echarts-presets.config.title.subtextStyle.verticalAlign.placeholder"),
+        default: "auto",
+        candidate: VERTICAL_ALIGN
+      }]
     }, {
       name: "textAlign",
       type: "Enum",
       label: t("grapesjs-echarts-presets.config.title.textAlign.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.textAlign.placeholder"),
       default: "auto",
-      candidate: ["auto", "left", "right", "center"]
+      candidate: ALIGN
     }, {
       name: "textVerticalAlign",
       type: "Enum",
       label: t("grapesjs-echarts-presets.config.title.textVerticalAlign.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.textVerticalAlign.placeholder"),
       default: "auto",
-      candidate: ["auto", "top", "bottom", "middle"]
+      candidate: VERTICAL_ALIGN
     }, {
       name: "triggerEvent",
       type: "Boolean",
