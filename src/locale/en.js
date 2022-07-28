@@ -437,6 +437,10 @@ export default {
           axis:{
             label:'Axis'
           },
+          type:{
+            label:'Type'
+          },
+
           crossStyle:{
             label:'Cross Style',
             color:'Color',
