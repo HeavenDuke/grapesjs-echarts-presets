@@ -11,30 +11,45 @@ export default build({
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
     let xAxis = options.xAxis || {};
-    const yAxis = options.yAxis || {};
+    let yAxis = options.yAxis || {};
     let dataset = {
-      source: options.dataset.source||[],
-      sourceHeader:options.dataset.sourceHeader||false
+      source: options.dataset.source || [],
+      sourceHeader: options.dataset.sourceHeader || false
     };
-    // console.log(11111, dataset.source);
-    let series =[]
-    for (let i = 0; i < dataset.source[0].length - 1; i++) {
-      series.push({type: "bar"});
+    let series = []
+    if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
+      for (let i = 1; i < dataset.source[0].length; i++) {
+        series.push({type: "bar"});
+      }
     }
-    // let series = [{type: "bar"}, {type: "bar"}, {type: "bar"},];
 
+    console.log("xAxis", xAxis)
 
     xAxis = {type: "category"};
-    return {
-      ...basic,
-      grid,
+
+    console.log({
+      // ...basic,
+      // grid,
       dataset,
-      legend,
-      title,
-      toolbox,
+      // legend,
+      // title,
+      // toolbox,
       xAxis,
       series,
-      tooltip,
+      // tooltip,
+      yAxis
+    })
+
+    return {
+      // ...basic,
+      // grid,
+      dataset,
+      // legend,
+      // title,
+      // toolbox,
+      xAxis,
+      series,
+      // tooltip,
       yAxis
     };
   },

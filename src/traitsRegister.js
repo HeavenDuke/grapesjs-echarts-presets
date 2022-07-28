@@ -31,6 +31,7 @@ function constructTrait(ec_option) {
     onEvent({component}){
       const { options, meta } = this.inputInstance;
       let attributes = {}
+      // console.log(`data-ecg-${meta.name}`, options)
       attributes[`data-ecg-${meta.name}`] = JSON.stringify(options)
       component.addAttributes(attributes);
       component.clearChart()

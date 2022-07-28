@@ -44,9 +44,6 @@ export default ({
           const theme = this.get("attributes")["data-ecg-theme"] || null;
 
           const dataset = JSON.parse(this.get("attributes")["data-ecg-dataset"] || "{}");
-
-          // console.log("dataset", dataset)
-
           const singleAxis = JSON.parse(this.get("attributes")["data-ecg-single-axis"] || "{}");
           const grid = JSON.parse(this.get("attributes")["data-ecg-grid"] || "{}");
           const xAxis = JSON.parse(this.get("attributes")["data-ecg-x-axis"] || "{}");
@@ -78,7 +75,6 @@ export default ({
             series,
           });
 
-          console.log(option)
           this.renderChart(option, theme);
         },
         getOptions,

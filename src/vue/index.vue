@@ -35,9 +35,8 @@
       }
     },
     data() {
-      let options = constructOptions(this.meta.options)
       return {
-        options: this.meta.multiple ? [options] : options,
+        options: {},
         optionIndex: 0
       }
     },
@@ -59,7 +58,9 @@
       }
     },
     created() {
-      // console.log(this.meta, this.options)
+      let options = constructOptions(this.meta.options)
+      this.options = this.meta.multiple ? [options] : options
+      // console.log(this.meta.name, this.options)
     }
   };
 </script>

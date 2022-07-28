@@ -970,7 +970,21 @@ export function splitArea(t, show = true) {
     name: "areaStyle",
     label: t("grapesjs-echarts-presets.config.axis.splitArea.areaStyle.label"),
     type: "Object",
-    children: areaStyle(t)
+    children: [{
+      name: "color",
+      label: t("grapesjs-echarts-presets.config.areaStyle.color.label"),
+      type: "Color",
+      array: true,
+      default: ["rgba(250,250,250,0.3)","rgba(200,200,200,0.3)"]
+    }, {
+      name: "opacity",
+      label: t("grapesjs-echarts-presets.config.areaStyle.opacity.label"),
+      type: "Number",
+      max: 1,
+      min: 0,
+      step: 0.05,
+      default: 1
+    }, ...shadow(t)]
   }];
 }
 
