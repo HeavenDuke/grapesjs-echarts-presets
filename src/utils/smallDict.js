@@ -12,6 +12,7 @@ export let SERIES_TYPES = [
   "time",
   "log"
 ];
+export let AXIS=['x','y','radius','angle']
 export let ALIGN=["auto", "left", "right", "center"]
 export let VERTICAL_ALIGN=["auto", "top", "bottom", "middle"]
 export let TARGET = ["self", "blank"];

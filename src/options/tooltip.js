@@ -1,8 +1,72 @@
-import {TOOLTIP} from "@/utils/smallDict";
-import {axisPointer, textStyle} from "@/options/shared";
+import {AXIS, BORDER_TYPE, LINE_CAPS, LINE_JOINS, TOOLTIP} from "@/utils/smallDict";
+import {animation, axisPointer, removeItems, shadow, textStyle} from "@/options/shared";
 //finished
 export default function (t, multiple = false) {
-
+  let newAxisPointer= removeItems(axisPointer(t),["type","snap","z","label","lineStyle","shadowStyle"]).concat([
+    {
+      name:'axis',
+      type:'Enum',
+      label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.axis.label"),
+      placeholder: t("grapesjs-echarts-presets.config.tooltip.axisPointer.axis.placeholder"),
+      candidate:AXIS,
+      default:'auto'
+    },{
+      name:'crossStyle',
+      type: 'Object',
+      label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.label"),
+      children:[{
+        name:'color',
+        type:'Color',
+        label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.color"),
+        default:'#555555'
+      },{
+        name:'width',
+        type:'Number',
+        label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.width"),
+        default: 1
+      },{
+        name: 'type',
+        type: 'Enum',
+        label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.type.label"),
+        placeholder:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.type.placeholder"),
+        candidate:BORDER_TYPE,
+        default: 'dashed'
+      },{
+        name:'dashOffset',
+        type: 'Number',
+        label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.dashOffset"),
+        default: 0
+      },{
+        name:'cap',
+        type: 'Enum',
+        label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.cap.label"),
+        placeholder:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.cap.placeholder"),
+        candidate:LINE_CAPS,
+        default: 'butt'
+      },{
+        name:'join',
+        type: 'Enum',
+        label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.join.label"),
+        placeholder:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.join.placeholder"),
+        candidate:LINE_JOINS,
+        default: 'bevel'
+      },{
+        name:'miterLimit',
+        type: 'Number',
+        label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.miterLimit"),
+        default: 10
+      },...shadow(t),{
+        name:'opacity',
+        type: 'Number',
+        min:0,
+        max:1,
+        step:0.1,
+        label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.crossStyle.opacity"),
+        default: 1
+      }]
+    },...animation(t,{aDurationU:200,aEasingU:'exponent'})
+  ])
+  // console.log(newAxisPointer)
   return {
     name: "tooltip",
     label: t("grapesjs-echarts-presets.dict.group.tooltip"),
@@ -22,7 +86,7 @@ export default function (t, multiple = false) {
       name: "axisPointer",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.tooltip.axisPointer.label"),
-      children: axisPointer(t)
+      children: newAxisPointer
     }, {
       name: "showContent",
       type: "Boolean",

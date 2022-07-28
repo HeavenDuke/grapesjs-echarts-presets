@@ -433,7 +433,28 @@ export default {
           placeholder: "Select trigger type"
         },
         axisPointer: {
-          label: "Axis Pointer"
+          label: "Axis Pointer",
+          axis:{
+            label:'Axis'
+          },
+          crossStyle:{
+            label:'Cross Style',
+            color:'Color',
+            width:'Width',
+            type: {
+              label:'type'
+            },
+            dashOffset: 'Dash Offset',
+            cap:{
+              label:'Cap'
+            },
+            join:{
+              label:'Join'
+            },
+            miterLimit: 'Miter Limit',
+            opacity:'Opacity'
+
+          }
         },
         showContent: {
           label: "Show Content"

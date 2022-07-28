@@ -79,32 +79,32 @@ export function size(t, width = "auto", height = "auto") {
 
 //finished 8 animation,animationThreshold,animationDuration,animationDurationUpdate,
 // animationEasing,animationEasingUpdate,animationDelay,animationDelayUpdate
-export function animation(t) {
+export function animation(t,{animation=true,aThreshold=2000,aDuration=1000,aDurationU=300,aEasing="cubicOut",aEasingU="cubicOut",aDelay=0,aDelayU=0}={}) {
   return [{
     name: "animation",
     type: "Boolean",
     label: t("grapesjs-echarts-presets.dict.animation.label"),
-    default: true,
+    default: animation,
   }, {
     name: "animationThreshold",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.animation.animationThreshold.label"),
-    default: 2000,
+    default: aThreshold,
   }, {
     name: "animationDuration",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.animation.animationDuration.label"),
-    default: 1000,
+    default: aDuration,
   }, {
     name: "animationDurationUpdate",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.animation.animationDurationUpdate.label"),
-    default: 300,
+    default: aDurationU,
   }, {
     name: "animationEasing",
     type: "Enum",
     label: t("grapesjs-echarts-presets.dict.animation.animationEasing.label"),
-    default: "cubicOut",
+    default: aEasing,
     placeholder: t("grapesjs-echarts-presets.dict.animation.animationEasing.placeholder"),
     candidate: ANIMATIONEASING
   }, {
@@ -112,18 +112,18 @@ export function animation(t) {
     type: "Enum",
     label: t("grapesjs-echarts-presets.dict.animation.animationEasingUpdate.label"),
     placeholder: t("grapesjs-echarts-presets.dict.animation.animationEasingUpdate.placeholder"),
-    default: "cubicOut",
+    default: aEasingU,
     candidate: ANIMATIONEASING
   }, {
     name: "animationDelay",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.animation.animationDelay.label"),
-    default: 0,
+    default: aDelay,
   }, {
     name: "animationDelayUpdate",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.animation.animationDelayUpdate.label"),
-    default: 0,
+    default: aDelayU,
   }];
 }
 
