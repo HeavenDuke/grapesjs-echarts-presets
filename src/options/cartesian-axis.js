@@ -1,5 +1,5 @@
 
-import { SERIES_TYPES } from "@/utils/smallDict";
+import {BINARY_POSITION_HORIZONTAL, BINARY_POSITION_VERTICAL, FLEX_POSITIONS, SERIES_TYPES} from "@/utils/smallDict";
 import {zIndex, textStyle, axisLine, axisTick, axisLabel, splitLine, splitArea, axisPointer} from "@/options/shared"
 import ToolTip from "@/options/tooltip"
 
@@ -33,7 +33,7 @@ export default function (type = "x", multiple = false) {
         name: "position",
         label: t("grapesjs-echarts-presets.config.axis.position.label"),
         type: "Enum",
-        candidate: [],
+        candidate: type === "x" ? BINARY_POSITION_VERTICAL : BINARY_POSITION_HORIZONTAL,
         default: ""
       }, {
         name: "name",
@@ -44,7 +44,7 @@ export default function (type = "x", multiple = false) {
         name: "nameLocation",
         label: t("grapesjs-echarts-presets.config.axis.nameLocation.label"),
         type: "Enum",
-        candidate: [],
+        candidate: FLEX_POSITIONS,
         default: ""
       }, {
         name: "nameTextStyle",

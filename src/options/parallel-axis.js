@@ -1,5 +1,5 @@
 
-import {DIRECTIONS, SERIES_TYPES} from "@/utils/smallDict";
+import {DIRECTIONS, FLEX_POSITIONS, SERIES_TYPES} from "@/utils/smallDict";
 import {
   zIndex,
   textStyle,
@@ -84,7 +84,7 @@ export default function (t, multiple = false) {
       name: "nameLocation",
       label: t("grapesjs-echarts-presets.config.axis.nameLocation.label"),
       type: "Enum",
-      candidate: [],
+      candidate: FLEX_POSITIONS,
       default: ""
     }, {
       name: "nameTextStyle",

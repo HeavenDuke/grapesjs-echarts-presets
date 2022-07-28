@@ -30,3 +30,9 @@ export let TRIGGERS = ["mousemove|click", "click", "mousemove", "none"];
 export let POINTER_TYPES = ["line", "shadow", "none"]
 
 export let VISIBLE_STATUS = ["show", "hide"]
+
+export let BINARY_POSITION_VERTICAL = ["top", "bottom"]
+
+export let BINARY_POSITION_HORIZONTAL = ["left", "right"]
+
+export let FLEX_POSITIONS = ["start", "middle", "end"]
