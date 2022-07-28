@@ -12,10 +12,9 @@ export default build({
     const legend = options.legend || {};
     let xAxis = options.xAxis || {};
     const yAxis = options.yAxis || {};
-    let source=options.dataset.source || [];
     let dataset = {
-      source: source,
-      sourceHeader:options.dataset.sourceHeader
+      source: options.dataset.source||[],
+      sourceHeader:options.dataset.sourceHeader||false
     };
     // console.log(11111, dataset.source);
     let series =[]
