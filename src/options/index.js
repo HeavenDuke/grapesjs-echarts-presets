@@ -14,7 +14,7 @@ import AngleAxisOptions from "@/options/angle-axis"
 import RadarOptions from "@/options/radar"
 import ParallelOptions from "@/options/parallel"
 import ParallelAxisOptions from "@/options/parallel-axis"
-
+import SeriesOption from "@/options/series";
 export default {
   "basic": BasicOptions,
   "dataset": DatasetOptions,
@@ -31,5 +31,6 @@ export default {
   "angle-axis": AngleAxisOptions,
   "radar": RadarOptions,
   "parallel": ParallelOptions,
-  "parallel-axis": ParallelAxisOptions
+  "parallel-axis": ParallelAxisOptions,
+  "series":SeriesOption
 }

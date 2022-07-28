@@ -3,7 +3,7 @@ import build from "../buildSeries";
 export default build({
   name: "grapesjs-echarts.components.bars.name",
   getOptions: (options) => {
-    const map = options.series || [];
+    const map = options.series || {};
     const title = options.title || {};
     const basic = options.basic || {};
     const grid = options.grid || {};
@@ -16,40 +16,24 @@ export default build({
       source: options.dataset.source || [],
       sourceHeader: options.dataset.sourceHeader || false
     };
+    console.log(map)
     let series = []
     if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
       for (let i = 1; i < dataset.source[0].length; i++) {
         series.push({type: "bar"});
       }
     }
-
-    // console.log("xAxis", xAxis)
-
-    xAxis = {type: "category"};
-
-    // console.log({
-    //   // ...basic,
-    //   // grid,
-    //   dataset,
-    //   // legend,
-    //   // title,
-    //   // toolbox,
-    //   xAxis,
-    //   series,
-    //   // tooltip,
-    //   yAxis
-    // })
-
+    console.log(map,series)
     return {
-      // ...basic,
-      // grid,
+      ...basic,
+      grid,
       dataset,
-      // legend,
-      // title,
-      // toolbox,
+      legend,
+      title,
+      toolbox,
       xAxis,
       series,
-      // tooltip,
+      tooltip,
       yAxis
     };
   },
