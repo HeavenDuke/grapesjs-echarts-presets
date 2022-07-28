@@ -92,7 +92,6 @@
     watch: {
       table: {
         handler(newValue) {
-          console.log(newValue.map(row => row.map(cell => cell.value)))
           this.$emit("input", newValue.map(row => row.map(cell => cell.value)))
         },
         deep: true
@@ -140,7 +139,6 @@
             this.types = []
           }
         }
-        console.log(this.table, "table")
       },
       initTable() {
         this.table = [[{value: ""}]]
