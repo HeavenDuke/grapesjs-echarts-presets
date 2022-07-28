@@ -1,14 +1,22 @@
-import {AXIS, BORDER_TYPE, LINE_CAPS, LINE_JOINS, TOOLTIP} from "@/utils/smallDict";
+import {AXIS, BORDER_TYPE, LINE_CAPS, LINE_JOINS, POINTER_TYPES, TOOLTIP} from "@/utils/smallDict";
 import {animation, axisPointer, removeItems, shadow, textStyle} from "@/options/shared";
+import {LINE_TYPES} from "@/utils/dict";
 //finished
 export default function (t, multiple = false) {
-  let newAxisPointer= removeItems(axisPointer(t),["type","snap","z","label","lineStyle","shadowStyle"]).concat([
+  let newAxisPointer= removeItems(axisPointer(t),["snap","z","label","lineStyle","shadowStyle"]).concat([
     {
       name:'axis',
       type:'Enum',
       label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.axis.label"),
       placeholder: t("grapesjs-echarts-presets.config.tooltip.axisPointer.axis.placeholder"),
       candidate:AXIS,
+      default:'auto'
+    },{
+      name:'type',
+      type:'Enum',
+      label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.type.label"),
+      placeholder: t("grapesjs-echarts-presets.config.tooltip.axisPointer.type.placeholder"),
+      candidate:[...POINTER_TYPES,'cross'],
       default:'auto'
     },{
       name:'crossStyle',
