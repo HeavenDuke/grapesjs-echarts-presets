@@ -5,7 +5,7 @@
         </div>
         <div class="gjs-field-wrp gjs-field-wrp--text">
             <div class="gjs-field gjs-select">
-                <select v-model="value" data-input>
+                <select v-model="selection" data-input>
                     <ep-option :value="placeholder" disabled>{{placeholder}}</ep-option>
                     <slot></slot>
                 </select>
@@ -19,7 +19,7 @@
 
 <script>
   //下拉框复用模板组件
-  import EpOption from './option'
+  import EpOption from "./option"
 
   export default {
     name: "ep-select",
@@ -34,9 +34,9 @@
     components: {
       EpOption
     },
-    data () {
+    data() {
       return {
-        selection: ''
+        selection: ""
       }
     },
     watch: {
@@ -44,11 +44,11 @@
         this.selection = val
       },
       selection(val) {
-        this.$emit('input', val)
+        this.$emit("input", val)
       }
     },
     created() {
-      this.selection= this.value
+      this.selection = this.value
     }
   }
 </script>

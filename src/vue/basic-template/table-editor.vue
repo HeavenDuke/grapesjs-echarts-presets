@@ -13,22 +13,41 @@
         </div>
         <div class="gjs-trt-traits gjs-one-bg gjs-two-color" v-else>
             <div class="row">
-                <div class="cell" v-for="i in columnCount">
+                <div class="cell" v-for="i in table[0].length">
                     <div class="gjs-trt-trait">
                         <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
                             <label class="gjs-field gjs-field--button" data-input="">
-                                <button class="btn btn-full" @click="removeColumn(i)">-</button>
+                                <button class="btn btn-full" @click="removeColumn(i - 1)">-</button>
                             </label>
                         </div>
                     </div>
+                    <ep-select v-model="types[i - 1]">
+                        <ep-option v-for="it in inputTypes" :key="it" :value="it" :label="it"></ep-option>
+                    </ep-select>
+                    <div v-for="(row, rIndex) in table">
+                        <ep-color-picker v-if="types[i - 1] === 'Color'" v-model="table[rIndex][i - 1].value"></ep-color-picker>
+                        <ep-number-input v-if="types[i - 1] === 'Number'" v-model="table[rIndex][i - 1].value"></ep-number-input>
+                        <ep-input v-if="types[i - 1] === 'String'" v-model="table[rIndex][i - 1].value"></ep-input>
+                    </div>
                 </div>
-                <button class="btn btn-icon" @click="addColumn">+</button>
-            </div>
-            <div class="row" v-for="(row, index) in table">
-                <div class="cell" v-for="cell in row">
-                    <ep-input v-model="cell.value"></ep-input>
+                <div>
+                    <div class="gjs-trt-trait">
+                        <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+                            <label class="gjs-field gjs-field--button" data-input="">
+                                <button class="btn btn-icon add-col" @click="addColumn">+</button>
+                            </label>
+                        </div>
+                    </div>
+                    <div v-for="(row, rIndex) in table">
+                        <div class="gjs-trt-trait">
+                            <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
+                                <label class="gjs-field gjs-field--button" data-input="">
+                                    <button class="btn btn-icon" @click="removeRow(rIndex)">-</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button class="btn btn-icon" @click="removeRow(index)">-</button>
             </div>
             <div class="row">
                 <div class="cell">
@@ -40,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <button style="opacity: 0;" class="btn btn-icon"></button>
+                <button style="visibility: hidden;" class="btn btn-icon"></button>
             </div>
         </div>
     </ep-more>
@@ -48,10 +67,13 @@
 
 <script>
 
+  import EpInput from "./input"
   import EpSelect from "./select"
   import EpOption from "./option"
-  import EpInput from "./input"
+  import EpColorPicker from "./color-picker"
+  import EpNumberInput from "./number-input"
   import EpMore from "./editor-more"
+  import { INPUT_TYPES } from "@/utils/smallDict";
 
   export default {
     name: "table-editor",
@@ -61,37 +83,68 @@
     },
     components: {
       EpMore,
-      EpInput,
       EpSelect,
-      EpOption
-    },
-    computed: {
-      rowCount() {
-        return this.table.length
-      },
-      columnCount() {
-        return this.table[0] ? this.table[0].length : 0
-      }
+      EpOption,
+      EpInput,
+      EpNumberInput,
+      EpColorPicker
     },
     watch: {
       table: {
         handler(newValue) {
+          console.log(newValue.map(row => row.map(cell => cell.value)))
           this.$emit("input", newValue.map(row => row.map(cell => cell.value)))
+        },
+        deep: true
+      },
+      value: {
+        handler(newValue) {
+          this.flushData(newValue)
         },
         deep: true
       }
     },
     data() {
       return {
+        types: [],
+        inputTypes: INPUT_TYPES,
         table: []
       }
     },
     methods: {
+      match(value) {
+        // 如果行数不通，则不一致
+        if (this.table.length !== value.length) return false
+        // 否则如果行数都为0，则按一致处理
+        if (this.table.length === 0) return true
+        // 否则如果列数不等，则不一致
+        if (this.table[0].length !== value[0].length) return false
+        // 否则逐项检查，若不一致则不一致
+        for(let i = 0; i < this.table.length; i++) {
+          for(let j = 0; j < this.table[i].length; j++) {
+            if(this.table[i][j].value !== value[i][j]) {
+              return false
+            }
+          }
+        }
+        // 否则一致
+        return true
+      },
       flushData(value) {
-        this.table = value.map(row => row.map(cell => ({value: cell})))
+        if (!this.match(value)) {
+          this.table = value.map(row => row.map(cell => ({value: cell})))
+          if (this.table.length > 0) {
+            this.types = this.table[0].map(item => "String")
+          }
+          else {
+            this.types = []
+          }
+        }
+        console.log(this.table, "table")
       },
       initTable() {
         this.table = [[{value: ""}]]
+        this.types = ["String"]
       },
       moveUp(index) {
 
@@ -109,6 +162,7 @@
         this.table.splice(index, 1)
       },
       removeColumn(index) {
+        this.types.splice(index, 1)
         for (let i = 0; i < this.table.length; i++) {
           this.table[i].splice(index, 1)
         }
@@ -117,14 +171,15 @@
         for (let i = 0; i < this.table.length; i++) {
           this.table[i].push({value: ""})
         }
+        this.types.push("String")
       },
       addRow(index) {
         let row = []
-        let colCount = this.columnCount
+        let colCount = this.table[0].length
         for (let i = 0; i < colCount; i++) {
           row.push({value: ""})
         }
-        this.table.push(row)
+        this.table = this.table.concat([row])
       }
     },
     created() {
@@ -144,6 +199,7 @@
         }
 
         button.btn {
+            flex-shrink: 0;
             background: rgba(0, 0, 0, .2);
             border: none;
             cursor: pointer;
@@ -153,6 +209,11 @@
             font-weight: 800;
             width: 26px;
             height: 25px;
+        }
+
+        button.btn.add-col {
+            height: 64px;
+            line-height: 64px;
         }
 
         .gjs-field--button {

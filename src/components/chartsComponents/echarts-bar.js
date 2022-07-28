@@ -23,22 +23,22 @@ export default build({
       }
     }
 
-    console.log("xAxis", xAxis)
+    // console.log("xAxis", xAxis)
 
     xAxis = {type: "category"};
 
-    console.log({
-      // ...basic,
-      // grid,
-      dataset,
-      // legend,
-      // title,
-      // toolbox,
-      xAxis,
-      series,
-      // tooltip,
-      yAxis
-    })
+    // console.log({
+    //   // ...basic,
+    //   // grid,
+    //   dataset,
+    //   // legend,
+    //   // title,
+    //   // toolbox,
+    //   xAxis,
+    //   series,
+    //   // tooltip,
+    //   yAxis
+    // })
 
     return {
       // ...basic,

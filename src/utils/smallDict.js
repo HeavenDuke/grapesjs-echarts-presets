@@ -36,3 +36,5 @@ export let BINARY_POSITION_VERTICAL = ["top", "bottom"]
 export let BINARY_POSITION_HORIZONTAL = ["left", "right"]
 
 export let FLEX_POSITIONS = ["start", "middle", "end"]
+
+export let INPUT_TYPES = ["String", "Color", "Number"]
