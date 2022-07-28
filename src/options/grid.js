@@ -5,6 +5,7 @@ export default function (t, multiple = false) {
   return {
     name:'grid',
     label: t("grapesjs-echarts-presets.dict.group.grid"),
+    multiple: false,
     options:[
       {
         name: "show",
