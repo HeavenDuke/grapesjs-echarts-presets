@@ -9,31 +9,27 @@ export default build({
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
-    const series = [
 
-      {
-        type: "pie",
-        radius:['25%','50%'],
-        itemStyle: {
-          borderRadius: 10,
-          borderColor: '#fff',
-          borderWidth: 2
-        },
-        data: map.map(({ value, color, label }) => ({
-          value,
-          name: label,
-          itemStyle: { color },
-        })),
-      },
+    let dataset = {
+      source: options.dataset.source || [],
+      // sourceHeader: options.dataset.sourceHeader || false
+    };
+    let series = [{
+      type: "pie",
+      radius:['25%','50%'],
+      itemStyle: {
+        borderRadius: 10,
+        borderColor: '#fff',
+        borderWidth: 2
+      },...map}]
 
-    ];
     return  {
       ...basic,
       grid,
       title,
+      dataset,
       toolbox,
       series,
-      selectedMode: 'single',
       legend,
       tooltip
     };

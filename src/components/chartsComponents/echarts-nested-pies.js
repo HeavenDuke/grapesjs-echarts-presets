@@ -1,42 +1,37 @@
 import build from "../buildSeries";
+
 export default build({
-  name: "grapesjs-echarts.components.scatter.name",
+  name: "grapesjs-echarts.components.nestedPie.name",
   getOptions: (options) => {
-    const map = options.series || [];
-    const basic=options.basic ||{};
-    const title = options.title || {};
+    const map = options.series || {};
+    const basic = options.basic || {};
     const grid = options.grid || {};
-    const tooltip = options.tooltip || null;
+    const title = options.title || {};
+    const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
     let dataset = {
       source: options.dataset.source || [],
-      sourceHeader: options.dataset.sourceHeader || false
+      // sourceHeader: options.dataset.sourceHeader || false
     };
     let series = [];
     if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
       for (let i = 1; i < dataset.source[0].length; i++) {
-        let obj = {type: "scatter", ...map};
-        series.push(obj);
+          series.push({type: "pie",z:10*-i,radius: [`${20*(i-1)}%`,`${20*i}%`],encode:{value:i},...map});
       }
     }
-  tooltip.formatter= 'Group {a}: ({c})'
 
-
-    const xAxis = options.xAxis||{}
-    const yAxis = options.yAxis||{}
+    // console.log(series,dataset)
     return {
       ...basic,
       grid,
       title,
-      series,
       dataset,
       toolbox,
-      xAxis,
-      tooltip,
+      series,
       legend,
-      yAxis
-
+      tooltip
     };
+
   },
 });

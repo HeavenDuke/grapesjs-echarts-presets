@@ -6,13 +6,6 @@ export default function (t, multiple = true) {
     name: "series",
     label: t("grapesjs-echarts-presets.dict.group.series"),
     options: [{
-      name: "type",
-      label: t("grapesjs-echarts-presets.config.series.type.label"),
-      placeholder: t("grapesjs-echarts-presets.config.series.type.placeholder"),
-      type: "Enum",
-      candidate: SERIES,
-      default: ""
-    }, {
       name: "name",
       type: "String",
       label: t("grapesjs-echarts-presets.config.series.name.label"),
@@ -20,14 +13,14 @@ export default function (t, multiple = true) {
     }, {
       name: "colorBy",
       type: "Enum",
-      label: t("grapesjs-echarts-presets.config.series.name.label"),
-      placeholder: t("grapesjs-echarts-presets.config.series.name.placeholder"),
+      label: t("grapesjs-echarts-presets.config.series.colorBy.label"),
+      placeholder: t("grapesjs-echarts-presets.config.series.colorBy.placeholder"),
       candidate: ["series", "data"],
       default: ""
     }, zIndex(t, 2, 0),{
       name:'silent',
       type: 'Boolean',
-      label:t("grapesjs-echarts-presets.config.series.name.label"),
+      label:t("grapesjs-echarts-presets.config.series.silent.label"),
       default: false
     }, ...animation(t)]
   };

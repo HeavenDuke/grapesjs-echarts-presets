@@ -1,35 +1,35 @@
 import build from "../buildSeries";
+
 export default build({
   name: "grapesjs-echarts.components.rose.name",
   getOptions: (options) => {
-    const map = options.series || [];
+    const map = options.series || {};
     const title = options.title || {};
-    const basic=options.basic ||{};
+    const basic = options.basic || {};
     const grid = options.grid || {};
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
+
+    let dataset = {
+      source: options.dataset.source || [],
+      // sourceHeader: options.dataset.sourceHeader || false
+    };
     const series = [
 
       {
         type: "pie",
-        data: map.map(({ value, color, label }) => ({
-          value,
-          name: label,
-          itemStyle: { color },
-        })).sort(function (a, b) {
-            return a.value - b.value;
-          }),
-        radius: ['25%', '65%'],
-        roseType: 'area',
-
+        radius: ["25%", "65%"],
+        roseType: "area",
+        ...map
       },
 
     ];
-    return  {
-      ...basic,
+    return {
+      // ...basic,
       grid,
       title,
+      dataset,
       toolbox,
       series,
       legend,
