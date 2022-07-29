@@ -37,11 +37,14 @@ export default {
       scatter: {
         name: "Scatter Chart"
       },
-      stackedLine:{
-        name:'Stacked Line'
+      stackedLine: {
+        name: "Stacked Line Chart"
       },
-      nestedPies:{
-        name:'Nested Pies'
+      stackedBar: {
+        name: "Stacked Bar Chart"
+      },
+      nestedPies: {
+        name: "Nested Pies Chart"
       }
     },
     dict: {
@@ -1205,14 +1208,14 @@ export default {
         type: {
           label: "Type"
         },
-        name:{
-          label:'Name',
+        name: {
+          label: "Name",
         },
-        colorBy:{
-          label:'ColorBy'
+        colorBy: {
+          label: "ColorBy"
         },
-        silent:{
-          label:'Silent'
+        silent: {
+          label: "Silent"
         }
       }
     }

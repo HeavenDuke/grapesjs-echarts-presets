@@ -7,6 +7,7 @@ import Rose from "./chartsComponents/echarts-rose";
 import Funnel from "./chartsComponents/echarts-funnel";
 import Scatter from "./chartsComponents/echarts-scatter";
 import StackedLine from "./chartsComponents/echarts-stacked-line"
+import StackedBar from "./chartsComponents/echarts-stacked-bar"
 import NestedPies from "./chartsComponents/echarts-nested-pies"
 
 //组件注册
@@ -20,5 +21,6 @@ export default {
   "echarts-funnel":Funnel,
   "echarts-scatter":Scatter,
   "echarts-stacked-line":StackedLine,
+  "echarts-stacked-bar":StackedBar,
   "echarts-nested-pies":NestedPies
 };
