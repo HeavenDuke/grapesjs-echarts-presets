@@ -1,8 +1,9 @@
 
-export default function (t) {
+export default function (t, multiple = false) {
   return {
     name: `dataset`,
     label: t(`grapesjs-echarts-presets.dict.group.dataset`),
+    multiple,
     options: [{
       name: "dimensions",
       label: t("grapesjs-echarts-presets.config.dataset.dimensions.label"),

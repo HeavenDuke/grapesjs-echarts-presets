@@ -5,6 +5,7 @@ const DEFAULT_GET_OPTIONS = function (options = {}) {
 export default ({
                   getOptions = DEFAULT_GET_OPTIONS,
                   name = "grapesjs-echarts.components.MY_COMPONENT.name",
+                  multiple = false
                 }) => {
   return function (editor) {
     return {
@@ -97,9 +98,11 @@ export default ({
           // Default props
           name: editor.I18n.t(name),
           resizable: true,
+          multiple,
           traits: [
             {
-              type: "echarts-basic-trait"
+              type: "echarts-basic-trait",
+
             },
             {
               type: "echarts-dataset-trait"

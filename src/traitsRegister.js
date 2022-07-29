@@ -8,7 +8,7 @@ function constructTrait(ec_option) {
       const editor = component.em.get("Editor");
       const intl = editor.I18n;
       const { Vue } = editor;
-      let option = ec_option((key) => intl.t(key))
+      let option = ec_option((key) => intl.t(key), component.attributes.multiple)
       Vue.use({
         install(instance, options) {
           Vue.prototype.$t = (key) => intl.t(key)
