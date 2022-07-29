@@ -107,7 +107,7 @@ export default function (t, multiple = false) {
       name: "tooltip",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.tooltip.label"),
-      children: tooltip(t)
+      children: tooltip(t).options
     }, {
       name: "icon",
       type: "Text",
@@ -119,7 +119,7 @@ export default function (t, multiple = false) {
       name: "backgroundColor",
       type: "Color",
       label: t("grapesjs-echarts-presets.config.legend.backgroundColor.label"),
-      default: ""
+      default: "none"
     }, {
       name: "borderColor",
       type: "Color",

@@ -41,7 +41,7 @@ export default {
     dict: {
       group: {
         title: "Title",
-        basic:'Basic',
+        basic: "Basic",
         singleAxis: "Single Axis",
         grid: "Grid Coordinate",
         xAxis: "X Axis",
@@ -56,7 +56,8 @@ export default {
         tooltip: "ToolTip",
         toolbox: "ToolBox",
         legend: "Legend",
-        dataset: "Dataset"
+        dataset: "Dataset",
+        series: "Series"
       },
       position: {
         left: "Left",
@@ -130,24 +131,24 @@ export default {
         },
         borderType: {
           label: "Border Type",
-          placeholder:'Select Border Type'
+          placeholder: "Select Border Type"
         },
-        borderRadius:{
-          label:'Border Radius'
+        borderRadius: {
+          label: "Border Radius"
         },
         borderDashOffset: {
           label: "Border Dash Offset"
         },
-        borderCap:{
-          label:'Border Cap',
-          placeholder:'Select BorderCap'
+        borderCap: {
+          label: "Border Cap",
+          placeholder: "Select BorderCap"
         },
-        borderJoin:{
-          label:'Border Join',
-          placeholder:'Select BorderJoin'
+        borderJoin: {
+          label: "Border Join",
+          placeholder: "Select BorderJoin"
         },
-        borderMiterLimit:{
-          label:'Border Miter Limit'
+        borderMiterLimit: {
+          label: "Border Miter Limit"
         }
       }
     },
@@ -247,172 +248,172 @@ export default {
         },
         feature: {
           label: "Feature",
-          saveAsImage:{
-            label:'Save As Image',
-            show:{
-              label:'Show'
+          saveAsImage: {
+            label: "Save As Image",
+            show: {
+              label: "Show"
             },
-            type:{
-              label:'Image Type',
-              placeholder:'Select Image Type'
+            type: {
+              label: "Image Type",
+              placeholder: "Select Image Type"
             },
-            name:{
-              label:'Image Name',
-              placeholder:'Input Image Name'
+            name: {
+              label: "Image Name",
+              placeholder: "Input Image Name"
             },
-            backgroundColor:{
-              label:'Image BackgroundColor'
+            backgroundColor: {
+              label: "Image BackgroundColor"
             },
-            connectBackgroundColor:{
-              label:'Connect BackgroundColor'
+            connectBackgroundColor: {
+              label: "Connect BackgroundColor"
             },
-            title:{
-              label:'Title'
+            title: {
+              label: "Title"
             },
-            icon:{
-              label:'Icon Link',
-              placeholder:'Input Icon Link'
+            icon: {
+              label: "Icon Link",
+              placeholder: "Input Icon Link"
             },
-            emphasis:{
-              label:'Emphasis'
+            emphasis: {
+              label: "Emphasis"
             },
-            pixelRatio:{
-              label:'Resolution Scale',
+            pixelRatio: {
+              label: "Resolution Scale",
             }
           },
-          restore:{
-            label:'Restore',
-            show:{
-              label:'Show'
+          restore: {
+            label: "Restore",
+            show: {
+              label: "Show"
             },
-            title:{
-              label:'Title'
+            title: {
+              label: "Title"
             },
-            icon:{
-              label:'Icon Link',
-              placeholder:'Input Icon Link'
+            icon: {
+              label: "Icon Link",
+              placeholder: "Input Icon Link"
             },
-            emphasis:{
-              label:'Emphasis'
-            },
-          },
-          dataView:{
-            label:'Data View',
-            show:{
-              label:'Show'
-            },
-            title:{
-              label:'Title'
-            },
-            icon:{
-              label:'Icon Link',
-              placeholder:'Input Icon Link'
-            },
-            emphasis:{
-              label:'Emphasis'
-            },
-            readOnly:{
-              label:'ReadOnly'
-            },
-            optionToContent:{
-              label:'Option To Content'
-            },
-            contentToOption:{
-              label:'Content To Option'
-            },
-            backgroundColor:{
-              label:'BackgroundColor'
-            },
-            textareaColor:{
-              label:'Textarea Color'
-            },
-            textColor:{
-              label:'Text Color'
-            },
-            buttonColor:{
-              label:'Button Color'
-            },
-            buttonTextColor:{
-              label:'Button Text Color'
+            emphasis: {
+              label: "Emphasis"
             },
           },
-          dataZoom:{
-            label:'Data Zoom',
-            show:{
-              label:'Show'
+          dataView: {
+            label: "Data View",
+            show: {
+              label: "Show"
             },
-            title:{
-              label:'Title',
-              zoom:'Input Zoom Title',
-              back:'Input Back Title'
+            title: {
+              label: "Title"
             },
-            icon:{
-              label:'Icon Link',
-              zoom:'Input Zoom Icon Link',
-              back:'Input Back Icon Link'
+            icon: {
+              label: "Icon Link",
+              placeholder: "Input Icon Link"
             },
-            emphasis:{
-              label:'Emphasis'
+            emphasis: {
+              label: "Emphasis"
             },
-            filterMode:{
-              label:'FilterMode'
+            readOnly: {
+              label: "ReadOnly"
             },
-            brushStyle:{
-              label:'Brush Style',
-              color:'Color',
-              opacity:'Opacity'
+            optionToContent: {
+              label: "Option To Content"
+            },
+            contentToOption: {
+              label: "Content To Option"
+            },
+            backgroundColor: {
+              label: "BackgroundColor"
+            },
+            textareaColor: {
+              label: "Textarea Color"
+            },
+            textColor: {
+              label: "Text Color"
+            },
+            buttonColor: {
+              label: "Button Color"
+            },
+            buttonTextColor: {
+              label: "Button Text Color"
+            },
+          },
+          dataZoom: {
+            label: "Data Zoom",
+            show: {
+              label: "Show"
+            },
+            title: {
+              label: "Title",
+              zoom: "Input Zoom Title",
+              back: "Input Back Title"
+            },
+            icon: {
+              label: "Icon Link",
+              zoom: "Input Zoom Icon Link",
+              back: "Input Back Icon Link"
+            },
+            emphasis: {
+              label: "Emphasis"
+            },
+            filterMode: {
+              label: "FilterMode"
+            },
+            brushStyle: {
+              label: "Brush Style",
+              color: "Color",
+              opacity: "Opacity"
             }
           },
-          magicType:{
-            label:'Magic Type',
-            show:{
-              label:'Show'
+          magicType: {
+            label: "Magic Type",
+            show: {
+              label: "Show"
             },
-            type:{
-              label:'Type',
-              placeholder:'Select Type'
+            type: {
+              label: "Type",
+              placeholder: "Select Type"
             },
-            title:{
-              label:'Title',
-              line:'Input Line Title',
-              bar:'Input Bar Title',
-              stack:'Input Stack Title',
-              tiled:'Input Tiled Title',
+            title: {
+              label: "Title",
+              line: "Input Line Title",
+              bar: "Input Bar Title",
+              stack: "Input Stack Title",
+              tiled: "Input Tiled Title",
             },
-            icon:{
-              label:'Icon Link',
-              line:'Input Line Icon Link',
-              bar:'Input Bar Icon Link',
-              stack:'Input Stack Icon Link',
-              tiled:'Input Tiled Icon Link',
+            icon: {
+              label: "Icon Link",
+              line: "Input Line Icon Link",
+              bar: "Input Bar Icon Link",
+              stack: "Input Stack Icon Link",
+              tiled: "Input Tiled Icon Link",
             },
-            emphasis:{
-              label:'Emphasis'
+            emphasis: {
+              label: "Emphasis"
             },
           },
-          brush:{
-            label:'Brush',
-            type:{
-              label:'Type',
-              placeholder:'Select Type'
+          brush: {
+            label: "Brush",
+            type: {
+              label: "Type",
+              placeholder: "Select Type"
             },
-            title:{
-              label:'Title',
-              rect:'Input rect Title',
-              polygon:'Input polygon Title',
-              lineX:'Input lineX Title',
-              lineY:'Input lineY Title',
-              keep:'Input keep Title',
-              clear:'Input clear Title',
+            title: {
+              label: "Title",
+              rect: "Input rect Title",
+              polygon: "Input polygon Title",
+              lineX: "Input lineX Title",
+              lineY: "Input lineY Title",
+              keep: "Input keep Title",
+              clear: "Input clear Title",
             },
-            icon:{
-              label:'Icon Link',
-              rect:'Input rect Icon Link',
-              polygon:'Input polygon Icon Link',
-              lineX:'Input lineX Icon Link',
-              lineY:'Input lineY Icon Link',
-              keep:'Input keep Icon Link',
-              clear:'Input clear Icon Link',
+            icon: {
+              label: "Icon Link",
+              rect: "Input rect Icon Link",
+              polygon: "Input polygon Icon Link",
+              lineX: "Input lineX Icon Link",
+              lineY: "Input lineY Icon Link",
+              keep: "Input keep Icon Link",
+              clear: "Input clear Icon Link",
             },
           }
         },
@@ -434,29 +435,29 @@ export default {
         },
         axisPointer: {
           label: "Axis Pointer",
-          axis:{
-            label:'Axis'
+          axis: {
+            label: "Axis"
           },
-          type:{
-            label:'Type'
+          type: {
+            label: "Type"
           },
 
-          crossStyle:{
-            label:'Cross Style',
-            color:'Color',
-            width:'Width',
+          crossStyle: {
+            label: "Cross Style",
+            color: "Color",
+            width: "Width",
             type: {
-              label:'type'
+              label: "type"
             },
-            dashOffset: 'Dash Offset',
-            cap:{
-              label:'Cap'
+            dashOffset: "Dash Offset",
+            cap: {
+              label: "Cap"
             },
-            join:{
-              label:'Join'
+            join: {
+              label: "Join"
             },
-            miterLimit: 'Miter Limit',
-            opacity:'Opacity'
+            miterLimit: "Miter Limit",
+            opacity: "Opacity"
 
           }
         },
@@ -586,8 +587,8 @@ export default {
         borderColor: {
           label: "BorderColor"
         },
-        pageIcon:{
-          label:'PageIcon'
+        pageIcon: {
+          label: "PageIcon"
         },
         borderWidth: {
           label: "BorderWidth"
@@ -628,7 +629,7 @@ export default {
         emphasis: {
           label: "Emphasis",
           selectorLabel: {
-            label:'SelectorLabel'
+            label: "SelectorLabel"
           }
         },
         selector: {
@@ -658,13 +659,13 @@ export default {
         axisPointer: {
           label: "Axis Pointer"
         },
-        stateAnimation:{
-          label:'State Animation',
-          duration:{
-            label:'Duration'
+        stateAnimation: {
+          label: "State Animation",
+          duration: {
+            label: "Duration"
           },
-          easing:{
-            label:'Easing'
+          easing: {
+            label: "Easing"
           },
         },
 
@@ -688,7 +689,7 @@ export default {
         },
         borderColor: {
           label: "Border Color"
-        },backgroundColor: {
+        }, backgroundColor: {
           label: "BackgroundColor"
         },
         borderWidth: {
@@ -725,11 +726,11 @@ export default {
           label: "Title Link",
           placeholder: "Input title link"
         },
-        target:{
-          label:'Title Target'
+        target: {
+          label: "Title Target"
         },
-        subtarget:{
-          label:'Subtitle Target'
+        subtarget: {
+          label: "Subtitle Target"
         },
         subtext: {
           label: "Subtitle",
@@ -758,25 +759,25 @@ export default {
         },
         subtextStyle: {
           label: "Subtitle Style",
-          align:{
-            label:'Align'
+          align: {
+            label: "Align"
           },
-          verticalAlign:{
-            label:'Vertical Align'
+          verticalAlign: {
+            label: "Vertical Align"
           }
         },
-        padding:{
-          label:'Padding'
+        padding: {
+          label: "Padding"
         },
-        triggerEvent:{
-          label:'Trigger Event'
+        triggerEvent: {
+          label: "Trigger Event"
         },
-        backgroundColor:{
-          label:'BackgroundColor'
+        backgroundColor: {
+          label: "BackgroundColor"
         },
-        borderRadius:{
-          label:'Border Radius'
-        } ,
+        borderRadius: {
+          label: "Border Radius"
+        },
       },
       xAxis: {
         label: "X Axis"
@@ -1099,40 +1100,40 @@ export default {
       },
       itemStyle: {
         label: "Item Style",
-        color:{
-          label:'Color'
+        color: {
+          label: "Color"
         },
-        borderCap:{
-          label:'Border Cap'
-        },
-        borderJoin:{
-          label:'Border Join'
-        },
-        borderMiterLimit:{
-          label:'Border Miter Limit'
-        },opacity: {
-          label:'Opacity'
-        },
-        decal:{
-          label:'Decal'
-        }
-      },
-      iconStyle:{
-        label:'Icon Style',
-        color:{
-          label:'Color'
-        },
-        borderCap:{
-          label:'Border Cap'
+        borderCap: {
+          label: "Border Cap"
         },
         borderJoin: {
-          label:'Border Join'
+          label: "Border Join"
         },
         borderMiterLimit: {
-          label:'Border Miter Limit'
+          label: "Border Miter Limit"
+        }, opacity: {
+          label: "Opacity"
         },
-        opacity:{
-          label:'Opacity'
+        decal: {
+          label: "Decal"
+        }
+      },
+      iconStyle: {
+        label: "Icon Style",
+        color: {
+          label: "Color"
+        },
+        borderCap: {
+          label: "Border Cap"
+        },
+        borderJoin: {
+          label: "Border Join"
+        },
+        borderMiterLimit: {
+          label: "Border Miter Limit"
+        },
+        opacity: {
+          label: "Opacity"
         }
       },
       axisPointer: {
@@ -1181,20 +1182,32 @@ export default {
         triggerOn: {
           label: "Trigger On"
         },
-        shadowStyle:{
-          label:"Shadow Style"
+        shadowStyle: {
+          label: "Shadow Style"
         }
       },
       event: {
         silent: {
           label: "Silent Mode"
         },
-        triggerEvent:{
+        triggerEvent: {
           label: "Trigger Event"
         }
       },
       series: {
-        label: "Series"
+        label: "Series",
+        type: {
+          label: "Type"
+        },
+        name:{
+          label:'Name',
+        },
+        colorBy:{
+          label:'ColorBy'
+        },
+        silent:{
+          label:'Silent'
+        }
       }
     }
   },

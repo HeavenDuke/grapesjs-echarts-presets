@@ -39,7 +39,7 @@ export default ({
           const basic = JSON.parse(this.get("attributes")["data-ecg-basic"] || "{}");
           const tooltip = JSON.parse(this.get("attributes")["data-ecg-tooltip"] || "{}");
           const title = JSON.parse(this.get("attributes")["data-ecg-title"] || "{}");
-          const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "[]");
+          const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "{}");
           const toolbox = JSON.parse(this.get("attributes")["data-ecg-toolbox"] || "{}");
           const legend = JSON.parse(this.get("attributes")["data-ecg-legend"] || "{}");
           const theme = this.get("attributes")["data-ecg-theme"] || null;
@@ -149,9 +149,9 @@ export default ({
             {
               type: "echarts-radar-trait"
             },
-            // {
-            //   type: "echarts-series-trait",
-            // }
+            {
+              type: "echarts-series-trait",
+            }
           ],
         },
       },

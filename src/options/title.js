@@ -105,7 +105,7 @@ export default function (t, multiple = false) {
       name: "backgroundColor",
       type: "Color",
       label: t("grapesjs-echarts-presets.config.title.backgroundColor.label"),
-      default: ""
+      default: "none"
     }, {
       name: "borderColor",
       type: "Color",

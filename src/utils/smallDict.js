@@ -1,3 +1,5 @@
+import series from "@/options/series";
+
 export const TOOLTIP = {
   trigger: ["item", "axis", "none"],
   triggerOn: ["mousemove", "click", "mousemove|click", "none"],
@@ -12,6 +14,8 @@ export let SERIES_TYPES = [
   "time",
   "log"
 ];
+export let SERIES=['line','bar','pie','scatter','effectScatter','candlestick','parallel','map','funnel','custom']
+
 export let AXIS=['x','y','radius','angle']
 export let ALIGN=["auto", "left", "right", "center"]
 export let VERTICAL_ALIGN=["auto", "top", "bottom", "middle"]
