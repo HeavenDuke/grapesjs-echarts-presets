@@ -10,20 +10,22 @@ export default build({
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
-    let dataset = {
-      source: options.dataset.source || [],
-      // sourceHeader: options.dataset.sourceHeader || false
-    };
+    let data = options.dataset||[];
     let series = [];
-    if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
-      for (let i = 1; i < dataset.source[0].length; i++) {
-          series.push({type: "pie",z:10*-i,radius: [`${20*(i-1)}%`,`${20*i}%`],encode:{value:i},...map});
+    let dataset=[];
+
+
+
+    for(let i=0;i<data.length;i++){
+      let obj={
+        source:data[i].source||[]
       }
+      dataset.push(obj)
+      series.push({datasetIndex:i,type: "pie",z:-10*(i+1),radius: [`${25*(i)}%`,`${25*(i+1)}%`],...map});
     }
 
-    // console.log(series,dataset)
     return {
-      ...basic,
+      // ...basic,
       grid,
       title,
       dataset,
@@ -34,4 +36,5 @@ export default build({
     };
 
   },
+  multiple: true
 });
