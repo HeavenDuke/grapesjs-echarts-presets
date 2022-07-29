@@ -54,7 +54,7 @@ export default ({
           const radar = JSON.parse(this.get("attributes")["data-ecg-radar"] || "{}");
           const parallel = JSON.parse(this.get("attributes")["data-ecg-parallel"] || "{}");
           const parallelAxis = JSON.parse(this.get("attributes")["data-ecg-parallel-axis"] || "{}");
-
+// console.log(tooltip)
           const option = this.getOptions({
             basic,
             title,

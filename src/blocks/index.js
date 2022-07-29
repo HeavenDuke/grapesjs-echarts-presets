@@ -6,7 +6,8 @@ import roundedPie from "./chartsBlocks/roundedPie-chart";
 import RoseChart from "./chartsBlocks/rose-chart";
 import FunnelChart from "./chartsBlocks/funnel-chart";
 import ScatterChart from "./chartsBlocks/scatter-chart";
-
+import StackedLineChart from "./chartsBlocks/stacked-line-chart"
+import NestedPiesChart from "./chartsBlocks/nested-pies-chart"
 //模块按钮注册
 export default {
   "bar-chart": BarChart,
@@ -17,4 +18,6 @@ export default {
   "rose-chart":RoseChart,
   "funnel-chart":FunnelChart,
   "scatter-chart":ScatterChart,
+  "stacked-line-chart":StackedLineChart,
+  "nested-pies-chart":NestedPiesChart,
 };

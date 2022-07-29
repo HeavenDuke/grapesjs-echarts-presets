@@ -36,6 +36,12 @@ export default {
       },
       scatter: {
         name: "Scatter Chart"
+      },
+      stackedLine:{
+        name:'Stacked Line'
+      },
+      nestedPies:{
+        name:'Nested Pies'
       }
     },
     dict: {

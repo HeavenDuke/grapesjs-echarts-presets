@@ -1,14 +1,17 @@
 import build from "../buildSeries";
+
 export default build({
-  name: "grapesjs-echarts.components.scatter.name",
+  name: "grapesjs-echarts.components.stackedLine.name",
   getOptions: (options) => {
-    const map = options.series || [];
-    const basic=options.basic ||{};
+    const map = options.series || {};
+    const basic = options.basic || {};
     const title = options.title || {};
     const grid = options.grid || {};
-    const tooltip = options.tooltip || null;
+    let tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
+    const xAxis = options.xAxis || {};
+    const yAxis = options.yAxis || {};
     let dataset = {
       source: options.dataset.source || [],
       sourceHeader: options.dataset.sourceHeader || false
@@ -16,27 +19,23 @@ export default build({
     let series = [];
     if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
       for (let i = 1; i < dataset.source[0].length; i++) {
-        let obj = {type: "scatter", ...map};
-        series.push(obj);
+        series.push({type: "line",stack:'1',areaStyle:{},emphasis:{focus:'series'},...map});
       }
     }
-  tooltip.formatter= 'Group {a}: ({c})'
-
-
-    const xAxis = options.xAxis||{}
-    const yAxis = options.yAxis||{}
+    xAxis.boundaryGap=false;
+    // console.log(series,tooltip,xAxis)
     return {
       ...basic,
       grid,
       title,
-      series,
       dataset,
-      toolbox,
-      xAxis,
-      tooltip,
+      series,
       legend,
-      yAxis
-
+      toolbox,
+      tooltip,
+      xAxis,
+      yAxis,
     };
+
   },
 });

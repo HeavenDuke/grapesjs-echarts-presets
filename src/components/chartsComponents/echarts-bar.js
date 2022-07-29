@@ -16,14 +16,13 @@ export default build({
       source: options.dataset.source || [],
       sourceHeader: options.dataset.sourceHeader || false
     };
-    console.log(map)
-    let series = []
+    let series = [];
     if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
       for (let i = 1; i < dataset.source[0].length; i++) {
-        series.push({type: "bar"});
+        let obj = {type: "bar", ...map};
+        series.push(obj);
       }
     }
-    console.log(map,series)
     return {
       ...basic,
       grid,
