@@ -1,30 +1,29 @@
 import build from "../buildSeries";
 
 export default build({
-  name: "grapesjs-echarts.components.rose.name",
+  name: "grapesjs-echarts.components.multipleY.name",
   getOptions: (options) => {
     const map = options.series || {};
-    const title = options.title || {};
     const basic = options.basic || {};
     const grid = options.grid || {};
+    const title = options.title || {};
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
+    let data = options.dataset||[];
+    let series = [];
+    let dataset=[];
 
-    let dataset = {
-      source: options.dataset.source || [],
-      // sourceHeader: options.dataset.sourceHeader || false
-    };
-    const series = [
 
-      {
-        type: "pie",
-        radius: ["25%", "65%"],
-        roseType: "area",
-        ...map
-      },
 
-    ];
+    for(let i=0;i<data.length;i++){
+      let obj={
+        source:data[i].source||[]
+      }
+      dataset.push(obj)
+      series.push({datasetIndex:i,yAxisIndex:i,type: "bar",...map});
+    }
+
     return {
       ...basic,
       grid,
@@ -35,6 +34,6 @@ export default build({
       legend,
       tooltip
     };
-
   },
+  multiple: true
 });

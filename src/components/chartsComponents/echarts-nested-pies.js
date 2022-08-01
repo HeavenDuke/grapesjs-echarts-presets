@@ -25,7 +25,7 @@ export default build({
     }
 
     return {
-      // ...basic,
+      ...basic,
       grid,
       title,
       dataset,

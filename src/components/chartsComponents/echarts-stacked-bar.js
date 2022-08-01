@@ -28,7 +28,7 @@ export default build({
     xAxis.axisPointer.show=true
     yAxis.axisPointer.show=true
     return {
-      // ...basic,
+      ...basic,
       grid,
       dataset,
       legend,

@@ -3,11 +3,12 @@ import {BINARY_POSITION_HORIZONTAL, BINARY_POSITION_VERTICAL, FLEX_POSITIONS, SE
 import {zIndex, textStyle, axisLine, axisTick, axisLabel, splitLine, splitArea, axisPointer} from "@/options/shared"
 import ToolTip from "@/options/tooltip"
 
-export default function (type = "x", multiple = false) {
-  return function (t) {
+export default function (type = "x") {
+  return function (t, multiple) {
     return {
       name: `${type}-axis`,
       label: t(`grapesjs-echarts-presets.dict.group.${type}Axis`),
+      multiple,
       valid (option) {
         if (option.series instanceof Array) {
           return option.series.find(item => item.coordinateSystem === "cartesian2d")
