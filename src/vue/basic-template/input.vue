@@ -15,14 +15,7 @@
   //文本输入框复用模板组件
   export default {
     name: "ep-input",
-    props: {
-      label: {
-        type: String,
-        default: ""
-      },
-      placeholder: String,
-      value: String
-    },
+    props: ["label", "placeholder", "value"],
     data() {
       return {
         text: ""

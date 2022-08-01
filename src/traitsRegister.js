@@ -30,19 +30,19 @@ function constructTrait(ec_option) {
     },
     onEvent({component}){
       const { options, meta } = this.inputInstance;
-      let attributes = {}
-      // console.log(`data-ecg-${meta.name}`, options)
-      attributes[`data-ecg-${meta.name}`] = JSON.stringify(options)
-      component.addAttributes(attributes);
-      component.clearChart()
-      component.view.render();
+      let attributes = {}, name = `data-ecg-${meta.name}`
+      attributes[name] = JSON.stringify(options)
+      if (component.get("attributes")[name] !== attributes[name]) {
+        console.log(name, "changed")
+        component.addAttributes(attributes);
+        component.clearChart()
+        component.view.render();
+      }
     },
     onUpdate({component}){
       const index = component.getAttributes()[`data-ecg-${this.inputInstance.meta.name}`] || null;
-      // console.log(index)
       if (index) {
         this.inputInstance.options = JSON.parse(index);
-        // console.log(this.inputInstance.options)
       }
     }
   }

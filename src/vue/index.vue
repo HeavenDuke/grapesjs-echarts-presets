@@ -1,6 +1,6 @@
 <template>
-    <chart-section :title="meta.label" v-show="!meta.valid || meta.valid(chartOption)">
-        <recursion-list v-if="!meta.multiple" :meta="meta.options" v-model="options"/>
+    <chart-section :title="meta.label" v-show="!meta.valid || meta.valid(overall)">
+        <recursion-list v-if="!meta.multiple" :overall="overall" :meta="meta.options" v-model="options"/>
         <div class="gjs-traits-group" v-else>
             <div class="gjs-traits-group-tabs">
                 <div :class="['gjs-traits-group-tab', { active: index === optionIndex }]" v-for="(option, index) in options" @click="switchOption(index)">
@@ -9,7 +9,7 @@
                 </div>
                 <div class="gjs-traits-group-tab add" @click="addOption">+</div>
             </div>
-            <recursion-list :meta="meta.options" v-model="options[optionIndex]"/>
+            <recursion-list :overall="overall" :meta="meta.options" v-model="options[optionIndex]"/>
         </div>
     </chart-section>
 </template>
@@ -26,14 +26,10 @@
       RecursionList,
       ChartSection
     },
-    computed: {
-      chartOption () {
-        return JSON.parse(this.editor.getSelected().get("attributes")["data-ecg-options"]) || {}
-      }
-    },
     watch: {
       options: {
         handler() {
+          this.updateOverall()
           this.onChange()
         },
         deep: true
@@ -41,17 +37,15 @@
     },
     data() {
       return {
-        test: {
-          bar: "2333",
-          foo () {
-            return Math.random()
-          }
-        },
+        overall: {},
         options: {},
         optionIndex: 0
       }
     },
     methods: {
+      updateOverall () {
+        this.overall = JSON.parse(this.editor.getSelected().get("attributes")["data-ecg-options"]) || {}
+      },
       addOption () {
         this.options = this.options.concat([constructOptions(this.meta.options)])
       },
@@ -71,7 +65,7 @@
     created() {
       let options = constructOptions(this.meta.options)
       this.options = this.meta.multiple ? [options] : options
-      // console.log(this.meta.name, this.options)
+      this.updateOverall()
     }
   };
 </script>

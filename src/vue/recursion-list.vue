@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="gjs-trt-traits gjs-one-bg gjs-two-color aa">
-      <div v-for="(item,index) in meta" :key="index">
+      <div v-for="(item,index) in meta" :key="index" v-if="!item.valid || item.valid(overall)">
         <ep-list-editor v-if="item.array" :label="item.label" v-model="value[item.name]">
           <template v-slot:default="scope">
             <ep-input v-if="item.type==='String'" v-model="scope.item.value" :placeholder="item.placeholder"></ep-input>
@@ -29,7 +29,7 @@
         <ep-function v-else-if="item.type ==='Function'" :label="item.label" v-model="value[item.name]"></ep-function>
         <ep-position v-else-if="item.type==='Position'" :title="item.label" v-model="value[item.name]" :use-unit="item.useUnit"></ep-position>
         <ep-more v-else-if="item.type==='Object'" :label="item.label">
-          <recursion-list v-model="value[item.name]" :meta="item.children"></recursion-list>
+          <recursion-list :overall="overall" v-model="value[item.name]" :meta="item.children"></recursion-list>
         </ep-more>
       </div>
     </div>
@@ -64,7 +64,8 @@ export default {
     },
     value: {
       type: Object,
-    }
+    },
+    overall: Object
   },
   components: {
     // ChartSection,

@@ -85,11 +85,10 @@ export default ({
             series,
           });
 
+          this.renderChart(option, theme);
           if (changedAttr) {
             this.syncTraits(changedAttr, option)
           }
-
-          this.renderChart(option, theme);
         },
         getOptions,
         clearChart() {
@@ -101,9 +100,7 @@ export default ({
           for(let i = 0; i < this.attributes.traits.models.length; i++) {
             try {
               let trait = this.attributes.traits.models[i]
-              if (trait.attributes.type !== source) {
-                trait.view.onUpdate({ component: this })
-              }
+              trait.view.onUpdate({ component: this })
             }
             catch (err) {}
           }
@@ -126,7 +123,6 @@ export default ({
           traits: [
             {
               type: "echarts-basic-trait",
-
             },
             {
               type: "echarts-dataset-trait"

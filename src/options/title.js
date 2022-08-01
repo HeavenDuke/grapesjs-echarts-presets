@@ -15,112 +15,179 @@ export default function (t, multiple = false) {
       type: "String",
       label: t("grapesjs-echarts-presets.config.title.text.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.text.placeholder"),
-      default: ""
+      default: "",
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "link",
       type: "String",
       label: t("grapesjs-echarts-presets.config.title.link.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.link.placeholder"),
-      default: ""
+      default: "",
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "target",
       type: "Enum",
       label: t("grapesjs-echarts-presets.config.title.target.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.target.placeholder"),
       candidate: TARGET,
-      default: "blank"
+      default: "blank",
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "textStyle",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.title.textStyle.label"),
-      children: textStyle(t, {color: "#333333", fontWeight: "bolder", fontSize: 18})
+      children: textStyle(t, {color: "#333333", fontWeight: "bolder", fontSize: 18}),
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "subtext",
       type: "String",
       label: t("grapesjs-echarts-presets.config.title.subtext.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.subtext.placeholder"),
-      default: ""
+      default: "",
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "sublink",
       type: "String",
       label: t("grapesjs-echarts-presets.config.title.sublink.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.sublink.placeholder"),
-      default: ""
+      default: "",
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "subtarget",
       type: "Enum",
       label: t("grapesjs-echarts-presets.config.title.subtarget.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.subtarget.placeholder"),
       candidate: TARGET,
-      default: "blank"
+      default: "blank",
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "subtextStyle",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.title.subtextStyle.label"),
-      children: [...textStyle(t, {color: "#aaaaaa"}),{
+      children: [...textStyle(t, {color: "#aaaaaa"}), {
         name: "align",
         type: "Enum",
         label: t("grapesjs-echarts-presets.config.title.subtextStyle.align.label"),
         placeholder: t("grapesjs-echarts-presets.config.title.subtextStyle.align.placeholder"),
         default: "auto",
         candidate: ALIGN
-      },{
+      }, {
         name: "verticalAlign",
         type: "Enum",
         label: t("grapesjs-echarts-presets.config.title.subtextStyle.verticalAlign.label"),
         placeholder: t("grapesjs-echarts-presets.config.title.subtextStyle.verticalAlign.placeholder"),
         default: "auto",
         candidate: VERTICAL_ALIGN
-      }]
+      }],
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "textAlign",
       type: "Enum",
       label: t("grapesjs-echarts-presets.config.title.textAlign.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.textAlign.placeholder"),
       default: "auto",
-      candidate: ALIGN
+      candidate: ALIGN,
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "textVerticalAlign",
       type: "Enum",
       label: t("grapesjs-echarts-presets.config.title.textVerticalAlign.label"),
       placeholder: t("grapesjs-echarts-presets.config.title.textVerticalAlign.placeholder"),
       default: "auto",
-      candidate: VERTICAL_ALIGN
+      candidate: VERTICAL_ALIGN,
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "triggerEvent",
       type: "Boolean",
       label: t("grapesjs-echarts-presets.config.title.triggerEvent.label"),
       default: false,
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "itemGap",
       type: "Number",
       label: t("grapesjs-echarts-presets.config.title.itemGap.label"),
       default: 10,
+      valid(option) {
+        return option.title && option.title.show
+      }
     }, {
       name: "padding",
       type: "Number",
       label: t("grapesjs-echarts-presets.config.title.padding.label"),
       default: 5,
-    }, ...zIndex(t, 2, 0), ...position(t), {
-      name: "backgroundColor",
-      type: "Color",
-      label: t("grapesjs-echarts-presets.config.title.backgroundColor.label"),
-      default: "none"
-    }, {
-      name: "borderColor",
-      type: "Color",
-      label: t("grapesjs-echarts-presets.dict.border.borderColor.label"),
-      default: "#cccccc"
-    }, {
-      name: "borderWidth",
-      type: "Number",
-      label: t("grapesjs-echarts-presets.dict.border.borderWidth.label"),
-      default: 0
-    }, {
-      name: "borderRadius",
-      type: "Number",
-      label: t("grapesjs-echarts-presets.config.title.borderRadius.label"),
-      default: 0
-    }, ...shadow(t)],
+      valid(option) {
+        return option.title && option.title.show
+      }
+    },
+      ...(zIndex(t, 2, 0)).map(item => Object.assign(item, {
+        valid(option) {
+          return option.title && option.title.show
+        }
+      })),
+      ...position(t).map(item => Object.assign(item, {
+        valid(option) {
+          return option.title && option.title.show
+        }
+      })),
+      {
+        name: "backgroundColor",
+        type: "Color",
+        label: t("grapesjs-echarts-presets.config.title.backgroundColor.label"),
+        default: "none",
+        valid(option) {
+          return option.title && option.title.show
+        }
+      }, {
+        name: "borderColor",
+        type: "Color",
+        label: t("grapesjs-echarts-presets.dict.border.borderColor.label"),
+        default: "#cccccc",
+        valid(option) {
+          return option.title && option.title.show
+        }
+      }, {
+        name: "borderWidth",
+        type: "Number",
+        label: t("grapesjs-echarts-presets.dict.border.borderWidth.label"),
+        default: 0,
+        valid(option) {
+          return option.title && option.title.show
+        }
+      }, {
+        name: "borderRadius",
+        type: "Number",
+        label: t("grapesjs-echarts-presets.config.title.borderRadius.label"),
+        default: 0,
+        valid(option) {
+          return option.title && option.title.show
+        }
+      },
+      ...shadow(t).map(item => Object.assign(item, {
+        valid(option) {
+          return option.title && option.title.show
+        }
+      }))],
   };
 }
