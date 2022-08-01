@@ -8,6 +8,14 @@ export default function (type = "x", multiple = false) {
     return {
       name: `${type}-axis`,
       label: t(`grapesjs-echarts-presets.dict.group.${type}Axis`),
+      valid (option) {
+        if (option.series instanceof Array) {
+          return option.series.find(item => item.coordinateSystem === "cartesian2d")
+        }
+        else {
+          return option.series.coordinateSystem === "cartesian2d"
+        }
+      },
       options: [{
         name: "show",
         label: t("grapesjs-echarts-presets.config.axis.show.label"),

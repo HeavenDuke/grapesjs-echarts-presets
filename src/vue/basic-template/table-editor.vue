@@ -1,7 +1,7 @@
 <template>
     <ep-more :label="label" width="500px">
         <div v-if="table.length === 0" class="gjs-trt-traits gjs-one-bg gjs-two-color">
-            <div class="gjs-trt-trait">
+            <div class="gjs-trt-trait custom">
                 <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
                     <label class="gjs-field gjs-field--button" data-input="">
                         <button class="btn btn-full" @click="initTable">
@@ -14,7 +14,7 @@
         <div class="gjs-trt-traits gjs-one-bg gjs-two-color" v-else>
             <div class="row">
                 <div class="cell" v-for="i in table[0].length">
-                    <div class="gjs-trt-trait">
+                    <div class="gjs-trt-trait custom">
                         <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
                             <label class="gjs-field gjs-field--button" data-input="">
                                 <button class="btn btn-full" @click="removeColumn(i - 1)">-</button>

@@ -1,6 +1,6 @@
 <template>
     <ep-more :label="label">
-        <div class="gjs-trt-trait">
+        <div class="gjs-trt-trait custom">
             <div class="gjs-field-wrp gjs-field-wrp--textarea" data-input="">
                 <label class="gjs-field gjs-field-textarea" data-input="">
                     <textarea :rows="8" v-model="strValue"></textarea>

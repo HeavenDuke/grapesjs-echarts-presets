@@ -5,7 +5,7 @@
                 <slot :item="item"></slot>
                 <button class="btn btn-icon" @click="removeItem(index)">-</button>
             </div>
-            <div class="gjs-trt-trait">
+            <div class="gjs-trt-trait custom">
                 <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
                     <label class="gjs-field gjs-field-text" data-input="">
                         <button class="btn btn-full" @click="addItem">

@@ -1,7 +1,11 @@
 .gjs-trt-traits {
 
-    .gjs-trt-trait {
+    .gjs-trt-trait.custom {
         padding: 5px 0;
+    }
+
+    .gjs-trt-trait {
+        padding: 0;
 
         .gjs-sm-property {
             padding: 0;
@@ -18,6 +22,10 @@
         }
 
         .gjs-field-wrp {
+            margin: 0;
+        }
+
+        .gjs-traits-wrapper {
             margin: 2px;
         }
 

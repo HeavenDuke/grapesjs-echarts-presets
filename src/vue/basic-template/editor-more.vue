@@ -1,5 +1,5 @@
 <template>
-  <div class="gjs-trt-trait">
+  <div class="gjs-trt-trait custom">
     <div class="gjs-label-wrp" data-label>
       <div class="gjs-label" :title="label">{{ label }}</div>
     </div>

@@ -34,7 +34,16 @@ export default ({
             this.updateChart();
           }, 100);
         },
-        updateChart() {
+        updateChart(component, value) {
+
+          let changedAttr = null
+          let attributes = this.get("attributes")
+          for(let key in attributes) {
+            if (attributes[key] === value) {
+              changedAttr = key
+            }
+          }
+
           //基础项
           const basic = JSON.parse(this.get("attributes")["data-ecg-basic"] || "{}");
           const tooltip = JSON.parse(this.get("attributes")["data-ecg-tooltip"] || "{}");
@@ -55,7 +64,7 @@ export default ({
           const radar = JSON.parse(this.get("attributes")["data-ecg-radar"] || "{}");
           const parallel = JSON.parse(this.get("attributes")["data-ecg-parallel"] || "{}");
           const parallelAxis = JSON.parse(this.get("attributes")["data-ecg-parallel-axis"] || "{}");
-// console.log(tooltip)
+
           const option = this.getOptions({
             basic,
             title,
@@ -76,12 +85,27 @@ export default ({
             series,
           });
 
+          if (changedAttr) {
+            this.syncTraits(changedAttr, option)
+          }
+
           this.renderChart(option, theme);
         },
         getOptions,
         clearChart() {
           if (this.chart) {
             editor.echarts.dispose(this.chart);
+          }
+        },
+        syncTraits (source) {
+          for(let i = 0; i < this.attributes.traits.models.length; i++) {
+            try {
+              let trait = this.attributes.traits.models[i]
+              if (trait.attributes.type !== source) {
+                trait.view.onUpdate({ component: this })
+              }
+            }
+            catch (err) {}
           }
         },
         renderChart(options, theme) {

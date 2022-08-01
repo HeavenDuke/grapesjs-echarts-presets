@@ -1,5 +1,5 @@
 <template>
-    <div class="gjs-traits gjs-sm-sectors gjs-one-bg gjs-two-color">
+    <div class="gjs-traits gjs-traits-wrapper gjs-sm-sectors gjs-one-bg gjs-two-color">
         <div :class="['gjs-sm-sector', 'gjs-sm-sector__general', 'no-select', { 'gjs-sm-open': isOpen }]" @click="isOpen = !isOpen">
             <div class="gjs-sm-sector-title" data-sector-title="">
                 <div class="gjs-sm-sector-caret">

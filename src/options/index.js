@@ -15,6 +15,7 @@ import RadarOptions from "@/options/radar"
 import ParallelOptions from "@/options/parallel"
 import ParallelAxisOptions from "@/options/parallel-axis"
 import SeriesOption from "@/options/series";
+
 export default {
   "basic": BasicOptions,
   "dataset": DatasetOptions,

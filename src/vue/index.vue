@@ -1,5 +1,5 @@
 <template>
-    <chart-section :title="meta.label">
+    <chart-section :title="meta.label" v-show="!meta.valid || meta.valid(chartOption)">
         <recursion-list v-if="!meta.multiple" :meta="meta.options" v-model="options"/>
         <div class="gjs-traits-group" v-else>
             <div class="gjs-traits-group-tabs">
@@ -26,6 +26,11 @@
       RecursionList,
       ChartSection
     },
+    computed: {
+      chartOption () {
+        return JSON.parse(this.editor.getSelected().get("attributes")["data-ecg-options"]) || {}
+      }
+    },
     watch: {
       options: {
         handler() {
@@ -36,6 +41,12 @@
     },
     data() {
       return {
+        test: {
+          bar: "2333",
+          foo () {
+            return Math.random()
+          }
+        },
         options: {},
         optionIndex: 0
       }

@@ -1,5 +1,5 @@
 <template>
-    <div class="gjs-trt-trait">
+    <div class="gjs-trt-trait custom">
         <div class="gjs-sm-property gjs-sm-composite gjs-sm-property__margin gjs-sm-property--full" style="">
             <div class="gjs-sm-label" data-sm-label="">
                 <span class="gjs-sm-icon " title="size">{{label}}</span>
