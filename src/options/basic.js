@@ -1,7 +1,5 @@
 import {ANIMATIONEASING, BLENDMODE} from "@/utils/dict";
 import {animation, axisPointer, textStyle} from "@/options/shared";
-import tooltip from "@/options/tooltip";
-import toolbox from "@/options/toolbox";
 //finished
 export default function (t) {
 
@@ -15,9 +13,9 @@ export default function (t) {
       children: axisPointer(t)
     }, {
       name: "color",
-      type: "Color",
+      type: "Table",
       label: t("grapesjs-echarts-presets.config.basic.color.label"),
-      default: "",
+      default: ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'],
     }, {
       name: "backgroundColor",
       type: "Color",

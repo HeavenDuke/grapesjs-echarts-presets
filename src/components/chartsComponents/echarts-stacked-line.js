@@ -27,7 +27,7 @@ export default build({
     yAxis.axisPointer.show=true
     // console.log(series,tooltip,xAxis)
     return {
-      // ...basic,
+      ...basic,
       grid,
       title,
       dataset,

@@ -9,6 +9,7 @@ import Scatter from "./chartsComponents/echarts-scatter";
 import StackedLine from "./chartsComponents/echarts-stacked-line"
 import StackedBar from "./chartsComponents/echarts-stacked-bar"
 import NestedPies from "./chartsComponents/echarts-nested-pies"
+import MultipleY from "./chartsComponents/echarts-multipleY"
 
 //组件注册
 export default {
@@ -22,5 +23,6 @@ export default {
   "echarts-scatter":Scatter,
   "echarts-stacked-line":StackedLine,
   "echarts-stacked-bar":StackedBar,
-  "echarts-nested-pies":NestedPies
+  "echarts-nested-pies":NestedPies,
+  "echarts-multipleY":MultipleY
 };

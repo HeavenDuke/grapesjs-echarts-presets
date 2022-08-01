@@ -5,7 +5,34 @@ export default function (t, multiple = true) {
   return {
     name: "series",
     label: t("grapesjs-echarts-presets.dict.group.series"),
+    multiple,
     options: [{
+      name:'type',
+      type: "Enum",
+      label:  t("grapesjs-echarts-presets.config.series.type.label"),
+      placeholder:  t("grapesjs-echarts-presets.config.series.type.placeholder"),
+      candidate:[]
+    },{
+      name:'xAxisIndex',
+      type: 'Number',
+      label:  t("grapesjs-echarts-presets.config.series.xAxisIndex.label"),
+      default: 0
+    },{
+      name:'yAxisIndex',
+      type: 'Number',
+      label:  t("grapesjs-echarts-presets.config.series.yAxisIndex.label"),
+      default: 0
+    },{
+      name:'polarIndex',
+      type: 'Number',
+      label:  t("grapesjs-echarts-presets.config.series.polarIndex.label"),
+      default: 0
+    },{
+      name:'datasetIndex',
+      type: 'Number',
+      label:  t("grapesjs-echarts-presets.config.series.datasetIndex.label"),
+      default: 0
+    },{
       name: "name",
       type: "String",
       label: t("grapesjs-echarts-presets.config.series.name.label"),
@@ -25,14 +52,3 @@ export default function (t, multiple = true) {
     }, ...animation(t)]
   };
 }
-// const a= {
-//   type: 'line',
-//   name: '',
-//   colorBy: 'series',
-//   zlevel: 0,
-//   z: 2,
-//   silent: false,
-//   animationDuration: 1000,
-//   animationEasing: 'linear',
-//   animationDelay: 0,
-// }

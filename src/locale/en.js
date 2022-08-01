@@ -45,6 +45,9 @@ export default {
       },
       nestedPies: {
         name: "Nested Pies Chart"
+      },
+      multipleY:{
+        name:"Multiple Y Chart"
       }
     },
     dict: {
