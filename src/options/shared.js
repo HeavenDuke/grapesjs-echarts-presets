@@ -16,6 +16,25 @@ export function constructOptions(meta) {
   return obj;
 }
 
+function extract(overall, meta, option) {
+  let obj = {}
+  for (let i = 0; i < meta.length; i++) {
+    if (!meta[i].valid || meta[i].valid(overall)) {
+      if (meta[i].type === "Object") {
+        obj[meta[i].name] = extract(overall, meta[i].children, option[meta[i].name])
+      }
+      else {
+        obj[meta[i].name] = option[meta[i].name]
+      }
+    }
+  }
+  return obj
+}
+
+export function extractOptions(overall, meta, option) {
+  return !meta.multiple ? extract(overall, meta, option) : option.map(item => extract(overall, meta, item))
+}
+
 /**
  *
  * @param options | type: Array
