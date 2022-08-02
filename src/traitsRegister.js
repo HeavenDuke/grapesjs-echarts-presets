@@ -1,5 +1,6 @@
 import options from "./options"
 import main from "@/vue/index"
+import {extractOptions} from "@/options/shared";
 
 function constructTrait(ec_option) {
   return {
@@ -33,7 +34,6 @@ function constructTrait(ec_option) {
       let attributes = {}, name = `data-ecg-${meta.name}`
       attributes[name] = JSON.stringify(options)
       if (component.get("attributes")[name] !== attributes[name]) {
-        console.log(name, "changed")
         component.addAttributes(attributes);
         component.clearChart()
         component.view.render();

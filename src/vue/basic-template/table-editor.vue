@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div>
-                    <div class="gjs-trt-trait">
+                    <div class="gjs-trt-trai custom">
                         <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
                             <label class="gjs-field gjs-field--button" data-input="">
                                 <button class="btn btn-icon add-col" @click="addColumn">+</button>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div v-for="(row, rIndex) in table">
-                        <div class="gjs-trt-trait">
+                        <div class="gjs-trt-trait custom">
                             <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
                                 <label class="gjs-field gjs-field--button" data-input="">
                                     <button class="btn btn-icon" @click="removeRow(rIndex)">-</button>
@@ -51,7 +51,7 @@
             </div>
             <div class="row">
                 <div class="cell">
-                    <div class="gjs-trt-trait">
+                    <div class="gjs-trt-trait custom">
                         <div class="gjs-field-wrp gjs-field-wrp--text" data-input="">
                             <label class="gjs-field gjs-field--button" data-input="">
                                 <button class="btn btn-full" @click="addRow">+</button>
