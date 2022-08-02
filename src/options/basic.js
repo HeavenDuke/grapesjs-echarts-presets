@@ -13,7 +13,8 @@ export default function (t) {
       children: axisPointer(t)
     }, {
       name: "color",
-      type: "Table",
+      type: "Color",
+      array: true,
       label: t("grapesjs-echarts-presets.config.basic.color.label"),
       default: ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'],
     }, {

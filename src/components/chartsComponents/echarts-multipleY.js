@@ -4,35 +4,37 @@ export default build({
   name: "grapesjs-echarts.components.multipleY.name",
   getOptions: (options) => {
     const map = options.series || {};
+    const title = options.title || {};
     const basic = options.basic || {};
     const grid = options.grid || {};
-    const title = options.title || {};
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
-    let data = options.dataset||[];
+    let xAxis = options.xAxis || [];
+    let yAxis = options.yAxis || [];
+    console.log(options.dataset)
+    let dataset = {
+      source: options.dataset[0] && options.dataset[0].source || [],
+      sourceHeader: options.dataset[0] && options.dataset[0].sourceHeader || false
+    };
     let series = [];
-    let dataset=[];
-
-
-
-    for(let i=0;i<data.length;i++){
-      let obj={
-        source:data[i].source||[]
+    if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
+      for (let i = 1; i < dataset.source[0].length; i++) {
+        let obj = {type: "bar", ...map};
+        series.push(obj);
       }
-      dataset.push(obj)
-      series.push({datasetIndex:i,yAxisIndex:i,type: "bar",...map});
     }
-
     return {
       ...basic,
       grid,
-      title,
       dataset,
-      toolbox,
-      series,
       legend,
-      tooltip
+      title,
+      toolbox,
+      xAxis,
+      series,
+      tooltip,
+      yAxis
     };
   },
   multiple: true

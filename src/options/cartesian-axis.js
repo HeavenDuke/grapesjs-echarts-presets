@@ -9,14 +9,14 @@ export default function (type = "x") {
       name: `${type}-axis`,
       label: t(`grapesjs-echarts-presets.dict.group.${type}Axis`),
       multiple,
-      valid (option) {
-        if (option.series instanceof Array) {
-          return option.series.find(item => item.coordinateSystem === "cartesian2d")
-        }
-        else {
-          return option.series.coordinateSystem === "cartesian2d"
-        }
-      },
+      // valid (option) {
+      //   if (option.series instanceof Array) {
+      //     return option.series.find(item => item.coordinateSystem === "cartesian2d")
+      //   }
+      //   else {
+      //     return option.series.coordinateSystem === "cartesian2d"
+      //   }
+      // },
       options: [{
         name: "show",
         label: t("grapesjs-echarts-presets.config.axis.show.label"),
@@ -45,6 +45,11 @@ export default function (type = "x") {
         candidate: type === "x" ? BINARY_POSITION_VERTICAL : BINARY_POSITION_HORIZONTAL,
         default: ""
       }, {
+        name:'offset',
+        type: 'Number',
+        label: t("grapesjs-echarts-presets.config.axis.offset.label"),
+        default: 0
+      },{
         name: "name",
         label: t("grapesjs-echarts-presets.config.axis.name.label"),
         type: "String",
@@ -112,7 +117,7 @@ export default function (type = "x") {
         name: "minorTick",
         label: t("grapesjs-echarts-presets.config.axis.minorAxisTick.label"),
         type: "Object",
-        children: axisTick(t, true)
+        children: axisTick(t, true,false,3)
       }, {
         name: "axisLabel",
         label: t("grapesjs-echarts-presets.config.axis.axisLabel.label"),

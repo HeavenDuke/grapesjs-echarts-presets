@@ -54,7 +54,7 @@
       }
     },
     created() {
-      this.list = this.list.concat(this.value)
+      this.list = this.list.concat(this.value.map(item => ({ value: item })))
     },
     mounted() {}
   }

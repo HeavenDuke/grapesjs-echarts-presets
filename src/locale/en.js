@@ -37,8 +37,8 @@ export default {
       scatter: {
         name: "Scatter Chart"
       },
-      stackedLine: {
-        name: "Stacked Line Chart"
+      stackedArea: {
+        name: "Stacked Area Chart"
       },
       stackedBar: {
         name: "Stacked Bar Chart"
@@ -861,6 +861,9 @@ export default {
         position: {
           label: "Position"
         },
+        offset:{
+          label:'Offset'
+        },
         size: {
           label: "Size"
         },
@@ -967,6 +970,9 @@ export default {
           },
           inside: {
             label: "Inside"
+          },
+          splitNumber:{
+            label:'Split Number'
           },
           length: {
             label: "Length"
@@ -1219,8 +1225,24 @@ export default {
         },
         silent: {
           label: "Silent"
+        },
+        xAxisIndex:{
+          label:"X Axis Index"
+        },
+        yAxisIndex:{
+          label:'Y Axis Index'
+        },
+        polarIndex:{
+        label:'Polar Index'
+        },
+        datasetIndex:{
+          label:'Dataset Index'
+        },
+        coordinateSystem:{
+          label:'Coordinate System'
         }
       }
+
     }
   },
 };

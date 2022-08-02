@@ -44,7 +44,7 @@
     },
     methods: {
       updateOverall () {
-        this.overall = JSON.parse(this.editor.getSelected().get("attributes")["data-ecg-options"]) || {}
+        this.overall = JSON.parse(this.editor.getSelected().get("attributes")["data-ecg-options"] || "{}")
       },
       addOption () {
         this.options = this.options.concat([constructOptions(this.meta.options)])
@@ -71,6 +71,9 @@
 </script>
 
 <style lang="scss" scoped>
+
+  @import "./assets/icon/iconfont.scss";
+
     .gjs-traits-group-tabs {
         display: flex;
         align-items: center;
