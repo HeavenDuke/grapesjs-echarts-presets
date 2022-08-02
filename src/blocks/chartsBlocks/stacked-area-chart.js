@@ -4,6 +4,6 @@ import icon from "../../icons/散点图.svg"
 export default (editor) =>
   build(editor)({
     // icon,
-    label: "grapesjs-echarts-presets.components.stackedLine.name",
-    type: "echarts-stacked-line",
+    label: "grapesjs-echarts-presets.components.stackedArea.name",
+    type: "echarts-stacked-area",
   });

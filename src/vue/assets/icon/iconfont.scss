@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3562394 */
+  src: url('iconfont.woff2?t=1659430467878') format('woff2'),
+       url('iconfont.woff?t=1659430467878') format('woff'),
+       url('iconfont.ttf?t=1659430467878') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-multiple-y-chart:before {
+  content: "\e66f";
+}
+
+.icon-bar-chart:before {
+  content: "\e66a";
+}
+
+.icon-a-Customchart:before {
+  content: "\e66b";
+}
+
+.icon-rounded-pie-chart:before {
+  content: "\e66c";
+}
+
+.icon-pie-chart:before {
+  content: "\e66d";
+}
+
+.icon-nested-pies-chart:before {
+  content: "\e66e";
+}
+
+.icon-line-chart:before {
+  content: "\e670";
+}
+
+.icon-polar-histogram-chart:before {
+  content: "\e671";
+}
+
+.icon-rose-chart:before {
+  content: "\e672";
+}
+
+.icon-stacked-area-chart:before {
+  content: "\e673";
+}
+
+.icon-stacked-bar-chart:before {
+  content: "\e674";
+}
+
+.icon-funnel-chart:before {
+  content: "\e675";
+}
+
+.icon-scatter-chart:before {
+  content: "\e669";
+}
+

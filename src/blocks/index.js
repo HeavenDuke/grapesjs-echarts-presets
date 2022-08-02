@@ -6,7 +6,7 @@ import roundedPie from "./chartsBlocks/roundedPie-chart";
 import RoseChart from "./chartsBlocks/rose-chart";
 import FunnelChart from "./chartsBlocks/funnel-chart";
 import ScatterChart from "./chartsBlocks/scatter-chart";
-import StackedLineChart from "./chartsBlocks/stacked-line-chart"
+import StackedAreaChart from "./chartsBlocks/stacked-area-chart"
 import StackedBarChart from "./chartsBlocks/stacked-bar-chart"
 import NestedPiesChart from "./chartsBlocks/nested-pies-chart"
 import MultipleYChart from "./chartsBlocks/multipleY-chart"
@@ -20,8 +20,8 @@ export default {
   "rose-chart":RoseChart,
   "funnel-chart":FunnelChart,
   "scatter-chart":ScatterChart,
-  "stacked-line-chart":StackedLineChart,
-  "stacked-line-bar":StackedBarChart,
+  "stacked-area-chart":StackedAreaChart,
+  "stacked-bar-chart":StackedBarChart,
   "nested-pies-chart":NestedPiesChart,
   "multipleY-chart":MultipleYChart
 };

@@ -1,7 +1,7 @@
 import build from "../buildSeries";
 
 export default build({
-  name: "grapesjs-echarts.components.stackedLine.name",
+  name: "grapesjs-echarts.components.stackedArea.name",
   getOptions: (options) => {
     const map = options.series || {};
     const basic = options.basic || {};
@@ -25,7 +25,6 @@ export default build({
     xAxis.boundaryGap=false;
     xAxis.axisPointer.show=true
     yAxis.axisPointer.show=true
-    // console.log(series,tooltip,xAxis)
     return {
       ...basic,
       grid,

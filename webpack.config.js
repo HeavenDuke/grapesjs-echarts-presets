@@ -65,6 +65,18 @@ module.exports = (env = {}) => {
           test: /\.scss$/,
           use: ["vue-style-loader", "css-loader", "sass-loader"],
         },
+        {
+          test: /\.css$/,
+          use: ["vue-style-loader", "css-loader"],
+        },
+        {
+          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            name: '/static/fonts/[name].[hash:7].[ext]'
+          }
+        }
       ],
     },
     plugins: [...corePlugins, new VueLoaderPlugin()],

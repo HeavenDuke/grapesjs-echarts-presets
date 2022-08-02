@@ -65,12 +65,12 @@ export function position(t, top = "auto" || 0, right = "auto" || 0, bottom = "au
 export function size(t, width = "auto", height = "auto") {
   return [{
     name: "width",
-    type: "String",
+    type: "Number",
     label: t("grapesjs-echarts-presets.dict.size.width"),
     default: width
   }, {
     name: "height",
-    type: "String",
+    type: "Number",
     label: t("grapesjs-echarts-presets.dict.size.height"),
     default: height
   }];

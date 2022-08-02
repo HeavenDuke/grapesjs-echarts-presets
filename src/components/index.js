@@ -6,7 +6,7 @@ import roundedPie from "./chartsComponents/echarts-roundedPie";
 import Rose from "./chartsComponents/echarts-rose";
 import Funnel from "./chartsComponents/echarts-funnel";
 import Scatter from "./chartsComponents/echarts-scatter";
-import StackedLine from "./chartsComponents/echarts-stacked-line"
+import StackedArea from "./chartsComponents/echarts-stacked-area"
 import StackedBar from "./chartsComponents/echarts-stacked-bar"
 import NestedPies from "./chartsComponents/echarts-nested-pies"
 import MultipleY from "./chartsComponents/echarts-multipleY"
@@ -21,7 +21,7 @@ export default {
   "echarts-rose":Rose,
   "echarts-funnel":Funnel,
   "echarts-scatter":Scatter,
-  "echarts-stacked-line":StackedLine,
+  "echarts-stacked-area":StackedArea,
   "echarts-stacked-bar":StackedBar,
   "echarts-nested-pies":NestedPies,
   "echarts-multipleY":MultipleY

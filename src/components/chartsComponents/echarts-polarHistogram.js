@@ -12,20 +12,28 @@ export default build({
     const legend = options.legend || {};
     const radiusAxis = options.radiusAxis || {};
     const angleAxis = options.angleAxis || {};
+    const polar =options.polar||{};
     let dataset = {
       source: options.dataset.source || [],
       sourceHeader: options.dataset.sourceHeader || false
     };
 
-    radiusAxis.type = "category";
-    angleAxis.type = "";
+
     let series = [];
+
     if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
       for (let i = 1; i < dataset.source[0].length; i++) {
-        let obj = {type: "bar", coordinateSystem: "polar", ...map};
-        series.push(obj);
+        map.coordinateSystem="polar";
+        map.type="bar"
+        // let obj = {type: "bar", ...map};
+        series.push(map);
+        // console.log(i)
       }
     }
+    console.log(series)
+    polar.radius=[30, "80%"]
+    radiusAxis.type = "category";
+    angleAxis.type = "";
     return {
       ...basic,
       grid,
@@ -37,9 +45,7 @@ export default build({
       angleAxis,
       legend,
       tooltip,
-      polar: {
-        radius: [30, "80%"]
-      }
+      polar
     };
   },
 });
