@@ -1,8 +1,7 @@
 import build from "../build";
-import icon from "../../icons/饼图.svg"
 export default (editor) =>
   build(editor)({
-    icon,
+    icon:'icon-pie-chart',
     label: "grapesjs-echarts-presets.components.pie.name",
     type: "echarts-pie",
   });

@@ -8,6 +8,7 @@
                     <small class="gjs-traits-group-tab-close" @click="removeOption(index)" v-if="options.length > 1">×</small>
                 </div>
                 <div class="gjs-traits-group-tab add" @click="addOption">+</div>
+
             </div>
             <recursion-list :overall="overall" :meta="meta.options" v-model="options[optionIndex]"/>
         </div>
@@ -72,7 +73,7 @@
 
 <style lang="scss" scoped>
 
-  @import "./assets/icon/iconfont.scss";
+  @import "assets/icon/iconfont.css";
 
     .gjs-traits-group-tabs {
         display: flex;

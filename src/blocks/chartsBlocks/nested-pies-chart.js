@@ -1,9 +1,9 @@
 import build from "../build";
-import icon from "../../icons/散点图.svg"
+
 //散点图
 export default (editor) =>
   build(editor)({
-    // icon,
+    icon:'icon-nested-pies-chart',
     label: "grapesjs-echarts-presets.components.nestedPies.name",
     type: "echarts-nested-pies",
   });

@@ -1,9 +1,9 @@
 import build from "../build";
-import icon from "../../icons/散点图.svg"
+
 //散点图
 export default (editor) =>
   build(editor)({
-    // icon,
+    icon:'icon-stacked-area-chart',
     label: "grapesjs-echarts-presets.components.stackedArea.name",
     type: "echarts-stacked-area",
   });

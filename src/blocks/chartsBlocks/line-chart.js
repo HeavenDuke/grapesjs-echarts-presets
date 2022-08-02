@@ -1,8 +1,8 @@
 import build from "../build";
-import icon from "../../icons/折线图.svg";
+
 export default (editor) =>
   build(editor)({
-    icon,
+    icon:'icon-line-chart',
     label: "grapesjs-echarts-presets.components.line.name",
     type: "echarts-line",
   });

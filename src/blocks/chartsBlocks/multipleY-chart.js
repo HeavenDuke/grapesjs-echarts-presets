@@ -1,8 +1,8 @@
 import build from "../build";
-import icon from "../../icons/折线图.svg";
+
 export default (editor) =>
   build(editor)({
-    // icon,
+    icon:'icon-multiple-y-chart',
     label: "grapesjs-echarts-presets.components.multipleY.name",
     type: "echarts-multipleY",
   });
