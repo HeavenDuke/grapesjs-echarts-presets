@@ -25,13 +25,12 @@ export function constructOptions(meta) {
 export function removeItems(options, names) {
   if (names instanceof Array) {
     let nameMap = names.reduce((result, name) => {
-      result[name] = name
-      return result
-    }, {})
-    return options.filter(item => nameMap[item.name])
-  }
-  else {
-    return options.filter(item => item.name !== names)
+      result[name] = name;
+      return result;
+    }, {});
+    return options.filter(item => nameMap[item.name]);
+  } else {
+    return options.filter(item => item.name !== names);
   }
 }
 
@@ -79,7 +78,16 @@ export function size(t, width = "auto", height = "auto") {
 
 //finished 8 animation,animationThreshold,animationDuration,animationDurationUpdate,
 // animationEasing,animationEasingUpdate,animationDelay,animationDelayUpdate
-export function animation(t,{animation=true,aThreshold=2000,aDuration=1000,aDurationU=300,aEasing="cubicOut",aEasingU="cubicOut",aDelay=0,aDelayU=0}={}) {
+export function animation(t, {
+  animation = true,
+  aThreshold = 2000,
+  aDuration = 1000,
+  aDurationU = 300,
+  aEasing = "cubicOut",
+  aEasingU = "cubicOut",
+  aDelay = 0,
+  aDelayU = 0
+} = {}) {
   return [{
     name: "animation",
     type: "Boolean",
@@ -652,7 +660,13 @@ export function feature(t) {
 
 
 //finished
-export function textStyle(t, {color = "#ffffff", fontWeight = "normal", fontSize = 12, padding = [0,0], complex = false} = {}) {
+export function textStyle(t, {
+  color = "#ffffff",
+  fontWeight = "normal",
+  fontSize = 12,
+  padding = [0, 0],
+  complex = false
+} = {}) {
   let basic = [{
     name: "color",
     type: "Color",
@@ -761,7 +775,7 @@ export function textStyle(t, {color = "#ffffff", fontWeight = "normal", fontSize
     label: t("grapesjs-echarts-presets.config.textStyle.padding.label"),
     default: padding
   }, ...shadow(t)];
-  let flag= complex
+  let flag = complex;
   if (flag) {
     return [...basic, ...more];
   } else {
@@ -919,16 +933,144 @@ export function areaStyle(t) {
   }, ...shadow(t)];
 }
 
-export function axisTick(t, minor = false) {
-  return [];
+export function axisTick(t, minor = false, show = true, length = 5) {
+  let basic = [{
+    name: "show",
+    label: t("grapesjs-echarts-presets.config.axis.axisTick.show.label"),
+    type: "Boolean",
+    default: show
+  }, {
+    name: "length",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.config.axis.axisTick.length.label"),
+    default: length
+  }, {
+    name: "lineStyle",
+    type: "Object",
+    label: t("grapesjs-echarts-presets.config.lineStyle.label"),
+    children: lineStyle(t)
+  }];
+  let big = [{
+    name: "alignWithLabel",
+    type: "Boolean",
+    label: t("grapesjs-echarts-presets.config.axis.axisTick.alignWithLabel.label"),
+    default: false
+  }, {
+    name: "interval",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.config.axis.axisTick.interval.label"),
+    default: "auto"
+  }, {
+    name: "inside",
+    type: "Boolean",
+    label: t("grapesjs-echarts-presets.config.axis.axisTick.inside.label"),
+    default: false
+  }];
+  if (!minor) {
+    return [...basic, ...big];
+  } else {
+    return [...basic, {
+      name: "splitNumber",
+      type: "Number",
+      label: t("grapesjs-echarts-presets.config.axis.axisTick.splitNumber.label"),
+    }];
+  }
+
 }
 
 export function axisLabel(t) {
-  return [];
+
+  return [{
+    name: "show",
+    type: "Boolean",
+    label: t("grapesjs-echarts-presets.config.axis.axisLabel.show.label"),
+    default: true
+  }, {
+    name: "interval",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.config.axis.axisLabel.interval.label"),
+    default: "auto"
+  }, {
+    name: "inside",
+    type: "Boolean",
+    label: t("grapesjs-echarts-presets.config.axis.axisLabel.inside.label"),
+    default: false
+  }, {
+    name: "rotate",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.config.axis.axisLabel.rotate.label"),
+    min: -90,
+    max: 90,
+    default: 0
+  }, {
+    name: "margin",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.config.axis.axisLabel.margin.label"),
+    default: 8
+  }, {
+    name: "formatter",
+    type: "Text",
+    label: t("grapesjs-echarts-presets.config.axis.axisLabel.formatter.label"),
+    placeholder: t("grapesjs-echarts-presets.config.axis.axisLabel.formatter.placeholder"),
+    default: ""
+  }, {
+    name: "showMinLabel",
+    type: "Boolean",
+    label: t("grapesjs-echarts-presets.config.axis.axisLabel.showMinLabel.label"),
+    default: true
+  }, {
+    name: "showMaxLabel",
+    type: "Boolean",
+    label: t("grapesjs-echarts-presets.config.axis.axisLabel.showMaxLabel.label"),
+    default: true
+  }, {
+    name: "hideOverlap",
+    type: "Boolean",
+    label: t("grapesjs-echarts-presets.config.axis.axisLabel.hideOverlap.label"),
+    default: false
+  }, ...textStyle(t, {complex: true})];
 }
 
 export function axisLine(t) {
-  return [];
+  return [{
+    name: "show",
+    type: "Boolean",
+    label: t("grapesjs-echarts-presets.config.axis.axisLine.show.label"),
+    default: true
+  }, {
+    name: "onZero",
+    type: "Boolean",
+    label: t("grapesjs-echarts-presets.config.axis.axisLine.onZero.label"),
+    default: true
+  }, {
+    name: "onZeroAxisIndex",
+    type: "Number",
+    label: t("grapesjs-echarts-presets.config.axis.axisLine.onZeroAxisIndex.label"),
+    default: undefined
+  }, {
+    name: "symbol",
+    type: "String",
+    array: true,
+    label: t("grapesjs-echarts-presets.config.axis.axisLine.symbol.label"),
+    default: "none"
+  }, {
+    name: "symbolSize",
+    type: "Size",
+    useUnit: false,
+    label: t("grapesjs-echarts-presets.config.axis.axisLine.symbolSize.label"),
+    default: [10, 15]
+  }, {
+    name: "symbolOffset",
+    type: "Number",
+    array: true,
+    label: t("grapesjs-echarts-presets.config.axis.axisLine.symbolOffset.label"),
+    default: [0, 0]
+  }, {
+    name: "lineStyle",
+    type: "Object",
+    label: t("grapesjs-echarts-presets.config.lineStyle.label"),
+    children: lineStyle(t)
+  }];
 }
 
 export function splitLine(t, minor = false, show = true) {
@@ -975,7 +1117,7 @@ export function splitArea(t, show = true) {
       label: t("grapesjs-echarts-presets.config.areaStyle.color.label"),
       type: "Color",
       array: true,
-      default: ["rgba(250,250,250,0.3)","rgba(200,200,200,0.3)"]
+      default: ["rgba(250,250,250,0.3)", "rgba(200,200,200,0.3)"]
     }, {
       name: "opacity",
       label: t("grapesjs-echarts-presets.config.areaStyle.opacity.label"),
@@ -1014,7 +1156,7 @@ export function axisPointer(t) {
     name: "label",
     label: t("grapesjs-echarts-presets.config.axisPointer.label.label"),
     type: "Object",
-    children: textStyle(t, {complex:true})
+    children: textStyle(t, {complex: true})
   }, {
     name: "lineStyle",
     label: t("grapesjs-echarts-presets.config.lineStyle.label"),
