@@ -2,6 +2,7 @@ import {BLENDMODE, ANIMATIONEASING, FONTS} from "@/utils/dict";
 import {TOOLTIP, BORDER_TYPE, LINE_CAPS, LINE_JOINS, POINTER_TYPES, VISIBLE_STATUS, TRIGGERS} from "@/utils/smallDict";
 import fa from "grapesjs/src/i18n/locale/fa";
 import el from "grapesjs/src/i18n/locale/el";
+import {off} from "grapesjs/src/utils/mixins";
 
 //function for translate data
 export function constructOptions(meta) {
@@ -204,7 +205,16 @@ export function shadow(t, {
 }
 
 //finished 4 borderColor,borderWidth,borderType,borderDashOffset
-export function border(t, more = false, color = "#000000") {
+export function border(t, {
+  more = false,
+  color = "inherit",
+  width="auto",
+  type="inherit",
+  dashOffset='inherit',
+  cap="inherit",
+  join="inherit",
+  miterLimit="inherit"
+}={}) {
   let basic = [{
     name: "borderColor",
     type: "Color",
@@ -214,19 +224,19 @@ export function border(t, more = false, color = "#000000") {
     name: "borderWidth",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.border.borderWidth.label"),
-    default: "auto"
+    default: width
   }, {
     name: "borderType",
     type: "Enum",
     label: t("grapesjs-echarts-presets.dict.border.borderType.label"),
     placeholder: t("grapesjs-echarts-presets.dict.border.borderType.placeholder"),
-    default: "solid",
+    default: type,
     candidate: BORDER_TYPE
   }, {
     name: "borderDashOffset",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.border.borderDashOffset.label"),
-    default: 0
+    default: dashOffset
   }];
   let m = [{
     name: "borderCap",
@@ -234,19 +244,19 @@ export function border(t, more = false, color = "#000000") {
     label: t("grapesjs-echarts-presets.dict.border.borderCap.label"),
     placeholder: t("grapesjs-echarts-presets.dict.border.borderCap.placeholder"),
     candidate: LINE_CAPS,
-    default: "butt"
+    default: cap
   }, {
     name: "borderJoin",
     type: "Enum",
     label: t("grapesjs-echarts-presets.dict.border.borderJoin.label"),
     placeholder: t("grapesjs-echarts-presets.dict.border.borderJoin.placeholder"),
     candidate: LINE_JOINS,
-    default: "bevel"
+    default: join
   }, {
     name: "borderMiterLimit",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.border.borderMiterLimit.label"),
-    default: 10
+    default: miterLimit
   }];
   if (more) {
     return [...basic, ...m];
@@ -254,6 +264,28 @@ export function border(t, more = false, color = "#000000") {
     return basic;
   }
 }
+
+export function align(t){
+  return[{
+    name:'align',
+    type:'Enum',
+    label:t("grapesjs-echarts-presets.dict.align.label"),
+    placeholder:t("grapesjs-echarts-presets.dict.align.placeholder"),
+    candidate:['left','center','right'],
+    default:''
+  },{
+    name:'verticalAlign',
+    type:'Enum',
+    label:t("grapesjs-echarts-presets.dict.align.label"),
+    placeholder:t("grapesjs-echarts-presets.dict.align.placeholder"),
+    candidate: ['top','middle','bottom'],
+    default:''
+  }]
+}
+
+
+
+
 
 export function feature(t) {
   return {
@@ -814,7 +846,15 @@ export function textStyle(t, {
 }
 
 //finished
-export function lineStyle(t,{color=''}={}) {
+export function lineStyle(t,{
+  color='inherit',
+  width='auto'||0,
+  type='inherit',
+  offset='inherit'||0,
+  cap='inherit',
+  join='inherit',
+  miterLimit='inherit'||10
+}={}) {
   return [{
     name: "color",
     type: "Color",
@@ -824,38 +864,38 @@ export function lineStyle(t,{color=''}={}) {
     name: "width",
     type: "Number",
     label: t("grapesjs-echarts-presets.config.lineStyle.width.label"),
-    default: 1
+    default: width
   }, {
     name: "type",
     type: "Enum",
     label: t("grapesjs-echarts-presets.config.lineStyle.type.label"),
     placeholder: t("grapesjs-echarts-presets.config.lineStyle.type.placeholder"),
-    default: 'solid',
+    default: type,
     candidate: BORDER_TYPE
   }, {
     name: "dashOffset",
     type: "Number",
     label: t("grapesjs-echarts-presets.config.lineStyle.dashOffset.label"),
-    default: 0
+    default: offset
   }, {
     name: "cap",
     type: "Enum",
     label: t("grapesjs-echarts-presets.config.lineStyle.cap.label"),
     placeholder: t("grapesjs-echarts-presets.config.lineStyle.cap.placeholder"),
-    default: "butt",
+    default: cap,
     candidate: LINE_CAPS
   }, {
     name: "join",
     type: "Enum",
     label: t("grapesjs-echarts-presets.config.lineStyle.join.label"),
     placeholder: t("grapesjs-echarts-presets.config.lineStyle.join.placeholder"),
-    default: "bevel",
+    default: join,
     candidate: LINE_JOINS
   }, {
     name: "miterLimit",
     type: "Number",
     label: t("grapesjs-echarts-presets.config.lineStyle.miterLimit.label"),
-    default: 10
+    default: miterLimit
   }, ...shadow(t), {
     name: "opacity",
     type: "Number",
@@ -863,7 +903,7 @@ export function lineStyle(t,{color=''}={}) {
     min: 0,
     max: 1,
     label: t("grapesjs-echarts-presets.config.lineStyle.opacity.label"),
-    default: 1
+    default: 'inherit'
   }];
 }
 
@@ -874,38 +914,14 @@ export function itemStyle(t) {
     type: "Color",
     label: t("grapesjs-echarts-presets.config.itemStyle.color.label"),
     default: ""
-  }, ...border(t), {
-    name: "borderCap",
-    type: "Enum",
-    label: t("grapesjs-echarts-presets.config.itemStyle.borderCap.label"),
-    placeholder: t("grapesjs-echarts-presets.config.itemStyle.borderCap.placeholder"),
-    candidate: LINE_CAPS,
-    default: ""
-  }, {
-    name: "borderJoin",
-    type: "Enum",
-    label: t("grapesjs-echarts-presets.config.itemStyle.borderJoin.label"),
-    placeholder: t("grapesjs-echarts-presets.config.itemStyle.borderJoin.placeholder"),
-    candidate: LINE_JOINS,
-    default: ""
-  }, {
-    name: "borderMiterLimit",
-    type: "Number",
-    label: t("grapesjs-echarts-presets.config.itemStyle.borderMiterLimit.label"),
-    default: 10
-  }, ...shadow(t), {
+  }, ...border(t,{more:true}), ...shadow(t), {
     name: "opacity",
     type: "Number",
     step: 0.1,
     min: 0,
     max: 1,
     label: t("grapesjs-echarts-presets.config.itemStyle.opacity.label"),
-    default: 1
-  }, {
-    name: "decal",
-    type: "Text",
-    label: t("grapesjs-echarts-presets.config.itemStyle.decal.label"),
-    default: ""
+    default: 'inherit'
   }];
 }
 

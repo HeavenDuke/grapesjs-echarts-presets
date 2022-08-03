@@ -165,6 +165,12 @@ export default {
         borderMiterLimit: {
           label: "Border Miter Limit"
         }
+      },
+      align:{
+        label:'Align',
+        verticalAlign: {
+          label:'Vertical Align'
+        }
       }
     },
     actions: {
@@ -602,9 +608,6 @@ export default {
         borderColor: {
           label: "BorderColor"
         },
-        pageIcon: {
-          label: "PageIcon"
-        },
         borderWidth: {
           label: "BorderWidth"
         },
@@ -627,7 +630,9 @@ export default {
           label: "PageButtonPosition"
         },
         pageIcons: {
-          label: "PageIcons"
+          label: "PageIcons",
+          horizontal: 'Horizontal',
+          vertical: 'Vertical'
         },
         pageIconColor: {
           label: "PageIconColor"
@@ -651,7 +656,11 @@ export default {
           label: "Selector"
         },
         selectorLabel: {
-          label: "SelectorLabel"
+          label: "SelectorLabel",
+          show:'Show',
+          distance:'Distance',
+          rotate:'Rotate',
+          offset:'Offset'
         },
         selectorPosition: {
           label: "SelectorPosition"
