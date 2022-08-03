@@ -1,8 +1,5 @@
 import {BLENDMODE, ANIMATIONEASING, FONTS} from "@/utils/dict";
 import {TOOLTIP, BORDER_TYPE, LINE_CAPS, LINE_JOINS, POINTER_TYPES, VISIBLE_STATUS, TRIGGERS} from "@/utils/smallDict";
-import fa from "grapesjs/src/i18n/locale/fa";
-import el from "grapesjs/src/i18n/locale/el";
-// import {off} from "grapesjs/src/utils/mixins";
 
 //function for translate data
 export function constructOptions(meta) {
@@ -926,32 +923,31 @@ export function itemStyle(t) {
 }
 
 //finished
-export function iconStyle(t) {
+export function iconStyle(t,{
+  Bmore=true,
+  Bcolor='#000000',
+  Bwidth=0,
+  Btype='solid',
+  BdashOffset=0,
+  Bcap='butt',
+  Bjoin='bevel',
+  BmiterLimit=10
+}={}) {
   return [{
     name: "color",
     label: t("grapesjs-echarts-presets.config.iconStyle.color.label"),
     type: "Color",
     default: ""
-  }, ...border(t), {
-    name: "borderCap",
-    type: "Enum",
-    label: t("grapesjs-echarts-presets.config.iconStyle.borderCap.label"),
-    placeholder: t("grapesjs-echarts-presets.config.iconStyle.borderCap.placeholder"),
-    candidate: LINE_CAPS,
-    default: ""
-  }, {
-    name: "borderJoin",
-    type: "Enum",
-    label: t("grapesjs-echarts-presets.config.iconStyle.borderJoin.label"),
-    placeholder: t("grapesjs-echarts-presets.config.iconStyle.borderJoin.placeholder"),
-    candidate: LINE_JOINS,
-    default: ""
-  }, {
-    name: "borderMiterLimit",
-    type: "Number",
-    label: t("grapesjs-echarts-presets.config.iconStyle.borderMiterLimit.label"),
-    default: 10
-  }, ...shadow(t), {
+  }, ...border(t,{
+    more:Bmore,
+    color:Bcolor,
+    width:Bwidth,
+    type:Btype,
+    dashOffset:BdashOffset,
+    cap:Bcap,
+    join:Bjoin,
+    miterLimit:BmiterLimit
+  }), ...shadow(t), {
     name: "opacity",
     type: "Number",
     step: 0.1,

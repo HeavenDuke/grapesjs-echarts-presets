@@ -10,7 +10,7 @@ export default function (t, multiple = false) {
       name: "show",
       type: "Boolean",
       label: t("grapesjs-echarts-presets.config.toolbox.show.label"),
-      default: false
+      default: true
     }, {
       name: "orient",
       type: "Enum",
@@ -32,7 +32,7 @@ export default function (t, multiple = false) {
       name:'showTitle',
       type:'Boolean',
       label: t("grapesjs-echarts-presets.config.toolbox.showTitle.label"),
-      default: 8
+      default: true
     },{
       name: 'feature',
       type: 'Object',
@@ -72,7 +72,10 @@ export default function (t, multiple = false) {
       name: 'iconStyle',
       type: 'Object',
       label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-      children: iconStyle(t)
+      children: iconStyle(t,{
+        Bcolor:'#666666',
+        Bwidth:1,
+      })
     },{
       name: 'emphasis',
       type: 'Object',
