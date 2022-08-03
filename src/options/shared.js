@@ -17,22 +17,21 @@ export function constructOptions(meta) {
 }
 
 function extract(overall, meta, option) {
-  let obj = {}
+  let obj = {};
   for (let i = 0; i < meta.length; i++) {
     if (!meta[i].valid || meta[i].valid(overall)) {
       if (meta[i].type === "Object") {
-        obj[meta[i].name] = extract(overall, meta[i].children, option[meta[i].name])
-      }
-      else {
-        obj[meta[i].name] = option[meta[i].name]
+        obj[meta[i].name] = extract(overall, meta[i].children, option[meta[i].name]);
+      } else {
+        obj[meta[i].name] = option[meta[i].name];
       }
     }
   }
-  return obj
+  return obj;
 }
 
 export function extractOptions(overall, meta, option) {
-  return !meta.multiple ? extract(overall, meta, option) : option.map(item => extract(overall, meta, item))
+  return !meta.multiple ? extract(overall, meta, option) : option.map(item => extract(overall, meta, item));
 }
 
 /**
@@ -115,16 +114,19 @@ export function animation(t, {
   }, {
     name: "animationThreshold",
     type: "Number",
+    min:0,
     label: t("grapesjs-echarts-presets.dict.animation.animationThreshold.label"),
     default: aThreshold,
   }, {
     name: "animationDuration",
     type: "Number",
+    min:0,
     label: t("grapesjs-echarts-presets.dict.animation.animationDuration.label"),
     default: aDuration,
   }, {
     name: "animationDurationUpdate",
     type: "Number",
+    min:0,
     label: t("grapesjs-echarts-presets.dict.animation.animationDurationUpdate.label"),
     default: aDurationU,
   }, {
@@ -144,11 +146,13 @@ export function animation(t, {
   }, {
     name: "animationDelay",
     type: "Number",
+    min:0,
     label: t("grapesjs-echarts-presets.dict.animation.animationDelay.label"),
     default: aDelay,
   }, {
     name: "animationDelayUpdate",
     type: "Number",
+    min:0,
     label: t("grapesjs-echarts-presets.dict.animation.animationDelayUpdate.label"),
     default: aDelayU,
   }];
@@ -170,27 +174,32 @@ export function zIndex(t, z = 0, zLevel = 0) {
 }
 
 //finished 4 shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
-export function shadow(t) {
+export function shadow(t, {
+  shadowBlur = 0,
+  shadowColor = "rgba(0, 0, 0, 0)",
+  OffsetX=0,
+  OffsetY=0
+}={}) {
   return [{
     name: "shadowBlur",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.shadow.shadowBlur.label"),
-    default: 0
+    default: shadowBlur
   }, {
     name: "shadowColor",
     type: "Color",
     label: t("grapesjs-echarts-presets.dict.shadow.shadowColor.label"),
-    default: "rgba(0, 0, 0, 0)"
+    default: shadowColor
   }, {
     name: "shadowOffsetX",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.shadow.shadowOffsetX.label"),
-    default: 0
+    default: OffsetX
   }, {
     name: "shadowOffsetY",
     type: "Number",
     label: t("grapesjs-echarts-presets.dict.shadow.shadowOffsetY.label"),
-    default: 0
+    default: OffsetY
   }];
 }
 
@@ -684,6 +693,8 @@ export function textStyle(t, {
   fontWeight = "normal",
   fontSize = 12,
   padding = [0, 0],
+  Sblur = 0,
+  Scolor = "rgba(0, 0, 0, 0)",
   complex = false
 } = {}) {
   let basic = [{
@@ -793,9 +804,8 @@ export function textStyle(t, {
     type: "Size",
     label: t("grapesjs-echarts-presets.config.textStyle.padding.label"),
     default: padding
-  }, ...shadow(t)];
-  let flag = complex;
-  if (flag) {
+  }, ...shadow(t, {shadowBlur: Sblur, shadowColor: Scolor})];
+  if (complex) {
     return [...basic, ...more];
   } else {
     return basic;
@@ -803,23 +813,23 @@ export function textStyle(t, {
 }
 
 //finished
-export function lineStyle(t) {
+export function lineStyle(t,{color=''}={}) {
   return [{
     name: "color",
     type: "Color",
     label: t("grapesjs-echarts-presets.config.lineStyle.color.label"),
-    default: ""
+    default: color
   }, {
     name: "width",
     type: "Number",
     label: t("grapesjs-echarts-presets.config.lineStyle.width.label"),
-    default: ""
+    default: 1
   }, {
     name: "type",
     type: "Enum",
     label: t("grapesjs-echarts-presets.config.lineStyle.type.label"),
     placeholder: t("grapesjs-echarts-presets.config.lineStyle.type.placeholder"),
-    default: "",
+    default: 'solid',
     candidate: BORDER_TYPE
   }, {
     name: "dashOffset",
@@ -1175,17 +1185,50 @@ export function axisPointer(t) {
     name: "label",
     label: t("grapesjs-echarts-presets.config.axisPointer.label.label"),
     type: "Object",
-    children: textStyle(t, {complex: true})
+    children: [{
+      name: "show",
+      type: "Boolean",
+      label: t("grapesjs-echarts-presets.config.axisPointer.label.show"),
+      default: false
+    }, {
+      name: "precision",
+      type: "Number",
+      label: t("grapesjs-echarts-presets.config.axisPointer.label.precision"),
+      default: "auto"
+    }, {
+      name: "formatter",
+      type: "String",
+      label: t("grapesjs-echarts-presets.config.axisPointer.label.formatter"),
+      default: ""
+    }, {
+      name: "margin",
+      type: "Number",
+      label: t("grapesjs-echarts-presets.config.axisPointer.label.margin"),
+      default: 3
+    }, ...textStyle(t, {complex: true,padding:[5,7],Sblur:3,Scolor:'#aaaaaa'})]
   }, {
     name: "lineStyle",
     label: t("grapesjs-echarts-presets.config.lineStyle.label"),
     type: "Object",
-    children: lineStyle(t)
+    children: lineStyle(t,{color:'#555'})
   }, {
     name: "shadowStyle",
     label: t("grapesjs-echarts-presets.config.axisPointer.shadowStyle.label"),
     type: "Object",
-    children: shadow(t)
+    children: [{
+      name: 'color',
+      type: 'Color',
+      label:t("grapesjs-echarts-presets.config.axisPointer.shadowStyle.color"),
+      default: 'rgba(150,150,150,0.3)'
+    },...shadow(t),{
+      name: "opacity",
+      type: "Number",
+      step: 0.1,
+      min: 0,
+      max: 1,
+      label: t("grapesjs-echarts-presets.config.axisPointer.shadowStyle.opacity"),
+      default: 1
+    }]
   }, {
     name: "triggerTooltip",
     label: t("grapesjs-echarts-presets.config.axisPointer.triggerTooltip.label"),
@@ -1231,8 +1274,8 @@ export function axisPointer(t) {
       name: "color",
       label: t("grapesjs-echarts-presets.config.axisPointer.handle.color.label"),
       type: "Color",
-      default: "#333"
-    }, ...shadow(t)]
+      default: "#333333"
+    }, ...shadow(t,{shadowColor:"#aaaaaa",shadowBlur:3,OffsetX:2})]
   }, {
     name: "triggerOn",
     label: t("grapesjs-echarts-presets.config.axisPointer.triggerOn.label"),

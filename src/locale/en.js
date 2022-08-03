@@ -46,8 +46,11 @@ export default {
       nestedPies: {
         name: "Nested Pies Chart"
       },
-      multipleY:{
-        name:"Multiple Y Chart"
+      multipleY: {
+        name: "Multiple Y Chart"
+      },
+      custom: {
+        name: "Custom Chart"
       }
     },
     dict: {
@@ -861,8 +864,8 @@ export default {
         position: {
           label: "Position"
         },
-        offset:{
-          label:'Offset'
+        offset: {
+          label: "Offset"
         },
         size: {
           label: "Size"
@@ -971,8 +974,8 @@ export default {
           inside: {
             label: "Inside"
           },
-          splitNumber:{
-            label:'Split Number'
+          splitNumber: {
+            label: "Split Number"
           },
           length: {
             label: "Length"
@@ -1168,7 +1171,11 @@ export default {
           label: "Z Index"
         },
         label: {
-          label: "Label"
+          label: "Label",
+          show:'Show',
+          precision:'Precision',
+          formatter:'Formatter',
+          margin:'Margin'
         },
         triggerTooltip: {
           label: "Trigger Tooltip"
@@ -1201,7 +1208,9 @@ export default {
           label: "Trigger On"
         },
         shadowStyle: {
-          label: "Shadow Style"
+          label: "Shadow Style",
+          color:'Color',
+          opacity:'Opacity'
         }
       },
       event: {
@@ -1226,20 +1235,20 @@ export default {
         silent: {
           label: "Silent"
         },
-        xAxisIndex:{
-          label:"X Axis Index"
+        xAxisIndex: {
+          label: "X Axis Index"
         },
-        yAxisIndex:{
-          label:'Y Axis Index'
+        yAxisIndex: {
+          label: "Y Axis Index"
         },
-        polarIndex:{
-        label:'Polar Index'
+        polarIndex: {
+          label: "Polar Index"
         },
-        datasetIndex:{
-          label:'Dataset Index'
+        datasetIndex: {
+          label: "Dataset Index"
         },
-        coordinateSystem:{
-          label:'Coordinate System'
+        coordinateSystem: {
+          label: "Coordinate System"
         }
       }
 

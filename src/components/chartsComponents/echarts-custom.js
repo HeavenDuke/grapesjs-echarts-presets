@@ -17,7 +17,7 @@ export default build({
     let series = [];
     if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
       for (let i = 1; i < dataset.source[0].length; i++) {
-        series.push({...map,type: "line"});
+        series.push({...map});
       }
     }
 

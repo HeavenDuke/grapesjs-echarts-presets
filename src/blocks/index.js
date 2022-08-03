@@ -10,6 +10,8 @@ import StackedAreaChart from "./chartsBlocks/stacked-area-chart"
 import StackedBarChart from "./chartsBlocks/stacked-bar-chart"
 import NestedPiesChart from "./chartsBlocks/nested-pies-chart"
 import MultipleYChart from "./chartsBlocks/multipleY-chart"
+import CustomChart from "./chartsBlocks/custom-chart"
+
 //模块按钮注册
 export default {
   "bar-chart": BarChart,
@@ -23,5 +25,6 @@ export default {
   "stacked-area-chart":StackedAreaChart,
   "stacked-bar-chart":StackedBarChart,
   "nested-pies-chart":NestedPiesChart,
-  "multipleY-chart":MultipleYChart
+  "multipleY-chart":MultipleYChart,
+  "custom-chart":CustomChart,
 };
