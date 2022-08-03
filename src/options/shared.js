@@ -1,8 +1,5 @@
 import {BLENDMODE, ANIMATIONEASING, FONTS} from "@/utils/dict";
 import {TOOLTIP, BORDER_TYPE, LINE_CAPS, LINE_JOINS, POINTER_TYPES, VISIBLE_STATUS, TRIGGERS} from "@/utils/smallDict";
-import fa from "grapesjs/src/i18n/locale/fa";
-import el from "grapesjs/src/i18n/locale/el";
-// import {off} from "grapesjs/src/utils/mixins";
 
 //function for translate data
 export function constructOptions(meta) {
