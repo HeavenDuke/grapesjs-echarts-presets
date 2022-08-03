@@ -10,9 +10,9 @@ export default build({
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
-    const radiusAxis = options.radiusAxis || {};
-    const angleAxis = options.angleAxis || {};
-    const polar =options.polar||{};
+    let radiusAxis = options.radiusAxis || {};
+    let angleAxis = options.angleAxis || {};
+    let polar = options.polar || {};
     let dataset = {
       source: options.dataset.source || [],
       sourceHeader: options.dataset.sourceHeader || false
@@ -23,17 +23,13 @@ export default build({
 
     if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
       for (let i = 1; i < dataset.source[0].length; i++) {
-        map.coordinateSystem="polar";
-        map.type="bar"
-        // let obj = {type: "bar", ...map};
-        series.push(map);
-        // console.log(i)
+        series.push({...map, type: "bar", coordinateSystem: "polar"});
+
       }
     }
-    console.log(series)
-    polar.radius=[30, "80%"]
-    radiusAxis.type = "category";
-    angleAxis.type = "";
+    polar = {...polar, radius: [30, "80%"]};
+    radiusAxis = {...radiusAxis, type: "category"};
+    angleAxis = {...angleAxis, type: "value"};
     return {
       ...basic,
       grid,

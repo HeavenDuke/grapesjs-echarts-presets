@@ -1,4 +1,5 @@
 import build from "../buildSeries";
+import fa from "grapesjs/src/i18n/locale/fa";
 
 export default build({
   name: "grapesjs-echarts.components.stackedArea.name",
@@ -10,8 +11,8 @@ export default build({
     let tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
-    const xAxis = options.xAxis || {};
-    const yAxis = options.yAxis || {};
+    let xAxis = options.xAxis || {};
+    let yAxis = options.yAxis || {};
     let dataset = {
       source: options.dataset.source || [],
       sourceHeader: options.dataset.sourceHeader || false
@@ -19,12 +20,23 @@ export default build({
     let series = [];
     if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
       for (let i = 1; i < dataset.source[0].length; i++) {
-        series.push({type: "line",stack:'1',areaStyle:{},emphasis:{focus:'series'},...map});
+        series.push({...map,type: "line",stack:'1',areaStyle:{},emphasis:{focus:'series'}});
       }
     }
-    xAxis.boundaryGap=false;
-    xAxis.axisPointer.show=true
-    yAxis.axisPointer.show=true
+
+    let x={
+      boundaryGap: false,
+      axisPointer:{
+        show:false
+      }
+    }
+    xAxis={...xAxis,...x}
+    let y={
+      axisPointer: {
+        show:false
+      }
+    }
+    yAxis={...yAxis,...y}
     return {
       ...basic,
       grid,

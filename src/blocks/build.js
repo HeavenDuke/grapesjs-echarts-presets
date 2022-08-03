@@ -1,7 +1,6 @@
-import DEFAULT_ICON from "../icons/custom-chart.svg";
 export default (editor) => {
   return function({
-    icon = DEFAULT_ICON,
+    icon = 'icon-custom-chart',
     label = "grapesjs-echarts-presets.components.MY-COMPONENT.name",
     type = "my-echart",
     category = "grapesjs-echarts-presets.category",

@@ -18,10 +18,11 @@ export default build({
     const series = [
 
       {
+        ...map,
         type: "pie",
         radius: ["25%", "65%"],
         roseType: "area",
-        ...map
+
       },
 
     ];

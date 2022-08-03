@@ -21,7 +21,7 @@ export default build({
         source:data[i].source||[]
       }
       dataset.push(obj)
-      series.push({datasetIndex:i,type: "pie",z:-10*(i+1),radius: [`${25*(i)}%`,`${25*(i+1)}%`],...map});
+      series.push({...map,datasetIndex:i,type: "pie",z:-10*(i+1),radius: [`${25*(i)}%`,`${25*(i+1)}%`],});
     }
 
     return {

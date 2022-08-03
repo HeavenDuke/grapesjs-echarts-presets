@@ -19,14 +19,23 @@ export default build({
     let series = [];
     if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
       for (let i = 1; i < dataset.source[0].length; i++) {
-        let obj = {type: "bar",stack:'1',emphasis: {
-            focus: 'series'
-          }, ...map};
-        series.push(obj);
+        series.push({...map,
+          type: "bar", stack: "1", emphasis: {focus: "series"}
+        });
       }
     }
-    xAxis.axisPointer.show=true
-    yAxis.axisPointer.show=true
+    let x={
+      axisPointer: {
+        show:true
+      }
+    }
+    xAxis={...xAxis,...x}
+    let y={
+      axisPointer: {
+        show:true
+      }
+    }
+    yAxis={...yAxis,...y}
     return {
       ...basic,
       grid,
@@ -36,7 +45,7 @@ export default build({
       toolbox,
       xAxis,
       series,
-      tooltip:{},
+      tooltip,
       yAxis
     };
   },

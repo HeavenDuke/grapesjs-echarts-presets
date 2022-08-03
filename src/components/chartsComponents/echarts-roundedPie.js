@@ -15,13 +15,14 @@ export default build({
       // sourceHeader: options.dataset.sourceHeader || false
     };
     let series = [{
+      ...map,
       type: "pie",
       radius:['25%','50%'],
       itemStyle: {
         borderRadius: 10,
         borderColor: '#fff',
         borderWidth: 2
-      },...map}]
+      },}]
 
     return  {
       ...basic,
