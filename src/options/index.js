@@ -14,7 +14,8 @@ import AngleAxisOptions from "@/options/angle-axis"
 import RadarOptions from "@/options/radar"
 import ParallelOptions from "@/options/parallel"
 import ParallelAxisOptions from "@/options/parallel-axis"
-import SeriesOption from "@/options/series";
+import GeoOptions from "@/options/geo"
+import SeriesOption from "@/options/series"
 
 export default {
   "basic": BasicOptions,
@@ -33,5 +34,6 @@ export default {
   "radar": RadarOptions,
   "parallel": ParallelOptions,
   "parallel-axis": ParallelAxisOptions,
+  "geo": GeoOptions,
   "series":SeriesOption
 }
