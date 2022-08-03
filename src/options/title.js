@@ -83,14 +83,14 @@ export default function (t, multiple = false) {
         type: "Enum",
         label: t("grapesjs-echarts-presets.config.title.subtextStyle.align.label"),
         placeholder: t("grapesjs-echarts-presets.config.title.subtextStyle.align.placeholder"),
-        default: "auto",
+        default: "",
         candidate: ALIGN
       }, {
         name: "verticalAlign",
         type: "Enum",
         label: t("grapesjs-echarts-presets.config.title.subtextStyle.verticalAlign.label"),
         placeholder: t("grapesjs-echarts-presets.config.title.subtextStyle.verticalAlign.placeholder"),
-        default: "auto",
+        default: "",
         candidate: VERTICAL_ALIGN
       }],
       valid(option) {
@@ -135,8 +135,9 @@ export default function (t, multiple = false) {
     }, {
       name: "padding",
       type: "Number",
+      array:true,
       label: t("grapesjs-echarts-presets.config.title.padding.label"),
-      default: 5,
+      default: [5,5,5,5],
       valid(option) {
         return option.title && option.title.show
       }
@@ -155,7 +156,7 @@ export default function (t, multiple = false) {
         name: "backgroundColor",
         type: "Color",
         label: t("grapesjs-echarts-presets.config.title.backgroundColor.label"),
-        default: "none",
+        default: "",
         valid(option) {
           return option.title && option.title.show
         }
@@ -178,8 +179,9 @@ export default function (t, multiple = false) {
       }, {
         name: "borderRadius",
         type: "Number",
+        array: true,
         label: t("grapesjs-echarts-presets.config.title.borderRadius.label"),
-        default: 0,
+        default: [0,0,0,0],
         valid(option) {
           return option.title && option.title.show
         }

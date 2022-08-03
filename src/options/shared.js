@@ -801,7 +801,8 @@ export function textStyle(t, {
     default: 0
   }, {
     name: "padding",
-    type: "Size",
+    type: "Number",
+    array:true,
     label: t("grapesjs-echarts-presets.config.textStyle.padding.label"),
     default: padding
   }, ...shadow(t, {shadowBlur: Sblur, shadowColor: Scolor})];
