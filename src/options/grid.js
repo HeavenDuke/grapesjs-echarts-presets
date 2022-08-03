@@ -1,18 +1,20 @@
 import tooltip from "@/options/tooltip";
-import {position, shadow, size, zIndex} from "@/options/shared";
+import {position, removeItems, shadow, size, zIndex} from "@/options/shared";
 //finished
 export default function (t, multiple = false) {
+  let newTooltip = removeItems(tooltip(t).options, ["show", "trigger", "axisPointer", "position", "formatter",
+    "valueFormatter", "backgroundColor", "borderColor", "borderWidth", "padding", "textStyle", "extraCssText"]);
   return {
-    name:'grid',
+    name: "grid",
     label: t("grapesjs-echarts-presets.dict.group.grid"),
     multiple: false,
-    options:[
+    options: [
       {
         name: "show",
         type: "Boolean",
         label: t("grapesjs-echarts-presets.config.grid.show.label"),
         default: false
-      }, ...zIndex(t,2,0), ...position(t,60,'10%',60,'10%'), ...size(t),
+      }, ...zIndex(t, 2, 0), ...position(t, 60, "10%", 60, "10%"), ...size(t),
       {
         name: "containLabel",
         type: "Boolean",
@@ -37,8 +39,8 @@ export default function (t, multiple = false) {
         name: "tooltip",
         type: "Object",
         label: t("grapesjs-echarts-presets.config.tooltip.label"),
-        children: tooltip(t).options
+        children: newTooltip
       }]
   }
-  ;
+    ;
 }

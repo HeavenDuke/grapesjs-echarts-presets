@@ -14,7 +14,7 @@ export default function (t, multiple = false) {
       name: "source",
       label: t("grapesjs-echarts-presets.config.dataset.source.label"),
       type: "Table",
-      default: []
+      default: [['年份','2018','2019'],['中国',100,95],['美国',90,85]]
     }, {
       name: "sourceHeader",
       label: t("grapesjs-echarts-presets.config.dataset.sourceHeader.label"),

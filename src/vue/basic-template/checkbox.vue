@@ -6,7 +6,7 @@
         <div class="gjs-field-wrp gjs-field-wrp--checkbox" data-input="">
             <label class="gjs-field gjs-field-checkbox" data-input="">
                 <input type="checkbox" v-model="status">
-                <i class="gjs-chk-icon iconfont icon-bar-chart"></i>
+                <i class="gjs-chk-icon"></i>
             </label>
         </div>
     </div>

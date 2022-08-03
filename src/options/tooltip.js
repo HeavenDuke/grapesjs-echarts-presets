@@ -17,7 +17,7 @@ export default function (t, multiple = false) {
       label:t("grapesjs-echarts-presets.config.tooltip.axisPointer.type.label"),
       placeholder: t("grapesjs-echarts-presets.config.tooltip.axisPointer.type.placeholder"),
       candidate:[...POINTER_TYPES,'cross'],
-      default:'auto'
+      default:'line'
     },{
       name:'crossStyle',
       type: 'Object',
@@ -196,8 +196,9 @@ export default function (t, multiple = false) {
     },{
       name: "padding",
       type: "Number",
+      array:true,
       label: t("grapesjs-echarts-presets.config.tooltip.padding.label"),
-      default: 5
+      default: [5,5,5,5]
     },{
       name:'textStyle',
       type: 'Object',

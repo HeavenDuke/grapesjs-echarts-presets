@@ -16,8 +16,8 @@ export default build({
       source: options.dataset.source || [],
       // sourceHeader: options.dataset.sourceHeader || false
     };
-    let series = [{
-      type: "pie", radius: "60%", ...map
+    let series = [{ ...map,
+      type: "pie", radius: "60%",
     }];
 
 

@@ -13,10 +13,11 @@ export default build({
 
     let dataset = {
       source: options.dataset.source || [],
-      sourceHeader: options.dataset.sourceHeader || false
+      // sourceHeader: options.dataset.sourceHeader || false
     };
     const series = [
       {
+        ...map,
         type: "funnel",
         left: "10%",
         top: 60,
@@ -26,13 +27,15 @@ export default build({
         label: {
           show: true,
           position: "inside"
-        },
-        ...map
+        }
+
       },
 
     ];
+    // console.log(series[0],map)
     tooltip.trigger='item';
     tooltip.formatter='{b} : {c}'
+    // console.log(map,series)
     return {
       ...basic,
       grid,

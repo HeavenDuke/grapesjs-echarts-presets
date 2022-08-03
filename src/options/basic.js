@@ -26,7 +26,7 @@ export default function (t) {
       name: "textStyle",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.textStyle.label"),
-      children: textStyle(t,{complex:true})
+      children: textStyle(t)
     }, ...animation(t), {
       name: "stateAnimation",
       type: "Object",
@@ -35,6 +35,7 @@ export default function (t) {
         name: "duration",
         type: "Number",
         label: t("grapesjs-echarts-presets.config.basic.stateAnimation.duration.label"),
+        min:0,
         default: 300
       }, {
         name: "easing",
@@ -61,7 +62,6 @@ export default function (t) {
       type: "Number",
       label: t("grapesjs-echarts-presets.config.basic.hoverLayerThreshold.label"),
       min: 0,
-      step: 0.1,
       default: 3000,
     }]
   };
