@@ -17,7 +17,7 @@ export default function (t, multiple = false) {
       placeholder: t("grapesjs-echarts-presets.config.title.text.placeholder"),
       default: "",
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "link",
@@ -26,7 +26,7 @@ export default function (t, multiple = false) {
       placeholder: t("grapesjs-echarts-presets.config.title.link.placeholder"),
       default: "",
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "target",
@@ -36,7 +36,7 @@ export default function (t, multiple = false) {
       candidate: TARGET,
       default: "blank",
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "textStyle",
@@ -44,7 +44,7 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.title.textStyle.label"),
       children: textStyle(t, {color: "#333333", fontWeight: "bolder", fontSize: 18}),
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "subtext",
@@ -53,7 +53,7 @@ export default function (t, multiple = false) {
       placeholder: t("grapesjs-echarts-presets.config.title.subtext.placeholder"),
       default: "",
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "sublink",
@@ -62,7 +62,7 @@ export default function (t, multiple = false) {
       placeholder: t("grapesjs-echarts-presets.config.title.sublink.placeholder"),
       default: "",
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "subtarget",
@@ -72,7 +72,7 @@ export default function (t, multiple = false) {
       candidate: TARGET,
       default: "blank",
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "subtextStyle",
@@ -80,7 +80,7 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.title.subtextStyle.label"),
       children: [...textStyle(t, {color: "#aaaaaa"}), ...align(t)],
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "textAlign",
@@ -90,7 +90,7 @@ export default function (t, multiple = false) {
       default: "auto",
       candidate: ALIGN,
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "textVerticalAlign",
@@ -100,7 +100,7 @@ export default function (t, multiple = false) {
       default: "auto",
       candidate: VERTICAL_ALIGN,
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "triggerEvent",
@@ -108,7 +108,7 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.title.triggerEvent.label"),
       default: false,
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "itemGap",
@@ -116,26 +116,26 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.title.itemGap.label"),
       default: 10,
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     }, {
       name: "padding",
       type: "Number",
-      array:true,
+      array: true,
       label: t("grapesjs-echarts-presets.config.title.padding.label"),
-      default: [5,5,5,5],
+      default: [5, 5, 5, 5],
       valid(option) {
-        return option.title && option.title.show
+        return option.title && option.title.show;
       }
     },
       ...(zIndex(t, 2, 0)).map(item => Object.assign(item, {
         valid(option) {
-          return option.title && option.title.show
+          return option.title && option.title.show;
         }
       })),
       ...position(t).map(item => Object.assign(item, {
         valid(option) {
-          return option.title && option.title.show
+          return option.title && option.title.show;
         }
       })),
       {
@@ -144,7 +144,7 @@ export default function (t, multiple = false) {
         label: t("grapesjs-echarts-presets.config.title.backgroundColor.label"),
         default: "",
         valid(option) {
-          return option.title && option.title.show
+          return option.title && option.title.show;
         }
       }, {
         name: "borderColor",
@@ -152,7 +152,7 @@ export default function (t, multiple = false) {
         label: t("grapesjs-echarts-presets.dict.border.borderColor.label"),
         default: "#cccccc",
         valid(option) {
-          return option.title && option.title.show
+          return option.title && option.title.show;
         }
       }, {
         name: "borderWidth",
@@ -160,21 +160,21 @@ export default function (t, multiple = false) {
         label: t("grapesjs-echarts-presets.dict.border.borderWidth.label"),
         default: 0,
         valid(option) {
-          return option.title && option.title.show
+          return option.title && option.title.show;
         }
       }, {
         name: "borderRadius",
         type: "Number",
         array: true,
         label: t("grapesjs-echarts-presets.config.title.borderRadius.label"),
-        default: [0,0,0,0],
+        default: [0, 0, 0, 0],
         valid(option) {
-          return option.title && option.title.show
+          return option.title && option.title.show;
         }
       },
       ...shadow(t).map(item => Object.assign(item, {
         valid(option) {
-          return option.title && option.title.show
+          return option.title && option.title.show;
         }
       }))],
   };

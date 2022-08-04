@@ -3,7 +3,7 @@ import build from "../buildSeries";
 export default build({
   name: "grapesjs-echarts.components.pie.name",
   getOptions: (options) => {
-    const map = options.series || {};
+    let map = options.series || {};
     const basic = options.basic || {};
     const grid = options.grid || {};
     const title = options.title || {};
@@ -11,14 +11,29 @@ export default build({
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
 
-
     let dataset = {
       source: options.dataset.source || [],
       // sourceHeader: options.dataset.sourceHeader || false
     };
-    let series = [{ ...map,
-      type: "pie", radius: "60%",
-    }];
+    map = {
+      dataIndex: map.dataIndex,
+      name: map.name,
+      colorBy:map.colorBy,
+      silent:map.silent,
+      z:map.z,
+      zIndex:map.zIndex,
+      animation: map.animation,
+      animationDelay: map.animationDelay,
+      animationDelayUpdate: map.animationDelayUpdate,
+      animationDuration: map.animationDuration,
+      animationDurationUpdate: map.animationDurationUpdate,
+      animationEasing: map.animationEasing,
+      animationEasingUpdate: map.animationEasingUpdate,
+      animationThreshold: map.animationThreshold,
+    };
+    let series = {
+      ...map,type: "pie", radius: "60%", label: {show: true}
+    };
 
 
     // console.log(series,dataset)
@@ -29,7 +44,7 @@ export default build({
       dataset,
       toolbox,
       series,
-      legend: {},
+      legend,
       tooltip
     };
 

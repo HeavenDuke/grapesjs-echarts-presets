@@ -1,19 +1,18 @@
-
-import BasicOptions from "@/options/basic"
-import DatasetOptions from "@/options/dataset"
-import TitleOptions from "@/options/title"
-import LegendOption from "@/options/legend"
-import TooltipOptions from "@/options/tooltip"
-import ToolboxOptions from "@/options/toolbox"
-import SingleAxisOptions from "@/options/single-axis"
-import GridOptions from "@/options/grid"
-import CartesianAxisOptions from "@/options/cartesian-axis"
-import PolarOptions from "@/options/polar"
-import RadiusAxisOptions from "@/options/radius-axis"
-import AngleAxisOptions from "@/options/angle-axis"
-import RadarOptions from "@/options/radar"
-import ParallelOptions from "@/options/parallel"
-import ParallelAxisOptions from "@/options/parallel-axis"
+import BasicOptions from "@/options/basic";
+import DatasetOptions from "@/options/dataset";
+import TitleOptions from "@/options/title";
+import LegendOption from "@/options/legend";
+import TooltipOptions from "@/options/tooltip";
+import ToolboxOptions from "@/options/toolbox";
+import SingleAxisOptions from "@/options/single-axis";
+import GridOptions from "@/options/grid";
+import CartesianAxisOptions from "@/options/cartesian-axis";
+import PolarOptions from "@/options/polar";
+import RadiusAxisOptions from "@/options/radius-axis";
+import AngleAxisOptions from "@/options/angle-axis";
+import RadarOptions from "@/options/radar";
+import ParallelOptions from "@/options/parallel";
+import ParallelAxisOptions from "@/options/parallel-axis";
 import GeoOptions from "@/options/geo"
 import SeriesOption from "@/options/series"
 
@@ -22,8 +21,8 @@ export default {
   "dataset": DatasetOptions,
   "title": TitleOptions,
   "legend": LegendOption,
-  "tooltip":TooltipOptions,
-  "toolbox":ToolboxOptions,
+  "tooltip": TooltipOptions,
+  "toolbox": ToolboxOptions,
   "single-axis": SingleAxisOptions,
   "grid": GridOptions,
   "x-axis": CartesianAxisOptions("x"),
@@ -35,5 +34,5 @@ export default {
   "parallel": ParallelOptions,
   "parallel-axis": ParallelAxisOptions,
   "geo": GeoOptions,
-  "series":SeriesOption
-}
+  "series": SeriesOption
+};

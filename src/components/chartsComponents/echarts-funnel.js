@@ -3,7 +3,7 @@ import build from "../buildSeries";
 export default build({
   name: "grapesjs-echarts.components.funnel.name",
   getOptions: (options) => {
-    const map = options.series || {};
+    let map = options.series || {};
     const basic = options.basic || {};
     const title = options.title || {};
     const grid = options.grid || {};
@@ -14,6 +14,23 @@ export default build({
     let dataset = {
       source: options.dataset.source || [],
       // sourceHeader: options.dataset.sourceHeader || false
+    };
+
+    map = {
+      dataIndex: map.dataIndex,
+      name: map.name,
+      colorBy:map.colorBy,
+      silent:map.silent,
+      z:map.z,
+      zIndex:map.zIndex,
+      animation: map.animation,
+      animationDelay: map.animationDelay,
+      animationDelayUpdate: map.animationDelayUpdate,
+      animationDuration: map.animationDuration,
+      animationDurationUpdate: map.animationDurationUpdate,
+      animationEasing: map.animationEasing,
+      animationEasingUpdate: map.animationEasingUpdate,
+      animationThreshold: map.animationThreshold,
     };
     const series = [
       {
@@ -43,7 +60,7 @@ export default build({
       dataset,
       legend,
       tooltip,
-      toolbox,
+      // toolbox,
       series,
 
 

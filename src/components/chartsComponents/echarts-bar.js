@@ -8,7 +8,7 @@ export default build({
     const basic = options.basic || {};
     const grid = options.grid || {};
     const tooltip = options.tooltip || {};
-    const toolbox = options.toolbox || {};
+    const toolbox = options.toolbox ||{};
     const legend = options.legend || {};
     let xAxis = options.xAxis || {};
     let yAxis = options.yAxis || {};

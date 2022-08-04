@@ -1,7 +1,16 @@
-
 import {BINARY_POSITION_HORIZONTAL, BINARY_POSITION_VERTICAL, FLEX_POSITIONS, SERIES_TYPES} from "@/utils/smallDict";
-import {zIndex, textStyle, axisLine, axisTick, axisLabel, splitLine, splitArea, axisPointer} from "@/options/shared"
-import ToolTip from "@/options/tooltip"
+import {
+  zIndex,
+  textStyle,
+  axisLine,
+  axisTick,
+  axisLabel,
+  splitLine,
+  splitArea,
+  axisPointer,
+  align
+} from "@/options/shared";
+import ToolTip from "@/options/tooltip";
 
 export default function (type = "x") {
   return function (t, multiple) {
@@ -45,11 +54,11 @@ export default function (type = "x") {
         candidate: type === "x" ? BINARY_POSITION_VERTICAL : BINARY_POSITION_HORIZONTAL,
         default: ""
       }, {
-        name:'offset',
-        type: 'Number',
+        name: "offset",
+        type: "Number",
         label: t("grapesjs-echarts-presets.config.axis.offset.label"),
         default: 0
-      },{
+      }, {
         name: "name",
         label: t("grapesjs-echarts-presets.config.axis.name.label"),
         type: "String",
@@ -59,12 +68,12 @@ export default function (type = "x") {
         label: t("grapesjs-echarts-presets.config.axis.nameLocation.label"),
         type: "Enum",
         candidate: FLEX_POSITIONS,
-        default: ""
+        default: "end"
       }, {
         name: "nameTextStyle",
         label: t("grapesjs-echarts-presets.config.axis.nameTextStyle.label"),
         type: "Object",
-        children: textStyle(t)
+        children: [...textStyle(t), ...align(t)]
       }, {
         name: "nameGap",
         label: t("grapesjs-echarts-presets.config.axis.nameGap.label"),
@@ -79,6 +88,21 @@ export default function (type = "x") {
         max: 360,
         step: 1
       }, {
+        name: "boundaryGap",
+        type: "Boolean",
+        label: t("grapesjs-echarts-presets.config.axis.boundaryGap.label"),
+        default: true
+      }, {
+        name: "min",
+        type: "Number",
+        label: t("grapesjs-echarts-presets.config.axis.min.label"),
+        default: "dataMin"
+      }, {
+        name: "max",
+        type: "Number",
+        label: t("grapesjs-echarts-presets.config.axis.max.label"),
+        default: "dataMax"
+      }, {
         name: "scale",
         label: t("grapesjs-echarts-presets.config.axis.scale.label"),
         type: "Boolean",
@@ -88,6 +112,8 @@ export default function (type = "x") {
         label: t("grapesjs-echarts-presets.config.axis.splitNumber.label"),
         type: "Number",
         default: 5
+      },{
+      //  minInterval,maxInterval,interval
       }, {
         name: "logBase",
         label: t("grapesjs-echarts-presets.config.axis.logBase.label"),
@@ -117,7 +143,7 @@ export default function (type = "x") {
         name: "minorTick",
         label: t("grapesjs-echarts-presets.config.axis.minorAxisTick.label"),
         type: "Object",
-        children: axisTick(t, true,false,3)
+        children: axisTick(t, true, false, 3)
       }, {
         name: "axisLabel",
         label: t("grapesjs-echarts-presets.config.axis.axisLabel.label"),
@@ -144,6 +170,6 @@ export default function (type = "x") {
         type: "Object",
         children: axisPointer(t)
       }, ...zIndex(t, 2, 0)]
-    }
-  }
+    };
+  };
 }

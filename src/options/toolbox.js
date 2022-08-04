@@ -1,10 +1,10 @@
 import {DIRECTIONS} from "@/utils/smallDict";
-import {feature, iconStyle, position, size, zIndex} from "@/options/shared";
+import {feature, iconStyle, position, size, textIconStyle, zIndex} from "@/options/shared";
 import tooltip from "@/options/tooltip";
 
 export default function (t, multiple = false) {
   return {
-    name: 'toolbox',
+    name: "toolbox",
     label: t("grapesjs-echarts-presets.dict.group.toolbox"),
     options: [{
       name: "show",
@@ -19,78 +19,75 @@ export default function (t, multiple = false) {
       candidate: DIRECTIONS,
       default: "horizontal"
     }, {
-      name:'itemSize',
-      type:'Number',
+      name: "itemSize",
+      type: "Number",
       label: t("grapesjs-echarts-presets.config.toolbox.itemSize.label"),
       default: 15
     }, {
-      name:'itemGap',
-      type:'Number',
+      name: "itemGap",
+      type: "Number",
       label: t("grapesjs-echarts-presets.config.toolbox.itemGap.label"),
       default: 8
     }, {
-      name:'showTitle',
-      type:'Boolean',
+      name: "showTitle",
+      type: "Boolean",
       label: t("grapesjs-echarts-presets.config.toolbox.showTitle.label"),
       default: true
-    },{
-      name: 'feature',
-      type: 'Object',
-      label:  t("grapesjs-echarts-presets.config.toolbox.feature.label"),
-      children:[{
-        name:'saveAsImage',
-        type:'Object',
-        label:t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.label"),
-        children:feature(t).saveAsImage
-      },{
-        name:'restore',
-        type:'Object',
-        label:t("grapesjs-echarts-presets.config.toolbox.feature.restore.label"),
-        children:feature(t).restore
-      },{
-        name:'dataView',
-        type:'Object',
-        label:t("grapesjs-echarts-presets.config.toolbox.feature.dataView.label"),
-        children:feature(t).dataView
-      },{
-        name:'dataZoom',
-        type:'Object',
-        label:t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.label"),
-        children:feature(t).dataZoom
-      },{
-        name:'magicType',
-        type:'Object',
-        label:t("grapesjs-echarts-presets.config.toolbox.feature.magicType.label"),
-        children:feature(t).magicType
-      },{
-        name:'brush',
-        type:'Object',
-        label:t("grapesjs-echarts-presets.config.toolbox.feature.brush.label"),
-        children:feature(t).brush
+    }, {
+      name: "feature",
+      type: "Object",
+      label: t("grapesjs-echarts-presets.config.toolbox.feature.label"),
+      children: [{
+        name: "saveAsImage",
+        type: "Object",
+        label: t("grapesjs-echarts-presets.config.toolbox.feature.saveAsImage.label"),
+        children: feature(t).saveAsImage
+      }, {
+        name: "restore",
+        type: "Object",
+        label: t("grapesjs-echarts-presets.config.toolbox.feature.restore.label"),
+        children: feature(t).restore
+      }, {
+        name: "dataView",
+        type: "Object",
+        label: t("grapesjs-echarts-presets.config.toolbox.feature.dataView.label"),
+        children: feature(t).dataView
+      }, {
+        name: "dataZoom",
+        type: "Object",
+        label: t("grapesjs-echarts-presets.config.toolbox.feature.dataZoom.label"),
+        children: feature(t).dataZoom
+      }, {
+        name: "magicType",
+        type: "Object",
+        label: t("grapesjs-echarts-presets.config.toolbox.feature.magicType.label"),
+        children: feature(t).magicType
+      }, {
+        name: "brush",
+        type: "Object",
+        label: t("grapesjs-echarts-presets.config.toolbox.feature.brush.label"),
+        children: feature(t).brush
       },]
-    },{
-      name: 'iconStyle',
-      type: 'Object',
+    }, {
+      name: "iconStyle",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-      children: iconStyle(t,{
-        Bcolor:'#666666',
-        Bwidth:1,
-      })
-    },{
-      name: 'emphasis',
-      type: 'Object',
-      label:  t("grapesjs-echarts-presets.config.toolbox.emphasis.label"),
-      children:[{
-        name: 'iconStyle',
-        type: 'Object',
+      children: iconStyle(t, {color: "none", Bcolor: "#666666", Bwidth: 1})
+    }, {
+      name: "emphasis",
+      type: "Object",
+      label: t("grapesjs-echarts-presets.config.toolbox.emphasis.label"),
+      children: [{
+        name: "iconStyle",
+        type: "Object",
         label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-        children: iconStyle(t)
+        children: [...iconStyle(t), ...textIconStyle(t)]
       }]
-    },...zIndex(t,2,0),...position(t),...size(t),{
-      name: 'tooltip',
-      type: 'Object',
+    }, ...zIndex(t, 2, 0), ...position(t), ...size(t), {
+      name: "tooltip",
+      type: "Object",
       label: t("grapesjs-echarts-presets.config.tooltip.label"),
-      children: tooltip(t).options
+      children: tooltip(t,false,false).options
     }]
-  }
+  };
 }
