@@ -10,10 +10,10 @@ export default function (t, multiple = false) {
     multiple: false,
     valid (option) {
       if (option.series instanceof Array) {
-        return option.series.find(item => item.coordinateSystem === "cartesian2d")
+        return option.series.find(item => item.coordinateSystem && item.coordinateSystem === "cartesian2d")
       }
       else {
-        return option.series.coordinateSystem === "cartesian2d"
+        return option.series.coordinateSystem && option.series.coordinateSystem === "cartesian2d"
       }
     },
     options: [

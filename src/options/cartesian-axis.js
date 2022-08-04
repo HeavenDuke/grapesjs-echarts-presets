@@ -18,14 +18,14 @@ export default function (type = "x") {
       name: `${type}-axis`,
       label: t(`grapesjs-echarts-presets.dict.group.${type}Axis`),
       multiple,
-      // valid (option) {
-      //   if (option.series instanceof Array) {
-      //     return option.series.find(item => item.coordinateSystem === "cartesian2d")
-      //   }
-      //   else {
-      //     return option.series.coordinateSystem === "cartesian2d"
-      //   }
-      // },
+      valid (option) {
+        if (option.series instanceof Array) {
+          return option.series.find(item => item.coordinateSystem && item.coordinateSystem === "cartesian2d")
+        }
+        else {
+          return option.series.coordinateSystem && option.series.coordinateSystem === "cartesian2d"
+        }
+      },
       options: [{
         name: "show",
         label: t("grapesjs-echarts-presets.config.axis.show.label"),
@@ -164,7 +164,10 @@ export default function (type = "x") {
         label: t("grapesjs-echarts-presets.config.axis.splitArea.label"),
         type: "Object",
         children: splitArea(t, true)
-      }, {
+      },{
+        name:"data",
+        type: "Object",
+    }, {
         name: "axisPointer",
         label: t("grapesjs-echarts-presets.config.axis.axisPointer.label"),
         type: "Object",

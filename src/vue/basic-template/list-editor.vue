@@ -28,6 +28,7 @@
       label: String,
       value: Array,
       type: String,
+      template: Object,
     },
     components: {
       EpMore
@@ -47,7 +48,12 @@
     },
     methods: {
       addItem() {
-        this.list = this.list.concat([{ value: '' }])
+        if (this.type === "Object") {
+          this.list = this.list.concat([{ value: JSON.parse(JSON.stringify(this.template)) }])
+        }
+        else {
+          this.list = this.list.concat([{ value: "" }])
+        }
       },
       removeItem (index) {
         this.list.splice(index, 1)

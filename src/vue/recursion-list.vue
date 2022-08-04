@@ -11,6 +11,9 @@
             <ep-select v-else-if="item.type==='Enum'" v-model="scope.item.value" :placeholder="item.placeholder">
               <ep-option v-for="val in item.candidate" :value="val.value || val" :label="val.name||val"></ep-option>
             </ep-select>
+<!--            <ep-more v-else-if="item.type==='Object'" :label="item.label">-->
+<!--              <recursion-list :overall="overall" v-model="value[item.name]" :meta="item.children"></recursion-list>-->
+<!--            </ep-more>-->
           </template>
         </ep-list-editor>
         <ep-table-editor v-else-if="item.type === 'Table'" :label="item.label" v-model="value[item.name]"></ep-table-editor>
@@ -52,6 +55,7 @@ import EpPosition from "./basic-template/position-selector";
 import EpSize from "./basic-template/size-selector";
 import EpMore from "./basic-template/editor-more";
 import ContentDialog from "./widgets/content-dialog";
+import {constructOptions} from "@/options/shared";
 
 export default {
   name: "recursion-list",
@@ -86,6 +90,11 @@ export default {
   },
   data () {
     return {}
+  },
+  methods: {
+    getTemplate(meta) {
+      return constructOptions(meta)
+    }
   }
 };
 </script>
