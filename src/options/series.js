@@ -12,22 +12,31 @@ export default function (t, multiple = true) {
       label: t("grapesjs-echarts-presets.config.series.type.label"),
       placeholder: t("grapesjs-echarts-presets.config.series.type.placeholder"),
       candidate: SERIES,
-      default: ''
+      default: ""
     }, {
       name: "xAxisIndex",
       type: "Number",
       label: t("grapesjs-echarts-presets.config.series.xAxisIndex.label"),
-      default: 0
+      default: 0,
+      valid(option) {
+        return option.series.type === ("pie" || "funnel");
+      }
     }, {
       name: "yAxisIndex",
       type: "Number",
       label: t("grapesjs-echarts-presets.config.series.yAxisIndex.label"),
-      default: 0
+      default: 0,
+      valid(option) {
+        return option.series.type === ("pie" || "funnel");
+      }
     }, {
       name: "polarIndex",
       type: "Number",
       label: t("grapesjs-echarts-presets.config.series.polarIndex.label"),
-      default: 0
+      default: 0,
+      valid(option) {
+        return option.series.type === ("pie" || "funnel");
+      }
     }, {
       name: "datasetIndex",
       type: "Number",
@@ -39,12 +48,15 @@ export default function (t, multiple = true) {
       label: t("grapesjs-echarts-presets.config.series.name.label"),
       default: ""
     }, {
-      name: "coordinateSystem",
-      type: "Enum",
-      label: t("grapesjs-echarts-presets.config.series.coordinateSystem.label"),
-      placeholder: t("grapesjs-echarts-presets.config.series.coordinateSystem.placeholder"),
-      default: "cartesian2d",
-      candidate: ["cartesian2d", "polar"]
+      // name: "coordinateSystem",
+      // type: "Enum",
+      // label: t("grapesjs-echarts-presets.config.series.coordinateSystem.label"),
+      // placeholder: t("grapesjs-echarts-presets.config.series.coordinateSystem.placeholder"),
+      // default: "cartesian2d",
+      // candidate: ["cartesian2d", "polar"],
+      // valid(option) {
+      //   return option.series.type === ("pie" || "funnel");
+      // }
     }, {
       name: "colorBy",
       type: "Enum",

@@ -35,9 +35,9 @@ export default function (t, multiple = false) {
     }, {
       name: "padding",
       type: "Number",
-      array:true,
+      array: true,
       label: t("grapesjs-echarts-presets.config.legend.padding.label"),
-      default: [5,5,5,5],
+      default: [5, 5, 5, 5],
     }, {
       name: "itemGap",
       type: "Number",
@@ -67,7 +67,7 @@ export default function (t, multiple = false) {
       name: "symbolRotate",
       type: "Number",
       label: t("grapesjs-echarts-presets.config.legend.symbolRotate.label"),
-      default: 'inherit'||0
+      default: "inherit" || 0
     }, {
       name: "formatter",
       type: "Text",
@@ -103,7 +103,7 @@ export default function (t, multiple = false) {
       name: "textStyle",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.textStyle.label"),
-      children: textStyle(t,{complex:true,color:'#333333',})
+      children: textStyle(t, {complex: true, color: "#333333",})
     }, {
       name: "tooltip",
       type: "Object",
@@ -115,12 +115,10 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.legend.icon.label"),
       default: ""
     }, {
-      // data
-    }, {
       name: "backgroundColor",
       type: "Color",
       label: t("grapesjs-echarts-presets.config.legend.backgroundColor.label"),
-      default: ""
+      default: "none"
     }, {
       name: "borderColor",
       type: "Color",
@@ -163,23 +161,23 @@ export default function (t, multiple = false) {
       type: "Text",
       label: t("grapesjs-echarts-presets.config.legend.pageFormatter.label"),
       placeholder: t("grapesjs-echarts-presets.config.legend.pageFormatter.placeholder"),
-      default: '{current}/{total}'
+      default: "{current}/{total}"
     }, {
       name: "pageIcons",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.legend.pageIcons.label"),
       children: [{
-        name:'horizontal',
+        name: "horizontal",
         type: "String",
-        array:true,
+        array: true,
         label: t("grapesjs-echarts-presets.config.legend.pageIcons.horizontal"),
-        default: ['M0,0L12,-10L12,10z', 'M0,0L-12,-10L-12,10z']
-      },{
-        name:'vertical',
+        default: ["M0,0L12,-10L12,10z", "M0,0L-12,-10L-12,10z"]
+      }, {
+        name: "vertical",
         type: "String",
-        array:true,
+        array: true,
         label: t("grapesjs-echarts-presets.config.legend.pageIcons.vertical"),
-        default: ['M0,0L20,0L10,-20z', 'M0,0L20,0L10,20z']
+        default: ["M0,0L20,0L10,-20z", "M0,0L20,0L10,20z"]
       },]
     }, {
       name: "pageIconColor",
@@ -200,7 +198,7 @@ export default function (t, multiple = false) {
       name: "pageTextStyle",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.legend.pageTextStyle.label"),
-      children: textStyle(t,{color:'#333333'})
+      children: textStyle(t, {color: "#333333"})
     }, {
       name: "animation",
       type: "Boolean",
@@ -220,28 +218,28 @@ export default function (t, multiple = false) {
         label: t("grapesjs-echarts-presets.config.legend.emphasis.selectorLabel.label"),
         type: "Object",
         children: [{
-          name:'show',
-          type:'Boolean',
-          label:t("grapesjs-echarts-presets.config.legend.selector.show"),
-          default:true
-        },{
-          name:'distance',
-          type:'Number',
-          label:t("grapesjs-echarts-presets.config.legend.selector.distance"),
-          default:5
-        },{
-          name:'rotate',
-          type:'Number',
-          label:t("grapesjs-echarts-presets.config.legend.selector.rotate"),
-          min:-90,
-          max:90,
-          default:0
-        },{
-          name:'offset',
-          type:'Size',
-          label:t("grapesjs-echarts-presets.config.legend.selector.offset"),
-          default:[0,0]
-        },...align(t),...textStyle(t, {complex:true})]
+          name: "show",
+          type: "Boolean",
+          label: t("grapesjs-echarts-presets.config.legend.selector.show"),
+          default: true
+        }, {
+          name: "distance",
+          type: "Number",
+          label: t("grapesjs-echarts-presets.config.legend.selector.distance"),
+          default: 5
+        }, {
+          name: "rotate",
+          type: "Number",
+          label: t("grapesjs-echarts-presets.config.legend.selector.rotate"),
+          min: -90,
+          max: 90,
+          default: 0
+        }, {
+          name: "offset",
+          type: "Size",
+          label: t("grapesjs-echarts-presets.config.legend.selector.offset"),
+          default: [0, 0]
+        }, ...align(t), ...textStyle(t, {complex: true})]
       }]
     }, {
       name: "selector",
@@ -253,28 +251,28 @@ export default function (t, multiple = false) {
       type: "Object",
       label: t("grapesjs-echarts-presets.config.legend.selector.label"),
       children: [{
-        name:'show',
-        type:'Boolean',
-        label:t("grapesjs-echarts-presets.config.legend.selector.show"),
-        default:true
-      },{
-        name:'distance',
-        type:'Number',
-        label:t("grapesjs-echarts-presets.config.legend.selector.distance"),
-        default:5
-      },{
-        name:'rotate',
-        type:'Number',
-        label:t("grapesjs-echarts-presets.config.legend.selector.rotate"),
-        min:-90,
-        max:90,
-        default:0
-      },{
-        name:'offset',
-        type:'Size',
-        label:t("grapesjs-echarts-presets.config.legend.selector.offset"),
-        default:[0,0]
-      },...align(t),...textStyle(t, {complex:true})]
+        name: "show",
+        type: "Boolean",
+        label: t("grapesjs-echarts-presets.config.legend.selector.show"),
+        default: true
+      }, {
+        name: "distance",
+        type: "Number",
+        label: t("grapesjs-echarts-presets.config.legend.selector.distance"),
+        default: 5
+      }, {
+        name: "rotate",
+        type: "Number",
+        label: t("grapesjs-echarts-presets.config.legend.selector.rotate"),
+        min: -90,
+        max: 90,
+        default: 0
+      }, {
+        name: "offset",
+        type: "Size",
+        label: t("grapesjs-echarts-presets.config.legend.selector.offset"),
+        default: [0, 0]
+      }, ...align(t), ...textStyle(t, {complex: true})]
 
     }, {
       name: "selectorPosition",

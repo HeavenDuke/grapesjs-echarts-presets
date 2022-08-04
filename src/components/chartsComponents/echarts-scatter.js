@@ -16,8 +16,8 @@ export default build({
     let series = [];
     if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
       for (let i = 1; i < dataset.source[0].length; i++) {
-        let obj = {...map,type: "scatter", };
-        series.push(obj);
+
+        series.push({...map,type: "scatter"});
       }
     }
   tooltip.formatter= 'Group {a}: ({c})'

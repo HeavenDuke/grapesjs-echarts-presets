@@ -43,7 +43,7 @@ export default build({
       dataset,
       legend,
       tooltip,
-      toolbox,
+      // toolbox,
       series,
 
 

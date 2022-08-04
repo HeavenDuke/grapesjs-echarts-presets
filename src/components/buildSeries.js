@@ -64,7 +64,6 @@ export default ({
           const radar = JSON.parse(this.get("attributes")["data-ecg-radar"] || "{}");
           const parallel = JSON.parse(this.get("attributes")["data-ecg-parallel"] || "{}");
           const parallelAxis = JSON.parse(this.get("attributes")["data-ecg-parallel-axis"] || "{}");
-
           const option = this.getOptions({
             basic,
             title,
@@ -84,7 +83,6 @@ export default ({
             dataset,
             series,
           });
-
           this.renderChart(option, theme);
           if (changedAttr) {
             this.syncTraits(changedAttr, option)

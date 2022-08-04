@@ -16,7 +16,7 @@ export default function (t) {
       type: "Color",
       array: true,
       label: t("grapesjs-echarts-presets.config.basic.color.label"),
-      default: ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'],
+      default: ["#5470c6", "#91cc75", "#fac858", "#ee6666", "#73c0de", "#3ba272", "#fc8452", "#9a60b4", "#ea7ccc"],
     }, {
       name: "backgroundColor",
       type: "Color",
@@ -35,7 +35,7 @@ export default function (t) {
         name: "duration",
         type: "Number",
         label: t("grapesjs-echarts-presets.config.basic.stateAnimation.duration.label"),
-        min:0,
+        min: 0,
         default: 300
       }, {
         name: "easing",

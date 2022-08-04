@@ -16,10 +16,10 @@ export default build({
       source: options.dataset.source || [],
       // sourceHeader: options.dataset.sourceHeader || false
     };
-    let series = [{ ...map,
-      type: "pie", radius: "60%",
-    }];
-
+    let series = { ...map,
+      type: "pie", radius: "60%",label:{show:true}
+    };
+    console.log(map,series)
 
     // console.log(series,dataset)
     return {
@@ -29,7 +29,7 @@ export default build({
       dataset,
       toolbox,
       series,
-      legend: {},
+      legend,
       tooltip
     };
 

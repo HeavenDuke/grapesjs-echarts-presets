@@ -296,11 +296,12 @@ export default {
               placeholder: "Input Icon Link"
             },
             emphasis: {
-              label: "Emphasis"
+              label: "Emphasis",
             },
             pixelRatio: {
               label: "Resolution Scale",
-            }
+            },
+
           },
           restore: {
             label: "Restore",
@@ -341,6 +342,9 @@ export default {
             },
             contentToOption: {
               label: "Content To Option"
+            },
+            lang:{
+              label:'Lang'
             },
             backgroundColor: {
               label: "BackgroundColor"
@@ -1221,6 +1225,26 @@ export default {
         },
         opacity: {
           label: "Opacity"
+        },
+        textIconStyle:{
+          textPosition:{
+            label:'Text Position'
+          },
+          textFill:{
+            label:'Text Fill'
+          },
+          textAlign:{
+            label:'Text Align'
+          },
+          textBackgroundColor:{
+            label:'Text BackgroundColor'
+          },
+          textBorderRadius:{
+            label:'Text Border Radius'
+          },
+          textPadding:{
+            label:'Text Padding'
+          }
         }
       },
       axisPointer: {

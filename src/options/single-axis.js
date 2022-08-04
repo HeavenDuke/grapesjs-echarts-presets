@@ -1,4 +1,3 @@
-
 import {DIRECTIONS, FLEX_POSITIONS, SERIES_TYPES} from "@/utils/smallDict";
 import {
   zIndex,
@@ -10,8 +9,8 @@ import {
   splitArea,
   axisPointer,
   position, size
-} from "@/options/shared"
-import ToolTip from "@/options/tooltip"
+} from "@/options/shared";
+import ToolTip from "@/options/tooltip";
 
 export default function (t, multiple = false) {
   return {
@@ -22,7 +21,7 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.axis.show.label"),
       type: "Boolean",
       default: true
-    },  {
+    }, {
       name: "type",
       label: t("grapesjs-echarts-presets.config.axis.type.label"),
       type: "Enum",
@@ -150,5 +149,5 @@ export default function (t, multiple = false) {
       type: "Object",
       children: ToolTip(t).options
     }]
-  }
+  };
 }
