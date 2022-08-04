@@ -31,8 +31,11 @@ function constructTrait(ec_option) {
     },
     onEvent({component}){
       const { options, meta } = this.inputInstance;
+      let overall = JSON.parse(component.get("attributes")["data-ecg-options"] || "{}")
+      overall[meta.name] = options
       let attributes = {}, name = `data-ecg-${meta.name}`
       attributes[name] = JSON.stringify(options)
+      attributes[`${name}-filtered`] = JSON.stringify(extractOptions(overall, meta, options))
       if (component.get("attributes")[name] !== attributes[name]) {
         component.addAttributes(attributes);
         component.clearChart()

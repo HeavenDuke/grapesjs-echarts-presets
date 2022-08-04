@@ -19,8 +19,10 @@ function extract(overall, meta, option) {
   for (let i = 0; i < meta.length; i++) {
     if (!meta[i].valid || meta[i].valid(overall)) {
       if (meta[i].type === "Object") {
-        obj[meta[i].name] = extract(overall, meta[i].children, option[meta[i].name]);
-      } else {
+        if (option[meta[i].name] !== undefined) {
+          obj[meta[i].name] = extract(overall, meta[i].children, option[meta[i].name]);
+        }
+      } else if (option[meta[i].name] !== undefined) {
         obj[meta[i].name] = option[meta[i].name];
       }
     }
@@ -29,7 +31,12 @@ function extract(overall, meta, option) {
 }
 
 export function extractOptions(overall, meta, option) {
-  return !meta.multiple ? extract(overall, meta, option) : option.map(item => extract(overall, meta, item));
+  if (!meta.valid || meta.valid(overall)) {
+    return !meta.multiple ? extract(overall, meta.options, option) : option.map(item => extract(overall, meta.options, item));
+  }
+  else {
+    return undefined
+  }
 }
 
 /**

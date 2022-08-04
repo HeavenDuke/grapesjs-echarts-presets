@@ -1,6 +1,7 @@
+import { extractOptions } from "@/options/shared"
 const DEFAULT_GET_OPTIONS = function (options = {}) {
-  return options;
-};
+  return options
+}
 
 export default ({
                   getOptions = DEFAULT_GET_OPTIONS,
@@ -35,7 +36,6 @@ export default ({
           }, 100);
         },
         updateChart(component, value) {
-
           let changedAttr = null
           let attributes = this.get("attributes")
           for(let key in attributes) {
@@ -44,48 +44,17 @@ export default ({
             }
           }
 
-          //基础项
-          const basic = JSON.parse(this.get("attributes")["data-ecg-basic"] || "{}");
-          const tooltip = JSON.parse(this.get("attributes")["data-ecg-tooltip"] || "{}");
-          const title = JSON.parse(this.get("attributes")["data-ecg-title"] || "{}");
-          const series = JSON.parse(this.get("attributes")["data-ecg-series"] || "{}");
-          const toolbox = JSON.parse(this.get("attributes")["data-ecg-toolbox"] || "{}");
-          const legend = JSON.parse(this.get("attributes")["data-ecg-legend"] || "{}");
-          const theme = this.get("attributes")["data-ecg-theme"] || null;
+          let options = {}
+          for(let i = 0; i < this.attributes.traits.models.length; i++) {
+            let trait = this.attributes.traits.models[i]
+            let name = trait.attributes.type
+            let option_name = name.match(/echarts-(.*)-trait/)[1]
+            options[option_name] = JSON.parse(this.get("attributes")[`data-ecg-${option_name}-filtered`] || "{}")
+          }
 
-          const dataset = JSON.parse(this.get("attributes")["data-ecg-dataset"] || "{}");
-          const singleAxis = JSON.parse(this.get("attributes")["data-ecg-single-axis"] || "{}");
-          const grid = JSON.parse(this.get("attributes")["data-ecg-grid"] || "{}");
-          const xAxis = JSON.parse(this.get("attributes")["data-ecg-x-axis"] || "{}");
-          const yAxis = JSON.parse(this.get("attributes")["data-ecg-y-axis"] || "{}");
-          const polar = JSON.parse(this.get("attributes")["data-ecg-polar"] || "{}");
-          const radiusAxis = JSON.parse(this.get("attributes")["data-ecg-radius-axis"] || "{}");
-          const angleAxis = JSON.parse(this.get("attributes")["data-ecg-angle-axis"] || "{}");
-          const radar = JSON.parse(this.get("attributes")["data-ecg-radar"] || "{}");
-          const parallel = JSON.parse(this.get("attributes")["data-ecg-parallel"] || "{}");
-          const parallelAxis = JSON.parse(this.get("attributes")["data-ecg-parallel-axis"] || "{}");
+          const option = this.getOptions(options);
 
-          const option = this.getOptions({
-            basic,
-            title,
-            legend,
-            grid,
-            xAxis,
-            yAxis,
-            polar,
-            radiusAxis,
-            angleAxis,
-            radar,
-            tooltip,
-            toolbox,
-            parallel,
-            parallelAxis,
-            singleAxis,
-            dataset,
-            series,
-          });
-
-          this.renderChart(option, theme);
+          this.renderChart(option);
           if (changedAttr) {
             this.syncTraits(changedAttr, option)
           }
@@ -105,9 +74,9 @@ export default ({
             catch (err) {}
           }
         },
-        renderChart(options, theme) {
+        renderChart(options) {
           if (options) {
-            const chart = editor.echarts.init(this.view.el, theme, {
+            const chart = editor.echarts.init(this.view.el, {
               renderer: "canvas",
             });
             chart.setOption(options);
