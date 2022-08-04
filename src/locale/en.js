@@ -737,6 +737,63 @@ export default {
           placeholder: "Specify the shadow blur size"
         },
       },
+      geo: {
+        label: "Geo",
+        show: {
+          label: "Show"
+        },
+        map: {
+          label: "Map"
+        },
+        roam: {
+          label: "Roam"
+        },
+        center: {
+          label: "Center"
+        },
+        aspectScale: {
+          label: "Aspect Scale"
+        },
+        zoom: {
+          label: "zoom"
+        },
+        scaleLimit: {
+          label: "Scale Limit",
+          max: {
+            label: "Maximum"
+          },
+          min: {
+            label: "Minimum"
+          }
+        },
+        selectedMode: {
+          label: "Select Mode"
+        },
+        itemStyle: {
+          label: "Item Style"
+        },
+        emphasis: {
+          label: "Emphasis Style"
+        },
+        select: {
+          label: "Select Style"
+        },
+        blur: {
+          label: "Blur Style"
+        },
+        layoutCenter: {
+          label: "Layout Center"
+        },
+        layoutSize: {
+          label: "Layout Size"
+        },
+        silent: {
+          label: "Silent Mode"
+        },
+        tooltip: {
+          label: "Tooltip"
+        }
+      },
       title: {
         label: "Title",
         show: {
@@ -1260,7 +1317,6 @@ export default {
           label: "Coordinate System"
         }
       }
-
     }
   },
 };

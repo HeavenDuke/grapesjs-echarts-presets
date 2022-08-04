@@ -170,6 +170,9 @@ export default ({
               type: "echarts-radar-trait"
             },
             {
+              type: "echarts-geo-trait"
+            },
+            {
               type: "echarts-series-trait",
             }
           ],
