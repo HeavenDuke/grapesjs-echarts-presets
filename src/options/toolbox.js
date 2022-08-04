@@ -72,7 +72,7 @@ export default function (t, multiple = false) {
       name: "iconStyle",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-      children: iconStyle(t, {color: "", Bcolor: "#666666", Bwidth: 1})
+      children: iconStyle(t, {color: "none", Bcolor: "#666666", Bwidth: 1})
     }, {
       name: "emphasis",
       type: "Object",
@@ -87,7 +87,7 @@ export default function (t, multiple = false) {
       name: "tooltip",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.tooltip.label"),
-      children: tooltip(t).options
+      children: tooltip(t,false,false).options
     }]
   };
 }

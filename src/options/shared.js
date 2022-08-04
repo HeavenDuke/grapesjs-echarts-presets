@@ -384,7 +384,7 @@ export function feature(t) {
         name: "iconStyle",
         type: "Object",
         label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-        children: [...iconStyle(t), ...textIconStyle(t)]
+        children: [...iconStyle(t,{Bwidth:1}), ...textIconStyle(t)]
       }]
     }, {
       name: "pixelRatio",
@@ -422,7 +422,7 @@ export function feature(t) {
         name: "iconStyle",
         type: "Object",
         label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-        children: [...iconStyle(t), ...textIconStyle(t)]
+        children: [...iconStyle(t,{Bwidth:1}), ...textIconStyle(t)]
       }]
     }],
     dataView: [{
@@ -454,7 +454,7 @@ export function feature(t) {
         name: "iconStyle",
         type: "Object",
         label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-        children: [...iconStyle(t), ...textIconStyle(t)]
+        children: [...iconStyle(t,{Bwidth:1}), ...textIconStyle(t)]
       }]
     }, {
       name: "readOnly",
@@ -560,7 +560,7 @@ export function feature(t) {
         name: "iconStyle",
         type: "Object",
         label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-        children: [...iconStyle(t), ...textIconStyle(t)]
+        children: [...iconStyle(t,{Bwidth:1}), ...textIconStyle(t)]
       }]
     }, {
       name: "filterMode",
@@ -663,7 +663,7 @@ export function feature(t) {
         name: "iconStyle",
         type: "Object",
         label: t("grapesjs-echarts-presets.config.iconStyle.label"),
-        children: [...iconStyle(t), ...textIconStyle(t)]
+        children: [...iconStyle(t,{Bwidth:1}), ...textIconStyle(t)]
       }, {
         // option
         //  seriesIndex
@@ -986,7 +986,12 @@ export function iconStyle(t, {
   Bjoin = "bevel",
   BmiterLimit = 10
 } = {}) {
-  let obj = {
+  return [{
+    name: "color",
+    label: t("grapesjs-echarts-presets.config.iconStyle.color.label"),
+    type: "Color",
+    default: color
+  }, ...border(t, {
     more: Bmore ,
     color: Bcolor ,
     width: Bwidth ,
@@ -995,13 +1000,7 @@ export function iconStyle(t, {
     cap: Bcap ,
     join: Bjoin ,
     miterLimit: BmiterLimit
-  };
-  return [{
-    name: "color",
-    label: t("grapesjs-echarts-presets.config.iconStyle.color.label"),
-    type: "Color",
-    default: color
-  }, ...border(t, obj), ...shadow(t), {
+  }), ...shadow(t), {
     name: "opacity",
     type: "Number",
     step: 0.1,

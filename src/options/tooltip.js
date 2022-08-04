@@ -2,7 +2,7 @@ import {AXIS, BORDER_TYPE, LINE_CAPS, LINE_JOINS, POINTER_TYPES, TOOLTIP} from "
 import {animation, axisPointer, removeItems, shadow, textStyle} from "@/options/shared";
 import {LINE_TYPES} from "@/utils/dict";
 //finished
-export default function (t, multiple = false) {
+export default function (t, multiple = false,show=true,) {
   let newAxisPointer = removeItems(axisPointer(t), ["snap", "z", "label", "lineStyle", "shadowStyle"]).concat([
     {
       name: "axis",
@@ -82,7 +82,7 @@ export default function (t, multiple = false) {
       name: "show",
       type: "Boolean",
       label: t("grapesjs-echarts-presets.config.tooltip.show.label"),
-      default: true
+      default: show
     }, {
       name: "trigger",
       type: "Enum",
