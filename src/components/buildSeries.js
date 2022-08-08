@@ -1,4 +1,4 @@
-import { extractOptions } from "@/options/shared"
+import {extractOptions, toChangeName} from "@/options/shared";
 const DEFAULT_GET_OPTIONS = function (options = {}) {
   return options
 }
@@ -23,8 +23,8 @@ export default ({
           this.on("change:attributes:data-ecg-dataset", this.updateChart);
           this.on("change:attributes:data-ecg-single-axis", this.updateChart);
           this.on("change:attributes:data-ecg-grid", this.updateChart);
-          this.on("change:attributes:data-ecg-xAxis", this.updateChart);
-          this.on("change:attributes:data-ecg-yAxis", this.updateChart);
+          this.on("change:attributes:data-ecg-x-axis", this.updateChart);
+          this.on("change:attributes:data-ecg-y-axis", this.updateChart);
           this.on("change:attributes:data-ecg-polar", this.updateChart);
           this.on("change:attributes:data-ecg-radius-axis", this.updateChart);
           this.on("change:attributes:data-ecg-angle-axis", this.updateChart);
@@ -43,28 +43,19 @@ export default ({
               changedAttr = key
             }
           }
-          //连字符转换为首字母大写
-          function toUpper(str){
-            return str.toLowerCase().replace(/( |^)[a-z]/g,(L)=>L.toUpperCase());
-          }
+
           let options = {}
           for(let i = 0; i < this.attributes.traits.models.length; i++) {
             let trait = this.attributes.traits.models[i]
             let name = trait.attributes.type
             // console.log(name)
             let option_name = name.match(/echarts-(.*)-trait/)[1]
-            if(option_name.split('-').length>1){
-              let a = option_name.split('-')[0]
-              let b = option_name.split('-')[1]
-              option_name=a+toUpper(b)
-
-            }
-            // console.log(option_name)
-            options[option_name] = JSON.parse(this.get("attributes")[`data-ecg-${option_name}-filtered`] || "{}")
+            let chartName=toChangeName(option_name)
+            options[chartName] = JSON.parse(this.get("attributes")[`data-ecg-${option_name}-filtered`] || "{}")
           }
 
           const option = this.getOptions(options);
-
+// console.log(option)
           this.renderChart(option);
           if (changedAttr) {
             this.syncTraits(changedAttr, option)

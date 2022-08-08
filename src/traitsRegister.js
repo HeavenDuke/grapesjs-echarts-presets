@@ -1,6 +1,6 @@
 import options from "./options"
 import main from "@/vue/index"
-import {extractOptions} from "@/options/shared";
+import {extractOptions, toChangeName, toUpper} from "@/options/shared";
 
 function constructTrait(ec_option) {
   return {
@@ -35,14 +35,18 @@ function constructTrait(ec_option) {
 
       let overall = JSON.parse(component.get("attributes")["data-ecg-options"] || "{}")
       // 把最新的改动刷进去，保留配置面板不涉及的部分
-      // console.log(meta.name,options,overall)
-      Object.assign(overall[meta.name], options)
+
+      let metaName=toChangeName(meta.name)
+      Object.assign(overall[metaName]||{}, options)
+
+      // console.log(111,overall,meta.name,options)
 
       // 存到Attributes里面，-filtered是最终的版本，不带-filtered的用来判断改动
       let attributes = {}, name = `data-ecg-${meta.name}`
       attributes[name] = JSON.stringify(options)
 
       attributes[`${name}-filtered`] = JSON.stringify(extractOptions(overall, meta, options))
+
       if (component.get("attributes")[name] !== attributes[name]) {
         component.addAttributes(attributes);
         component.clearChart()

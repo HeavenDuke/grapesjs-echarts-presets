@@ -15,7 +15,7 @@ import ToolTip from "@/options/tooltip";
 export default function (type = "x") {
   return function (t, multiple) {
     return {
-      name: `${type}Axis`,
+      name: `${type}-axis`,
       label: t(`grapesjs-echarts-presets.dict.group.${type}Axis`),
       multiple,
       // valid (option) {
@@ -36,49 +36,132 @@ export default function (type = "x") {
         label: t("grapesjs-echarts-presets.config.axis.type.label"),
         type: "Enum",
         candidate: SERIES_TYPES,
-        default: type === "x" ? "category" : "value"
+        default: type === "x" ? "category" : "value",
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+
+              return option.xAxis.findIndex(item => item.show&&item.show===true)+1;
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show&&item.show===true);
+            }
+
+        }
       }, {
         name: "inverse",
         label: t("grapesjs-echarts-presets.config.axis.inverse.label"),
         type: "Boolean",
-        default: false
+        default: false,
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show);
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show);
+            }
+
+        }
       }, {
         name: "alignTicks",
         label: t("grapesjs-echarts-presets.config.axis.alignTicks.label"),
         type: "Boolean",
-        default: false
+        default: false,
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show && item.type === ("value" || "log"));
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show && item.type === ("value" || "log"));
+            }
+
+        }
       }, {
         name: "position",
         label: t("grapesjs-echarts-presets.config.axis.position.label"),
         type: "Enum",
         candidate: type === "x" ? BINARY_POSITION_VERTICAL : BINARY_POSITION_HORIZONTAL,
-        default: ""
+        default: "",
+        valid(option) {
+          if (option.xAxis instanceof Array && option.yAxis instanceof Array) {
+            // if(type==='x oreturn {
+            // ption.xAxis.axisLine.onZero && option.xAxis.find(item => item.axisLine.onZero === false) : option.yAxis.axisLine.onZero && option.yAxis.find(item => item.axisLine.onZero === false);
+          }
+        }
       }, {
         name: "offset",
         type: "Number",
         label: t("grapesjs-echarts-presets.config.axis.offset.label"),
-        default: 0
+        default: 0,
+        valid(option) {
+          if (option.xAxis instanceof Array && option.yAxis instanceof Array) {
+            // if(type==='x oreturn {
+            // ption.xAxis.axisLine.onZero && option.xAxis.find(item => item.axisLine.onZero === false) : option.yAxis.axisLine.onZero && option.yAxis.find(item => item.axisLine.onZero === false);
+          }
+        }
       }, {
         name: "name",
         label: t("grapesjs-echarts-presets.config.axis.name.label"),
         type: "String",
-        default: ""
+        default: "",
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show);
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show);
+            }
+
+        }
       }, {
         name: "nameLocation",
         label: t("grapesjs-echarts-presets.config.axis.nameLocation.label"),
         type: "Enum",
         candidate: FLEX_POSITIONS,
-        default: "end"
+        default: "end",
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show);
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show);
+            }
+
+        }
       }, {
         name: "nameTextStyle",
         label: t("grapesjs-echarts-presets.config.axis.nameTextStyle.label"),
         type: "Object",
-        children: [...textStyle(t), ...align(t)]
+        children: [...textStyle(t), ...align(t)],
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show);
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show);
+            }
+
+        }
       }, {
         name: "nameGap",
         label: t("grapesjs-echarts-presets.config.axis.nameGap.label"),
         type: "Number",
-        default: 15
+        default: 15,
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show);
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show);
+            }
+
+        }
       }, {
         name: "nameRotate",
         label: t("grapesjs-echarts-presets.config.axis.nameRotate.label"),
@@ -86,93 +169,304 @@ export default function (type = "x") {
         default: 0,
         min: 0,
         max: 360,
-        step: 1
+        step: 1,
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show);
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show);
+            }
+
+        }
       }, {
         name: "boundaryGap",
         type: "Boolean",
         label: t("grapesjs-echarts-presets.config.axis.boundaryGap.label"),
-        default: true
+        default: true,
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show);
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show);
+            }
+
+        }
       }, {
-        name: "min",
-        type: "Number",
-        label: t("grapesjs-echarts-presets.config.axis.min.label"),
-        default: "dataMin"
-      }, {
-        name: "max",
-        type: "Number",
-        label: t("grapesjs-echarts-presets.config.axis.max.label"),
-        default: "dataMax"
+      //   name: "min",
+      //   type: "Number",
+      //   label: t("grapesjs-echarts-presets.config.axis.min.label"),
+      //   default: "",
+      //   valid(option) {
+      //
+      //       if (type === "x" && option.xAxis instanceof Array) {
+      //         return option.xAxis.find(item => item.show);
+      //       }
+      //       if (type === "y" && option.yAxis instanceof Array) {
+      //         return option.yAxis.find(item => item.show);
+      //       }
+      //
+      //   }
+      // }, {
+      //   name: "max",
+      //   type: "Number",
+      //   label: t("grapesjs-echarts-presets.config.axis.max.label"),
+      //   default: "",
+      //   valid(option) {
+      //
+      //       if (type === "x" && option.xAxis instanceof Array) {
+      //         return option.xAxis.find(item => item.show);
+      //       }
+      //       if (type === "y" && option.yAxis instanceof Array) {
+      //         return option.yAxis.find(item => item.show);
+      //       }
+      //
+      //   }
       }, {
         name: "scale",
         label: t("grapesjs-echarts-presets.config.axis.scale.label"),
         type: "Boolean",
-        default: false
+        default: false,
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show && item.type === "value" );
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show && item.type === "value");
+            }
+
+        }
       }, {
         name: "splitNumber",
         label: t("grapesjs-echarts-presets.config.axis.splitNumber.label"),
         type: "Number",
-        default: 5
-      },{
-      //  minInterval,maxInterval,interval
+        default: 5,
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show && item.type !== "category");
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show && item.type !== "category");
+            }
+
+        }
       }, {
-        name: "logBase",
-        label: t("grapesjs-echarts-presets.config.axis.logBase.label"),
+        name: "minInterval",
         type: "Number",
-        default: 10
+        label: t("grapesjs-echarts-presets.config.axis.minInterval.label"),
+        default: "",
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show && item.type === ("value" || "time"));
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show && item.type === ("value" || "time"));
+            }
+         }
+
       }, {
-        name: "silent",
-        label: t("grapesjs-echarts-presets.config.axis.silent.label"),
-        type: "Boolean",
-        default: false
-      }, {
-        name: "triggerEvent",
-        label: t("grapesjs-echarts-presets.config.axis.triggerEvent.label"),
-        type: "Boolean",
-        default: false
-      }, {
-        name: "axisLine",
-        label: t("grapesjs-echarts-presets.config.axis.axisLine.label"),
-        type: "Object",
-        children: axisLine(t)
-      }, {
-        name: "axisTick",
-        label: t("grapesjs-echarts-presets.config.axis.axisTick.label"),
-        type: "Object",
-        children: axisTick(t, false)
-      }, {
-        name: "minorTick",
-        label: t("grapesjs-echarts-presets.config.axis.minorAxisTick.label"),
-        type: "Object",
-        children: axisTick(t, true, false, 3)
-      }, {
-        name: "axisLabel",
-        label: t("grapesjs-echarts-presets.config.axis.axisLabel.label"),
-        type: "Object",
-        children: axisLabel(t)
-      }, {
-        name: "splitLine",
-        label: t("grapesjs-echarts-presets.config.axis.splitLine.label"),
-        type: "Object",
-        children: splitLine(t, false, true)
-      }, {
-        name: "minorSplitLine",
-        label: t("grapesjs-echarts-presets.config.axis.minorSplitLine.label"),
-        type: "Object",
-        children: splitLine(t, true, false)
-      }, {
-        name: "splitArea",
-        label: t("grapesjs-echarts-presets.config.axis.splitArea.label"),
-        type: "Object",
-        children: splitArea(t, true)
-      },{
-        // name:"data",
-        // type: "Object",
-    }, {
-        name: "axisPointer",
-        label: t("grapesjs-echarts-presets.config.axis.axisPointer.label"),
-        type: "Object",
-        children: axisPointer(t)
-      }, ...zIndex(t, 2, 0)]
+        name: "maxInterval",
+        type: "Number",
+        label: t("grapesjs-echarts-presets.config.axis.maxInterval.label"),
+        default: "",
+        valid(option) {
+
+            if (type === "x" && option.xAxis instanceof Array) {
+              return option.xAxis.find(item => item.show && item.type === ("value" || "time"));
+            }
+            if (type === "y" && option.yAxis instanceof Array) {
+              return option.yAxis.find(item => item.show && item.type === ("value" || "time"));
+            }
+
+        }
+      },
+        //lost interval
+        {
+          name: "logBase",
+          label: t("grapesjs-echarts-presets.config.axis.logBase.label"),
+          type: "Number",
+          default: 10,
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show && item.type === "log");
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show && item.type === "log");
+              }
+
+          }
+        }, {
+          name: "silent",
+          label: t("grapesjs-echarts-presets.config.axis.silent.label"),
+          type: "Boolean",
+          default: false,
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show);
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show);
+              }
+
+          }
+        }, {
+          name: "triggerEvent",
+          label: t("grapesjs-echarts-presets.config.axis.triggerEvent.label"),
+          type: "Boolean",
+          default: false,
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show);
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show);
+              }
+
+          }
+        }, {
+          name: "axisLine",
+          label: t("grapesjs-echarts-presets.config.axis.axisLine.label"),
+          type: "Object",
+          children: axisLine(t),
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show);
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show);
+              }
+
+          }
+        }, {
+          name: "axisTick",
+          label: t("grapesjs-echarts-presets.config.axis.axisTick.label"),
+          type: "Object",
+          children: axisTick(t, false),
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show);
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show);
+              }
+
+          }
+        }, {
+          name: "minorTick",
+          label: t("grapesjs-echarts-presets.config.axis.minorAxisTick.label"),
+          type: "Object",
+          children: axisTick(t, true, false, 3),
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show);
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show);
+              }
+
+          }
+        }, {
+          name: "axisLabel",
+          label: t("grapesjs-echarts-presets.config.axis.axisLabel.label"),
+          type: "Object",
+          children: axisLabel(t),
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show);
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show);
+              }
+
+          }
+        }, {
+          name: "splitLine",
+          label: t("grapesjs-echarts-presets.config.axis.splitLine.label"),
+          type: "Object",
+          children: splitLine(t, false, true),
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show);
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show);
+              }
+
+          }
+        }, {
+          name: "minorSplitLine",
+          label: t("grapesjs-echarts-presets.config.axis.minorSplitLine.label"),
+          type: "Object",
+          children: splitLine(t, true, false),
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show);
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show);
+              }
+
+          }
+        }, {
+          name: "splitArea",
+          label: t("grapesjs-echarts-presets.config.axis.splitArea.label"),
+          type: "Object",
+          children: splitArea(t, true),
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show);
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show);
+              }
+
+          }
+        }, {
+          // name:"data",
+          // type: "Object",
+        }, {
+          name: "axisPointer",
+          label: t("grapesjs-echarts-presets.config.axis.axisPointer.label"),
+          type: "Object",
+          children: axisPointer(t),
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show);
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show);
+              }
+
+          }
+        }, ...(zIndex(t, 2, 0)).map(item => Object.assign(item, {
+          valid(option) {
+
+              if (type === "x" && option.xAxis instanceof Array) {
+                return option.xAxis.find(item => item.show);
+              }
+              if (type === "y" && option.yAxis instanceof Array) {
+                return option.yAxis.find(item => item.show);
+              }
+
+          }
+        }))]
     };
   };
 }

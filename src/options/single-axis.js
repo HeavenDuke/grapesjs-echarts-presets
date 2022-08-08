@@ -14,7 +14,7 @@ import ToolTip from "@/options/tooltip";
 
 export default function (t, multiple = false) {
   return {
-    name: `singleAxis`,
+    name: `single-axis`,
     label: t(`grapesjs-echarts-presets.dict.group.singleAxis`),
     options: [{
       name: "show",

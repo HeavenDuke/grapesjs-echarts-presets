@@ -39,6 +39,20 @@ function extract(overall, meta, option) {
   return obj;
 }
 
+function toUpper(str){
+  return str.toLowerCase().replace(/( |^)[a-z]/g,(L)=>L.toUpperCase());
+}
+export function toChangeName(str){
+  if(str.split('-').length>1){
+    let a = str.split('-')[0]
+    let b = str.split('-')[1]
+    return a+toUpper(b)
+  }else{
+    return str;
+  }
+}
+
+
 export function extractOptions(overall, meta, option) {
   if (!meta.valid || meta.valid(overall)) {
     return !meta.multiple ? extract(overall, meta.options, option) : option.map(item => extract(overall, meta.options, item));
@@ -1041,7 +1055,8 @@ export function axisTick(t, minor = false, show = true, length = 5) {
     name: "show",
     label: t("grapesjs-echarts-presets.config.axis.axisTick.show.label"),
     type: "Boolean",
-    default: show
+    default: show,
+
   }, {
     name: "length",
     type: "Number",

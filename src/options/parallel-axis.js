@@ -15,7 +15,7 @@ import ToolTip from "@/options/tooltip"
 
 export default function (t, multiple = false) {
   return {
-    name: `parallelAxis`,
+    name: `parallel-axis`,
     label: t(`grapesjs-echarts-presets.dict.group.parallelAxis`),
     options: [{
       name: "dim",
