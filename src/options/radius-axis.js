@@ -15,7 +15,7 @@ import ToolTip from "@/options/tooltip"
 
 export default function (t, multiple = false) {
   return {
-    name: `radius-axis`,
+    name: `radiusAxis`,
     label: t(`grapesjs-echarts-presets.dict.group.radiusAxis`),
     options: [{
       name: "type",

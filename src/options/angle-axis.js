@@ -12,7 +12,7 @@ import {
 
 export default function (t, multiple = false) {
   return {
-    name: `angle-axis`,
+    name: `angleAxis`,
     label: t(`grapesjs-echarts-presets.dict.group.angleAxis`),
     options: [{
       name: "type",

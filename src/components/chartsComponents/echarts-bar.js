@@ -12,13 +12,13 @@ export default build({
     const legend = options.legend || {};
     let xAxis = options.xAxis || {};
     let yAxis = options.yAxis || {};
-    let dataset = {
+    let dataset = [{
       source: options.dataset.source || [],
       sourceHeader: options.dataset.sourceHeader || false
-    };
+    }];
     let series = [];
-    if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
-      for (let i = 1; i < dataset.source[0].length; i++) {
+    if (dataset[0].source.length >= 1 && dataset[0].source[0].length >= 2) {
+      for (let i = 1; i < dataset[0].source[0].length; i++) {
         let obj = { ...map,type: "bar"};
         series.push(obj);
       }
@@ -36,5 +36,5 @@ export default build({
       yAxis
     };
   },
-
+multiple:true
 });

@@ -19,7 +19,13 @@ export default function (t, multiple = true) {
       label: t("grapesjs-echarts-presets.config.series.xAxisIndex.label"),
       default: 0,
       valid(option) {
-        return option.series.type === ("pie" || "funnel");
+        if (option.series instanceof Array) {
+
+          return option.series.find(item => item.type  && item.type !== ("pie" || "funnel"))
+        }
+        else {
+          return option.series.type && option.series.type !== ("pie" || "funnel")
+        }
       }
     }, {
       name: "yAxisIndex",
@@ -27,7 +33,12 @@ export default function (t, multiple = true) {
       label: t("grapesjs-echarts-presets.config.series.yAxisIndex.label"),
       default: 0,
       valid(option) {
-        return option.series.type === ("pie" || "funnel");
+        if (option.series instanceof Array) {
+          return option.series.find(item => item.type  && item.type !== ("pie" || "funnel"))
+        }
+        else {
+          return option.series.type && option.series.type !== ("pie" || "funnel")
+        }
       }
     }, {
       name: "polarIndex",
@@ -35,7 +46,12 @@ export default function (t, multiple = true) {
       label: t("grapesjs-echarts-presets.config.series.polarIndex.label"),
       default: 0,
       valid(option) {
-        return option.series.type === ("pie" || "funnel");
+        if (option.series instanceof Array) {
+          return option.series.find(item => item.type  && item.type !== ("pie" || "funnel"))
+        }
+        else {
+          return option.series.type && option.series.type !== ("pie" || "funnel")
+        }
       }
     }, {
       name: "datasetIndex",
@@ -54,9 +70,18 @@ export default function (t, multiple = true) {
       placeholder: t("grapesjs-echarts-presets.config.series.coordinateSystem.placeholder"),
       default: "cartesian2d",
       candidate: ["cartesian2d", "polar"],
-      valid(option) {
-        return option.series.type !== ("pie" || "funnel");
-      }
+      // valid(option) {
+      //
+      //
+      //   if (option.series instanceof Array) {
+      //     // console.log(111)
+      //     console.log(option.series)
+      //     return option.series.find(item => item.type  && item.type !== "pie" || "funnel")
+      //   }
+      //   else {
+      //     return option.series.type && option.series.type !== "pie" || "funnel"
+      //   }
+      // }
     }, {
       name: "colorBy",
       type: "Enum",

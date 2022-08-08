@@ -43,7 +43,7 @@ export default ({
               changedAttr = key
             }
           }
-
+          //连字符转换为首字母大写
           function toUpper(str){
             return str.toLowerCase().replace(/( |^)[a-z]/g,(L)=>L.toUpperCase());
           }
@@ -57,9 +57,9 @@ export default ({
               let a = option_name.split('-')[0]
               let b = option_name.split('-')[1]
               option_name=a+toUpper(b)
-              // console.log(option_name)
-            }
 
+            }
+            // console.log(option_name)
             options[option_name] = JSON.parse(this.get("attributes")[`data-ecg-${option_name}-filtered`] || "{}")
           }
 

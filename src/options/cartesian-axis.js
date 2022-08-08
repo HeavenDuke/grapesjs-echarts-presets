@@ -15,17 +15,17 @@ import ToolTip from "@/options/tooltip";
 export default function (type = "x") {
   return function (t, multiple) {
     return {
-      name: `${type}-axis`,
+      name: `${type}Axis`,
       label: t(`grapesjs-echarts-presets.dict.group.${type}Axis`),
       multiple,
-      valid (option) {
-        if (option.series instanceof Array) {
-          return option.series.find(item => item.coordinateSystem && item.coordinateSystem === "cartesian2d")
-        }
-        else {
-          return option.series.coordinateSystem && option.series.coordinateSystem === "cartesian2d"
-        }
-      },
+      // valid (option) {
+      //   if (option.series instanceof Array) {
+      //     return option.series.find(item => item.coordinateSystem && item.coordinateSystem === "cartesian2d")
+      //   }
+      //   else {
+      //     return option.series.coordinateSystem && option.series.coordinateSystem === "cartesian2d"
+      //   }
+      // },
       options: [{
         name: "show",
         label: t("grapesjs-echarts-presets.config.axis.show.label"),
@@ -165,8 +165,8 @@ export default function (type = "x") {
         type: "Object",
         children: splitArea(t, true)
       },{
-        name:"data",
-        type: "Object",
+        // name:"data",
+        // type: "Object",
     }, {
         name: "axisPointer",
         label: t("grapesjs-echarts-presets.config.axis.axisPointer.label"),
