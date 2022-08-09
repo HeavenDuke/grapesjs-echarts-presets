@@ -961,6 +961,9 @@ export default {
         boundaryGap: {
           label: "Boundary Gap"
         },
+        formatter:{
+          label:'Formatter'
+        },
         min: {
           label: "Minimum"
         },

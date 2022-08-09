@@ -79,6 +79,7 @@ export default ({
             chart.setOption(option);
             this.chart = chart;
           }
+          console.log(option)
           this.addAttributes({"data-ecg-options": JSON.stringify(options)});
         },
         defaults: {

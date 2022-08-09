@@ -1089,7 +1089,7 @@ export function axisTick(t, minor = false, show = true, length = 5) {
     name: "interval",
     type: "Number",
     label: t("grapesjs-echarts-presets.config.axis.axisTick.interval.label"),
-    default: "auto"
+    default: undefined
   }, {
     name: "inside",
     type: "Boolean",

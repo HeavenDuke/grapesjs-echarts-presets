@@ -19,7 +19,7 @@ export default function (t, multiple = true) {
       label: t("grapesjs-echarts-presets.config.series.xAxisIndex.label"),
       default: 0,
       valid(option) {
-        console.log(option)
+        // console.log(option)
         if (option.series instanceof Array) {
 
           return option.series.find(item => item.type  && item.type !== ("pie" || "funnel"))

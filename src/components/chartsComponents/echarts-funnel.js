@@ -16,25 +16,25 @@ export default build({
       // sourceHeader: options.dataset.sourceHeader || false
     };
 
-    map = {
-      dataIndex: map.dataIndex,
-      name: map.name,
-      colorBy:map.colorBy,
-      silent:map.silent,
-      z:map.z,
-      zIndex:map.zIndex,
-      animation: map.animation,
-      animationDelay: map.animationDelay,
-      animationDelayUpdate: map.animationDelayUpdate,
-      animationDuration: map.animationDuration,
-      animationDurationUpdate: map.animationDurationUpdate,
-      animationEasing: map.animationEasing,
-      animationEasingUpdate: map.animationEasingUpdate,
-      animationThreshold: map.animationThreshold,
-    };
+    // map = {
+    //   dataIndex: map.dataIndex,
+    //   name: map.name,
+    //   colorBy:map.colorBy,
+    //   silent:map.silent,
+    //   z:map.z,
+    //   zIndex:map.zIndex,
+    //   animation: map.animation,
+    //   animationDelay: map.animationDelay,
+    //   animationDelayUpdate: map.animationDelayUpdate,
+    //   animationDuration: map.animationDuration,
+    //   animationDurationUpdate: map.animationDurationUpdate,
+    //   animationEasing: map.animationEasing,
+    //   animationEasingUpdate: map.animationEasingUpdate,
+    //   animationThreshold: map.animationThreshold,
+    // };
     const series = [
       {
-        ...map,
+        ...map[0],
         type: "funnel",
         left: "10%",
         top: 60,

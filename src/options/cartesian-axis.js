@@ -171,9 +171,9 @@ export default function (type = "x") {
         }
       }, {
         name: "min",
-        type: "Number",
+        type: "String",
         label: t("grapesjs-echarts-presets.config.axis.min.label"),
-        default: "",
+        default: "dataMin",
         valid(option, module) {
           if (option[module] instanceof Array) {
             return option[module] && option[module].find(item => item.show);
@@ -183,9 +183,9 @@ export default function (type = "x") {
         }
       }, {
         name: "max",
-        type: "Number",
+        type: "String",
         label: t("grapesjs-echarts-presets.config.axis.max.label"),
-        default: "",
+        default: "dataMax",
         valid(option, module) {
           if (option[module] instanceof Array) {
             return option[module] && option[module].find(item => item.show);
