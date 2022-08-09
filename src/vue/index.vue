@@ -29,11 +29,9 @@
     },
     watch: {
       options: {
-        handler(newValue, oldValue) {
+        handler() {
           this.updateOverall()
-          if (md5(newValue) === md5(oldValue)) {
-            this.onChange()
-          }
+          this.onChange()
         },
         deep: true
       }
