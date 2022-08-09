@@ -31,9 +31,6 @@ export default ({
           this.on("change:attributes:data-ecg-radar", this.updateChart);
           this.on("change:attributes:data-ecg-parallel", this.updateChart);
           this.on("change:attributes:data-ecg-parallel-axis", this.updateChart);
-          setTimeout(() => {
-            this.updateChart();
-          }, 100);
         },
         updateChart(component, value) {
           let changedAttr = null
@@ -50,15 +47,12 @@ export default ({
             let name = trait.attributes.type
             // console.log(name)
             let option_name = name.match(/echarts-(.*)-trait/)[1]
-            let chartName=toChangeName(option_name)
-            options[chartName] = JSON.parse(this.get("attributes")[`data-ecg-${option_name}-filtered`] || "{}")
+            options[option_name] = JSON.parse(this.get("attributes")[`data-ecg-${option_name}-filtered`] || "{}")
           }
 
-          const option = this.getOptions(options);
-// console.log(option)
-          this.renderChart(option);
+          this.renderChart(options);
           if (changedAttr) {
-            this.syncTraits(changedAttr, option)
+            this.syncTraits(changedAttr, options)
           }
         },
         getOptions,
@@ -77,14 +71,15 @@ export default ({
           }
         },
         renderChart(options) {
-          if (options) {
+          const option = this.getOptions(options);
+          if (option) {
             const chart = editor.echarts.init(this.view.el, {
               renderer: "canvas",
             });
-            chart.setOption(options);
-            this.addAttributes({"data-ecg-options": JSON.stringify(options)});
+            chart.setOption(option);
             this.chart = chart;
           }
+          this.addAttributes({"data-ecg-options": JSON.stringify(options)});
         },
         defaults: {
           // Default props

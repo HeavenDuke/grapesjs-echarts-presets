@@ -23,15 +23,24 @@ export function constructOptions(meta) {
   return obj;
 }
 
-function extract(overall, meta, option) {
+function extract(overall, meta, option, module) {
   let obj = {};
   for (let i = 0; i < meta.length; i++) {
-    if (!meta[i].valid || meta[i].valid(overall)) {
+    // if (['x-axis', 'y-axis'].includes(module)) {
+    //   if (meta[i].valid) {
+    //     console.log(meta[i].name, !!meta[i].valid(overall, module))
+    //   }
+    //   else {
+    //     console.log(meta[i].name)
+    //   }
+    // }
+    if (!meta[i].valid || meta[i].valid(overall, module)) {
       if (meta[i].type === "Object") {
         if (option[meta[i].name] !== undefined) {
-          obj[meta[i].name] = extract(overall, meta[i].children, option[meta[i].name]);
+          obj[meta[i].name] = extract(overall, meta[i].children, option[meta[i].name], module);
         }
-      } else if (option[meta[i].name] !== undefined) {
+      }
+      else if (option[meta[i].name] !== undefined) {
         obj[meta[i].name] = option[meta[i].name];
       }
     }
@@ -54,8 +63,11 @@ export function toChangeName(str){
 
 
 export function extractOptions(overall, meta, option) {
+  // if (meta.name === 'x-axis') {
+  //   console.log(overall, meta, option)
+  // }
   if (!meta.valid || meta.valid(overall)) {
-    return !meta.multiple ? extract(overall, meta.options, option) : option.map(item => extract(overall, meta.options, item));
+    return !meta.multiple ? extract(overall, meta.options, option, meta.name) : option.map(item => extract(overall, meta.options, item, meta.name));
   }
   else {
     return undefined

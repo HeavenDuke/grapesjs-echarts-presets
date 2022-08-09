@@ -106,7 +106,7 @@ export default function (t, multiple = false) {
       name: "symbolRotate",
       type: "Number",
       label: t("grapesjs-echarts-presets.config.legend.symbolRotate.label"),
-      default: "inherit" ,
+      default: "inherit",
       valid(option) {
         return option.legend && option.legend.show;
       }
@@ -213,10 +213,10 @@ export default function (t, multiple = false) {
         return option.legend && option.legend.show;
       }
     }, ...(shadow(t)).map(item => Object.assign(item, {
-    valid(option) {
-      return option.legend && option.legend.show;
-    }
-  })), {
+      valid(option) {
+        return option.legend && option.legend.show;
+      }
+    })), {
       name: "scrollDataIndex",
       type: "Number",
       label: t("grapesjs-echarts-presets.config.legend.scrollDataIndex.label"),
@@ -325,7 +325,7 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.dict.animation.animationDurationUpdate.label"),
       default: 800,
       valid(option) {
-        return option.legend.animation ;
+        return option.legend.show && option.legend.animation;
       }
     }, {
       name: "emphasis",
@@ -398,7 +398,7 @@ export default function (t, multiple = false) {
         default: [0, 0]
       }, ...align(t), ...textStyle(t, {complex: true})],
       valid(option) {
-        return option.legend.selector
+        return option.legend.selector;
       }
     }, {
       name: "selectorPosition",
@@ -406,7 +406,7 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.legend.selector.label"),
       default: "auto",
       valid(option) {
-        return option.legend.selector
+        return option.legend.selector;
       }
     }, {
       name: "selectorItemGap",
@@ -414,7 +414,7 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.legend.selectorItemGap.label"),
       default: 7,
       valid(option) {
-        return option.legend.selector
+        return option.legend.selector;
       }
     }, {
       name: "selectorButtonGap",
@@ -422,7 +422,7 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.legend.selectorButtonGap.label"),
       default: 10,
       valid(option) {
-        return option.legend.selector
+        return option.legend.selector;
       }
     }
     ]

@@ -12,13 +12,14 @@ export default function (t, multiple = true) {
       label: t("grapesjs-echarts-presets.config.series.type.label"),
       placeholder: t("grapesjs-echarts-presets.config.series.type.placeholder"),
       candidate: SERIES,
-      default: ""
+      default: "bar"
     }, {
       name: "xAxisIndex",
       type: "Number",
       label: t("grapesjs-echarts-presets.config.series.xAxisIndex.label"),
       default: 0,
       valid(option) {
+        console.log(option)
         if (option.series instanceof Array) {
 
           return option.series.find(item => item.type  && item.type !== ("pie" || "funnel"))

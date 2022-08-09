@@ -21,33 +21,65 @@ export default function (t, multiple = false) {
         name: "show",
         type: "Boolean",
         label: t("grapesjs-echarts-presets.config.grid.show.label"),
-        default: false
-      }, ...zIndex(t, 2, 0), ...position(t, 60, "10%", 60, "10%"), ...size(t),
+        default: true,
+
+      }, ...(zIndex(t, 2, 0)).map(item => Object.assign(item, {
+        valid(option) {
+          return option.grid && option.grid.show;
+        }
+      })), ...(position(t, 60, "10%", 60, "10%")).map(item => Object.assign(item, {
+        valid(option) {
+          return option.grid && option.grid.show;
+        }
+      })), ...(size(t)).map(item => Object.assign(item, {
+        valid(option) {
+          return option.grid && option.grid.show;
+        }
+      })),
       {
         name: "containLabel",
         type: "Boolean",
         label: t("grapesjs-echarts-presets.config.grid.containLabel.label"),
-        default: false
+        default: false,
+        valid(option) {
+          return option.grid && option.grid.show;
+        }
       }, {
         name: "backgroundColor",
         type: "Color",
         label: t("grapesjs-echarts-presets.config.grid.backgroundColor.label"),
-        default: ""
+        default: "",
+        valid(option) {
+          return option.grid && option.grid.show;
+        }
       }, {
         name: "borderColor",
         type: "Color",
         label: t("grapesjs-echarts-presets.config.grid.borderColor.label"),
-        default: "#cccccc"
+        default: "#cccccc",
+        valid(option) {
+          return option.grid && option.grid.show;
+        }
       }, {
         name: "borderWidth",
         type: "Number",
         label: t("grapesjs-echarts-presets.config.grid.borderWidth.label"),
-        default: 1
-      }, ...shadow(t), {
+        default: 1,
+        valid(option) {
+          return option.grid && option.grid.show;
+        }
+      }, ...(shadow(t)).map(item => Object.assign(item, {
+        valid(option) {
+          return option.grid && option.grid.show && option.grid.backgroundColor !== "transparent";
+        }
+      })), {
         name: "tooltip",
         type: "Object",
         label: t("grapesjs-echarts-presets.config.tooltip.label"),
-        children: newTooltip
+        children: newTooltip,
+        valid(option) {
+          return option.grid && option.grid.show;
+        }
       }]
   }
     ;

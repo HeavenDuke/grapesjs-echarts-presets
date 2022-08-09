@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="gjs-trt-traits gjs-one-bg gjs-two-color aa">
-      <div v-for="(item,index) in meta" :key="index" v-if="!item.valid || item.valid(overall)">
+      <div v-for="(item,index) in meta" :key="index" v-if="!item.valid || item.valid(overall, module)">
         <ep-list-editor v-if="item.array" :label="item.label" v-model="value[item.name]">
           <template v-slot:default="scope">
             <ep-input v-if="item.type==='String'" v-model="scope.item.value" :placeholder="item.placeholder"></ep-input>
@@ -69,7 +69,8 @@ export default {
     value: {
       type: Object,
     },
-    overall: Object
+    overall: Object,
+    module: String
   },
   components: {
     // ChartSection,

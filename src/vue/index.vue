@@ -1,6 +1,6 @@
 <template>
-    <chart-section :title="meta.label" v-show="!meta.valid || meta.valid(overall)">
-        <recursion-list v-if="!meta.multiple" :overall="overall" :meta="meta.options" v-model="options"/>
+    <chart-section :title="meta.label" v-show="!meta.valid || meta.valid(overall, meta.name)">
+        <recursion-list v-if="!meta.multiple" :module="meta.name" :overall="overall" :meta="meta.options" v-model="options"/>
         <div class="gjs-traits-group" v-else>
             <div class="gjs-traits-group-tabs">
                 <div :class="['gjs-traits-group-tab', { active: index === optionIndex }]" v-for="(option, index) in options" @click="switchOption(index)">
@@ -10,7 +10,7 @@
                 <div class="gjs-traits-group-tab add" @click="addOption">+</div>
 
             </div>
-            <recursion-list :overall="overall" :meta="meta.options" v-model="options[optionIndex]"/>
+            <recursion-list :module="meta.name" :overall="overall" :meta="meta.options" v-model="options[optionIndex]"/>
         </div>
     </chart-section>
 </template>
