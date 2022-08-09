@@ -44,14 +44,11 @@ function constructTrait(ec_option) {
         overall[meta.name] = Object.assign(overall[meta.name], options);
       }
 
-
-
       // 存到Attributes里面，-filtered是最终的版本，不带-filtered的用来判断改动
       let attributes = {}, name = `data-ecg-${meta.name}`;
       attributes[name] = JSON.stringify(options);
 
       attributes[`${name}-filtered`] = JSON.stringify(extractOptions(overall, meta, options));
-
       if (component.get("attributes")[name] !== attributes[name] || component.get("attributes")[`${name}-filtered`] !== attributes[`${name}-filtered`]) {
         component.addAttributes(attributes);
         component.clearChart();

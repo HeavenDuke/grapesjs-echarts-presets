@@ -37,9 +37,9 @@ export default build({
       title,
       toolbox,
       xAxis,
+      yAxis,
       series,
       tooltip,
-      yAxis
     };
   },
 multiple:true

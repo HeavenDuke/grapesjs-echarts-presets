@@ -45,7 +45,6 @@ export default ({
           for(let i = 0; i < this.attributes.traits.models.length; i++) {
             let trait = this.attributes.traits.models[i]
             let name = trait.attributes.type
-            // console.log(name)
             let option_name = name.match(/echarts-(.*)-trait/)[1]
             options[option_name] = JSON.parse(this.get("attributes")[`data-ecg-${option_name}-filtered`] || "{}")
           }
@@ -71,16 +70,18 @@ export default ({
           }
         },
         renderChart(options) {
-          const option = this.getOptions(options);
+          const option = this.getOptions(options)
           if (option) {
-            const chart = editor.echarts.init(this.view.el, {
-              renderer: "canvas",
-            });
-            chart.setOption(option);
-            this.chart = chart;
+            let that = this
+            setTimeout(function () {
+              const chart = editor.echarts.init(that.view.el, {
+                renderer: "canvas",
+              })
+              chart.setOption(option)
+              that.chart = chart
+            }, 10)
           }
-          console.log(option)
-          this.addAttributes({"data-ecg-options": JSON.stringify(options)});
+          this.addAttributes({"data-ecg-options": JSON.stringify(options)})
         },
         defaults: {
           // Default props
