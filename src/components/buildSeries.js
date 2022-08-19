@@ -71,13 +71,17 @@ export default ({
         },
         renderChart(options) {
           const option = this.getOptions(options)
+          this.addAttributes({"data-ecg-options-finalized": JSON.stringify(option)})
           if (option) {
             let that = this
+
             setTimeout(function () {
               const chart = editor.echarts.init(that.view.el, {
                 renderer: "canvas",
               })
+
               chart.setOption(option)
+
               that.chart = chart
             }, 10)
           }
@@ -88,6 +92,53 @@ export default ({
           name: editor.I18n.t(name),
           resizable: true,
           multiple,
+          script: function() {
+            if (!window.$grapesEcharts) {
+              window.$grapesEcharts = {
+                themes: [],
+              };
+            }
+            const options = JSON.parse(this.getAttribute("data-ecg-options-finalized"));
+            const theme = this.getAttribute("data-ecg-theme") || null;
+            const init = () => {
+              try {
+                const instance = echarts.getInstanceByDom(this);
+                if (instance) {
+                  echarts.dispose(instance);
+                }
+                const chart = echarts.init(this, theme);
+                if (options) {
+                  chart.setOption(options);
+                }
+              } catch (e) {
+                console.log(e);
+              }
+            };
+            const themeCheck = () => {
+              if (theme) {
+                if (!window.$grapesEcharts.themes.includes(theme)) {
+                  const script = document.createElement("script");
+                  script.onload = init;
+                  window.$grapesEcharts.themes.push(theme);
+                  script.src = `https://unpkg.com/echarts@4.6.0/theme/${theme}.js`;
+                  document.body.appendChild(script);
+                } else {
+                  init();
+                }
+              } else {
+                init();
+              }
+            };
+            if (typeof echarts === "undefined") {
+              const script = document.createElement("script");
+              script.onload = themeCheck;
+              script.src =
+                "https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.min.js";
+              document.body.appendChild(script);
+            } else {
+              themeCheck();
+            }
+          },
           traits: [
             {
               type: "echarts-basic-trait",
