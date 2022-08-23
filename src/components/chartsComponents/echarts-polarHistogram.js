@@ -6,7 +6,6 @@ export default build({
     const map = options.series || {};
     const basic = options.basic || {};
     const title = options.title || {};
-    const grid = options.grid || {};
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
@@ -32,7 +31,6 @@ export default build({
     angleAxis = {...angleAxis, type: "value"};
     return {
       ...basic,
-      grid,
       title,
       dataset,
       series,

@@ -5,7 +5,6 @@ export default build({
     const map = options.series || [];
     const title = options.title || {};
     const basic=options.basic ||{};
-    const grid = options.grid || {};
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
@@ -15,7 +14,7 @@ export default build({
       // sourceHeader: options.dataset.sourceHeader || false
     };
     let series = [{
-      ...map,
+      ...map[0],
       type: "pie",
       radius:['25%','50%'],
       itemStyle: {
@@ -26,7 +25,6 @@ export default build({
 
     return  {
       ...basic,
-      grid,
       title,
       dataset,
       toolbox,

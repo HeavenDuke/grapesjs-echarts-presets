@@ -25,7 +25,7 @@ export default function (t, multiple = false) {
       valid(option) {
         return option.legend && option.legend.show;
       }
-    })), ...(position(t)).map(item => Object.assign(item, {
+    })), ...(position(t,{bottom:'bottom'})).map(item => Object.assign(item, {
       valid(option) {
         return option.legend && option.legend.show;
       }
@@ -152,14 +152,6 @@ export default function (t, multiple = false) {
         return option.legend && option.legend.show;
       }
     }, {
-      name: "selected",
-      type: "Text",
-      label: t("grapesjs-echarts-presets.config.legend.selected.label"),
-      default: "",
-      valid(option) {
-        return option.legend && option.legend.show;
-      }
-    }, {
       name: "textStyle",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.textStyle.label"),
@@ -171,16 +163,18 @@ export default function (t, multiple = false) {
       name: "tooltip",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.tooltip.label"),
-      children: tooltip(t).options,
+      children: tooltip(t,false,false).options,
       valid(option) {
         return option.legend && option.legend.show;
       }
-    }, {
+    },
+      // {
       // name: "icon",
       // type: "Text",
       // label: t("grapesjs-echarts-presets.config.legend.icon.label"),
       // default: ""
-    }, {
+    // },
+      {
       name: "backgroundColor",
       type: "Color",
       label: t("grapesjs-echarts-presets.config.legend.backgroundColor.label"),

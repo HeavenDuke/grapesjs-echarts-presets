@@ -5,7 +5,6 @@ export default build({
   getOptions: (options) => {
     const map = options.series || {};
     const basic = options.basic || {};
-    const grid = options.grid || {};
     const title = options.title || {};
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
@@ -26,7 +25,6 @@ export default build({
 
     return {
       ...basic,
-      grid,
       title,
       dataset,
       toolbox,

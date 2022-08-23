@@ -8,14 +8,14 @@ export default function (t, multiple = false) {
     name: "grid",
     label: t("grapesjs-echarts-presets.dict.group.grid"),
     multiple: false,
-    // valid (option) {
-    //   if (option.series instanceof Array) {
-    //     return option.series.find(item => item.coordinateSystem && item.coordinateSystem === "cartesian2d")
-    //   }
-    //   else {
-    //     return option.series.coordinateSystem && option.series.coordinateSystem === "cartesian2d"
-    //   }
-    // },
+    valid (option) {
+      if (option.series instanceof Array) {
+        return option.series.find(item => item.coordinateSystem && item.coordinateSystem === "cartesian2d")
+      }
+      else {
+        return option.series.coordinateSystem && option.series.coordinateSystem === "cartesian2d"
+      }
+    },
     options: [
       {
         name: "show",

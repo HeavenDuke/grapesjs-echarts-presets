@@ -3,10 +3,9 @@ import build from "../buildSeries";
 export default build({
   name: "grapesjs-echarts.components.rose.name",
   getOptions: (options) => {
-    const map = options.series || {};
+    const map = options.series ||[];
     const title = options.title || {};
     const basic = options.basic || {};
-    const grid = options.grid || {};
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
@@ -15,20 +14,17 @@ export default build({
       source: options.dataset.source || [],
       // sourceHeader: options.dataset.sourceHeader || false
     };
-    const series = [
-
-      {
-        ...map,
+    let series = {
+        ...map[0],
         type: "pie",
-        radius: ["25%", "65%"],
+        radius: ["25%", "60%"],
+      label: {show: true},
         roseType: "area",
+      }
 
-      },
 
-    ];
     return {
       ...basic,
-      grid,
       title,
       dataset,
       toolbox,

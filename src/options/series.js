@@ -64,25 +64,21 @@ export default function (t, multiple = true) {
       type: "String",
       label: t("grapesjs-echarts-presets.config.series.name.label"),
       default: ""
-    }, {
+    },{
       name: "coordinateSystem",
       type: "Enum",
       label: t("grapesjs-echarts-presets.config.series.coordinateSystem.label"),
       placeholder: t("grapesjs-echarts-presets.config.series.coordinateSystem.placeholder"),
       default: "cartesian2d",
       candidate: ["cartesian2d", "polar"],
-      // valid(option) {
-      //
-      //
-      //   if (option.series instanceof Array) {
-      //     // console.log(111)
-      //     console.log(option.series)
-      //     return option.series.find(item => item.type  && item.type !== "pie" || "funnel")
-      //   }
-      //   else {
-      //     return option.series.type && option.series.type !== "pie" || "funnel"
-      //   }
-      // }
+      valid(option) {
+        if (option.series instanceof Array) {
+          return option.series.find(item => item.type  && item.type !== "pie" || "funnel")
+        }
+        else {
+          return option.series.type && option.series.type !== "pie" || "funnel"
+        }
+      }
     }, {
       name: "colorBy",
       type: "Enum",

@@ -10,32 +10,26 @@ export default build({
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
-    let xAxis = options.xAxis || {};
-    let yAxis = options.yAxis || {};
-    let dataset = {
-      source: options.dataset.source || [],
-      sourceHeader: options.dataset.sourceHeader || false
-    };
+    let xAxis = options["x-axis"] || [];
+    let yAxis = options["y-axis"] || [];
+    let data = options.dataset || [];
+    let dataset = [];
     let series = [];
-    if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
-      for (let i = 1; i < dataset.source[0].length; i++) {
-        series.push({...map,
+    if (data instanceof Array) {
+      dataset = [{
+        source: options.dataset[0].source || [],
+        sourceHeader: options.dataset[0].sourceHeader || false
+      }];
+    }
+    if (map.length >= 1) {
+      for (let i = 0; i < map.length; i++) {
+        let obj = {
+          ...map,
           type: "bar", stack: "1", emphasis: {focus: "series"}
-        });
+        };
+        series.push(obj);
       }
     }
-    let x={
-      axisPointer: {
-        show:true
-      }
-    }
-    xAxis={...xAxis,...x}
-    let y={
-      axisPointer: {
-        show:true
-      }
-    }
-    yAxis={...yAxis,...y}
     return {
       ...basic,
       grid,
