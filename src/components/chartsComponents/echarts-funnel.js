@@ -6,7 +6,6 @@ export default build({
     let map = options.series || {};
     const basic = options.basic || {};
     const title = options.title || {};
-    const grid = options.grid || {};
     const legend = options.legend || {};
     let tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
@@ -35,7 +34,6 @@ export default build({
     ];
     return {
       ...basic,
-      grid,
       title,
       dataset,
       legend,

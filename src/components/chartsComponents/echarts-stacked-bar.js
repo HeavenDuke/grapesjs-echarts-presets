@@ -20,6 +20,7 @@ export default build({
         source: options.dataset[0].source || [],
         sourceHeader: options.dataset[0].sourceHeader || false
       }];
+
     }
     if (map.length >= 1) {
       for (let i = 0; i < map.length; i++) {
@@ -43,5 +44,5 @@ export default build({
       yAxis
     };
   },
-
+  multiple: true
 });

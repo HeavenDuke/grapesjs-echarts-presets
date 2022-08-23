@@ -12,20 +12,18 @@ export default function (t, multiple = true) {
       label: t("grapesjs-echarts-presets.config.series.type.label"),
       placeholder: t("grapesjs-echarts-presets.config.series.type.placeholder"),
       candidate: SERIES,
-      default: "bar"
+      default: "custom"
     }, {
       name: "xAxisIndex",
       type: "Number",
       label: t("grapesjs-echarts-presets.config.series.xAxisIndex.label"),
       default: 0,
       valid(option) {
-        // console.log(option)
         if (option.series instanceof Array) {
 
-          return option.series.find(item => item.type  && item.type !== ("pie" || "funnel"))
-        }
-        else {
-          return option.series.type && option.series.type !== ("pie" || "funnel")
+          return option.series.find(item => item.type && item.type !== ("pie" || "funnel"));
+        } else {
+          return option.series.type && option.series.type !== ("pie" || "funnel");
         }
       }
     }, {
@@ -35,10 +33,9 @@ export default function (t, multiple = true) {
       default: 0,
       valid(option) {
         if (option.series instanceof Array) {
-          return option.series.find(item => item.type  && item.type !== ("pie" || "funnel"))
-        }
-        else {
-          return option.series.type && option.series.type !== ("pie" || "funnel")
+          return option.series.find(item => item.type && item.type !== ("pie" || "funnel"));
+        } else {
+          return option.series.type && option.series.type !== ("pie" || "funnel");
         }
       }
     }, {
@@ -48,10 +45,9 @@ export default function (t, multiple = true) {
       default: 0,
       valid(option) {
         if (option.series instanceof Array) {
-          return option.series.find(item => item.type  && item.type !== ("pie" || "funnel"))
-        }
-        else {
-          return option.series.type && option.series.type !== ("pie" || "funnel")
+          return option.series.find(item => item.type && item.type !== ("pie" || "funnel"));
+        } else {
+          return option.series.type && option.series.type !== ("pie" || "funnel");
         }
       }
     }, {
@@ -64,7 +60,7 @@ export default function (t, multiple = true) {
       type: "String",
       label: t("grapesjs-echarts-presets.config.series.name.label"),
       default: ""
-    },{
+    }, {
       name: "coordinateSystem",
       type: "Enum",
       label: t("grapesjs-echarts-presets.config.series.coordinateSystem.label"),
@@ -73,10 +69,9 @@ export default function (t, multiple = true) {
       candidate: ["cartesian2d", "polar"],
       valid(option) {
         if (option.series instanceof Array) {
-          return option.series.find(item => item.type  && item.type !== "pie" || "funnel")
-        }
-        else {
-          return option.series.type && option.series.type !== "pie" || "funnel"
+          return option.series.find(item => item.type && item.type !== ("pie" || "funnel"));
+        } else {
+          return option.series.type && option.series.type !== ("pie" || "funnel");
         }
       }
     }, {

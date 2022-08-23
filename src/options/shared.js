@@ -1318,7 +1318,7 @@ export function axisPointer(t) {
     name: "lineStyle",
     label: t("grapesjs-echarts-presets.config.lineStyle.label"),
     type: "Object",
-    children: lineStyle(t, {color: "#555"})
+    children: lineStyle(t, {color: "#555",width:1})
   }, {
     name: "shadowStyle",
     label: t("grapesjs-echarts-presets.config.axisPointer.shadowStyle.label"),

@@ -194,7 +194,7 @@ export default function (t, multiple = false) {
       name: "borderWidth",
       type: "Number",
       label: t("grapesjs-echarts-presets.dict.border.borderWidth.label"),
-      default: 1,
+      default: 0,
       valid(option) {
         return option.legend && option.legend.show;
       }

@@ -9,8 +9,8 @@ export default build({
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
-    let radiusAxis = options.radiusAxis || {};
-    let angleAxis = options.angleAxis || {};
+    let radiusAxis = options['radius-axis'] || {};
+    let angleAxis = options['angle-axis'] || {};
     let polar = options.polar || {};
     let dataset = {
       source: options.dataset.source || [],

@@ -11,8 +11,8 @@ export default build({
     let tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
-    let xAxis = options.xAxis || {};
-    let yAxis = options.yAxis || {};
+    let xAxis = options["x-axis"] || {};
+    let yAxis = options["y-axis"] || {};
     let dataset = {
       source: options.dataset.source || [],
       sourceHeader: options.dataset.sourceHeader || false
@@ -20,23 +20,10 @@ export default build({
     let series = [];
     if (dataset.source.length >= 1 && dataset.source[0].length >= 2) {
       for (let i = 1; i < dataset.source[0].length; i++) {
-        series.push({...map,type: "line",stack:'1',areaStyle:{},emphasis:{focus:'series'}});
+        series.push({...map, type: "line", stack: "1", areaStyle: {}, emphasis: {focus: "series"}});
       }
     }
 
-    let x={
-      boundaryGap: false,
-      axisPointer:{
-        show:false
-      }
-    }
-    xAxis={...xAxis,...x}
-    let y={
-      axisPointer: {
-        show:false
-      }
-    }
-    yAxis={...yAxis,...y}
     return {
       ...basic,
       grid,
