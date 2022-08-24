@@ -13,7 +13,7 @@ export default function (t, multiple = false) {
       name: "source",
       label: t("grapesjs-echarts-presets.config.dataset.source.label"),
       type: "Table",
-      default: [[1,2],[2,3],[3,4]]
+      default: []
     }, {
       name: "sourceHeader",
       label: t("grapesjs-echarts-presets.config.dataset.sourceHeader.label"),
