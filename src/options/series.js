@@ -20,10 +20,9 @@ export default function (t, multiple = true) {
       default: 0,
       valid(option) {
         if (option.series instanceof Array) {
-
-          return option.series.find(item => item.type && item.type !== ("pie" || "funnel"));
+          return option.series.find(item => item.type && item.type !== "pie" &&item.type !=="funnel");
         } else {
-          return option.series.type && option.series.type !== ("pie" || "funnel");
+          return option.series.type && option.series.type !== "pie" && option.series.type !=="funnel";
         }
       }
     }, {
@@ -33,9 +32,9 @@ export default function (t, multiple = true) {
       default: 0,
       valid(option) {
         if (option.series instanceof Array) {
-          return option.series.find(item => item.type && item.type !== ("pie" || "funnel"));
+          return option.series.find(item => item.type && item.type !== "pie" &&item.type !=="funnel");
         } else {
-          return option.series.type && option.series.type !== ("pie" || "funnel");
+          return option.series.type && option.series.type !== "pie" && option.series.type !=="funnel";
         }
       }
     }, {
@@ -45,9 +44,9 @@ export default function (t, multiple = true) {
       default: 0,
       valid(option) {
         if (option.series instanceof Array) {
-          return option.series.find(item => item.type && item.type !== ("pie" || "funnel"));
+          return option.series.find(item => item.type && item.type !== "pie" &&item.type !=="funnel");
         } else {
-          return option.series.type && option.series.type !== ("pie" || "funnel");
+          return option.series.type && option.series.type !== "pie" && option.series.type !=="funnel";
         }
       }
     }, {
@@ -69,9 +68,9 @@ export default function (t, multiple = true) {
       candidate: ["cartesian2d", "polar"],
       valid(option) {
         if (option.series instanceof Array) {
-          return option.series.find(item => item.type && item.type !== ("pie" || "funnel"));
+          return option.series.find(item => item.type && item.type !== "pie" &&item.type !== "funnel");
         } else {
-          return option.series.type && option.series.type !== ("pie" || "funnel");
+          return option.series.type && option.series.type !== "pie" && option.series.type !== "funnel";
         }
       }
     }, {

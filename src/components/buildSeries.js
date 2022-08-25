@@ -71,6 +71,7 @@ export default ({
         },
         renderChart(options) {
           const option = this.getOptions(options)
+          console.log(option)
           this.addAttributes({"data-ecg-options-finalized": JSON.stringify(option)})
           if (option) {
             let that = this
@@ -150,6 +151,18 @@ export default ({
               type: "echarts-title-trait"
             },
             {
+              type: "echarts-tooltip-trait"
+            },
+            {
+              type: "echarts-toolbox-trait"
+            },
+            {
+              type: "echarts-legend-trait"
+            },
+            {
+              type: "echarts-series-trait",
+            },
+            {
               type: "echarts-single-axis-trait"
             },
             {
@@ -160,15 +173,6 @@ export default ({
             },
             {
               type: "echarts-y-axis-trait"
-            },
-            {
-              type: "echarts-tooltip-trait"
-            },
-            {
-              type: "echarts-toolbox-trait"
-            },
-            {
-              type: "echarts-legend-trait"
             },
             {
               type: "echarts-polar-trait"
@@ -191,9 +195,7 @@ export default ({
             {
               type: "echarts-geo-trait"
             },
-            {
-              type: "echarts-series-trait",
-            }
+
           ],
         },
       },

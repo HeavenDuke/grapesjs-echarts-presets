@@ -14,6 +14,13 @@ export default function (t, multiple = false) {
   return {
     name: `angle-axis`,
     label: t(`grapesjs-echarts-presets.dict.group.angleAxis`),
+    valid(option) {
+      if (option.series instanceof Array) {
+        return option.series.find(item => item.coordinateSystem && item.coordinateSystem === "polar");
+      } else {
+        return option.series.coordinateSystem && option.series.coordinateSystem === "polar";
+      }
+    },
     options: [{
       name: "type",
       label: t("grapesjs-echarts-presets.config.axis.type.label"),

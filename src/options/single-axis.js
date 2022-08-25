@@ -8,11 +8,14 @@ import {
   splitLine,
   splitArea,
   axisPointer,
-  position, size
+  position, size, removeItems
 } from "@/options/shared";
-import ToolTip from "@/options/tooltip";
+
+import tooltip from "@/options/tooltip";
 
 export default function (t, multiple = false) {
+  let newTooltip = removeItems(tooltip(t).options, ["show", "trigger", "axisPointer", "position", "formatter",
+    "valueFormatter", "backgroundColor", "borderColor", "borderWidth", "padding", "textStyle", "extraCssText"]);
   return {
     name: `single-axis`,
     label: t(`grapesjs-echarts-presets.dict.group.singleAxis`),
@@ -147,7 +150,7 @@ export default function (t, multiple = false) {
       name: "tooltip",
       label: t("grapesjs-echarts-presets.config.axis.tooltip.label"),
       type: "Object",
-      children: ToolTip(t).options
+      children: newTooltip
     }]
   };
 }

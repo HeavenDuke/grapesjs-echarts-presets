@@ -717,7 +717,8 @@ export default {
         },
         borderColor: {
           label: "Border Color"
-        }, backgroundColor: {
+        },
+        backgroundColor: {
           label: "BackgroundColor"
         },
         borderWidth: {
@@ -726,12 +727,6 @@ export default {
         },
         containLabel: {
           label: "Contain Label"
-        },
-        zlevel: {
-          label: "Z Level"
-        },
-        z: {
-          label: "Z"
         },
         shadowColor: {
           label: "Shadow Color"
@@ -844,12 +839,6 @@ export default {
         },
         subtextStyle: {
           label: "Subtitle Style",
-          align: {
-            label: "Align"
-          },
-          verticalAlign: {
-            label: "Vertical Align"
-          }
         },
         padding: {
           label: "Padding"
@@ -871,7 +860,10 @@ export default {
         label: "Y Axis"
       },
       radiusAxis: {
-        label: "Radius Axis"
+        label: "Radius Axis",
+        polarIndex:{
+          label:"Polar Index"
+        }
       },
       angleAxis: {
         label: "Angle Axis",

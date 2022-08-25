@@ -36,11 +36,43 @@ export default {
       },
       scatter:{
         name:"散点图"
+      },
+      stackedArea: {
+        name: "堆叠面积图"
+      },
+      stackedBar: {
+        name: "堆叠柱图"
+      },
+      nestedPies: {
+        name: "嵌套饼图"
+      },
+      multipleY: {
+        name: "多y轴图"
+      },
+      custom: {
+        name: "自定义图表"
       }
     },
     dict: {
       group: {
-        title: '标题'
+        title: '标题',
+        basic: "基础配置",
+        singleAxis: "单轴",
+        grid: "直角坐标系",
+        xAxis: "X轴",
+        yAxis: "Y轴",
+        polar: "极坐标系",
+        radiusAxis: "径向轴",
+        angleAxis: "角度轴",
+        radar: "雷达图坐标系",
+        parallel: "平行坐标系",
+        parallelAxis: "平行坐标轴",
+        geo: "地理坐标系组件",
+        tooltip: "提示框",
+        toolbox: "工具栏",
+        legend: "图例",
+        dataset: "数据集",
+        series: "Series"
       },
       position: {
         left: "左",
@@ -54,13 +86,97 @@ export default {
         time: '时间型',
         log: '对数型'
       },
+      size: {
+        width: "宽度",
+        height: "高度"
+      },
       direction: {
         vertical: '垂直',
         horizontal: '水平'
+      },
+      animation: {
+        label: "动画",
+        animationThreshold: {
+          label: "动画开启阈值"
+        },
+        animationDuration: {
+          label: "初始动画时长"
+        },
+        animationDurationUpdate: {
+          label: "数据更新动画时长"
+        },
+        animationEasing: {
+          label: "初始动画缓动效果"
+        },
+        animationEasingUpdate: {
+          label: "数据更新动画缓动效果"
+        },
+        animationDelay: {
+          label: "初始动画延迟"
+        },
+        animationDelayUpdate: {
+          label: "数据更新动画延迟"
+        }
+      },
+      zIndex: {
+        z: {
+          label: "Z"
+        },
+        zlevel: {
+          label: "Z Level"
+        }
+      },
+      shadow: {
+        shadowBlur: {
+          label: "阴影模糊大小"
+        }, shadowColor: {
+          label: "阴影颜色"
+        }, shadowOffsetX: {
+          label: "阴影水平方向偏移距离"
+        }, shadowOffsetY: {
+          label: "阴影垂直方向偏移距离"
+        },
+      },
+      border: {
+        borderColor: {
+          label: "边框颜色"
+        },
+        borderWidth: {
+          label: "边框线宽"
+        },
+        borderType: {
+          label: "边框类型",
+          placeholder: "选择边框类型"
+        },
+        borderRadius: {
+          label: "边框圆角"
+        },
+        borderDashOffset: {
+          label: "边框虚线偏移量"
+        },
+        borderCap: {
+          label: "线段末端结束方式",
+          placeholder: "选择线段末端结束绘制方式"
+        },
+        borderJoin: {
+          label: "线段连接属性",
+          placeholder: "选择两个线段相连部分的链接方式"
+        },
+        borderMiterLimit: {
+          label: "斜接面限制比例"
+        }
+      },
+      align:{
+        label:'文字水平对齐方式',
+        verticalAlign: {
+          label:'文字垂直对齐方式'
+        }
       }
     },
     actions: {
-      edit: "编辑"
+      addItem: "添加",
+      edit: "编辑",
+      init: "初始化"
     },
     dialogs: {
       textStyle: '编辑文本样式',
@@ -80,32 +196,17 @@ export default {
         backgroundColor:{
           label:"背景颜色"
         },
-        animation:{
-          label: "动画",
-
+        axisPointer: {
+          label: "坐标轴指示器"
         },
-        animationThreshold:{
-          label:"动画显示阈值"
-        },
-        animationDuration:{
-          label:"初始动画时长"
-        },
-        animationEasing: {
-          label: "动画缓动效果",
-          placeholder:"选择初始缓动动画"
-        },
-        animationDelay: {
-          label: "初始动画延迟"
-        },
-        animationDurationUpdate: {
-          label: "数据更新动画时长"
-        },
-        animationEasingUpdate: {
-          label: "数据更新动画缓动效果",
-          placeholder:"选择数据更新缓动动画"
-        },
-        animationDelayUpdate: {
-          label: "数据更新动画延迟"
+        stateAnimation: {
+          label: "状态切换动画配置",
+          duration: {
+            label: "状态切换动画时长"
+          },
+          easing: {
+            label: "状态切换动画缓动"
+          },
         },
         blendMode:{
           label:"图形混合模式"
@@ -128,25 +229,24 @@ export default {
         borderColor: {
           label: "边框颜色"
         },
+        backgroundColor: {
+          label: "背景颜色"
+        },
         borderWidth: {
           label: "边框粗细",
-          placeholder: ""
+          placeholder: "指定宽度"
         },
         shadowColor: {
           label: "阴影颜色"
         },
         shadowBlur: {
-          label: "阴影长度"
+          label: "阴影模糊大小",
+          placeholder: "指定阴影模糊大小"
         },
         containLabel: {
           label: "包含刻度标签"
         },
-        zlevel: {
-          label: "Z Level"
-        },
-        z: {
-          label: "Z"
-        }
+
       },
       title: {
         label: "图表标题",
@@ -164,6 +264,12 @@ export default {
         subtext: {
           label: "副标题",
           placeholder: "请输入副标题"
+        },
+        target: {
+          label: "主标题链接窗口打开方式"
+        },
+        subtarget: {
+          label: "副标题链接窗口打开方式"
         },
         sublink: {
           label: "副标题",
@@ -188,7 +294,19 @@ export default {
         },
         subTextStyle: {
           label: "副标题样式"
-        }
+        },
+        padding: {
+          label: "内边距"
+        },
+        triggerEvent: {
+          label: "触发事件"
+        },
+        backgroundColor: {
+          label: "背景颜色"
+        },
+        borderRadius: {
+          label: "边框圆角"
+        },
       },
       xAxis: {
         label: 'X轴'
@@ -200,10 +318,43 @@ export default {
         label: "极坐标系径向轴"
       },
       angleAxis: {
-        label: "极坐标系角度轴"
+        label: "极坐标系角度轴",
+        startAngle: {
+          label: "起始刻度角度"
+        },
+        clockwise: {
+          label: "刻度增长是否顺时针"
+        }
       },
       singleAxis: {
         label: "单坐标轴"
+      },
+      parallelAxis: {
+        label: "平行坐标轴",
+        dim: {
+          label: "维度序号"
+        },
+        realtime: {
+          label: "实时属性视图"
+        },
+        areaSelectStyle: {
+          label: "坐标轴框选设置",
+          width: {
+            label: "宽度"
+          },
+          borderWidth: {
+            label: "边框宽度"
+          },
+          borderColor: {
+            label: "边框颜色"
+          },
+          color: {
+            label: "填充色"
+          },
+          opacity: {
+            label: "透明度"
+          }
+        },
       },
       axis: {
         show: {

@@ -4,16 +4,16 @@ export default build({
   name: "grapesjs-echarts.components.bars.name",
   getOptions: (options) => {
 
-    const map = options.series || [];
-    const title = options.title || {};
-    const basic = options.basic || {};
-    const grid = options.grid || {};
-    const tooltip = options.tooltip || {};
-    const toolbox = options.toolbox || {};
-    const legend = options.legend || {};
-    let xAxis = options["x-axis"] || [];
-    let yAxis = options["y-axis"] || [];
-    let data = options.dataset || [];
+    const map = options.series ;
+    const title = options.title ;
+    const basic = options.basic ;
+    const grid = options.grid ;
+    const tooltip = options.tooltip ;
+    const toolbox = options.toolbox ;
+    const legend = options.legend ;
+    let xAxis = options["x-axis"] ;
+    let yAxis = options["y-axis"] ;
+    let data = options.dataset ;
     let dataset = [];
     let series = [];
     if (data instanceof Array) {

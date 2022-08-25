@@ -9,14 +9,21 @@ import {
   splitLine,
   splitArea,
   axisPointer,
-  actionTrigger
-} from "@/options/shared"
+  actionTrigger, align
+} from "@/options/shared";
 import ToolTip from "@/options/tooltip"
 
 export default function (t, multiple = false) {
   return {
     name: `radius-axis`,
     label: t(`grapesjs-echarts-presets.dict.group.radiusAxis`),
+    valid(option) {
+      if (option.series instanceof Array) {
+        return option.series.find(item => item.coordinateSystem && item.coordinateSystem === "polar");
+      } else {
+        return option.series.coordinateSystem && option.series.coordinateSystem === "polar";
+      }
+    },
     options: [{
       name: "type",
       label: t("grapesjs-echarts-presets.config.axis.type.label"),
@@ -24,6 +31,11 @@ export default function (t, multiple = false) {
       candidate: SERIES_TYPES,
       default: "value"
     }, {
+      name: "polarIndex",
+      label: t("grapesjs-echarts-presets.config.radiusAxis.polarIndex.label"),
+      type: "Number",
+      default: 0
+    },{
       name: "inverse",
       label: t("grapesjs-echarts-presets.config.axis.inverse.label"),
       type: "Boolean",
@@ -43,7 +55,7 @@ export default function (t, multiple = false) {
       name: "nameTextStyle",
       label: t("grapesjs-echarts-presets.config.axis.nameTextStyle.label"),
       type: "Object",
-      children: textStyle(t)
+      children: [...textStyle(t),...align(t)]
     }, {
       name: "nameGap",
       label: t("grapesjs-echarts-presets.config.axis.nameGap.label"),
