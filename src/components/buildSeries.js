@@ -71,7 +71,6 @@ export default ({
         },
         renderChart(options) {
           const option = this.getOptions(options)
-          console.log(option)
           this.addAttributes({"data-ecg-options-finalized": JSON.stringify(option)})
           if (option) {
             let that = this

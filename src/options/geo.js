@@ -26,7 +26,11 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.geo.map.label"),
       default: "",
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       name: "roam",
@@ -34,7 +38,11 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.geo.roam.label"),
       default: true,
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       //  projection
@@ -44,7 +52,11 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.geo.center.label"),
       default: [115.97, 29.71],
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       name: "aspectScale",
@@ -55,7 +67,11 @@ export default function (t, multiple = false) {
       max: 1,
       step: 0.01,
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       //  boundingCoords
@@ -65,7 +81,11 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.geo.zoom.label"),
       default: 1,
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       name: "scaleLimit",
@@ -83,7 +103,11 @@ export default function (t, multiple = false) {
         default: 1
       }],
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       //  nameMap,nameProperty
@@ -93,7 +117,11 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.geo.selectedMode.label"),
       default: false,
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       name: "label",
@@ -101,7 +129,11 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.geo.label.label"),
       children: [],
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       name: "itemStyle",
@@ -109,25 +141,41 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.geo.itemStyle.label"),
       children: itemStyle(t),
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       //  emphasis,select,blur
     }, ...(zIndex(t, 2, 0)).map(item => Object.assign(item, {
-    valid(option) {
-      return option.geo && option.geo.show;
-    }
+      valid(option) {
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
+      }
   })), ...(position(t)).map(item => Object.assign(item, {
-    valid(option) {
-      return option.geo && option.geo.show;
-    }
+      valid(option) {
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
+      }
   })), {
       name: "layoutCenter",
       type: "Size",
       label: t("grapesjs-echarts-presets.config.geo.layoutCenter.label"),
       default: [115.97, 29.71],
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       name: "layoutSize",
@@ -137,7 +185,11 @@ export default function (t, multiple = false) {
       step: 0.1,
       default: 100,
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       name: "silent",
@@ -145,7 +197,11 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.geo.silent.label"),
       default: false,
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }, {
       name: "tooltip",
@@ -153,7 +209,11 @@ export default function (t, multiple = false) {
       label: t("grapesjs-echarts-presets.config.geo.tooltip.label"),
       children: newTooltip,
       valid(option) {
-        return option.geo && option.geo.show;
+        if (option.geo instanceof Array) {
+          return option.geo && option.geo.find(item => item.show );
+        } else {
+          return option.geo && option.geo.show ;
+        }
       }
     }]
   };
