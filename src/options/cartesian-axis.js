@@ -241,8 +241,19 @@ export default function (type = "x") {
             return option[module] && option[module].show && (option[module].type === "value" || option[module].type === "time");
           }
         }
+      }, {
+        name: "interval",
+        label: t("grapesjs-echarts-presets.config.axis.interval.label"),
+        type: "Number",
+        default: undefined,
+        valid(option, module) {
+          if (option[module] instanceof Array) {
+            return option[module] && option[module].find(item => item.show && item.type !== "category");
+          } else {
+            return option[module] && option[module].show && option[module].type !== "category";
+          }
+        }
       },
-        //lost interval
         {
           name: "logBase",
           label: t("grapesjs-echarts-presets.config.axis.logBase.label"),
