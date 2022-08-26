@@ -48,7 +48,7 @@ export default function (t, multiple = false) {
         name: "backgroundColor",
         type: "Color",
         label: t("grapesjs-echarts-presets.config.grid.backgroundColor.label"),
-        default: "",
+        default: "none",
         valid(option) {
           return option.grid && option.grid.show;
         }

@@ -178,7 +178,7 @@ export default function (t, multiple = false) {
         name: "backgroundColor",
         type: "Color",
         label: t("grapesjs-echarts-presets.config.legend.backgroundColor.label"),
-        default: "none",
+        default: undefined,
         valid(option) {
           return option.legend && option.legend.show;
         }
