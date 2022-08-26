@@ -1,13 +1,14 @@
 import {extractOptions, toChangeName} from "@/options/shared";
+
 const DEFAULT_GET_OPTIONS = function (options = {}) {
-  return options
-}
+  return options;
+};
 
 export default ({
-                  getOptions = DEFAULT_GET_OPTIONS,
-                  name = "grapesjs-echarts.components.MY_COMPONENT.name",
-                  multiple = false
-                }) => {
+  getOptions = DEFAULT_GET_OPTIONS,
+  name = "grapesjs-echarts.components.MY_COMPONENT.name",
+  multiple = false
+}) => {
   return function (editor) {
     return {
       extend: "default",
@@ -33,25 +34,25 @@ export default ({
           this.on("change:attributes:data-ecg-parallel-axis", this.updateChart);
         },
         updateChart(component, value) {
-          let changedAttr = null
-          let attributes = this.get("attributes")
-          for(let key in attributes) {
+          let changedAttr = null;
+          let attributes = this.get("attributes");
+          for (let key in attributes) {
             if (attributes[key] === value) {
-              changedAttr = key
+              changedAttr = key;
             }
           }
 
-          let options = {}
-          for(let i = 0; i < this.attributes.traits.models.length; i++) {
-            let trait = this.attributes.traits.models[i]
-            let name = trait.attributes.type
-            let option_name = name.match(/echarts-(.*)-trait/)[1]
-            options[option_name] = JSON.parse(this.get("attributes")[`data-ecg-${option_name}-filtered`] || "{}")
+          let options = {};
+          for (let i = 0; i < this.attributes.traits.models.length; i++) {
+            let trait = this.attributes.traits.models[i];
+            let name = trait.attributes.type;
+            let option_name = name.match(/echarts-(.*)-trait/)[1];
+            options[option_name] = JSON.parse(this.get("attributes")[`data-ecg-${option_name}-filtered`] || "{}");
           }
 
           this.renderChart(options);
           if (changedAttr) {
-            this.syncTraits(changedAttr, options)
+            this.syncTraits(changedAttr, options);
           }
         },
         getOptions,
@@ -60,39 +61,39 @@ export default ({
             editor.echarts.dispose(this.chart);
           }
         },
-        syncTraits (source) {
-          for(let i = 0; i < this.attributes.traits.models.length; i++) {
+        syncTraits(source) {
+          for (let i = 0; i < this.attributes.traits.models.length; i++) {
             try {
-              let trait = this.attributes.traits.models[i]
-              trait.view.onUpdate({ component: this })
+              let trait = this.attributes.traits.models[i];
+              trait.view.onUpdate({component: this});
+            } catch (err) {
             }
-            catch (err) {}
           }
         },
         renderChart(options) {
-          const option = this.getOptions(options)
-          this.addAttributes({"data-ecg-options-finalized": JSON.stringify(option)})
+          const option = this.getOptions(options);
+          this.addAttributes({"data-ecg-options-finalized": JSON.stringify(option)});
           if (option) {
-            let that = this
+            let that = this;
 
             setTimeout(function () {
               const chart = editor.echarts.init(that.view.el, {
                 renderer: "canvas",
-              })
+              });
 
-              chart.setOption(option)
+              chart.setOption(option);
 
-              that.chart = chart
-            }, 10)
+              that.chart = chart;
+            }, 10);
           }
-          this.addAttributes({"data-ecg-options": JSON.stringify(options)})
+          this.addAttributes({"data-ecg-options": JSON.stringify(options)});
         },
         defaults: {
           // Default props
           name: editor.I18n.t(name),
           resizable: true,
           multiple,
-          script: function() {
+          script: function () {
             if (!window.$grapesEcharts) {
               window.$grapesEcharts = {
                 themes: [],
@@ -141,6 +142,9 @@ export default ({
           },
           traits: [
             {
+              type: "echarts-series-trait",
+            },
+            {
               type: "echarts-basic-trait",
             },
             {
@@ -158,9 +162,7 @@ export default ({
             {
               type: "echarts-legend-trait"
             },
-            {
-              type: "echarts-series-trait",
-            },
+
             {
               type: "echarts-single-axis-trait"
             },

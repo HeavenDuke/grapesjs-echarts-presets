@@ -19,51 +19,58 @@ export default function (t, multiple = false) {
   return {
     name: `single-axis`,
     label: t(`grapesjs-echarts-presets.dict.group.singleAxis`),
-    options: [ {
+    valid(option) {
+      if (option.series instanceof Array) {
+        return option.series.find(item => item.coordinateSystem && item.coordinateSystem === "singleAxis" && item.type === "scatter");
+      } else {
+        return option.series.coordinateSystem && option.series.coordinateSystem === "singleAxis" && option.series.type === "scatter";
+      }
+    },
+    options: [{
       name: "type",
       label: t("grapesjs-echarts-presets.config.axis.type.label"),
       type: "Enum",
       candidate: SERIES_TYPES,
       default: "value",
-      valid(option,module){
-        return option[module]
+      valid(option, module) {
+        return option[module];
       }
     }, {
       name: "inverse",
       label: t("grapesjs-echarts-presets.config.axis.inverse.label"),
       type: "Boolean",
       default: false,
-      valid(option,module){
-        return option[module]
+      valid(option, module) {
+        return option[module];
       }
     }, ...(position(t)).map(item => Object.assign(item, {
-    valid(option, module) {
-      return option[module];
-    }
-  })), ...(size(t)).map(item => Object.assign(item, {
-    valid(option, module) {
-      return option[module];
-    }
-  })), ...(zIndex(t, 2, 0)).map(item => Object.assign(item, {
-    valid(option, module) {
-      return option[module];
-    }
-  })), {
+      valid(option, module) {
+        return option[module];
+      }
+    })), ...(size(t)).map(item => Object.assign(item, {
+      valid(option, module) {
+        return option[module];
+      }
+    })), ...(zIndex(t, 2, 0)).map(item => Object.assign(item, {
+      valid(option, module) {
+        return option[module];
+      }
+    })), {
       name: "orient",
       label: t("grapesjs-echarts-presets.config.axis.orient.label"),
       type: "Enum",
       candidate: DIRECTIONS,
       default: "",
-      valid(option,module){
-        return option[module]
+      valid(option, module) {
+        return option[module];
       }
     }, {
       name: "name",
       label: t("grapesjs-echarts-presets.config.axis.name.label"),
       type: "String",
       default: "",
-      valid(option,module){
-        return option[module]
+      valid(option, module) {
+        return option[module];
       }
     }, {
       name: "nameLocation",
@@ -71,21 +78,21 @@ export default function (t, multiple = false) {
       type: "Enum",
       candidate: FLEX_POSITIONS,
       default: "",
-      valid(option,module){
-        return option[module]
+      valid(option, module) {
+        return option[module];
       }
     }, {
       name: "nameTextStyle",
       label: t("grapesjs-echarts-presets.config.axis.nameTextStyle.label"),
       type: "Object",
-      children: [...textStyle(t),...align(t)]
+      children: [...textStyle(t), ...align(t)]
     }, {
       name: "nameGap",
       label: t("grapesjs-echarts-presets.config.axis.nameGap.label"),
       type: "Number",
       default: 15,
-      valid(option,module){
-        return option[module]
+      valid(option, module) {
+        return option[module];
       }
     }, {
       name: "nameRotate",
@@ -95,8 +102,8 @@ export default function (t, multiple = false) {
       min: 0,
       max: 360,
       step: 1,
-      valid(option,module){
-        return option[module]
+      valid(option, module) {
+        return option[module];
       }
     }, {
       name: "scale",
@@ -112,8 +119,8 @@ export default function (t, multiple = false) {
       type: "Size",
       useUnit: true,
       default: ["10%", "10%"],
-      valid(option,module){
-        return option[module]
+      valid(option, module) {
+        return option[module];
       }
     }, {
       name: "splitNumber",

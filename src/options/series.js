@@ -12,7 +12,7 @@ export default function (t, multiple = true) {
       label: t("grapesjs-echarts-presets.config.series.type.label"),
       placeholder: t("grapesjs-echarts-presets.config.series.type.placeholder"),
       candidate: SERIES,
-      default: "custom"
+      default: undefined
     }, {
       name: "xAxisIndex",
       type: "Number",
@@ -65,7 +65,7 @@ export default function (t, multiple = true) {
       label: t("grapesjs-echarts-presets.config.series.coordinateSystem.label"),
       placeholder: t("grapesjs-echarts-presets.config.series.coordinateSystem.placeholder"),
       default: "cartesian2d",
-      candidate: ["cartesian2d", "polar"],
+      candidate: ["cartesian2d", "polar","singleAxis"],
       valid(option) {
         if (option.series instanceof Array) {
           return option.series.find(item => item.type && item.type !== "pie" &&item.type !== "funnel");

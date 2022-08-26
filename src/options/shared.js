@@ -10,7 +10,7 @@ import {
   POSITION
 } from "@/utils/smallDict";
 
-//function for translate data
+//function for translate data json数据翻译成echarts的可读数据
 export function constructOptions(meta) {
   let obj = {};
   for (let i = 0; i < meta.length; i++) {
@@ -47,11 +47,12 @@ function extract(overall, meta, option, module) {
   return obj;
 }
 
-function toUpper(str) {
-  return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
-}
 
+//单个连字符转换为大驼峰
 export function toChangeName(str) {
+  function toUpper(str) {
+    return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
+  }
   if (str.split("-").length > 1) {
     let a = str.split("-")[0];
     let b = str.split("-")[1];
@@ -79,6 +80,7 @@ export function extractOptions(overall, meta, option) {
  * @param names | type: Array<String> or String;
  * @returns {*}
  */
+//提炼meta数据中的某些数据
 export function removeItems(options, names) {
   if (names instanceof Array) {
     let nameMap = names.reduce((result, name) => {

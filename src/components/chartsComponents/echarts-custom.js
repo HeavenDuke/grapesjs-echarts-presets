@@ -1,46 +1,21 @@
 import build from "../buildSeries";
+import {toChangeName} from "@/options/shared";
 
 export default build({
   name: "grapesjs-echarts.components.custom.name",
   getOptions: (options) => {
-    const series = options.series || null;
-    const basic = options.basic || null;
-    const title = options.title || null;
-    let dataset = options.dataset || null;
-    const grid = options.grid || null;
-    const tooltip = options.tooltip || null;
-    const toolbox = options.toolbox || null;
-    const legend = options.legend || null;
-    let xAxis = options["x-axis"] || null;
-    let yAxis = options["y-axis"] || null;
-    let polar = options.polar || null;
-    let angleAxis = options["angle-axis"] || null;
-    let radiusAxis = options["radius-axis"] || null;
-    let parallel = options.parallel || null;
-    let parallelAxis = options["parallel-axis"] || null;
-    let singleAxis = options["single-axis"] || null;
-    let geo = options.geo || null;
-
-
-    return {
-      ...basic,
-      grid,
-      polar,
-      angleAxis,
-      radiusAxis,
-      parallel,
-      parallelAxis,
-      singleAxis,
-      title,
-      dataset,
-      series,
-      legend,
-      toolbox,
-      tooltip,
-      xAxis,
-      yAxis,
-    };
-
+    let basic = options.basic || {};
+    let result = {...basic};
+    for (let attribute in options) {
+      if (JSON.stringify(options[attribute]) !== '{}' &&attribute!=='basic') {
+        let name=attribute
+        if(name.indexOf('-')){
+          name=toChangeName(name)
+        }
+        result[`${name}`] = options[attribute];
+      }
+    }
+    return result;
   },
   multiple: true
 });
