@@ -352,6 +352,9 @@ export default {
             textareaColor: {
               label: "Textarea Color"
             },
+            textareaBorderColor:{
+              label:"Textarea Border Color"
+            },
             textColor: {
               label: "Text Color"
             },
@@ -737,7 +740,9 @@ export default {
         },
       },
       geo: {
-        label: "Geo",
+        label:{
+          label:"Label"
+        },
         show: {
           label: "Show"
         },
@@ -1059,6 +1064,9 @@ export default {
           },
           interval: {
             label: "Interval"
+          },
+          formatter:{
+            label:'Formatter'
           },
           inside: {
             label: "Inside"

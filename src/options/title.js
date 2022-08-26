@@ -133,7 +133,7 @@ export default function (t, multiple = false) {
           return option.title && option.title.show;
         }
       })),
-      ...position(t).map(item => Object.assign(item, {
+      ...(position(t)).map(item => Object.assign(item, {
         valid(option) {
           return option.title && option.title.show;
         }
@@ -172,7 +172,7 @@ export default function (t, multiple = false) {
           return option.title && option.title.show;
         }
       },
-      ...shadow(t).map(item => Object.assign(item, {
+      ...(shadow(t)).map(item => Object.assign(item, {
         valid(option) {
           return option.title && option.title.show;
         }

@@ -208,7 +208,7 @@ export default function (t, multiple = false) {
       }
     }, {
       name: "tooltip",
-      label: t("grapesjs-echarts-presets.config.axis.tooltip.label"),
+      label: t("grapesjs-echarts-presets.config.tooltip.label"),
       type: "Object",
       children: newTooltip,
       valid(option, module) {

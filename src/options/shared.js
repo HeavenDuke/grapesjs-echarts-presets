@@ -53,6 +53,7 @@ export function toChangeName(str) {
   function toUpper(str) {
     return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
   }
+
   if (str.split("-").length > 1) {
     let a = str.split("-")[0];
     let b = str.split("-")[1];
@@ -317,7 +318,7 @@ export function align(t) {
   }, {
     name: "verticalAlign",
     type: "Enum",
-    label: t("grapesjs-echarts-presets.dict.verticalAlign.label"),
+    label: t("grapesjs-echarts-presets.dict.align.verticalAlign.label"),
     placeholder: t("grapesjs-echarts-presets.dict.verticalAlign.placeholder"),
     candidate: ["top", "middle", "bottom"],
     default: ""
@@ -805,7 +806,7 @@ export function textStyle(t, {
   color = "#fff",
   fontWeight = "normal",
   fontSize = 12,
-  padding = [0, 0],
+  padding = [0, 0, 0, 0],
   Sblur = 0,
   Scolor = "rgba(0, 0, 0, 0)",
   complex = false
@@ -1157,7 +1158,7 @@ export function axisLabel(t) {
     label: t("grapesjs-echarts-presets.config.axis.axisLabel.hideOverlap.label"),
     default: false
   }, ...align(t)
-    , ...textStyle(t, {complex: true,color:"#000"})
+    , ...textStyle(t, {complex: true, color: "#000"})
   ];
 }
 
@@ -1320,7 +1321,7 @@ export function axisPointer(t) {
     name: "lineStyle",
     label: t("grapesjs-echarts-presets.config.lineStyle.label"),
     type: "Object",
-    children: lineStyle(t, {color: "#555",width:1})
+    children: lineStyle(t, {color: "#555", width: 1})
   }, {
     name: "shadowStyle",
     label: t("grapesjs-echarts-presets.config.axisPointer.shadowStyle.label"),

@@ -322,41 +322,6 @@ export default function (t, multiple = false) {
           return option.legend.show && option.legend.animation && option.legend.type === "scroll";
         }
       }, {
-        name: "emphasis",
-        type: "Object",
-        label: t("grapesjs-echarts-presets.config.legend.emphasis.label"),
-        children: [{
-          name: "selectorLabel",
-          label: t("grapesjs-echarts-presets.config.legend.emphasis.selectorLabel.label"),
-          type: "Object",
-          children: [{
-            name: "show",
-            type: "Boolean",
-            label: t("grapesjs-echarts-presets.config.legend.selector.show"),
-            default: true
-          }, {
-            name: "distance",
-            type: "Number",
-            label: t("grapesjs-echarts-presets.config.legend.selector.distance"),
-            default: 5
-          }, {
-            name: "rotate",
-            type: "Number",
-            label: t("grapesjs-echarts-presets.config.legend.selector.rotate"),
-            min: -90,
-            max: 90,
-            default: 0
-          }, {
-            name: "offset",
-            type: "Size",
-            label: t("grapesjs-echarts-presets.config.legend.selector.offset"),
-            default: [0, 0]
-          }, ...align(t), ...textStyle(t, {complex: true})]
-        }],
-        valid(option) {
-          return option.legend && option.legend.show;
-        }
-      }, {
         name: "selector",
         type: "Boolean",
         label: t("grapesjs-echarts-presets.config.legend.selector.label"),
@@ -371,33 +336,69 @@ export default function (t, multiple = false) {
         children: [{
           name: "show",
           type: "Boolean",
-          label: t("grapesjs-echarts-presets.config.legend.selector.show"),
+          label: t("grapesjs-echarts-presets.config.legend.selectorLabel.show"),
           default: true
         }, {
           name: "distance",
           type: "Number",
-          label: t("grapesjs-echarts-presets.config.legend.selector.distance"),
+          label: t("grapesjs-echarts-presets.config.legend.selectorLabel.distance"),
           default: 5
         }, {
           name: "rotate",
           type: "Number",
-          label: t("grapesjs-echarts-presets.config.legend.selector.rotate"),
+          label: t("grapesjs-echarts-presets.config.legend.selectorLabel.rotate"),
           min: -90,
           max: 90,
           default: 0
         }, {
           name: "offset",
           type: "Size",
-          label: t("grapesjs-echarts-presets.config.legend.selector.offset"),
+          label: t("grapesjs-echarts-presets.config.legend.selectorLabel.offset"),
           default: [0, 0]
         }, ...align(t), ...textStyle(t, {complex: true})],
         valid(option) {
           return option.legend.selector && option.legend.show;
         }
       }, {
+        name: "emphasis",
+        type: "Object",
+        label: t("grapesjs-echarts-presets.config.legend.emphasis.label"),
+        children: [{
+          name: "selectorLabel",
+          label: t("grapesjs-echarts-presets.config.legend.emphasis.selectorLabel.label"),
+          type: "Object",
+          children: [{
+            name: "show",
+            type: "Boolean",
+            label: t("grapesjs-echarts-presets.config.legend.selectorLabel.show"),
+            default: true
+          }, {
+            name: "distance",
+            type: "Number",
+            label: t("grapesjs-echarts-presets.config.legend.selectorLabel.distance"),
+            default: 5
+          }, {
+            name: "rotate",
+            type: "Number",
+            label: t("grapesjs-echarts-presets.config.legend.selectorLabel.rotate"),
+            min: -90,
+            max: 90,
+            default: 0
+          }, {
+            name: "offset",
+            type: "Size",
+            label: t("grapesjs-echarts-presets.config.legend.selectorLabel.offset"),
+            default: [0, 0]
+          }, ...align(t), ...textStyle(t, {complex: true})]
+        }],
+        valid(option) {
+          return option.legend.selector && option.legend.show;
+        }
+      }, {
         name: "selectorPosition",
-        type: "String",
-        label: t("grapesjs-echarts-presets.config.legend.selector.label"),
+        type: "Enum",
+        label: t("grapesjs-echarts-presets.config.legend.selectorPosition.label"),
+        candidate: ["auto", "end", "start"],
         default: "auto",
         valid(option) {
           return option.legend.selector && option.legend.show;
