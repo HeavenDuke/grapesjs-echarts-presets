@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3562394 */
-  src: url('iconfont.woff2?t=1659430467878') format('woff2'),
-       url('iconfont.woff?t=1659430467878') format('woff'),
-       url('iconfont.ttf?t=1659430467878') format('truetype');
+  src: url('iconfont.woff2?t=1661759826489') format('woff2'),
+       url('iconfont.woff?t=1661759826489') format('woff'),
+       url('iconfont.ttf?t=1661759826489') format('truetype');
 }
 
 .iconfont {
@@ -14,54 +14,54 @@
 }
 
 .icon-multiple-y-chart:before {
-  content: "\e66f";
+  content: "\166f";
 }
 
 .icon-bar-chart:before {
-  content: "\e66a";
+  content: "\166a";
 }
 
 .icon-custom-chart:before {
-  content: "\e66b";
+  content: "\166b";
 }
 
 .icon-rounded-pie-chart:before {
-  content: "\e66c";
+  content: "\166c";
 }
 
 .icon-pie-chart:before {
-  content: "\e66d";
+  content: "\166d";
 }
 
 .icon-nested-pies-chart:before {
-  content: "\e66e";
+  content: "\166e";
 }
 
 .icon-line-chart:before {
-  content: "\e670";
+  content: "\1670";
 }
 
 .icon-polar-histogram-chart:before {
-  content: "\e671";
+  content: "\1671";
 }
 
 .icon-rose-chart:before {
-  content: "\e672";
+  content: "\1672";
 }
 
 .icon-stacked-area-chart:before {
-  content: "\e673";
+  content: "\1673";
 }
 
 .icon-stacked-bar-chart:before {
-  content: "\e674";
+  content: "\1674";
 }
 
 .icon-funnel-chart:before {
-  content: "\e675";
+  content: "\1675";
 }
 
 .icon-scatter-chart:before {
-  content: "\e669";
+  content: "\1669";
 }
 

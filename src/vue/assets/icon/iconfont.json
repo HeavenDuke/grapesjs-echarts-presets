@@ -9,92 +9,92 @@
       "icon_id": "31004712",
       "name": "multiple-y-chart",
       "font_class": "multiple-y-chart",
-      "unicode": "e66f",
-      "unicode_decimal": 58991
+      "unicode": "166f",
+      "unicode_decimal": 5743
     },
     {
       "icon_id": "31002956",
       "name": "bar-chart",
       "font_class": "bar-chart",
-      "unicode": "e66a",
-      "unicode_decimal": 58986
+      "unicode": "166a",
+      "unicode_decimal": 5738
     },
     {
       "icon_id": "31002957",
       "name": "Custom chart",
-      "font_class": "a-Customchart",
-      "unicode": "e66b",
-      "unicode_decimal": 58987
+      "font_class": "custom-chart",
+      "unicode": "166b",
+      "unicode_decimal": 5739
     },
     {
       "icon_id": "31002958",
       "name": "rounded-pie-chart",
       "font_class": "rounded-pie-chart",
-      "unicode": "e66c",
-      "unicode_decimal": 58988
+      "unicode": "166c",
+      "unicode_decimal": 5740
     },
     {
       "icon_id": "31002959",
       "name": "pie-chart",
       "font_class": "pie-chart",
-      "unicode": "e66d",
-      "unicode_decimal": 58989
+      "unicode": "166d",
+      "unicode_decimal": 5741
     },
     {
       "icon_id": "31002960",
       "name": "nested-pies-chart",
       "font_class": "nested-pies-chart",
-      "unicode": "e66e",
-      "unicode_decimal": 58990
+      "unicode": "166e",
+      "unicode_decimal": 5742
     },
     {
       "icon_id": "31002962",
       "name": "line-chart",
       "font_class": "line-chart",
-      "unicode": "e670",
-      "unicode_decimal": 58992
+      "unicode": "1670",
+      "unicode_decimal": 5744
     },
     {
       "icon_id": "31002963",
       "name": "polar-histogram-chart",
       "font_class": "polar-histogram-chart",
-      "unicode": "e671",
-      "unicode_decimal": 58993
+      "unicode": "1671",
+      "unicode_decimal": 5745
     },
     {
       "icon_id": "31002964",
       "name": "rose-chart",
       "font_class": "rose-chart",
-      "unicode": "e672",
-      "unicode_decimal": 58994
+      "unicode": "1672",
+      "unicode_decimal": 5746
     },
     {
       "icon_id": "31002965",
       "name": "stacked-area-chart",
       "font_class": "stacked-area-chart",
-      "unicode": "e673",
-      "unicode_decimal": 58995
+      "unicode": "1673",
+      "unicode_decimal": 5747
     },
     {
       "icon_id": "31002966",
       "name": "stacked-bar-chart",
       "font_class": "stacked-bar-chart",
-      "unicode": "e674",
-      "unicode_decimal": 58996
+      "unicode": "1674",
+      "unicode_decimal": 5748
     },
     {
       "icon_id": "31002967",
       "name": "funnel-chart",
       "font_class": "funnel-chart",
-      "unicode": "e675",
-      "unicode_decimal": 58997
+      "unicode": "1675",
+      "unicode_decimal": 5749
     },
     {
       "icon_id": "31002606",
       "name": "scatter-chart",
       "font_class": "scatter-chart",
-      "unicode": "e669",
-      "unicode_decimal": 58985
+      "unicode": "1669",
+      "unicode_decimal": 5737
     }
   ]
 }
