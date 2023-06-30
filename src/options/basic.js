@@ -26,7 +26,7 @@ export default function (t) {
       name: "textStyle",
       type: "Object",
       label: t("grapesjs-echarts-presets.config.textStyle.label"),
-      children: textStyle(t)
+      children: textStyle(t,{color:'#000'})
     }, ...animation(t), {
       name: "stateAnimation",
       type: "Object",

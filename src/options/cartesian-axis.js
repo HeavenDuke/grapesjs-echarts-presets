@@ -18,14 +18,13 @@ export default function (type = "x") {
       name: `${type}-axis`,
       label: t(`grapesjs-echarts-presets.dict.group.${type}Axis`),
       multiple,
-      // valid (option) {
-      //   if (option.series instanceof Array) {
-      //     return option.series.find(item => item.coordinateSystem && item.coordinateSystem === "cartesian2d")
-      //   }
-      //   else {
-      //     return option.series.coordinateSystem && option.series.coordinateSystem === "cartesian2d"
-      //   }
-      // },
+      valid(option) {
+        if (option.series instanceof Array) {
+          return option.series.find(item => item.coordinateSystem && item.coordinateSystem === "cartesian2d");
+        } else {
+          return option.series.coordinateSystem && option.series.coordinateSystem === "cartesian2d";
+        }
+      },
       options: [{
         name: "show",
         label: t("grapesjs-echarts-presets.config.axis.show.label"),
@@ -63,9 +62,9 @@ export default function (type = "x") {
         default: false,
         valid(option, module) {
           if (option[module] instanceof Array) {
-            return option[module] && option[module].find(item => item.show && item.type === ("value" || "log"));
+            return option[module] && option[module].find(item => item.show && (item.type === "value" || item.type === "log"));
           } else {
-            return option[module] && option[module].show && option[module].type === ("value" || "log");
+            return option[module] && option[module].show && (option[module].type === "value" || option[module].type === "log");
           }
         }
       }, {
@@ -76,9 +75,9 @@ export default function (type = "x") {
         default: "",
         valid(option, module) {
           if (option[module] instanceof Array) {
-            return option[module] && option[module].find(item => item.show && item.type === ("value" || "log"));
+            return option[module] && option[module].find(item => item.show && (item.type === "value" || item.type === "log"));
           } else {
-            return option[module] && option[module].show && option[module].type === ("value" || "log");
+            return option[module] && option[module].show && (option[module].type === "value" || option[module].type === "log");
           }
         }
       }, {
@@ -88,9 +87,9 @@ export default function (type = "x") {
         default: 0,
         valid(option, module) {
           if (option[module] instanceof Array) {
-            return option[module] && option[module].find(item => item.show && item.type === ("value" || "log"));
+            return option[module] && option[module].find(item => item.show && (item.type === "value" || item.type === "log"));
           } else {
-            return option[module] && option[module].show && option[module].type === ("value" || "log");
+            return option[module] && option[module].show && (option[module].type === "value" || option[module].type === "log");
           }
         }
       }, {
@@ -173,7 +172,7 @@ export default function (type = "x") {
         name: "min",
         type: "String",
         label: t("grapesjs-echarts-presets.config.axis.min.label"),
-        default: "dataMin",
+        default: undefined,
         valid(option, module) {
           if (option[module] instanceof Array) {
             return option[module] && option[module].find(item => item.show);
@@ -185,7 +184,7 @@ export default function (type = "x") {
         name: "max",
         type: "String",
         label: t("grapesjs-echarts-presets.config.axis.max.label"),
-        default: "dataMax",
+        default: undefined,
         valid(option, module) {
           if (option[module] instanceof Array) {
             return option[module] && option[module].find(item => item.show);
@@ -221,12 +220,12 @@ export default function (type = "x") {
         name: "minInterval",
         type: "Number",
         label: t("grapesjs-echarts-presets.config.axis.minInterval.label"),
-        default: "",
+        default: undefined,
         valid(option, module) {
           if (option[module] instanceof Array) {
-            return option[module] && option[module].find(item => item.show && item.type === ("value" || "time"));
+            return option[module] && option[module].find(item => item.show && (item.type === "value" || item.type === "time"));
           } else {
-            return option[module] && option[module].show && option[module].type === ("value" || "time");
+            return option[module] && option[module].show && (option[module].type === "value" || option[module].type === "time");
           }
         }
 
@@ -234,16 +233,27 @@ export default function (type = "x") {
         name: "maxInterval",
         type: "Number",
         label: t("grapesjs-echarts-presets.config.axis.maxInterval.label"),
-        default: "",
+        default: undefined,
         valid(option, module) {
           if (option[module] instanceof Array) {
-            return option[module] && option[module].find(item => item.show && item.type === ("value" || "time"));
+            return option[module] && option[module].find(item => item.show && (item.type === "value" || item.type === "time"));
           } else {
-            return option[module] && option[module].show && option[module].type === ("value" || "time");
+            return option[module] && option[module].show && (option[module].type === "value" || option[module].type === "time");
+          }
+        }
+      }, {
+        name: "interval",
+        label: t("grapesjs-echarts-presets.config.axis.interval.label"),
+        type: "Number",
+        default: undefined,
+        valid(option, module) {
+          if (option[module] instanceof Array) {
+            return option[module] && option[module].find(item => item.show && item.type !== "category");
+          } else {
+            return option[module] && option[module].show && option[module].type !== "category";
           }
         }
       },
-        //lost interval
         {
           name: "logBase",
           label: t("grapesjs-echarts-presets.config.axis.logBase.label"),
@@ -364,9 +374,9 @@ export default function (type = "x") {
               return option[module] && option[module].show;
             }
           }
-        }, {
-          // name:"data",
-          // type: "Object",
+          //   }, {
+          //     // name:"data",
+          //     // type: "Object",
         }, {
           name: "axisPointer",
           label: t("grapesjs-echarts-presets.config.axis.axisPointer.label"),
@@ -388,6 +398,7 @@ export default function (type = "x") {
             }
           }
         }))]
+
     };
   };
 }

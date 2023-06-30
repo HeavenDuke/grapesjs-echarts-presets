@@ -352,6 +352,9 @@ export default {
             textareaColor: {
               label: "Textarea Color"
             },
+            textareaBorderColor:{
+              label:"Textarea Border Color"
+            },
             textColor: {
               label: "Text Color"
             },
@@ -717,7 +720,8 @@ export default {
         },
         borderColor: {
           label: "Border Color"
-        }, backgroundColor: {
+        },
+        backgroundColor: {
           label: "BackgroundColor"
         },
         borderWidth: {
@@ -726,12 +730,6 @@ export default {
         },
         containLabel: {
           label: "Contain Label"
-        },
-        zlevel: {
-          label: "Z Level"
-        },
-        z: {
-          label: "Z"
         },
         shadowColor: {
           label: "Shadow Color"
@@ -742,7 +740,9 @@ export default {
         },
       },
       geo: {
-        label: "Geo",
+        label:{
+          label:"Label"
+        },
         show: {
           label: "Show"
         },
@@ -844,12 +844,6 @@ export default {
         },
         subtextStyle: {
           label: "Subtitle Style",
-          align: {
-            label: "Align"
-          },
-          verticalAlign: {
-            label: "Vertical Align"
-          }
         },
         padding: {
           label: "Padding"
@@ -871,7 +865,10 @@ export default {
         label: "Y Axis"
       },
       radiusAxis: {
-        label: "Radius Axis"
+        label: "Radius Axis",
+        polarIndex:{
+          label:"Polar Index"
+        }
       },
       angleAxis: {
         label: "Angle Axis",
@@ -1067,6 +1064,9 @@ export default {
           },
           interval: {
             label: "Interval"
+          },
+          formatter:{
+            label:'Formatter'
           },
           inside: {
             label: "Inside"

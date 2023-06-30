@@ -134,7 +134,7 @@ export default function (t, multiple = false, show = true,) {
       placeholder: t("grapesjs-echarts-presets.config.tooltip.showDelay.placeholder"),
       default: 0,
       valid(option) {
-        return option.tooltip.show && option.tooltip.triggerOn === ("mousemove" || "mousemove|click");
+        return option.tooltip.show && (option.tooltip.triggerOn === "mousemove" || option.tooltip.triggerOn ==="mousemove|click");
       }
     }, {
       name: "hideDelay",
