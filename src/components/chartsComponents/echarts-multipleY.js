@@ -10,8 +10,8 @@ export default build({
     const tooltip = options.tooltip || {};
     const toolbox = options.toolbox || {};
     const legend = options.legend || {};
-    let xAxis = options.xAxis || [];
-    let yAxis = options.yAxis || [];
+    let xAxis = options['x-axis'] || [];
+    let yAxis = options['y-axis'] || [];
     // console.log(options.dataset)
     let dataset = {
       source: options.dataset && options.dataset[0].source || [],

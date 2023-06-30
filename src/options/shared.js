@@ -1142,7 +1142,7 @@ export function axisLabel(t) {
     type: "Text",
     label: t("grapesjs-echarts-presets.config.axis.axisLabel.formatter.label"),
     placeholder: t("grapesjs-echarts-presets.config.axis.axisLabel.formatter.placeholder"),
-    default: ""
+    default: "{value}"
   }, {
     name: "showMinLabel",
     type: "Boolean",

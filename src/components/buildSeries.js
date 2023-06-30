@@ -78,6 +78,7 @@ export default ({
                 renderer: "canvas",
               })
               chart.setOption(option)
+              that.addAttributes({"data-ecg-options-finalized": JSON.stringify(option)})
               that.chart = chart
             }, 10)
           }
@@ -88,6 +89,9 @@ export default ({
           name: editor.I18n.t(name),
           resizable: true,
           multiple,
+          script () {
+            console.log(2333)
+          },
           traits: [
             {
               type: "echarts-basic-trait",

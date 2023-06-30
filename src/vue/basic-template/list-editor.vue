@@ -70,7 +70,7 @@
     .gjs-trt-list-item {
         display: flex;
 
-        /deep/ > div {
+        > div {
             flex-grow: 1;
         }
 

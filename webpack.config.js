@@ -3,14 +3,11 @@ const path = require("path");
 const webpack = require("webpack");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const pkg = require("./package.json");
-const MinifyPlugin = require("babel-minify-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = (env = {}) => {
   const isProd = env.production;
   let corePlugins = [];
-  if (isProd) {
-    corePlugins = [new webpack.BannerPlugin(`${pkg.name} - ${pkg.version}`), new MinifyPlugin({},{})];
-  }
+
   const index = "index.html";
   const indexDev = index;
   corePlugins.push(
@@ -21,7 +18,6 @@ module.exports = (env = {}) => {
   );
   return {
     mode: isProd ? "production" : "development",
-    devtool: isProd ? "source-map" : "cheap-module-eval-source-map",
     entry: {
       "grapesjs-echarts-presets": "./src",
       "grapesjs-echarts-presets.min": "./src",
@@ -71,11 +67,7 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-          loader: 'url-loader',
-          // options: {
-          //   limit: 10000,
-          //   name: 'fonts/[name].[hash:7].[ext]'
-          // }
+          loader: 'url-loader'
         }
       ],
     },

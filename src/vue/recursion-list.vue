@@ -9,7 +9,7 @@
             <ep-number-input v-else-if="item.type==='Number'" v-model="scope.item.value" :step="item.step"
                              :max="item.max" :min="item.min"></ep-number-input>
             <ep-select v-else-if="item.type==='Enum'" v-model="scope.item.value" :placeholder="item.placeholder">
-              <ep-option v-for="val in item.candidate" :value="val.value || val" :label="val.name||val"></ep-option>
+              <ep-option v-for="val in item.candidate" :key="val.value || val" :value="val.value || val" :label="val.name||val"></ep-option>
             </ep-select>
 <!--            <ep-more v-else-if="item.type==='Object'" :label="item.label">-->
 <!--              <recursion-list :overall="overall" v-model="value[item.name]" :meta="item.children"></recursion-list>-->
@@ -26,7 +26,7 @@
         <ep-text-area v-else-if="item.type==='Text'" v-model="value[item.name]" :label="item.label"
                       :placeholder="item.placeholder"></ep-text-area>
         <ep-select v-else-if="item.type==='Enum'" v-model="value[item.name]" :label="item.label" :placeholder="item.placeholder">
-          <ep-option v-for="val in item.candidate" :value="val.value || val" :label="val.name||val"></ep-option>
+          <ep-option v-for="val in item.candidate" :key="val.value || val" :value="val.value || val" :label="val.name||val"></ep-option>
         </ep-select>
         <ep-size v-else-if="item.type ==='Size'" :use-unit="item.useUnit" :label="item.label" v-model="value[item.name]"></ep-size>
         <ep-function v-else-if="item.type ==='Function'" :label="item.label" v-model="value[item.name]"></ep-function>
